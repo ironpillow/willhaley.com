@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Booting macOS From An External USB 3.0 Drive - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="I have a Late 2012 21.5&rdquo; iMac with a dying 5400 RPM Drive. Backups are failing for reasons that are very ambiguous. All I know is that the machine keeps c...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/boot-mac-usb-3-external/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Booting macOS From An External USB 3.0 Drive</h1>
+    <p class="post-meta"><time datetime="2017-11-06T00:00:00+00:00" itemprop="datePublished">Nov 6, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>I have a <a href="https://support.apple.com/kb/sp665?locale=en_US">Late 2012 21.5&rdquo; iMac</a> with a dying 5400 RPM Drive.</p>
+
+<p>Backups are failing for reasons that are very ambiguous. All I know is that the machine keeps complaining that <code>Time Machine couldn't back up</code>, that the Time Machine drive constantly needed first aid, and then first aid would consistently fail with exit code <code>8</code>.</p>
+
+<p><img src="/images/boot-mac-usb-3-external/time-machine.png" alt="time-machine.png" /></p>
+
+<p>I realize that sounds much more like the Time Machine drive is at fault, and not the internal drive.</p>
+
+<p>However, I replaced the Time Machine drive and enclosure with an SSD, and the issue persisted.</p>
+
+<p>At this point, I decided that the underlying issue was that the internal fusion drive was failing.</p>
+
+<p>I was seeing very slow performance and system hangs that required a hard shutdown, and took that as a hint that the drive was dying and causing this corruption I was seeing with Time Machine.</p>
+
+<h1 id="replacing-the-boot-drive-on-an-imac-or-not">Replacing The Boot Drive On An iMac&hellip;Or Not</h1>
+
+<p>I was originally planning to <a href="https://www.youtube.com/watch?v=AHVOCoi6Q6E">replace the internal drive</a> in my iMac with an SSD. The process is certainly doable, but I hate the idea of cracking open the iMac, taking apart components, and re-applying glue. It seems like so much can go wrong.</p>
+
+<p>Eventually, it hit me, modern Macs have the built-in ability to boot from an external drive. Why not boot from that rather than try to replace the internal drive?</p>
+
+<p>I read that others had <a href="https://www.macworld.com/article/2907125/use-an-external-ssd-to-make-an-old-mac-feel-new-without-cracking-it-open.html">great success</a> booting externally like this, and it <a href="http://osxdaily.com/2013/06/22/boot-mac-external-drive/">seems</a> <a href="https://apple.stackexchange.com/questions/112351/can-i-boot-mac-from-an-external-hard-drive-internal-hard-drivehard-drive-closu">like</a> something that is very commonly done with Macs.</p>
+
+<p>At this point I decided I would be booting externally, and forgo the internal hard drive upgrade.</p>
+
+<h1 id="usb-3-0-or-thunderbolt-1">USB 3.0 or Thunderbolt 1?</h1>
+
+<p>My iMac has both USB 3.0 and <a href="https://support.apple.com/en-us/HT204154">Thunderbolt 1 ports</a> and did a lot of research to try and determine which connection was ideal for booting an external drive.</p>
+
+<p><a href="https://forums.macrumors.com/threads/external-ssd-as-boot-drive-usb-3-vs-thunderbolt.1709803/">Some posts</a> warned that USB 3.0 does not support TRIM, but that the performance is essentially the same.</p>
+
+<p>I <a href="https://forums.macrumors.com/threads/thunderbolt-ssd-enclosure.1708619/#post-18803508">also</a> <a href="https://forums.macrumors.com/threads/imac-bto-which-is-which.1708796/#post-18803060">noticed</a> that <a href="https://en.wikipedia.org/wiki/USB_Attached_SCSI">UASP</a> support in the USB 3.0 enclosure would reportedly <a href="https://blog.startech.com/post/all-you-need-to-know-about-uasp/">make a great difference</a>.</p>
+
+<p>I compared both my <a href="/blog/thunderbolt-enclosure/">Thunderbolt enclosure</a> and <a href="/blog/usb-3-uasp/">USB 3.0 with UASP enclosure</a> for booting my Mac, and found that booting macOS from <strong>USB 3.0 performed better than Thunderbolt</strong>, and was far cheaper.</p>
+
+<p>Based on my tests, I think USB 3.0 is the best way to go, and that is what I ended up using. Though, Thunderbolt is nearly as fast and seems like a perfectly viable option too.</p>
+
+<h1 id="installing-macos">Installing macOS</h1>
+
+<p>I rebooted my iMac to the recovery partition and installed macOS to my external drive.</p>
+
+<p>The install seemed much slower than I would have hoped. The &ldquo;8 minutes remaining&rdquo; turned into 20 minutes. This was disheartening. I was convinced there was no way this would work.</p>
+
+<p>Thankfully, I did not prematurely stop the installation. I let it finish, the machine rebooted to the external drive, and it ran wonderfully!</p>
+
+<p>My Mac automatically defaulted to booting to the external drive, and everything was very snappy and worked great. Yay!</p>
+
+<p>Write performance went from ~82.3 MiB/s to ~339 MiB/s</p>
+
+<pre><code># Before
+cat /dev/zero | pv -t -a &gt; /tmp/garbage.file
+19:42 [82.3MiB/s]
+</code></pre>
+
+<pre><code># After
+cat /dev/zero | pv -t -a &gt; /tmp/garbage.file
+0:02:14 [ 339MiB/s]
+</code></pre>
+
+<p>I used the migration assistant to transfer data and everything worked perfectly. Time Machine backups are now working without issue.</p>
+
+<p>The only remaining task for me is to wipe the internal drive to prevent accidentally booting to it in the future.</p>
+
+<!--
+TODO WFH Using external SSD for default booting
+https://discussions.apple.com/thread/7450878?start=0&tstart=0
+
+TODO WFH How to set up and use an external Mac startup disk
+https://support.apple.com/en-us/HT202796 -->
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fboot-mac-usb-3-external%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

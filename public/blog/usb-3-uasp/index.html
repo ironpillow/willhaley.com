@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Examining UASP Performance with USB 3.0 on Linux and Mac - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="I wanted to try and understand just how much of a practical benefit I could get from an external drive enclosure with UASP (USB Attached SCSI). Please note that...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/usb-3-uasp/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Examining UASP Performance with USB 3.0 on Linux and Mac</h1>
+    <p class="post-meta"><time datetime="2017-09-28T00:00:00+00:00" itemprop="datePublished">Sep 28, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>I wanted to try and understand just how much of a practical benefit I could get from an external drive enclosure with <a href="https://en.wikipedia.org/wiki/USB_Attached_SCSI">UASP (USB Attached SCSI)</a>.</p>
+
+<p>Please note that I am <strong>not</strong> examining the performance of USB 3.1 or Thunderbolt in this article. Simply USB 3.0 with and without UASP.</p>
+
+<p>For this experiment, I purchased two enclosures. One with UASP and one without UASP. Both are USB 3.0 external 2.5&rdquo; enclosures.</p>
+
+<p><a href="https://www.inateck.com/hard-drive-accessories/hdd-enclosures/tool-free-usb-3-0-hdd-enclosure/fe2001.html">Inateck FE2001/FEU3NS-1 Tool-free 2.5 Inch HDD Case</a></p>
+
+<p><a href="https://www.amazon.com/gp/product/B00DW374W4/ref=oh_aui_detailpage_o03_s00?ie=UTF8&amp;psc=1"><em>Amazon Product Link</em></a></p>
+
+<p><a href="https://www.inateck.com/hard-drive-accessories/hdd-enclosures/tool-free-usb-3-0-hdd-enclosure/fe2002.html">Inateck FE2002/FEU3NS-1E Tool-free 2.5 Inch HDD Case [UASP]</a></p>
+
+<p><a href="https://www.amazon.com/gp/product/B00FCLG65U/ref=oh_aui_detailpage_o05_s00?ie=UTF8&amp;psc=1"><em>Amazon Product Link</em></a></p>
+
+<p>The enclosures are nearly identical except that one supports UASP, and one does not. Both use USB 3.0.</p>
+
+<p>For my tests, I used the <strong>exact same cable</strong> and the <strong>exact same USB 3.0 port</strong> on the test computers.</p>
+
+<p>The test SSD drive used in the enclosures is a <a href="http://poweredbymushkin.com/catalog/item/11-chronos/772-chronos-120gb-7mm.html">Chronos MKNSSDCR120GB SATA III 2.5&rdquo; SSD</a>.</p>
+
+<p>I tested against Arch Linux 4.13.3-1-ARCH using an <a href="https://www.asus.com/us/Motherboards/H87IPLUS/">ASUS H87I-PLUS</a> motherboard that supports UASP over USB 3.0.</p>
+
+<p>I tested against macOS Sierra 10.12.6 using a MacBook Pro (Retina, 15-inch, Mid 2015), which <a href="https://support.apple.com/kb/SP719?locale=en_US">has USB 3.0 ports</a>. I wrote to <code>rdisk</code> rather than <code>disk</code> because <code>disk</code> <a href="http://daoyuan.li/solution-dd-too-slow-on-mac-os-x/">is inherintly slower</a> than <code>rdisk</code>.</p>
+
+<h1 id="linux-without-uasp-fe2001">Linux - Without UASP (FE2001)</h1>
+
+<p>In this test I wrote data to the SSD while it was in the enclosure without UASP support.</p>
+
+<pre><code>$ cat /dev/zero | pv -t -a &gt; /dev/sdz
+0:08:30 [ 224MiB/s]
+</code></pre>
+
+<p>The test averaged 224MiB/s (1.879 Gbps).</p>
+
+<h1 id="linux-with-uasp-fe2002">Linux - With UASP (FE2002)</h1>
+
+<p>In this test I wrote data to the SSD while it was in the enclosure with UASP support.</p>
+
+<pre><code>$ cat /dev/zero | pv -t -a &gt; /dev/sdz
+0:04:44 [ 402MiB/s]
+</code></pre>
+
+<p>The test averaged 402MiB/s (3.372 Gbps).</p>
+
+<h1 id="mac-without-uasp-fe2001">Mac - Without UASP (FE2001)</h1>
+
+<p>In this test I wrote data to the SSD while it was in the enclosure without UASP support.</p>
+
+<pre><code>$ cat /dev/zero | pv -t -a &gt; /dev/rdisk9
+0:12:20 [ 154MiB/s]
+</code></pre>
+
+<p>The test averaged 154MiB/s (1.291 Gbps).</p>
+
+<h1 id="mac-with-uasp-fe2002">Mac - With UASP (FE2002)</h1>
+
+<p>In this test I wrote data to the SSD while it was in the enclosure with UASP support.</p>
+
+<pre><code>$ cat /dev/zero | pv -t -a &gt; /dev/rdisk9
+0:09:02 [ 209MiB/s]
+</code></pre>
+
+<p>The test averaged 209MiB/s (1.753 Gbps).</p>
+
+<h1 id="mac-boot-to-enclosure-without-uasp-fe2001">Mac - Boot To Enclosure Without UASP (FE2001)</h1>
+
+<p>In this test I installed macOS 10.12.6 to the SSD, and booted to it while it was in the enclosure without UASP support.</p>
+
+<pre><code>$ cat /dev/zero | pv -t -a &gt; /tmp/garbage.file
+0:02:00 [ 213MiB/s]
+</code></pre>
+
+<p>The test averaged 213MiB/s (1.786 Gbps).</p>
+
+<h1 id="mac-boot-to-enclosure-with-uasp-fe2002">Mac - Boot To Enclosure With UASP (FE2002)</h1>
+
+<p>In this test I installed macOS 10.12.6 to the SSD, and booted to it while it was in the enclosure with UASP support.</p>
+
+<pre><code>$ cat /dev/zero | pv -t -a &gt; /tmp/garbage.file
+0:02:00 [ 389MiB/s]
+</code></pre>
+
+<p>The test averaged 389MiB/s (3.263 Gbps).</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>UASP made a clear difference for me on Linux.</p>
+
+<p>The macOS results were a bit more difficult to decipher.</p>
+
+<p>On macOS, UASP barely made a difference in the first couple tests. The numbers make me believe that UASP support was not working properly in the first two macOS tests.</p>
+
+<p>The very last test is interesting. I booted my MacBook Pro to the USB 3.0 enclosure with UASP, and in that scenario, UASP seemed to be working, because the speeds were far faster. Unfortunately, I do not understand why this particular scenario allowed UASP to work.</p>
+
+<p>I am pleased to know that UASP can offer clear performance benefits in Linux.</p>
+
+<p>I am also pleased to know that booting to an external USB 3.0 enclosure with UASP on a Mac performs well. If you are considering a USB 3.0 drive for booting your Mac, clearly UASP <em>can</em> make a difference.</p>
+
+<p>I do not know what Apple magic is in play that causes UASP to work properly in that last test scenario of mine, but at least it works!</p>
+
+<h1 id="buyer-beware">Buyer Beware</h1>
+
+<p>Based on the <a href="https://en.wikipedia.org/wiki/USB_Attached_SCSI#Hardware_support">mix of hardware support for UASP</a>, I definitely suggest doing serious research before making any purchases related to this feature.</p>
+
+<h1 id="additional-research">Additional Research</h1>
+
+<p>In my first two tests on macOS, it seemed that UASP was not enabled, or that it provided no significant benefits.</p>
+
+<p>Only that <em>last test</em> seems to show UASP working on macOS. That was the scenario where the UASP enclosure was being used as the boot drive.</p>
+
+<p>Perhaps macOS loads a special extension at boot time if it detects that the boot drive is being accessed via external storage? Or perhaps the native install of macOS on my internal SSD is suffering from an issue of some sort that prevents UASP from working properly?</p>
+
+<p>I found <a href="https://www.reddit.com/r/applehelp/comments/3vhcnt/how_do_i_know_if_my_imac_supports_the_uasp/">some</a> <a href="https://discussions.apple.com/thread/5128258?tstart=0">articles</a>  that lead me to to believe that UASP support is hit-or-miss in Macs.</p>
+
+<p>To further confuse things, I noticed that the extension supposedly responsible for UASP support on Macs was not loaded on my Mac at any time during these tests. Even in the test scenario when UASP seemed to be working.</p>
+
+<p>I went to <code>About This Mac</code> -&gt; <code>System Report...</code> -&gt; <code>Extensions</code> -&gt; <code>IOUSBAttachedSCSI</code> and saw the IOUSBAttachedSCSI module (which apparently corresponds to UASP) was not loaded at any time.</p>
+
+<p>I tried manually loaded the IOUSBAttachedSCSI kext to see if that made any difference in these tests.</p>
+
+<pre><code>sudo kextload /System/Library/Extensions/IOUSBAttachedSCSI.kext
+</code></pre>
+
+<p>But there was no change in my test results.</p>
+
+<p>I&rsquo;ve <a href="https://discussions.apple.com/thread/7443772?start=0&amp;tstart=0">seen</a> <a href="https://discussions.apple.com/thread/6164330?tstart=0">multiple</a> <a href="https://forums.macrumors.com/threads/uasp-drivers-broken-in-el-capitan.1892027/">articles</a> suggesting that the IOUSBAttachedSCSI extension has been renamed to IOUSBMassStorageUASDriver, but I never saw that extension in any of these tests in macOS.</p>
+
+<p><a href="https://forums.macrumors.com/threads/external-ssd-as-boot-drive-usb-3-vs-thunderbolt.1709803/#post-18804403">Some</a> <a href="https://discussions.apple.com/thread/5592068?tstart=0">articles</a> imply that perhaps only enclosures with specific chipsets will properly support UASP on a Mac.</p>
+
+<pre><code>$ ioreg
+...
++-o SSP1@14500000  &lt;class AppleUSB30XHCIPort, id 0x1000002a3, registered, matched, active, busy 0 (5346 ms), retain 23&gt;
+| +-o ASM1153E@14500000  &lt;class IOUSBHostDevice, id 0x100001b36, registered, matched, active, busy 0 (768 ms), retain 118&gt;
+|   +-o AppleUSBHostLegacyClient  &lt;class AppleUSBHostLegacyClient, id 0x100001b39, !registered, !matched, active, busy 0, retain$
+|   +-o AppleUSBHostCompositeDevice  &lt;class AppleUSBHostCompositeDevice, id 0x100001b43, !registered, !matched, active, busy 0, $
+|   +-o IOUSBHostInterface@0  &lt;class IOUSBHostInterface, id 0x100001b44, registered, matched, active, busy 0 (638 ms), retain 13$
+|     +-o IOUSBMassStorageInterfaceNub  &lt;class IOUSBMassStorageInterfaceNub, id 0x100001b48, registered, matched, active, busy 0$
+|       +-o IOUSBMassStorageDriverNub  &lt;class IOUSBMassStorageDriverNub, id 0x100001b4a, registered, matched, active, busy 0 (63$
+|         +-o IOUSBMassStorageUASDriver  &lt;class IOUSBMassStorageUASDriver, id 0x100001b4c, registered, matched, active, busy 0 ($
+|           +-o IOSCSITargetDevice  &lt;class IOSCSITargetDevice, id 0x100001b4e, registered, matched, active, busy 0 (529 ms), ret$
+|             +-o IOSCSIHierarchicalLogicalUnit@0000000000000000  &lt;class IOSCSIHierarchicalLogicalUnit, id 0x100001b50, register$
+|               +-o IOSCSIPeripheralDeviceType00  &lt;class IOSCSIPeripheralDeviceType00, id 0x100001b54, !registered, !matched, ac$
+|                 +-o IOBlockStorageServices  &lt;class IOBlockStorageServices, id 0x100001b57, registered, matched, active, busy 0$
+|                   +-o IOBlockStorageDriver  &lt;class IOBlockStorageDriver, id 0x100001b58, registered, matched, active, busy 0 ($
+|                     +-o Inateck ASM1153E Media  &lt;class IOMedia, id 0x100001b59, registered, matched, active, busy 0 (3 ms), re$
+|                       +-o IOMediaBSDClient  &lt;class IOMediaBSDClient, id 0x100001b5a, registered, matched, active, busy 0 (0 ms$
+
+...
+</code></pre>
+
+<p>You can see from the <code>ioreg</code> output above that my Inateck enclosure is using the ASM1153E chipset, and that the IOUSBMassStorageUASDriver driver does seem to be loaded (even though there is no corresponding kext, which confuses me), and still, performance was subpar <em>until it was used as the boot drive</em>.</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fusb-3-uasp%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "willhaley" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

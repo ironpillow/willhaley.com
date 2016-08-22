@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://willhaley.com/blog/north-face-gnomad/</loc>
+    <lastmod>2018-11-10T17:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/timbuk2-swig/</loc>
+    <lastmod>2018-10-27T13:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/chrome-bravo-2/</loc>
+    <lastmod>2018-10-23T20:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/</loc>
+    <lastmod>2018-04-14T15:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/frc-roborio-version-mismatch/</loc>
+    <lastmod>2018-02-22T22:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/frc-roborio-java/</loc>
+    <lastmod>2018-02-22T21:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/frc-roborio-image-firmware/</loc>
+    <lastmod>2018-02-22T20:05:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/linear-gradient-background-googlebot/</loc>
+    <lastmod>2018-02-19T16:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/custom-debian-live-environment/</loc>
+    <lastmod>2018-02-08T18:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/frc-toggle-button/</loc>
+    <lastmod>2018-02-08T01:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/golang-makefile/</loc>
+    <lastmod>2018-02-01T21:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/url-array-go/</loc>
+    <lastmod>2018-01-03T17:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/googlebot-crawler/</loc>
+    <lastmod>2017-12-27T13:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/windows-installer-usb-linux/</loc>
+    <lastmod>2017-12-20T19:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/docker-macos-ember/</loc>
+    <lastmod>2017-11-12T16:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/ember-docker-build-performance/</loc>
+    <lastmod>2017-11-09T09:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/ubuntu-nfs-server/</loc>
+    <lastmod>2017-11-09T00:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/unlock-veracrypt-boot/</loc>
+    <lastmod>2017-11-08T18:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/compile-samba-macos/</loc>
+    <lastmod>2017-11-06T11:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/boot-mac-usb-3-external/</loc>
+    <lastmod>2017-11-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/macos-virtual-machine-mac/</loc>
+    <lastmod>2017-11-01T23:14:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/extlinux-menu/</loc>
+    <lastmod>2017-10-19T23:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/finding-linux-wifi-usb/</loc>
+    <lastmod>2017-10-07T16:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/thunderbolt-enclosure/</loc>
+    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/usb-3-uasp/</loc>
+    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/</loc>
+    <lastmod>2017-09-13T20:22:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/lakewood-line-chicago/</loc>
+    <lastmod>2017-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/access-point-vulnerable-wps-attack/</loc>
+    <lastmod>2017-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/restore-stock-firmware-wnr2000v3/</loc>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/hacking-my-access-point-with-aircrack/</loc>
+    <lastmod>2017-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/iperf3-server-client/</loc>
+    <lastmod>2017-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/google-assistant-sdk-hello-world/</loc>
+    <lastmod>2017-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/usb-write-protect-switch/</loc>
+    <lastmod>2017-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/scan-images-with-sane/</loc>
+    <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/fullscreen-raspberry-pi-app-tft/</loc>
+    <lastmod>2017-08-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/power-off-raspberry-pi-adafruit-tft-screen-shutdown/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/raspberry-pi-adafruit-tft-input-wonky/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/debian-fullscreen-gui-kiosk/</loc>
+    <lastmod>2017-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/install-debian-usb/</loc>
+    <lastmod>2017-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/decode-and-save-google-authenticator-qr-codes/</loc>
+    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/cannot-ping-dd-wrt/</loc>
+    <lastmod>2017-05-27T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/encrypt-single-file-linux-aes-gpg/</loc>
+    <lastmod>2017-05-13T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/custom-debian-hard-drive-install/</loc>
+    <lastmod>2017-05-07T15:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/add-facebook-calendar-to-google-calendar/</loc>
+    <lastmod>2017-04-08T09:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/concourse-lite/</loc>
+    <lastmod>2017-03-21T10:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/deploy-elastic-beanstalk-semaphore/</loc>
+    <lastmod>2017-02-20T17:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/correct-robot-drift-talon-calibration/</loc>
+    <lastmod>2017-02-07T22:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/linux-usb-wifi/</loc>
+    <lastmod>2017-02-05T13:03:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/printing-in-arch-linux/</loc>
+    <lastmod>2017-02-04T16:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/combine-pdfs-linux/</loc>
+    <lastmod>2017-02-02T22:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/frc-linux/</loc>
+    <lastmod>2017-01-31T21:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/contributing-go-remote-package/</loc>
+    <lastmod>2017-01-29T10:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/print-directory-tree-with-sizes/</loc>
+    <lastmod>2017-01-29T10:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/large-persistent-casper-parition-xubuntu-efi-live-usb-2/</loc>
+    <lastmod>2017-01-28T21:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/install-rclone-on-windows/</loc>
+    <lastmod>2017-01-15T10:27:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/mount-reversed-encfs-volume-on-windows/</loc>
+    <lastmod>2017-01-15T10:01:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/run-remote-vagrant-commands/</loc>
+    <lastmod>2017-01-15T09:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/script-install-cygwin-windows/</loc>
+    <lastmod>2017-01-15T09:44:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/checkbox-as-radio/</loc>
+    <lastmod>2017-01-10T20:45:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/unintuitive-clickable-card/</loc>
+    <lastmod>2017-01-10T20:45:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/unlock-luks-volumes-with-usb-key/</loc>
+    <lastmod>2016-12-28T11:25:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/static-ip-in-arch-linux/</loc>
+    <lastmod>2016-12-28T11:11:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/mount-nfs-share-on-a-mac/</loc>
+    <lastmod>2016-12-28T11:08:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/marvell-88se6145-sata-controller-on-arch-linux/</loc>
+    <lastmod>2016-12-27T13:38:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/aggressive-validation/</loc>
+    <lastmod>2016-12-23T05:09:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/obscure-error-messaging/</loc>
+    <lastmod>2016-12-23T05:09:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/generate-jwt-with-bash/</loc>
+    <lastmod>2016-12-17T10:54:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/use-cookies-with-curl/</loc>
+    <lastmod>2016-12-17T10:54:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/pipe-arguments-to-base-function/</loc>
+    <lastmod>2016-12-17T10:49:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/embedding-types-to-share-functionality-in-go/</loc>
+    <lastmod>2016-12-02T19:09:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/private-and-public-visibility-with-go-packages/</loc>
+    <lastmod>2016-12-02T19:09:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/favorites/</loc>
+    <lastmod>2016-12-02T18:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/simple-interface-and-polymorphism-examples-with-go/</loc>
+    <lastmod>2016-11-17T19:03:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/encrypted-core-storage-home-folder-on-mac-osx/</loc>
+    <lastmod>2016-11-12T10:23:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/deploy-an-html-web-app-with-nginx-config-changes-without-passwords/</loc>
+    <lastmod>2016-11-05T12:26:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/clippings/</loc>
+    <lastmod>2016-10-16T09:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/getting-my-jekyll-blog-on-aws-s3-with-semaphore-ci/</loc>
+    <lastmod>2016-10-04T15:51:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/</loc>
+    <lastmod>2016-09-26T17:30:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/</loc>
+    <lastmod>2016-09-21T22:07:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/resolvconf-dns-issue-after-ubuntu-xenial-upgrade/</loc>
+    <lastmod>2016-09-10T07:45:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/power-performance-comparisons-between-various-cpus-configurations/</loc>
+    <lastmod>2016-09-02T17:28:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/simple-lvm-spanned-volume/</loc>
+    <lastmod>2016-09-01T18:15:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/default-foreign-soft-subtitle-support-in-plex-using-handbrake/</loc>
+    <lastmod>2016-08-20T21:24:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/power-consumption-tests-with-a-kill-a-watt/</loc>
+    <lastmod>2016-08-19T16:08:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/united-mileage-plus-security-standards-are-disappointing/</loc>
+    <lastmod>2016-03-20T08:51:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/securely-erase-a-disk-in-the-terminal-in-os-x-el-capitan/</loc>
+    <lastmod>2016-02-07T12:05:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/moderately-advanced-mongo-queries/</loc>
+    <lastmod>2015-09-16T21:31:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/creating-the-encfs-extension-for-tinycore-linux/</loc>
+    <lastmod>2015-09-16T21:19:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/different-ssh-users-for-vagrant-ssh-and-vagrant-up/</loc>
+    <lastmod>2015-09-16T19:46:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/edit-microsoft-office-files-in-google-drive-docs/</loc>
+    <lastmod>2015-09-16T18:52:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/try-catch-callbacks-in-javascript/</loc>
+    <lastmod>2015-05-08T19:46:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/octopress-maintenance/</loc>
+    <lastmod>2015-05-08T14:58:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/simple-portable-linux-qemu-vm-usb/</loc>
+    <lastmod>2015-04-19T20:46:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/access-host-from-qemu-vm/</loc>
+    <lastmod>2015-04-19T13:50:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/clone-windows-to-a-smaller-drive/</loc>
+    <lastmod>2015-03-08T22:41:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/backup-disk-encryption-keyfiles-physical-theft-raspberry-pi/</loc>
+    <lastmod>2015-02-21T01:40:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/wordpress-in-tiny-core-linux-6/</loc>
+    <lastmod>2015-01-16T20:43:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/mariadb-tinycore-linux/</loc>
+    <lastmod>2015-01-13T22:29:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/portable-wordpress-for-windows/</loc>
+    <lastmod>2015-01-10T13:39:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/install-android-apps-to-sd-card-by-default/</loc>
+    <lastmod>2015-01-09T22:47:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/encrypted-file-container-disk-image-in-linux/</loc>
+    <lastmod>2014-10-14T17:28:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/cv/</loc>
+    <lastmod>2014-10-10T20:31:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/about/</loc>
+    <lastmod>2014-06-29T00:31:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/root-samsung-galaxy-s-blaze-4g-sgh-t769/</loc>
+    <lastmod>2014-05-15T21:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/chinese-characters-in-android-emulator/</loc>
+    <lastmod>2013-10-21T21:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/reset-raspberry-pi-password-offline/</loc>
+    <lastmod>2013-10-10T20:31:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/backup-windows-internet-rsync-ssh-raspberry-pi/</loc>
+    <lastmod>2013-10-10T20:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/</loc>
+    <lastmod>2013-05-01T22:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/clone-xp-to-larger-partition-with-linux/</loc>
+    <lastmod>2013-04-21T21:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/clone-windows-xp-from-an-ide-to-sata-drive/</loc>
+    <lastmod>2013-04-21T17:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/flask-on-bluehost/</loc>
+    <lastmod>2012-04-22T16:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/python-27-bluehost/</loc>
+    <lastmod>2012-04-17T21:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/optware-on-the-pogoplug/</loc>
+    <lastmod>2012-03-22T23:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/pogoplug-software-and-support-issues/</loc>
+    <lastmod>2012-03-04T23:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/tmobile-password-confusion/</loc>
+    <lastmod>2012-02-26T00:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/altiris-folder-org/</loc>
+    <lastmod>2012-02-03T23:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/java-single-instance/</loc>
+    <lastmod>2012-02-03T23:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/delay-windows-idle-timer/</loc>
+    <lastmod>2012-02-03T23:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/</loc>
+    <lastmod>2018-11-10T17:55:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

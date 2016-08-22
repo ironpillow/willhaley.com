@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Simple Interface and Polymorphism Examples with Go - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="Here is a quick demo of polymorphism via interfaces in golang. I am writing this up as a note-to-self, but maybe it will help others. package main import ( &quo...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/simple-interface-and-polymorphism-examples-with-go/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Simple Interface and Polymorphism Examples with Go</h1>
+    <p class="post-meta"><time datetime="2016-11-17T19:03:11+00:00" itemprop="datePublished">Nov 17, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Here is a quick demo of polymorphism via interfaces in golang. I am writing this up as a note-to-self, but maybe it will help others.</p>
+
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+)
+
+// This is the interface. Types that wish to confirm to Vehicle must implement
+// this interface. Implementing this interface is done by implementing the
+// methods defined here. `description()` and `medium()`.
+type Vehicle interface {
+	description() string
+	medium() string
+}
+
+// This is a simple struct type.
+type Car struct {
+	doors int
+}
+
+// This is a simple struct type.
+type Boat struct {
+	rudders int
+	masts int
+}
+
+// By implementing this interface method, Car is starting to conform to the
+// Vehicle interface.
+func (c Car) description() string {
+	return fmt.Sprintf(&quot;I am a car with %v door(s). I move on the %v.&quot;, c.doors, c.medium())
+}
+
+// By implementing this interface method, Car now completely conforms to the
+// Vehicle interface.
+func (c Car) medium() string {
+	return &quot;road&quot;
+}
+
+// By implementing this interface method, Boat is starting to conform to the
+// Vehicle interface.
+func (b Boat) description() string {
+	return fmt.Sprintf(&quot;I am a boat with %v rudder(s) and %v mast(s). I ride on %v.&quot;, b.rudders, b.masts, b.medium())
+}
+
+// By implementing this interface method, Boat now completely conforms to the
+// Vehicle interface.
+func (b Boat) medium() string {
+	return &quot;water&quot;
+}
+
+// Note that an interface can either be a value-type or a reference-type, so
+// we use `Vehicle` here, not `*Vehicle`.
+// See http://openmymind.net/Things-I-Wish-Someone-Had-Told-Me-About-Go/
+func ride(vehicle Vehicle) {
+	fmt.Println(fmt.Sprintf(&quot;Literal Vehicle: Value is %v. Type is %T.&quot;, vehicle, vehicle))
+	fmt.Println(vehicle.description())
+	fmt.Println(fmt.Sprintf(&quot;Did you notice that the vehicle rides on %v?&quot;, vehicle.medium()))
+}
+
+// Type checking for a vehicle.
+func checkType(vehicle Vehicle) {
+	test1, ok1 := vehicle.(*Car)
+
+	fmt.Println(fmt.Sprintf(&quot;Is %v a *Car? %v.&quot;, test1, ok1))
+
+	test2, ok2 := vehicle.(Car)
+
+	fmt.Println(fmt.Sprintf(&quot;Is %v a Car? %v.&quot;, test2, ok2))
+
+	test3, ok1 := vehicle.(*Boat)
+
+	fmt.Println(fmt.Sprintf(&quot;Is %v a *Boat? %v.&quot;, test3, ok1))
+
+	test4, ok2 := vehicle.(Boat)
+
+	fmt.Println(fmt.Sprintf(&quot;Is %v a Boat? %v.&quot;, test4, ok2))
+
+	test5, ok3 := vehicle.(Vehicle)
+
+	fmt.Println(fmt.Sprintf(&quot;Is %v a Vehicle? %v.&quot;, test5, ok3))
+}
+
+func main() {
+	// Using &amp; returns a pointer to the struct value.
+	car := &amp;Car{
+		doors: 4,
+	}
+
+	// Not using &amp; returns the struct value.
+	boat := Boat{
+		rudders: 1,
+		masts: 3,
+	}
+
+	fmt.Println(&quot;Ride in the car!&quot;)
+	ride(car)
+	fmt.Println()
+
+	fmt.Println(&quot;Ride in the boat!&quot;)
+	ride(boat)
+	fmt.Println()
+
+	fmt.Println(&quot;Check the type of the car.&quot;)
+	checkType(car)
+	fmt.Println()
+
+	fmt.Println(&quot;Check the type of the boat.&quot;)
+	checkType(boat)
+	fmt.Println()
+}
+</code></pre>
+
+<p>Here is the output from running the above code. Note the <code>*</code> on <code>*main.Car</code> as opposed to <code>main.Boat</code>. That is because one uses <code>&amp;</code> when defining the struct literal while the other does not. The <code>&amp;</code> returns a pointer to the struct value as opposed to the value.</p>
+
+<pre><code>Ride in the car!
+Literal Vehicle: Value is &amp;{4}. Type is *main.Car.
+I am a car with 4 door(s). I move on the road.
+Did you notice that the vehicle rides on road?
+
+Ride in the boat!
+Literal Vehicle: Value is {1 3}. Type is main.Boat.
+I am a boat with 1 rudder(s) and 3 mast(s). I ride on water.
+Did you notice that the vehicle rides on water?
+
+Check the type of the car.
+Is &amp;{4} a *Car? true.
+Is {0} a Car? false.
+Is &lt;nil&gt; a *Boat? false.
+Is {0 0} a Boat? false.
+Is &amp;{4} a Vehicle? true.
+
+Check the type of the boat.
+Is &lt;nil&gt; a *Car? false.
+Is {0} a Car? false.
+Is &lt;nil&gt; a *Boat? false.
+Is {1 3} a Boat? true.
+Is {1 3} a Vehicle? true.
+</code></pre>
+
+<p><a href="http://openmymind.net/Things-I-Wish-Someone-Had-Told-Me-About-Go/">This article explaining references</a> was very helpful to me in creating this demo for myself.</p>
+
+<p>The same goes for <a href="https://play.golang.org/p/313UebA3rD">this polymorphism example from the Go Playground</a> and this <a href="https://tour.golang.org/moretypes/5">example about struct literals</a>. The Go Tour is a great source of information, especially <a href="https://tour.golang.org/methods/10">this section on interfaces</a> as it relates to my article.</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fsimple-interface-and-polymorphism-examples-with-go%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

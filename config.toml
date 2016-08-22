@@ -1,0 +1,26 @@
+baseURL = "http://willhaley.com/"
+languageCode = "en-us"
+title = "Will Haley"
+theme = "willhaley-default"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+disableHugoGeneratorInject = true
+pygmentsCodeFences = true
+paginate = 50
+googleAnalytics = "UA-16792239-1"
+disqusShortname = "willhaley"
+
+[blackfriday]
+smartypants = true
+smartypantsQuotesNBSP = false
+smartDashes = false
+extensions = [ "plainIDAnchors" ]
+fractions = false
+
+[permalinks]
+post = "/blog/:title/"
+
+[params]
+version = "1.1.6"
+assetDomain = "http://d.willhaley.com"
+gitHubUserName = "williamhaley"
+name = "Will Haley"

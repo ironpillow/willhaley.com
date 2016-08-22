@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ubuntu Linux Compatible WiFi USB Adapters - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="First, Consider Tethering As pointed out by @roland in the comments you may find that the easiest, cheapest, fastest, and most reliable way to get a USB WiFi co...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/linux-usb-wifi/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Ubuntu Linux Compatible WiFi USB Adapters</h1>
+    <p class="post-meta"><time datetime="2017-02-05T13:03:00+00:00" itemprop="datePublished">Feb 5, 2017</time><span class="date-modified">Updated <time datetime="2018-04-14T19:09:00+00:00" itemprop="dateModified">Apr 14, 2018</time></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<h1 id="first-consider-tethering">First, Consider Tethering</h1>
+
+<p>As pointed out by <a href="https://willhaley.com/blog/linux-usb-wifi/#comment-3695819134">@roland in the comments</a> you may find that the easiest, cheapest, fastest, and most reliable way to get a USB WiFi connection on your Linux box is by using USB tethering with your smartphone.</p>
+
+<p>This is possible natively in <a href="https://android.stackexchange.com/questions/3134/can-i-use-my-android-device-as-wi-fi-adapter-for-my-pc-i-e-tethering-to-pc-thr">Android</a>. It is not possible with <a href="https://apple.stackexchange.com/questions/31182/share-iphone-wifi-with-computer-over-usb">iOS</a> unless iOS is jailbroken. iOS can share its <em>cellular</em> connection over USB natively, but not its <em>WiFi</em> connection unless it is jailbroken.</p>
+
+<p>A Raspberry Pi 3 B+ (which <a href="https://www.raspberrypi.org/blog/raspberry-pi-3-model-bplus-sale-now-35/">supports 802.11ac 5Ghz</a>) can <a href="/blog/raspberry-pi-wifi-ethernet-bridge/">also be used to accomplish a similar result</a>, but using ethernet rather than USB.</p>
+
+<p>I recommend considering some form of tethering before buying a USB WiFi device for the reasons explained below. Generally speaking, USB WiFi in Linux is a tricky thing to get right.</p>
+
+<h1 id="linux-wifi-warnings">Linux WiFi Warnings</h1>
+
+<p>Read <a href="https://wiki.debian.org/WiFi">the Introduction in the Debian WiFi article</a> before diving into Linux and USB WiFi devices. Also, feel free to read about <a href="/blog/finding-linux-wifi-usb/">my own experiences on this topic</a>. I rewrote this article after a <a href="#comment-3480480313">helpful commenter</a> pointed out <a href="/blog/finding-linux-wifi-usb/">how problematic it is</a> to recommend USB WiFi devices for Linux. <em>Most</em> manufacterers do not play well with Linux, with some <a href="#tpe-n150usb-great-for-linux">notable exceptions</a>.</p>
+
+<p>Ever wonder some <a href="/blog/finding-linux-wifi-usb/#marketing-and-sales-confusion">Amazon reviews have conflicting reports</a> about Linux support? Read those articles I just listed! It is <a href="/blog/finding-linux-wifi-usb/#chipset-inconsistency">almost impossible to know which chipset one will receive when buying most USB WiFi devices</a> except when buying <a href="https://www.thinkpenguin.com/catalog/wireless-networking-gnulinux">🐧 ThinkPenguin device</a>.</p>
+
+<p>I understand that ThinkPenguin devices may not be ideal for everyone. I am listing other, <em>non-ThinkPenguin devices</em>, that I have tested. However, for the reasons I stated above, it is a gamble whether or not they will work for everyone. ThinkPenguin devices are a much simpler option for Linux. Unfortunately, ThinkPenguin devices lack 802.11ac support and are a bit more expensive.</p>
+
+<p><strong>You are responsible for your own purchasing decisions and I make no guarantees!</strong></p>
+
+<h1 id="devices-tested">Devices Tested</h1>
+
+<ul>
+<li><a href="#tpe-n150usb-great-for-linux">TPE-N150USB - Great for Linux 🐧</a></li>
+<li><a href="#tpe-n150usbl-great-for-linux">TPE-N150USBL - Great for Linux 🐧</a></li>
+<li><a href="#ew-7811utc-works-with-802-11ac">EW-7811UTC - Works with 802.11ac</a></li>
+<li><a href="#pau06-cheap-but-less-reliable">PAU06 - Cheap, but less reliable</a></li>
+<li><a href="#pau05-cheap-but-less-reliable">PAU05 - Cheap, but less reliable</a></li>
+</ul>
+
+<p>This is <em>not</em> an exhaustive list. I have <em>not</em> purchased hundreds of cards. I have purchased several cards, and am ranking only the cards <em>I own</em>. As an average Linux user, I will do the best I can to relate what I found so that it may help others.</p>
+
+<p><em>All cards were tested using Ubuntu 16.04.3 LTS Xenial Xerus <code>4.10.0-37-generic #41~16.04.1-Ubuntu SMP Fri Oct 6 22:42:59 UTC 2017</code> against a server running iperf 3.0.11. Each test was performed over a period of 4 hours. See my <a href="http://d.willhaley.com/linux-usb-wifi/">test data</a> and <a href="https://github.com/williamhaley/wifi-testing">my wifi-testing repo</a> if you are interested.</em></p>
+
+<h1 id="tpe-n150usb-great-for-linux">TPE-N150USB - Great for Linux</h1>
+
+<p><a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb">Penguin Wireless N USB Adapter for GNU / Linux (TPE-N150USB)</a></p>
+
+<p><img src="/images/linux-usb-wifi/tpe-n150usb.jpg" alt="/images/linux-usb-wifi/tpe-n150usb.jpg" /></p>
+
+<p><strong>Chipset</strong>: <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb">AR9271</a></p>
+
+<p><strong>Driver</strong>: <a href="https://wiki.debian.org/ath9k_htc">ath9k_htc</a></p>
+
+<pre><code>0cf3:9271 Qualcomm Atheros Communications AR9271 802.11n
+</code></pre>
+
+<p>The TPE-N150USB performed very reliably in my tests. Download speeds averaged <code>31.16 Mbps</code> and upload speeds averaged <code>11.58 Mbps</code>. The <code>max</code> speeds never topped <code>40.0 Mbps</code>, but I found that the overall consistency in performance was stellar.</p>
+
+<p>From the research I have done, I would say this is going to be the most reliable Linux supported mini USB WiFi networking interface a consumer can except to find.</p>
+
+<p>This card is <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb">supported by the Linux Kernel</a>, which means that no special intervention is required to get this NIC to work. Just plug it in. It also <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb">supports Monitor mode</a>, which is great for security analysis. Since ThinkPenguin uses reliable chipsets we can have confidence that we will receive the chipset that was advertised.</p>
+
+<p>This card is my favorite considering the size, performance consistency, and Linux support.</p>
+
+<p><strong>Download Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps |   0
+ 3.3 -  6.7 Mbps |   4
+ 6.7 - 10.0 Mbps |   8
+10.0 - 13.3 Mbps |   6
+13.3 - 16.7 Mbps |  10
+16.7 - 20.0 Mbps |   2
+20.0 - 23.3 Mbps |   0
+23.3 - 26.7 Mbps |   2
+26.7 - 30.0 Mbps |  58 +++++
+30.0 - 33.3 Mbps | 325 ++++++++++++++++++++++++++++++
+33.3 - 36.7 Mbps | 152 ++++++++++++++
+36.7 - 40.0 Mbps |   3
+40.0 - 43.3 Mbps |   0
+43.3 - 46.7 Mbps |   0
+46.7 - 50.0 Mbps |   0
+total: 570
+max: 37.0923 Mbps
+min: 5.70558 Mbps
+average: 31.16 Mbps
+</code></pre>
+
+<p><strong>Upload Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps |   5
+ 3.3 -  6.7 Mbps |  28 ++
+ 6.7 - 10.0 Mbps |  53 ++++
+10.0 - 13.3 Mbps | 362 ++++++++++++++++++++++++++++++
+13.3 - 16.7 Mbps | 122 ++++++++++
+16.7 - 20.0 Mbps |   1
+20.0 - 23.3 Mbps |   0
+23.3 - 26.7 Mbps |   0
+26.7 - 30.0 Mbps |   0
+30.0 - 33.3 Mbps |   0
+33.3 - 36.7 Mbps |   0
+36.7 - 40.0 Mbps |   0
+40.0 - 43.3 Mbps |   0
+43.3 - 46.7 Mbps |   0
+46.7 - 50.0 Mbps |   0
+total: 571
+max: 17.9236 Mbps
+min: 2.44766 Mbps
+average: 11.58 Mbps
+</code></pre>
+
+<h1 id="tpe-n150usbl-great-for-linux">TPE-N150USBL - Great for Linux</h1>
+
+<p><a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-w-external-antenna-gnu-linux-tpe-n150usbl">Penguin Wireless N USB Adapter /w External Antenna for GNU / Linux (TPE-N150USBL)</a></p>
+
+<p><img src="/images/linux-usb-wifi/tpe-n150usbl.jpg" alt="/images/linux-usb-wifi/tpe-n150usbl.jpg" /></p>
+
+<p><strong>Chipset</strong>: <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-w-external-antenna-gnu-linux-tpe-n150usbl">AR9271</a></p>
+
+<p><strong>Driver</strong>: <a href="https://wiki.debian.org/ath9k_htc">ath9k_htc</a></p>
+
+<pre><code>0cf3:9271 Qualcomm Atheros Communications AR9271 802.11n
+</code></pre>
+
+<p>The TPE-N150USBL performed very reliably in my tests. Download speeds averaged <code>32.25 Mbps</code> and upload speeds averaged <code>17.35 Mbps</code>. The <code>max</code> speeds never topped <code>40.0 Mbps</code>, but I found that the overall consistency in performance was stellar.</p>
+
+<p>This card seems to be almost identical to the TPE-N150USB. Both cards use the same chipset, same vendor ids, same product ids, and had almost identical performance statistics. This card was a tad faster, but it seems the difference in speeds is very slight. The external antenna on the TPE-N150USBL did not make much difference in testing. In my opinion, this card is not worth the additional cost compared to the TPE-N150USB.</p>
+
+<p>This card is <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-w-external-antenna-gnu-linux-tpe-n150usbl">supported by the Linux Kernel</a>, which means that no special intervention is required to get this NIC to work. Just plug it in. It also <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-w-external-antenna-gnu-linux-tpe-n150usbl">supports Monitor mode</a>, which is great for security analysis. Since ThinkPenguin uses reliable chipsets we can have confidence that we will receive the chipset that was advertised.</p>
+
+<p><strong>Download Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps |   0
+ 3.3 -  6.7 Mbps |   3
+ 6.7 - 10.0 Mbps |   8
+10.0 - 13.3 Mbps |   7
+13.3 - 16.7 Mbps |   7
+16.7 - 20.0 Mbps |   7
+20.0 - 23.3 Mbps |   3
+23.3 - 26.7 Mbps |   4
+26.7 - 30.0 Mbps |  16
+30.0 - 33.3 Mbps | 176 +++++
+33.3 - 36.7 Mbps | 305 ++++++++++
+36.7 - 40.0 Mbps |  31 +
+40.0 - 43.3 Mbps |   0
+43.3 - 46.7 Mbps |   0
+46.7 - 50.0 Mbps |   0
+total: 567
+max: 38.28 Mbps
+min: 5.35 Mbps
+average: 32.52 Mbps
+sucess: 567
+errors: 0
+</code></pre>
+
+<p><strong>Upload Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps |   0
+ 3.3 -  6.7 Mbps |  16
+ 6.7 - 10.0 Mbps |  11
+10.0 - 13.3 Mbps |   4
+13.3 - 16.7 Mbps |  55 +
+16.7 - 20.0 Mbps | 459 ++++++++++
+20.0 - 23.3 Mbps |  22
+23.3 - 26.7 Mbps |   0
+26.7 - 30.0 Mbps |   0
+30.0 - 33.3 Mbps |   0
+33.3 - 36.7 Mbps |   0
+36.7 - 40.0 Mbps |   0
+40.0 - 43.3 Mbps |   0
+43.3 - 46.7 Mbps |   0
+46.7 - 50.0 Mbps |   0
+total: 567
+max: 21.39 Mbps
+min: 4.25 Mbps
+average: 17.35 Mbps
+sucess: 567
+errors: 0
+</code></pre>
+
+<h1 id="ew-7811utc-works-with-802-11ac">EW-7811UTC - Works with 802.11ac</h1>
+
+<p><a href="https://www.amazon.com/gp/product/B00FW6T36Y/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1">Edimax EW-7811UTC AC600 Dual-Band</a></p>
+
+<p><img src="/images/linux-usb-wifi/ew-7811utc.jpg" alt="/images/linux-usb-wifi/ew-7811utc.jpg" /></p>
+
+<p><strong>Potential Chipsets</strong>: <a href="https://wikidevi.com/wiki/Edimax_EW-7811UTC_7392_A812">RTL8811AU</a></p>
+
+<p><strong>Potential Drivers</strong>: <a href="https://github.com/scrivy/rtl8812AU_8821AU_linux">scrivy/rtl8812au</a>, <a href="https://github.com/diederikdehaas/rtl8812AU">diederikdehaas/rtl8812AU</a>, <a href="https://github.com/gordboy/rtl8812au">gordboy/rtl8812au</a>, <a href="https://github.com/abperiasamy/rtl8812AU_8821AU_linux">abperiasamy/rtl8812AU_8821AU_linux</a>, <a href="https://github.com/gnab/rtl8812au">gnab/rtl8812au</a>, <a href="https://github.com/sloretz/rtl8811au">sloretz/rtl8811au</a>, <a href="http://www.edimax.com/edimax/download/download/data/edimax/au/download/for_home/wireless_adapters/wireless_adapters_ac600_dual-band/ew-7811utc">Edimax</a>, <a href="https://packages.ubuntu.com/xenial/kernel/rtl8812au-dkms">rtl8812au-dkms</a></p>
+
+<pre><code>7392:a812 Edimax Technology Co., Ltd
+</code></pre>
+
+<p><span class="warning">Purchasing this card means there is <a href="/blog/finding-linux-wifi-usb/">no guarantee that anyone will receive the same chipset I received</a>, as I state in the warnings above. Performance and support for this card <strong>will</strong> vary based on which chipset it ships with.</span></p>
+
+<p>Getting this device to work on Linux was complicated. There <a href="https://github.com/diederikdehaas/rtl8812AU">are</a> <a href="https://github.com/gordboy/rtl8812au">multiple</a> <a href="https://github.com/abperiasamy/rtl8812AU_8821AU_linux">drivers</a> by <a href="https://github.com/gnab/rtl8812au">multiple</a> <a href="https://github.com/sloretz/rtl8811au">authors</a> for this chipset. None of these linked drivers worked for me.</p>
+
+<p>I tried multiple variations of the <a href="http://www.edimax.com/edimax/download/download/data/edimax/au/download/for_home/wireless_adapters/wireless_adapters_ac600_dual-band/ew-7811utc">official Edimax driver code</a>, but none of the Edimax drivers built successfully for me, and I did not want to spend time debugging their build scripts.</p>
+
+<p>I found that the <a href="https://packages.ubuntu.com/xenial/kernel/rtl8812au-dkms">Ubuntu package for this driver</a> would not build on my (vanilla) Ubuntu install either.</p>
+
+<p><a href="https://blog.danielscrivano.com/installing-rtl8812au-on-linux-for-wireless-dual-band-usb-adapters/">This article</a> finally helped me find a working driver. For me, the working driver was the <a href="https://github.com/scrivy/rtl8812AU_8821AU_linux">rtl8812AU_8821AU_linux driver by scrivy</a>.</p>
+
+<p>Once working, this card seemed <strong>blazing fast</strong> (relative to other Linux WiFi adapters that I tested) for me on Ubuntu 16.04.3. The performance boost came from 802.11ac. With 802.11ac I saw download speeds average <code>64.16 Mbps</code> and upload speeds average <code>59.42 Mbps</code>.</p>
+
+<p>Overall, the performance of this card seemed very reliable for me.</p>
+
+<p><strong>Please note</strong> this is clearly not a well supported device on Linux, there are risks in downloading software from random repos, there are <strong><a href="https://wikidevi.com/wiki/Edimax_EW-7811UTC_7392_A812">multiple versions</a></strong> of this device sold by Edimax, I only tested on Ubuntu, others may well <a href="/blog/finding-linux-wifi-usb/">receive a different chipset that I did</a>, and there is no guarantee this card will work for everyone.</p>
+
+<p><em>This is the only 802.11ac card I tested. Speeds are all for my 802.11ac network.</em></p>
+
+<p><strong>Download Tests</strong></p>
+
+<pre><code> 0.0 -  6.0 Mbps |   0
+ 6.0 - 12.0 Mbps |   0
+12.0 - 18.0 Mbps |   1
+18.0 - 24.0 Mbps |   0
+24.0 - 30.0 Mbps |   0
+30.0 - 36.0 Mbps |   0
+36.0 - 42.0 Mbps |   0
+42.0 - 48.0 Mbps |   0
+48.0 - 54.0 Mbps |   2
+54.0 - 60.0 Mbps | 125 +++++++++++++++++++
+60.0 - 66.0 Mbps | 190 ++++++++++++++++++++++++++++++
+66.0 - 72.0 Mbps | 171 +++++++++++++++++++++++++++
+72.0 - 78.0 Mbps |  35 +++++
+78.0 - 84.0 Mbps |   0
+84.0 - 90.0 Mbps |   0
+total: 524
+max: 75.8806 Mbps
+min: 15.0154 Mbps
+average: 64.16 Mbps
+</code></pre>
+
+<p><strong>Upload Tests</strong></p>
+
+<pre><code> 0.0 -  6.0 Mbps |   0
+ 6.0 - 12.0 Mbps |   0
+12.0 - 18.0 Mbps |   0
+18.0 - 24.0 Mbps |   0
+24.0 - 30.0 Mbps |   0
+30.0 - 36.0 Mbps |   0
+36.0 - 42.0 Mbps |   0
+42.0 - 48.0 Mbps |   0
+48.0 - 54.0 Mbps |   4
+54.0 - 60.0 Mbps | 259 +++++++++++++++++++++++++++++
+60.0 - 66.0 Mbps | 261 ++++++++++++++++++++++++++++++
+66.0 - 72.0 Mbps |   0
+72.0 - 78.0 Mbps |   0
+78.0 - 84.0 Mbps |   0
+84.0 - 90.0 Mbps |   0
+total: 524
+max: 63.3158 Mbps
+min: 50.9182 Mbps
+average: 59.42 Mbps
+</code></pre>
+
+<h1 id="pau06-cheap-but-less-reliable">PAU06 Cheap, But Less Reliable</h1>
+
+<p><a href="https://www.amazon.com/Panda-Wireless-PAU06-300Mbps-Adapter/dp/B00JDVRCI0">Panda Wireless PAU06 300Mbps N</a></p>
+
+<p><img src="/images/linux-usb-wifi/pau06.jpg" alt="/images/linux-usb-wifi/pau06.jpg" /></p>
+
+<p><strong>Potential Chipsets</strong>: <a href="https://wikidevi.com/wiki/Panda_PAUO6">RT5372</a></p>
+
+<p><strong>Potential Drivers</strong>: <a href="https://wiki.debian.org/rt2800usb">rt2800usb</a></p>
+
+<pre><code>148f:5372 Ralink Technology, Corp. RT5372 Wireless Adapter
+</code></pre>
+
+<p><span class="warning">Purchasing this card means there is <a href="/blog/finding-linux-wifi-usb/">no guarantee that anyone will receive the same chipset I received</a>, as I state in the warnings above. Performance and support for this card <strong>will</strong> vary based on which chipset it ships with.</span></p>
+
+<p>This card (at least, the one that I received) uses a reasonably common chipset, and so a reasonably well supported Linux driver out of the box on Ubuntu 16.04.3.</p>
+
+<p>It is relatively cheap, worked out of the box, and connected to my AP without issue. The chipset I received supports monitor mode, but <a href="/blog/finding-linux-wifi-usb/">it is very likely others who buy this card may not have a chipset that supports monitor mode</a>. Compared to the other cards here, <strong>I would say the performance is very unreliable</strong>.</p>
+
+<p>Just look at the wide range of download and upload speeds below. I re-ran these tests multiple times at different times of day (and overnight) and the speeds are very inconsistent in all test cases.</p>
+
+<p>I have only seen one reported chipset for this device in my research, but as I warn multiple times, that is <a href="/blog/finding-linux-wifi-usb/">no guarantee that the card others receive will have the same chipset as mine</a>.</p>
+
+<p><strong>Download Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps | 38 +++++++++++
+ 3.3 -  6.7 Mbps | 56 +++++++++++++++++
+ 6.7 - 10.0 Mbps | 63 +++++++++++++++++++
+10.0 - 13.3 Mbps | 92 ++++++++++++++++++++++++++++
+13.3 - 16.7 Mbps | 90 ++++++++++++++++++++++++++++
+16.7 - 20.0 Mbps | 96 ++++++++++++++++++++++++++++++
+20.0 - 23.3 Mbps | 62 +++++++++++++++++++
+23.3 - 26.7 Mbps | 33 ++++++++++
+26.7 - 30.0 Mbps | 18 +++++
+30.0 - 33.3 Mbps |  6 +
+33.3 - 36.7 Mbps |  2
+36.7 - 40.0 Mbps |  0
+40.0 - 43.3 Mbps |  0
+43.3 - 46.7 Mbps |  0
+46.7 - 50.0 Mbps |  0
+total: 556
+max: 35.8563 Mbps
+min: 1.14618 Mbps
+average: 14.36 Mbps
+</code></pre>
+
+<p><strong>Upload Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps |   6
+ 3.3 -  6.7 Mbps | 104 +++++++++
+ 6.7 - 10.0 Mbps | 332 ++++++++++++++++++++++++++++++
+10.0 - 13.3 Mbps | 111 ++++++++++
+13.3 - 16.7 Mbps |   2
+16.7 - 20.0 Mbps |   0
+20.0 - 23.3 Mbps |   0
+23.3 - 26.7 Mbps |   0
+26.7 - 30.0 Mbps |   1
+30.0 - 33.3 Mbps |   0
+33.3 - 36.7 Mbps |   0
+36.7 - 40.0 Mbps |   0
+40.0 - 43.3 Mbps |   0
+43.3 - 46.7 Mbps |   0
+46.7 - 50.0 Mbps |   0
+total: 556
+max: 28.5147 Mbps
+min: 2.09204 Mbps
+average: 8.33 Mbps
+</code></pre>
+
+<h1 id="pau05-cheap-but-less-reliable">PAU05 Cheap, But Less Reliable</h1>
+
+<p><a href="https://www.amazon.com/Panda-300Mbps-Wireless-USB-Adapter/dp/B00EQT0YK2">Panda 300Mbps PAU05 Wireless N USB Adapter</a></p>
+
+<p><img src="/images/linux-usb-wifi/pau05.jpg" alt="/images/linux-usb-wifi/pau05.jpg" /></p>
+
+<p><strong>Potential Chipsets</strong>: <a href="http://www.wirelesshack.org/kali-linux-nano-usb-adapters.html">RT3070</a>, <a href="https://www.amazon.com/gp/customer-reviews/R23NBB147NFJC0/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&amp;ASIN=B00EQT0YK2">Atheros ?</a>, <a href="https://www.amazon.com/gp/customer-reviews/R9PNEUOR226MI/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&amp;ASIN=B00EQT0YK2">RT2870</a>, <a href="https://www.amazon.com/gp/customer-reviews/RMT9IALY45B4T/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&amp;ASIN=B00EQT0YK2">RT5732</a></p>
+
+<p><strong>Potential Drivers</strong>: <a href="https://wiki.debian.org/rt2800usb">rt2800usb</a></p>
+
+<pre><code>148f:5372 Ralink Technology, Corp. RT5372 Wireless Adapter
+</code></pre>
+
+<p><span class="warning">Purchasing this card means there is <a href="/blog/finding-linux-wifi-usb/">no guarantee that anyone will receive the same chipset I received</a>, as I state in the warnings above. Performance and support for this card <strong>will</strong> vary based on which chipset it ships with.</span></p>
+
+<p>This card (at least, the one that I received) uses a reasonably common chipset, and so a reasonably well supported Linux driver out of the box on Ubuntu 16.04.3.</p>
+
+<p>It is relatively cheap, worked out of the box, and connected to my AP without issue. The chipset I received supports monitor mode, but <a href="/blog/finding-linux-wifi-usb/">it is very likely others who buy this card may not have a chipset that supports monitor mode</a>. Compared to the other cards here, <strong>I would say the performance is very unreliable</strong>.</p>
+
+<p>Just look at the wide range of download and upload speeds below. I re-ran these tests multiple times at different times of day (and overnight) and the speeds are very inconsistent in all test cases.</p>
+
+<p>I have seen <strong>multiple</strong> reported chipset for this device in my research, and as I warn multiple times, there is <a href="/blog/finding-linux-wifi-usb/">no guarantee that the card others receive will have the same chipset as mine</a>.</p>
+
+<p><strong>Download Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps | 16 +++++
+ 3.3 -  6.7 Mbps | 46 +++++++++++++++
+ 6.7 - 10.0 Mbps | 55 +++++++++++++++++
+10.0 - 13.3 Mbps | 69 ++++++++++++++++++++++
+13.3 - 16.7 Mbps | 92 ++++++++++++++++++++++++++++++
+16.7 - 20.0 Mbps | 87 ++++++++++++++++++++++++++++
+20.0 - 23.3 Mbps | 89 +++++++++++++++++++++++++++++
+23.3 - 26.7 Mbps | 56 ++++++++++++++++++
+26.7 - 30.0 Mbps | 26 ++++++++
+30.0 - 33.3 Mbps | 19 ++++++
+33.3 - 36.7 Mbps |  3
+36.7 - 40.0 Mbps |  0
+40.0 - 43.3 Mbps |  1
+43.3 - 46.7 Mbps |  0
+46.7 - 50.0 Mbps |  0
+total: 559
+max: 42.1666 Mbps
+min: 1.33794 Mbps
+average: 16.62 Mbps
+</code></pre>
+
+<p><strong>Upload Tests</strong></p>
+
+<pre><code> 0.0 -  3.3 Mbps |   1
+ 3.3 -  6.7 Mbps |   9
+ 6.7 - 10.0 Mbps | 383 ++++++++++++++++++++++++++++++
+10.0 - 13.3 Mbps | 164 ++++++++++++
+13.3 - 16.7 Mbps |   2
+16.7 - 20.0 Mbps |   0
+20.0 - 23.3 Mbps |   0
+23.3 - 26.7 Mbps |   0
+26.7 - 30.0 Mbps |   0
+30.0 - 33.3 Mbps |   0
+33.3 - 36.7 Mbps |   0
+36.7 - 40.0 Mbps |   0
+40.0 - 43.3 Mbps |   0
+43.3 - 46.7 Mbps |   0
+46.7 - 50.0 Mbps |   0
+total: 559
+max: 15.1124 Mbps
+min: 3.18209 Mbps
+average: 9.40 Mbps
+</code></pre>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2flinux-usb-wifi%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "willhaley" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

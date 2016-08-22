@@ -1,0 +1,1251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Will Haley</title>
+    <link>http://willhaley.com/blog/</link>
+    <description>Recent content in Blogs on Will Haley</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Nov 2018 17:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://willhaley.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>North Face Gnomad</title>
+      <link>http://willhaley.com/blog/north-face-gnomad/</link>
+      <pubDate>Sat, 10 Nov 2018 17:55:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/north-face-gnomad/</guid>
+      <description>Summary Pros for the Gnomad:
+ Simple pocket and organization design Fits a 15&amp;rdquo; MacBook Pro Expandable rolltop Flexible main storage bucket/pocket Shoulder straps adjustable at top and bottom Sternum strap Feels light and comfortable Rides high  Cons for the Gnomad:
+ Does not fit a 15&amp;rdquo; MacBook Pro with a sleeve Laptop pocket protection is dubious Unusual dual pockets with single zipper  Details The bag I received has GNOMAD printed on the side, and the product page on The North Face website for this bag has gnomad in the URL, but the bag seems to have been rebranded as the ROVARA.</description>
+    </item>
+    
+    <item>
+      <title>Timbuk2 Swig Backpack</title>
+      <link>http://willhaley.com/blog/timbuk2-swig/</link>
+      <pubDate>Sat, 27 Oct 2018 13:46:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/timbuk2-swig/</guid>
+      <description>Summary Pros for the Swig:
+ Compact Decent number of pockets and organization options Fits a 15&amp;rdquo; MacBook Pro with sleeve Plastic buckles/no velcro  Cons for the Swig:
+ Not very comfortable when fully loaded Potential for water coming in through fold top Not a lot of storage space overall  Details The Swig has a simple straightforward design which is what drew me to it in the first place.</description>
+    </item>
+    
+    <item>
+      <title>Chrome Bravo 2.0 Backpack</title>
+      <link>http://willhaley.com/blog/chrome-bravo-2/</link>
+      <pubDate>Tue, 23 Oct 2018 20:23:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/chrome-bravo-2/</guid>
+      <description>Summary Pros for the Bravo 2.0:
+ Very comfortable main straps and sternum strap Padded back Waterproof main compartment with rolltop Strong velcro A couple exterior pockets  Cons for the Bravo 2.0:
+ Laptop compartment is not waterproof Velcro is loud, and cuts into the back of my hand Takes a bit of finagling to fit all my commuter gear  Details I love the feel of this bag compared to others I&amp;rsquo;ve tried, and I find the design simple and elegant.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi 3 B&#43; WiFi Ethernet Bridge</title>
+      <link>http://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/</link>
+      <pubDate>Sat, 14 Apr 2018 15:16:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/</guid>
+      <description>The goal is to connect a desktop to a WiFi network via a Raspberry Pi. We will use a Raspberry Pi 3 B+ as a bridge between the desktop and the WiFi network. The Raspberry Pi 3 B+ has 802.11ac WiFi, and so seems well suited to this task. This Stack Overflow answer and accompanying script are almost entirely how I got this working and are the inspiration for this guide.</description>
+    </item>
+    
+    <item>
+      <title>FRC roboRIO Version Mismatch</title>
+      <link>http://willhaley.com/blog/frc-roborio-version-mismatch/</link>
+      <pubDate>Thu, 22 Feb 2018 22:19:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/frc-roborio-version-mismatch/</guid>
+      <description>Our team encountered this error recently.
+BUILD FAILED C:\Users\Programming\wpilib\java\current\ant\build.xml:349: Assertion failed boolean test. Image of roboRIO does not match plugin. Allowed image year: 2017 version: 8. Actual image year: 2018 version 17. RoboRIO needs to be re-imaged or plugins updated.  This was quite perplexing. We saw this error after our team laptop had died. We re-installed Eclipse using the latest version of everything.
+In the process, we installed the latest versions of the Eclipse plugins (V2018.</description>
+    </item>
+    
+    <item>
+      <title>Install Java To roboRIO</title>
+      <link>http://willhaley.com/blog/frc-roborio-java/</link>
+      <pubDate>Thu, 22 Feb 2018 21:28:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/frc-roborio-java/</guid>
+      <description>This article is about installing Java to the roboRIO. This article is not about installing Java to your developer/programmer computer. They are two separate processes.
+The FRC guides say:
+ &amp;hellip; Java 8 is installed on the RoboRIO &amp;hellip;
+ However, that does not seem to be true if your roboRIO has Image 2017 version 8 (FRC_roboRIO_2017_v8) installed on it, as our team discovered.
+Our team encountered an error like this when trying to deploy our code to the robot.</description>
+    </item>
+    
+    <item>
+      <title>FRC roboRIO Images, Firmware, and Update Suites</title>
+      <link>http://willhaley.com/blog/frc-roborio-image-firmware/</link>
+      <pubDate>Thu, 22 Feb 2018 20:05:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/frc-roborio-image-firmware/</guid>
+      <description>I find the distinction between the roboRIO image and the roboRIO firmware is unclear when reading the FRC documentation. The terms image and firmware are used interchangably in some industries and contexts, and even the FRC guides seem to overlap the terms imaging and image in relation to firmware.
+After hours of troubleshooting some bugs, our team learned quite a bit about the processes involved with, and the distinctions between, the roboRIO image and firmware.</description>
+    </item>
+    
+    <item>
+      <title>linear-gradient Backgrounds With Googlebot</title>
+      <link>http://willhaley.com/blog/linear-gradient-background-googlebot/</link>
+      <pubDate>Mon, 19 Feb 2018 16:01:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/linear-gradient-background-googlebot/</guid>
+      <description>It was recently pointed out to me that Googlebot may try and filter out content that seems to be cheating the system.
+For example, something like white text on a white background. In that scenario viewers would not be able to see the text, but crawlers might.
+It appears Google does try and filter out that sort of dishonest content, which seems like the correct choice since that sort of content is purely to cheat SEO and not for the sake of users.</description>
+    </item>
+    
+    <item>
+      <title>Create a Custom Debian Live Environment (CD or USB)</title>
+      <link>http://willhaley.com/blog/custom-debian-live-environment/</link>
+      <pubDate>Thu, 08 Feb 2018 18:36:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/custom-debian-live-environment/</guid>
+      <description>These are steps that I used on an Ubuntu 18.04 LTS (Bionic Beaver) 64-bit system to build an x86 Debian 9 (Stretch) live environment that I can boot from CD or USB.
+These steps can be used to create a live environment that is BIOS bootable (MBR), UEFI bootable (GPT), or combination of both UEFI and BIOS bootable. Something unique about this guide is that Syslinux/Isolinux are not used. Only Grub boot equipment.</description>
+    </item>
+    
+    <item>
+      <title>FRC Joystick Toggle Button In Java</title>
+      <link>http://willhaley.com/blog/frc-toggle-button/</link>
+      <pubDate>Thu, 08 Feb 2018 01:53:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/frc-toggle-button/</guid>
+      <description>Let&amp;rsquo;s compare two different types of buttons.
+Imagine you want to have a button that fires a laser.
+It may make sense that the laser fires only when the button is held down (pressed). So you could press the button for 1 second, 10 seconds, a minute, and the laser would fire in a sustained beam for as long as you held the button.
+hold button -&amp;gt; 1 second -&amp;gt; 2 seconds -&amp;gt; 3 seconds STOP pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew-&amp;gt;pew- STOP  Now image we have a button that should open or close a door.</description>
+    </item>
+    
+    <item>
+      <title>Using a Makefile with Golang</title>
+      <link>http://willhaley.com/blog/golang-makefile/</link>
+      <pubDate>Thu, 01 Feb 2018 21:22:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/golang-makefile/</guid>
+      <description>I&amp;rsquo;ve found that using a Makefile is helpful for running and building Go projects.
+You can create a very complex Makefile to coordinate a number of build tasks. However, I will not focus on a complex setup here. Rather, this is a quick and dirty generic Makefile that I like to use for demo or throwaway projects.
+You could just as easily use a bash script, but I prefer a Makefile.</description>
+    </item>
+    
+    <item>
+      <title>Serializing Array Values In URLs For Golang</title>
+      <link>http://willhaley.com/blog/url-array-go/</link>
+      <pubDate>Wed, 03 Jan 2018 17:51:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/url-array-go/</guid>
+      <description>First, here is a quick (and non-exhaustive) primer on escaping values for URIs so that they can be properly utilized as part of our HTTP query string params. We escape values in a URI to conform to standards.
+A URI with a query string like /someroute?key=hello there is invalid because of the space between hello and there. Spaces cannot exist in the URI search value. The same goes for a number of other characters.</description>
+    </item>
+    
+    <item>
+      <title>Googlebot Is Not Chrome</title>
+      <link>http://willhaley.com/blog/googlebot-crawler/</link>
+      <pubDate>Wed, 27 Dec 2017 13:04:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/googlebot-crawler/</guid>
+      <description>I recently created a trivial demo SPA (single page app) with Ember.js. I wanted to see how Google might naturally crawl my site and index it for Google Search results.
+My website is using a very unique and nonsensical name that overlaps with no other search results, so it was easy to search on and see what was and was not indexed. Initially, Google had no search results for my site&amp;rsquo;s name.</description>
+    </item>
+    
+    <item>
+      <title>Boot Windows 10 Installer With GRUB</title>
+      <link>http://willhaley.com/blog/windows-installer-usb-linux/</link>
+      <pubDate>Wed, 20 Dec 2017 19:32:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/windows-installer-usb-linux/</guid>
+      <description>You can use these instructions to create a bootable USB drive with GRUB that can run the Windows 10 installer. I used Arch Linux to prepare my USB device, but any Linux variant like Debian or Ubuntu should work.
+I am assuming you have an appropriately large USB disk at /dev/sdz that you can completely erase for this process.
+Unmount the USB drive if mounted.
+sudo umount /dev/sdz*  Wipe all partitions from the USB device.</description>
+    </item>
+    
+    <item>
+      <title>Docker, macOS, and Ember</title>
+      <link>http://willhaley.com/blog/docker-macos-ember/</link>
+      <pubDate>Sun, 12 Nov 2017 16:47:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/docker-macos-ember/</guid>
+      <description>Poor Docker performance on macOS is a well documented issue. This is not an Ember issue, but rather, an issue with Docker and macOS.
+After months of working with a hobbled and hacked together Docker build environment, I gave docker-sync with Unison a try and it has worked wonderfully.
+I can finally use Ember with Docker without a horrible performance hit! Thank you docker-sync and Unison!
+I would like to point out that docker-sync has extensive documentation and you should read their docs.</description>
+    </item>
+    
+    <item>
+      <title>Ember Build Performance With Different Environments</title>
+      <link>http://willhaley.com/blog/ember-docker-build-performance/</link>
+      <pubDate>Thu, 09 Nov 2017 09:23:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/ember-docker-build-performance/</guid>
+      <description>I have found that building Ember on Linux (with and without Docker) and Mac (without Docker) are fairly fast and all reasonably close in speed.
+Each of those environments built in less than 15 seconds for me.
+The major performance outlier was Docker for Mac. With Docker for Mac, builds took 1 minute and 16 seconds. The performance issues using Docker for Mac are well documented.
+I want to specifically call out the official Docker documentation that shows this is not an Ember issue, but rather, a macOS and Docker issue that effects multiple frameworks and tools.</description>
+    </item>
+    
+    <item>
+      <title>Serve Either NFSv3 or NFSv4 From Ubuntu</title>
+      <link>http://willhaley.com/blog/ubuntu-nfs-server/</link>
+      <pubDate>Thu, 09 Nov 2017 00:01:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/ubuntu-nfs-server/</guid>
+      <description>These steps are for configuring an NFS Linux server on Ubuntu.
+Install the nfs-kernel-server package.
+sudo apt-get install nfs-kernel-server  Check to see if NFS is running.
+sudo systemctl status nfs-kernel-server  Create a directory to serve via NFS.
+sudo mkdir -p /srv/nfs  Create an /etc/exports file. In my case, I am serving my /srv/nfs directory to any machine on my network. You may read about the other options online.</description>
+    </item>
+    
+    <item>
+      <title>Unlock Veracrypt Encrypted File Container at Boot</title>
+      <link>http://willhaley.com/blog/unlock-veracrypt-boot/</link>
+      <pubDate>Wed, 08 Nov 2017 18:26:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/unlock-veracrypt-boot/</guid>
+      <description>These steps were tested on Ubuntu 17.04.
+Create a 1 GiB veracrypt file container volume. Name it whatever you like. In my case, I am naming it veracrypt.img, formatting it as ext4, and saving it at /veracrypt.img. Note that this is not an especially secure setup, but rather, meant to demonstrate the basics.
+Create a key file. In my case, I am creating a simple file at /key.file with the following text.</description>
+    </item>
+    
+    <item>
+      <title>Compiling and Running Samba 4 Server on macOS</title>
+      <link>http://willhaley.com/blog/compile-samba-macos/</link>
+      <pubDate>Mon, 06 Nov 2017 11:06:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/compile-samba-macos/</guid>
+      <description>The goal of this article is to compile and run a Samba server on a Mac using the open source version of Samba instead of Apple&amp;rsquo;s implementation of Samba. We will configure Samba to share both public and private shares.
+I should point out that there are already MacPorts formulas for Samba 3 and Samba 4. Additionally, macOS already ships with an implementation of smbd.
+Apple&amp;rsquo;s Samba implementation is limited.</description>
+    </item>
+    
+    <item>
+      <title>Booting macOS From An External USB 3.0 Drive</title>
+      <link>http://willhaley.com/blog/boot-mac-usb-3-external/</link>
+      <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/boot-mac-usb-3-external/</guid>
+      <description>I have a Late 2012 21.5&amp;rdquo; iMac with a dying 5400 RPM Drive.
+Backups are failing for reasons that are very ambiguous. All I know is that the machine keeps complaining that Time Machine couldn&#39;t back up, that the Time Machine drive constantly needed first aid, and then first aid would consistently fail with exit code 8.
+I realize that sounds much more like the Time Machine drive is at fault, and not the internal drive.</description>
+    </item>
+    
+    <item>
+      <title>Installing macOS High Sierra In Parallels Lite On A Mac</title>
+      <link>http://willhaley.com/blog/macos-virtual-machine-mac/</link>
+      <pubDate>Wed, 01 Nov 2017 23:14:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/macos-virtual-machine-mac/</guid>
+      <description>I wanted to install macOS High Sierra on a virtual machine on my Mac so that I could debug some issues. The host machine is running macOS and the guest VM would be running macOS as well.
+VirtualBox does not support APFS right now and neither does Parallels Lite. This is a problem since APFS is the default for macOS High Sierra.
+Although it should be possible to install macOS High Sierra in VirtualBox on an HFS+ disk, I could not get it to work with VirtualBox.</description>
+    </item>
+    
+    <item>
+      <title>EXTLINUX Menu Customization</title>
+      <link>http://willhaley.com/blog/extlinux-menu/</link>
+      <pubDate>Thu, 19 Oct 2017 23:25:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/extlinux-menu/</guid>
+      <description>EXTLINUX is neat.
+ EXTLINUX is a Syslinux variant which boots from a Linux filesystem
+ It provides (as far as I can tell) all the functionality of SYSLINUX with the bonus that you can boot from these filesystems.
+FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS[1]
+If you have an ext4 formatted disk with the bootable flag enabled on the parition, you can do the following to set up a fun custom boot menu.</description>
+    </item>
+    
+    <item>
+      <title>Why Is Finding A Reliable USB WiFi Device For Linux Difficult?</title>
+      <link>http://willhaley.com/blog/finding-linux-wifi-usb/</link>
+      <pubDate>Sat, 07 Oct 2017 16:08:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/finding-linux-wifi-usb/</guid>
+      <description>TL;DR Most manufacterers do not play well with Linux. ThinkPenguin Devices are designed for Linux and should always work out-of-the-box!
+Finding a reliable USB Linux WiFi device can be complicated.
+I naively bought several devices from Amazon that had mixed reviews for Linux support, and I informally tested them at home on Ubuntu. It was a simplistic effort to find a card that worked out of the box on Ubuntu.</description>
+    </item>
+    
+    <item>
+      <title>Thunderbolt 1 Enclosure</title>
+      <link>http://willhaley.com/blog/thunderbolt-enclosure/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/thunderbolt-enclosure/</guid>
+      <description>My research has led me to believe that there are no single-bay 2.5&amp;rdquo; diskless Thunderbolt 1 enclosures.
+The enclosures I have found all include at least one drive, and many of them are built using sleek unibody designs that do not seem conducive to replacing the hard drive.
+I have decided that the only way to get an &amp;ldquo;empty&amp;rdquo; Thunderbolt 1 enclosure is to find an external Thunderbolt 1 device that already has a drive in it, and to then open it up and replace the hard drive within as needed.</description>
+    </item>
+    
+    <item>
+      <title>Examining UASP Performance with USB 3.0 on Linux and Mac</title>
+      <link>http://willhaley.com/blog/usb-3-uasp/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/usb-3-uasp/</guid>
+      <description>I wanted to try and understand just how much of a practical benefit I could get from an external drive enclosure with UASP (USB Attached SCSI).
+Please note that I am not examining the performance of USB 3.1 or Thunderbolt in this article. Simply USB 3.0 with and without UASP.
+For this experiment, I purchased two enclosures. One with UASP and one without UASP. Both are USB 3.0 external 2.</description>
+    </item>
+    
+    <item>
+      <title>Uncovering The Lakewood Train Line</title>
+      <link>http://willhaley.com/blog/lakewood-line-chicago/</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/lakewood-line-chicago/</guid>
+      <description>Lakewood is a funny street. It abruptly ends in places. It gets cut off by a building or courtyard here and there. In some areas it is unusually wide.
+I used to live by Lakewood and Wrightwood and would ocasionally notice train tracks on Lakewood surfacing from under the pavement. Some stretches were only visible where the pavement was worn, but some stretches of track were totally exposed and maintained to the point that a rail car could fit.</description>
+    </item>
+    
+    <item>
+      <title>Is My Access Point Vulnerable To A WPS Attack?</title>
+      <link>http://willhaley.com/blog/access-point-vulnerable-wps-attack/</link>
+      <pubDate>Wed, 23 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/access-point-vulnerable-wps-attack/</guid>
+      <description>In order to test this, you must have a WiFi card with monitor mode. The Penguin Wireless N USB Adapter for GNU / Linux (TPE-N150USB) worked well for me.
+ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain you will receive an Atheros chipset for this device[1]. With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.</description>
+    </item>
+    
+    <item>
+      <title>Restore Stock Firmware To Netgear WNR2000v3 After DD-WRT</title>
+      <link>http://willhaley.com/blog/restore-stock-firmware-wnr2000v3/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/restore-stock-firmware-wnr2000v3/</guid>
+      <description>DD-WRT, OpenWRT, and LEDE are excellent firmware replacements for an access point. The Netgear WNR2000v3 DD-WRT Wiki is very helpful in the setup process for that router (OpenWRT and LEDE require more Flash space and did not run properly on this router in my testing).
+Despite how well DD-WRT works for this device, I wanted to restore the stock firmeware so that I could test it for security vulnerabilities. I was curious how easy it might be to hack it if I did not have DD-WRT.</description>
+    </item>
+    
+    <item>
+      <title>Trying (and failing) To Hack My Access Point With Aircrack</title>
+      <link>http://willhaley.com/blog/hacking-my-access-point-with-aircrack/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/hacking-my-access-point-with-aircrack/</guid>
+      <description>I had used aircrack in the days of WEP to crack trivial passwords. It was interesting to see just how vulnerable my own network was.
+I wanted to get a handle on how those same tools work against WPA2.
+I am happy to find that my neighbors and I are all using WPA2 with PSK.
+I am happy because, in my very basic research, WPA2 seems incredibly difficult to crack.</description>
+    </item>
+    
+    <item>
+      <title>iperf3 Server and Client</title>
+      <link>http://willhaley.com/blog/iperf3-server-client/</link>
+      <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/iperf3-server-client/</guid>
+      <description>iperf3 is useful for testing the network throughput of your local network. It can help to indicate network bandwidth of individual nodes on your LAN. Do you have one computer that seems perpetually slow? Then iperf3 may be able to confirm this potential issue.
+A WAN speedtest service like Google&amp;rsquo;s will not necessarily indicate the speed of individual nodes on your LAN. Rather, it is better suited to testing the throughput from your home to the public Internet.</description>
+    </item>
+    
+    <item>
+      <title>Google Assistant SDK Hello World</title>
+      <link>http://willhaley.com/blog/google-assistant-sdk-hello-world/</link>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/google-assistant-sdk-hello-world/</guid>
+      <description>It is relatively simple to get started with the Google Assistant SDK. An Instructable about a Raspberry Pi Google Assistant is what first piqued my interest about trying the Google Assistant SDK.
+Requisites Before doing anything else, make sure your microphone works. I insist you do this first to avoid wasting time later.
+You may use a program like Google Hangouts or an online microphone test program to verify your microphone is being properly detected.</description>
+    </item>
+    
+    <item>
+      <title>USB Drive With Write Protect Switch</title>
+      <link>http://willhaley.com/blog/usb-write-protect-switch/</link>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/usb-write-protect-switch/</guid>
+      <description>I am a big fan of hardware enabled write protect switches on flash drives.
+My favorite is the Kanguru FlashBlu30 with Physical Write Protect Switch.
+You can certainly find cheaper thumb drives, but the write protect locking switch on this disk ensures the safety and integrity of this drive.
+It&amp;rsquo;s only 8.0 GB, but at least it&amp;rsquo;s USB 3.0. I don&amp;rsquo;t buy these for space, but rather for the write protect switch.</description>
+    </item>
+    
+    <item>
+      <title>Scan Images With SANE</title>
+      <link>http://willhaley.com/blog/scan-images-with-sane/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/scan-images-with-sane/</guid>
+      <description>Simple scan with relatively nice resolution to png format.
+scanimage \ --format=png \ --resolution=300 \ &amp;gt; output.png  Force US Letter dimensions. x and y correspond to mm. US Letter is 215.9 by 279.4 mm. Also, force grayscale mode.
+scanimage \ --format=png \ -x 215.9 \ -y 279.4 \ --resolution=300 \ --mode=Gray \ &amp;gt; output.png  I then typically use pdfjoin to convert the page(s) to a pdf file. I often print these files via Google Chrome, and am sure to choose Black and white and to not choose Fit to page.</description>
+    </item>
+    
+    <item>
+      <title>Fullscreen App With Raspberry Pi and Adafruit TFT Display</title>
+      <link>http://willhaley.com/blog/fullscreen-raspberry-pi-app-tft/</link>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/fullscreen-raspberry-pi-app-tft/</guid>
+      <description>Please consider that these instructions may not be the ideal solution depending on the needs of a given project. Adafruit&amp;rsquo;s forums are a valuable resource for help regarding their products.
+These are the steps I used in order to run a fullscreen Python app on a Raspberry Pi with an Adafruit 2.8&amp;rdquo; resistive TFT display.
+The first thing we need to do is enable support for the TFT on our Raspberry Pi.</description>
+    </item>
+    
+    <item>
+      <title>Power Off Raspberry Pi Adafruit TFT Screen on Shutdown</title>
+      <link>http://willhaley.com/blog/power-off-raspberry-pi-adafruit-tft-screen-shutdown/</link>
+      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/power-off-raspberry-pi-adafruit-tft-screen-shutdown/</guid>
+      <description>I have been enjoying the Adafruit PiTFT 2.8&amp;rdquo; Touchscreen Display for Raspberry Pi. It is a nice, simple, touch display, and it has taught me a few distinctions regarding system power offs.
+There is a kernel module called rpi_power_switch included with the Adafruit Raspbian Jessie image. That module is used to power the system on and off when a button on the TFT board is pressed. By default, the button is tied to GPIO pin 23.</description>
+    </item>
+    
+    <item>
+      <title>Correcting Wonky TFT Input Events on Raspberry Pi with Adafruit TFT</title>
+      <link>http://willhaley.com/blog/raspberry-pi-adafruit-tft-input-wonky/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/raspberry-pi-adafruit-tft-input-wonky/</guid>
+      <description>I had an interesting issue with my Adafruit PiTFT 2.8&amp;rdquo; Touchscreen Display for Raspberry Pi.
+The screen was displaying properly, and touch events were received, but those events seemed to be misinterpreted resulting in strange behavior and an inability to actually use the touch interface.
+I thought the axes were swapped or inverted somehow, but some careful examination eventually revealed the underlying issue.
+In my case, all events were being misinterpreted like so.</description>
+    </item>
+    
+    <item>
+      <title>Debian Fullscreen GUI Kiosk</title>
+      <link>http://willhaley.com/blog/debian-fullscreen-gui-kiosk/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/debian-fullscreen-gui-kiosk/</guid>
+      <description>These instructions are helpful if you would like to create a computer kiosk. The instructions are designed to run Chromium (the open-source version of Google&amp;rsquo;s Chrome browser), but can be adapted to run any GUI program in a kiosk/fullscreen mode.
+This guide was last tested against Debian 9.4 (Stretch) GNU/Linux.
+Note that this guide is not intended to create a perfectly secure system, and may be vulnerable to tampering by knowledgable users.</description>
+    </item>
+    
+    <item>
+      <title>Install Debian to USB Drive</title>
+      <link>http://willhaley.com/blog/install-debian-usb/</link>
+      <pubDate>Sat, 10 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/install-debian-usb/</guid>
+      <description>These instructions are not for a live install, but rather an installation of Debian to USB flash media.
+An added bonus here is that we&amp;rsquo;re going to first prepare our Debian chroot inside an img file that we mount as a loopback device.
+We can then use that img file as a generic base image that we can deploy to a large number of USB drives.
+Why would you want to do this?</description>
+    </item>
+    
+    <item>
+      <title>Decode and Save Google Authenticator TOTP QR Code URLs</title>
+      <link>http://willhaley.com/blog/decode-and-save-google-authenticator-qr-codes/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/decode-and-save-google-authenticator-qr-codes/</guid>
+      <description>zbarimg is a helpful command line tool that can take an image of a QR code and decode the underlying text represented by the code.
+zbarimg qr-code.png  This is helpful if you want to decode a Google Authenticator TOTP (Time-based one time password), or any other sort of QR code content.
+It should be noted that saving the seed for TOTP codes may open you up to a security vulnerability, but there may be cases when you want this information.</description>
+    </item>
+    
+    <item>
+      <title>Cannot Ping Other Computer on DD-WRT Network</title>
+      <link>http://willhaley.com/blog/cannot-ping-dd-wrt/</link>
+      <pubDate>Sat, 27 May 2017 10:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/cannot-ping-dd-wrt/</guid>
+      <description>I recently ran into a problem where I was not able to ping, SSH, or otherwise connect to a computer on my home network. My router is using DD-WRT. Both machines were wired in.
+This seems to be a common issue
+In the DD-WRT admin page navigate to Administration -&amp;gt; Commands.
+Enter these commands (both lines at once) and click Run Commands.
+swconfig dev eth1 set enable_vlan 1 swconfig dev eth1 set apply  This should fix the problem immediately.</description>
+    </item>
+    
+    <item>
+      <title>Encrypt a Single File on Linux with AES256 and GPG</title>
+      <link>http://willhaley.com/blog/encrypt-single-file-linux-aes-gpg/</link>
+      <pubDate>Sat, 13 May 2017 10:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/encrypt-single-file-linux-aes-gpg/</guid>
+      <description>Encrypt
+gpg \ --cipher-algo AES256 \ --symmetric \ --output encrypted.file \ plain.file  Decrypt
+gpg \ --output plain.file \ --decrypt encrypted.file  </description>
+    </item>
+    
+    <item>
+      <title>Perform a Custom Debian Hard Drive Install</title>
+      <link>http://willhaley.com/blog/custom-debian-hard-drive-install/</link>
+      <pubDate>Sun, 07 May 2017 15:00:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/custom-debian-hard-drive-install/</guid>
+      <description>The stock Debian installer provided by Debian is fantastic. It is intuitive, and simple. However, if you want a custom install for whatever reason (specific configuration, machine deployment, minimal image), you can use these steps to accomplish that.
+To do this, we will need any Debian-based live CD. You can use my guide for creating a custom Debian Live CD or USB to generate this, or simply use an Ubuntu or Debian live CD or USB.</description>
+    </item>
+    
+    <item>
+      <title>Add Facebook Calendar and Events to Google Calendar</title>
+      <link>http://willhaley.com/blog/add-facebook-calendar-to-google-calendar/</link>
+      <pubDate>Sat, 08 Apr 2017 09:27:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/add-facebook-calendar-to-google-calendar/</guid>
+      <description>Go to your Facebook Events page by clicking &amp;ldquo;Events&amp;rdquo; on the left side of your timeline at facebook.com.
+Right click the &amp;ldquo;Upcoming Events&amp;rdquo; link on the lower right side of the page and click &amp;ldquo;Copy link address&amp;rdquo;.
+What we just did copies a special sort of export link which we will later paste into our Google Calendar.
+Open Google Calendar in your browser. https://calendar.google.com
+In the lower left corner of the page, click the arrow next to &amp;ldquo;Other calendars&amp;rdquo; and then click &amp;ldquo;Add by URL&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Concourse Lite on Ubuntu</title>
+      <link>http://willhaley.com/blog/concourse-lite/</link>
+      <pubDate>Tue, 21 Mar 2017 10:41:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/concourse-lite/</guid>
+      <description>Clone concourse-docker locally on Ubuntu.
+git clone https://github.com/concourse/concourse-docker  Change to the concourse-docker directory.
+cd concourse-docker  Generate keys for your local linux Concourse environment.
+./generate-keys.sh  Run Concourse. If you see an error regarding Version in &amp;quot;./docker-compose.yml&amp;quot; is unsupported then edit docker-compose.yml and change the version to 2, or whatever is appropriate for your docker-compose version installed.
+Note that I am using the real IP address for my machine. This is necessary.</description>
+    </item>
+    
+    <item>
+      <title>Deploy to Elastic Beanstalk with Semaphore CI</title>
+      <link>http://willhaley.com/blog/deploy-elastic-beanstalk-semaphore/</link>
+      <pubDate>Mon, 20 Feb 2017 17:10:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/deploy-elastic-beanstalk-semaphore/</guid>
+      <description>This process is really easy thanks to Semaphore&amp;rsquo;s guide.
+You can follow their directions just about to the letter, but here are some additional steps I like to follow regarding AWS roles and policies.
+Create a group in IAM like semaphore-group-eb (eb for elastic beanstalk).
+Don&amp;rsquo;t add any policies to it. Don&amp;rsquo;t add any users to it.
+Click group details and note the id.
+Group ARN: arn:aws:iam::SOME_ID:group/semaphore-group-eb Users (in this group): 0 Path: / Creation Time: 2017-01-21 20:17 CST  Note the id that appears where I have the SOME_ID placeholder.</description>
+    </item>
+    
+    <item>
+      <title>Correct FRC Robot Drift With Talon Calibration</title>
+      <link>http://willhaley.com/blog/correct-robot-drift-talon-calibration/</link>
+      <pubDate>Tue, 07 Feb 2017 22:06:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/correct-robot-drift-talon-calibration/</guid>
+      <description>We found that the robot our team is building for the FRC 2017 competition seems to favor one side. It lists on the X axis to the left when we try to simply go straight forward or back.
+This tendency to lean and favor an axis was confusing us for a while. We thought it could be a software issue related to the drive train, an issue with our logitech joystick controller, or an electrical problem.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Linux Compatible WiFi USB Adapters</title>
+      <link>http://willhaley.com/blog/linux-usb-wifi/</link>
+      <pubDate>Sun, 05 Feb 2017 13:03:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/linux-usb-wifi/</guid>
+      <description>First, Consider Tethering As pointed out by @roland in the comments you may find that the easiest, cheapest, fastest, and most reliable way to get a USB WiFi connection on your Linux box is by using USB tethering with your smartphone.
+This is possible natively in Android. It is not possible with iOS unless iOS is jailbroken. iOS can share its cellular connection over USB natively, but not its WiFi connection unless it is jailbroken.</description>
+    </item>
+    
+    <item>
+      <title>Printing in Arch Linux</title>
+      <link>http://willhaley.com/blog/printing-in-arch-linux/</link>
+      <pubDate>Sat, 04 Feb 2017 16:09:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/printing-in-arch-linux/</guid>
+      <description>I had added my user to the group lp, but still got this error when trying to list printers.
+$ lpinfo -v lpinfo: Forbidden  I found that the key was in this post on the Arch Linux Forums.
+sudo groupadd printadmin sudo usermod -a -G printadmin $USER  Then I had to edit /etc/cups/cups-files.conf and change the following.
+SystemGroup sys root  to
+SystemGroup printadmin root  Once I did that and rebooted, I was able to see output from lpinfo -v without needing root access.</description>
+    </item>
+    
+    <item>
+      <title>Combine PDF Files on Arch Linux</title>
+      <link>http://willhaley.com/blog/combine-pdfs-linux/</link>
+      <pubDate>Thu, 02 Feb 2017 22:08:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/combine-pdfs-linux/</guid>
+      <description>This functionality is provided by the pdfjam package on Arch Linux.
+# Join multiple pdfs, sorted by alpha pdfjoin *.pdf  # Join multiple images, sorted by alpha pdfjoin *.jpg  # Join pdfs as listed pdfjoin 1.pdf 2.pdf 3.pdf  # Join everything into a pdf pdfjoin *  I had a number of brief PDF files that I wanted to merge together into a single concatenated PDF. This is the sort of task that typically leads me down a rabbit hole of abandoned scripts and obscure apps.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a Linux Ubuntu 16.04.3 Box for FRC 2018</title>
+      <link>http://willhaley.com/blog/frc-linux/</link>
+      <pubDate>Tue, 31 Jan 2017 21:12:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/frc-linux/</guid>
+      <description>These instructions are meant to help set up an Ubuntu Xenial 16.04.3 LTS development environment for the FRC 2018 FIRST POWER UP competition. This guide is written with Java in mind and not C++. With these steps, you should be able to run a simulated environment with which you can test your robot code for FRC 2018.
+Index  Warnings Install Java Install Eclipse Install FRC Toolchain Install Eclipse FRC Plugins Install Gazebo Install FRCSim Install model and world files Create a sample application Run Next steps Troubleshooting Docs  Warnings!</description>
+    </item>
+    
+    <item>
+      <title>Contributing to a Remote Go Package</title>
+      <link>http://willhaley.com/blog/contributing-go-remote-package/</link>
+      <pubDate>Sun, 29 Jan 2017 10:24:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/contributing-go-remote-package/</guid>
+      <description>I have never contributed work to a Go remote package before, but I recently tried this for the first time. In my case I worked on a fork of negroni.
+These steps might not be the best, and some steps might be superflous, but they worked for me.
+First, I deleted my local negroni directory from src.
+rm -rf src/github.com/urfave/negroni  I also deleted the compiled files.
+rm -rf pkg/*/github.com/urfave  At this point, I had a fork of negroni in github.</description>
+    </item>
+    
+    <item>
+      <title>Print Directory Tree With Sizes</title>
+      <link>http://willhaley.com/blog/print-directory-tree-with-sizes/</link>
+      <pubDate>Sun, 29 Jan 2017 10:11:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/print-directory-tree-with-sizes/</guid>
+      <description>This command uses find to recursively print all files and directories under a given directory tree.
+The -printf option allows us to print the %p path and %s size.
+We print them in that order so that when we sort, we sort on the path, and not the file size.
+find . -printf &amp;quot;%p %s\n&amp;quot; | sort  This can be helpful if you run some sort of process against a directory, and want to see how the files change.</description>
+    </item>
+    
+    <item>
+      <title>Large Persistent Casper Partition on an Ubuntu EFI Live USB</title>
+      <link>http://willhaley.com/blog/large-persistent-casper-parition-xubuntu-efi-live-usb-2/</link>
+      <pubDate>Sat, 28 Jan 2017 21:55:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/large-persistent-casper-parition-xubuntu-efi-live-usb-2/</guid>
+      <description>YUMI and UNetbootin are both very user-friendly and simple applications for creating bootable USB drives with persistence. I highly recommend trying those first if you want persistence. They are very helpful and may do exactly what you need with much less effort.
+If those options do not suit your needs, then mkusb might fit the bill.
+First, get access to an Ubuntu based machine and install mkusb.
+sudo apt-get update sudo add-apt-repository ppa:mkusb/ppa sudo apt-get update  Connect your target flash drive on which you want Xubuntu with persistence</description>
+    </item>
+    
+    <item>
+      <title>Install rclone on Windows</title>
+      <link>http://willhaley.com/blog/install-rclone-on-windows/</link>
+      <pubDate>Sun, 15 Jan 2017 10:27:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/install-rclone-on-windows/</guid>
+      <description>These are the steps I typically use to bootstrap an rclone install on Windows. My intentions with rclone are typically as a backup service, so this may not all be applicable to your use.
+Create C:\Program Files\rclone.
+Download rclone from http://rclone.org/downloads/ and unzip it to C:\Program Files\rclone.
+Save this content as C:\Program Files\rclone\rclone.bat.
+SET RCLONE_ROOT_FOLDER_NAME= SET RCLONE_FOLDER_NAME= SET RCLONE_DEST=SomeBackupService:%RCLONE_ROOT_FOLDER_NAME% cd &amp;quot;C:\program files\rclone&amp;quot; for /f &amp;quot;tokens=1,2 delims=;&amp;quot; %%X in (sources.txt) do ( echo %%X echo %%Y rclone.</description>
+    </item>
+    
+    <item>
+      <title>Mount a Reversed Encfs Volume on Windows</title>
+      <link>http://willhaley.com/blog/mount-reversed-encfs-volume-on-windows/</link>
+      <pubDate>Sun, 15 Jan 2017 10:01:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/mount-reversed-encfs-volume-on-windows/</guid>
+      <description>The -S flag allows encfs4win to read passwords from stdin on Windows. Here we use a keyfile to script the mount of a reversed encfs share on Windows.
+type C:\encfs-key.txt|C:\encfs4win\encfs.exe -S --reverse C:\Users\Will\Documents C:\Users\Will\Encrypted\Documents  You could also echo the password to the script
+echo the-password|C:\encfs4win\encfs.exe -S --reverse C:\Users\Will\Documents C:\Users\Will\Encrypted\Documents  </description>
+    </item>
+    
+    <item>
+      <title>Run Remote Commands in Vagrant</title>
+      <link>http://willhaley.com/blog/run-remote-vagrant-commands/</link>
+      <pubDate>Sun, 15 Jan 2017 09:50:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/run-remote-vagrant-commands/</guid>
+      <description>This is a one liner to get into vagrant, run a command, and when that command exits, keep your SSH session up and running rather than terminating.
+I learned how to do this thanks to this StackOverflow article.
+You could easily turn this command into a shell alias.
+(cd ~/wherever/you/want &amp;amp;&amp;amp; vagrant ssh -- -t &#39;mongo; exec bash --login&#39;)  That example above cds to the vagrant directory, uses ssh to open a terminal, runs mongo, and when the mongo command terminates, it starts a new shell.</description>
+    </item>
+    
+    <item>
+      <title>Script to Install Cygwin on Windows</title>
+      <link>http://willhaley.com/blog/script-install-cygwin-windows/</link>
+      <pubDate>Sun, 15 Jan 2017 09:44:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/script-install-cygwin-windows/</guid>
+      <description>This is my script to perform an unattended silent install of Cygwin on Windows without use of the wizard.
+Note that you can pre-configure the packages to install with --packages.
+mkdir &amp;quot;%PROGRAMFILES%\cygwinx86&amp;quot; REM Powershell 2 powershell -Command &amp;quot;(New-Object Net.WebClient).DownloadFile(&#39;https://cygwin.com/setup-x86.exe&#39;, &#39;%PROGRAMFILES%\cygwinx86\setup-x86.exe&#39;)&amp;quot; REM Powershell 3 REM powershell -Command &amp;quot;Invoke-WebRequest https://cygwin.com/setup-x86.exe -OutFile setup-x86.exe&amp;quot; &amp;quot;%PROGRAMFILES%\cygwinx86\setup-x86.exe&amp;quot; ^ --site http://cygwin.mirror.constant.com ^ --no-shortcuts ^ --no-desktop ^ --quiet-mode ^ --root &amp;quot;%PROGRAMFILES%\cygwinx86\cygwin&amp;quot; ^ --arch x86 ^ --local-package-dir &amp;quot;%PROGRAMFILES%\cygwinx86\cygwin-packages&amp;quot; ^ --verbose ^ --prune-install ^ --packages openssh,git,rsync,nano  You could take that script above, host it, then make a one-liner like this.</description>
+    </item>
+    
+    <item>
+      <title>Checkbox used as a Radio Button</title>
+      <link>http://willhaley.com/blog/checkbox-as-radio/</link>
+      <pubDate>Tue, 10 Jan 2017 20:45:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/checkbox-as-radio/</guid>
+      <description>This incorrect implementation caught my eye. This feels like a textbook situation where the wrong semantic element was used.
+These checkboxes cannot be unchecked, and are mutually exclusive. Clearly, they would be better off as radios.
+The fact that hovering over the text causes the background to animate, but is not clickable, is also weird.</description>
+    </item>
+    
+    <item>
+      <title>Unintuitive Clickable Card</title>
+      <link>http://willhaley.com/blog/unintuitive-clickable-card/</link>
+      <pubDate>Tue, 10 Jan 2017 20:45:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/unintuitive-clickable-card/</guid>
+      <description>This sort of behavior can be very frustrating.
+Here we have a div that looks a lot like a clickable element. When one hovers over it, a border appears. Text changes. Yet, only the bottom half is clickable. This is very confusing.
+The &amp;ldquo;Click me!&amp;rdquo; text was my own modification to obscure the original content of the page.</description>
+    </item>
+    
+    <item>
+      <title>Unlock LUKS Encrypted Volumes at Boot With a USB Key</title>
+      <link>http://willhaley.com/blog/unlock-luks-volumes-with-usb-key/</link>
+      <pubDate>Wed, 28 Dec 2016 11:25:22 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/unlock-luks-volumes-with-usb-key/</guid>
+      <description>You can automatically unlock and mount LUKS encrypted volumes at boot by specifying the volumes and their keys in /etc/crypttab.
+For the sake of this article, I am working with non-critical volumes. Volumes for storage. Not volumes required to boot your machine properly. I am not discussing how to mount an encrypted root volume.
+I like to keep my keyfiles on USB drives. You do not need to use a USB device to unlock your volumes, but it is a bit silly to keep the key on a permanent disk connected to your machine, right?</description>
+    </item>
+    
+    <item>
+      <title>Use a Static IP in Arch Linux with dhcpcd</title>
+      <link>http://willhaley.com/blog/static-ip-in-arch-linux/</link>
+      <pubDate>Wed, 28 Dec 2016 11:11:12 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/static-ip-in-arch-linux/</guid>
+      <description>I am assuming that your Arch Linux system is using, or will use, dhcpcd. If you are using systemd-networkd, you will have to disable it to switch to dhcpcd.
+systemctl disable systemd-networkd systemctl stop systemd-networkd  Install dhcpcd and enable it at boot. Be careful. If this is a remote machine, and you screw something up and reboot, you may not be able to reconnect.
+pacman -Sy dhcpcd systemctl enable dhcpcd systemctl start dhcpcd  Before assigning the static IP, make sure of the following:</description>
+    </item>
+    
+    <item>
+      <title>Mount an NFS Share on a Mac using the Terminal</title>
+      <link>http://willhaley.com/blog/mount-nfs-share-on-a-mac/</link>
+      <pubDate>Wed, 28 Dec 2016 11:08:46 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/mount-nfs-share-on-a-mac/</guid>
+      <description>In this case we are mounting a share on a Mac client from a Linux NFS server.
+The Linux NFS server is sharing the directory at /srv/nfs via both the NFS4 (nfsv4) and NFS3 (nfsv3) protocols.
+The NFS share is mounted at /mnt/nfs on the Mac client.
+sudo mount -t nfs 192.168.1.2:/srv/nfs /mnt/nfs  Persistent Mount If you want to make the NFS mount persistent (automatically mount at boot) on the Mac client, you can use the special vifs command and add that mount point.</description>
+    </item>
+    
+    <item>
+      <title>Marvell 88SE6145 SATA Controller on Arch Linux</title>
+      <link>http://willhaley.com/blog/marvell-88se6145-sata-controller-on-arch-linux/</link>
+      <pubDate>Tue, 27 Dec 2016 13:38:25 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/marvell-88se6145-sata-controller-on-arch-linux/</guid>
+      <description>My instructions are based on this article for getting Arch to support the 88SE6145 SATA II PCI-E Marvell controller. That is one of two SATA controllers used by the Intel BOXD975XBX2KR LGA 775 Intel 975X ATX Intel Motherboard.
+Here is what we must do.
+Blacklist the Marvell PATA kernel module.
+# /etc/rc.conf MODULES=(... !pata_marvell)  Enable Marvell AHCI module.
+# /etc/modprobe.d/modprobe.conf options ahci marvell_enable=1  Update ramdisk config.
+# /etc/mkinitcpio.conf MODULES=&amp;quot;ahci&amp;quot; .</description>
+    </item>
+    
+    <item>
+      <title>Aggressive Validation</title>
+      <link>http://willhaley.com/blog/aggressive-validation/</link>
+      <pubDate>Fri, 23 Dec 2016 05:09:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/aggressive-validation/</guid>
+      <description>The validation here seems to be based on focus and blur, which is a little aggressive in my opinion. It would seem that waiting until the user has entered some input, or waiting until submit, would be a better initial trigger for validation.</description>
+    </item>
+    
+    <item>
+      <title>Obscure Error Messaging</title>
+      <link>http://willhaley.com/blog/obscure-error-messaging/</link>
+      <pubDate>Fri, 23 Dec 2016 05:09:03 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/obscure-error-messaging/</guid>
+      <description>Notice what happens here when changing a setting. A confirmation message is displayed at the top of the page. The message is essentially useless in this case unless the user happens to scroll up. You can see the page shifts to accomodate the message, but when scrolled towards the bottom of the page, it is not clear to the user why it happened.
+When editing the bio, an error message is displayed because an ancillary required field is invalid.</description>
+    </item>
+    
+    <item>
+      <title>Generate JWT With Bash</title>
+      <link>http://willhaley.com/blog/generate-jwt-with-bash/</link>
+      <pubDate>Sat, 17 Dec 2016 10:54:29 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/generate-jwt-with-bash/</guid>
+      <description>To assist in troubleshooting, I wanted to generate JWT (JSON Web Tokens) on-the-fly with bash.
+It was the easiest way (I thought) to be able to test various conditions like malformed headers, payloads, mismatching algorithms, and various other edge cases to see how my server would respond.
+This nginx blog post and this superuser post were very helpful in getting my script working.
+For most people, you might find that the interactive debugger available at jwt.</description>
+    </item>
+    
+    <item>
+      <title>Use Cookies With Curl</title>
+      <link>http://willhaley.com/blog/use-cookies-with-curl/</link>
+      <pubDate>Sat, 17 Dec 2016 10:54:29 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/use-cookies-with-curl/</guid>
+      <description>#!/usr/bin/env bash curl \ -vv \ --cookie cookies.txt \ --cookie-jar cookies.txt \ http://localhost/login \ -d &#39;{ &amp;quot;email&amp;quot;: &amp;quot;user@whatever.com&amp;quot;, &amp;quot;password&amp;quot;: &amp;quot;password&amp;quot; }&#39;  If you are finding that the cookies.txt file is not being generated or is empty, then look at the output from curl.
+We&amp;rsquo;re using verbose flags (-vv) so you should see something like this.
+* Added cookie some_cookie=&amp;quot;Some+cookie&amp;quot; for domain localhost, path /, expire 0 &amp;lt; Set-Cookie: some_cookie=Some+cookie; path=/; domain=localhost; secure  If you see any errors or no cookies being sent, then the issue is probably that the server is not sending cookies properly.</description>
+    </item>
+    
+    <item>
+      <title>Pipe Arguments To Bash Function</title>
+      <link>http://willhaley.com/blog/pipe-arguments-to-base-function/</link>
+      <pubDate>Sat, 17 Dec 2016 10:49:23 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/pipe-arguments-to-base-function/</guid>
+      <description>This is a trivial example, but is meant to demonstrate how you can pipe arguments to a bash function.
+#!/usr/bin/env bash lowercase() { # Grab input. declare input=${1:-$(&amp;lt;/dev/stdin)}; # Use that input to do anything. echo &amp;quot;$input&amp;quot; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39; } echo &amp;quot;HELLO there, FRIEND!&amp;quot; | lowercase  Which outputs the following.
+hello there, friend!  </description>
+    </item>
+    
+    <item>
+      <title>Embedding Types To Share Functionality In Go</title>
+      <link>http://willhaley.com/blog/embedding-types-to-share-functionality-in-go/</link>
+      <pubDate>Fri, 02 Dec 2016 19:09:26 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/embedding-types-to-share-functionality-in-go/</guid>
+      <description>Use embedding to share functionality between types in Go.
+Both car and boat embed the type vehicle. Because they do that, they get access to the method move on vehicle automatically. Pretty nice!
+As stated in the golang docs:
+ Go does not provide the typical, type-driven notion of subclassing, but it does have the ability to “borrow” pieces of an implementation by embedding types within a struct or interface.</description>
+    </item>
+    
+    <item>
+      <title>Private and Public Visibility with Go Packages</title>
+      <link>http://willhaley.com/blog/private-and-public-visibility-with-go-packages/</link>
+      <pubDate>Fri, 02 Dec 2016 19:09:26 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/private-and-public-visibility-with-go-packages/</guid>
+      <description>I knew that naming, specifically as it relates to capitalization, was how we control exports in Golang.
+It was not until I was using the language for a couple weeks that I realized the implications behind this.
+Exports in Go, which are controlled by naming conventions, are very similar to the concepts of public and private we see in other languages.
+package abc // This will be exported. It is essentially public to other packages that // import package abc.</description>
+    </item>
+    
+    <item>
+      <title>Simple Interface and Polymorphism Examples with Go</title>
+      <link>http://willhaley.com/blog/simple-interface-and-polymorphism-examples-with-go/</link>
+      <pubDate>Thu, 17 Nov 2016 19:03:11 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/simple-interface-and-polymorphism-examples-with-go/</guid>
+      <description>Here is a quick demo of polymorphism via interfaces in golang. I am writing this up as a note-to-self, but maybe it will help others.
+package main import ( &amp;quot;fmt&amp;quot; ) // This is the interface. Types that wish to confirm to Vehicle must implement // this interface. Implementing this interface is done by implementing the // methods defined here. `description()` and `medium()`. type Vehicle interface { description() string medium() string } // This is a simple struct type.</description>
+    </item>
+    
+    <item>
+      <title>Encrypted Core Storage Home Folder on Mac OSX</title>
+      <link>http://willhaley.com/blog/encrypted-core-storage-home-folder-on-mac-osx/</link>
+      <pubDate>Sat, 12 Nov 2016 10:23:51 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/encrypted-core-storage-home-folder-on-mac-osx/</guid>
+      <description>So you want to encrypt your $HOME on your Mac but nothing else?
+Let&amp;rsquo;s stop right here.
+The built in option for FileVault full disk encryption is the standard on a Mac, and I recommend going that route for encryption. It is a fairly big pain to do what you&amp;rsquo;re asking.
+Though, it is possible, and that is what this guide will help you to accomplish. Although it is complicated, it is possible to encrypt a user&amp;rsquo;s home folder independently of the rest of the system.</description>
+    </item>
+    
+    <item>
+      <title>Deploy an HTML Web App With Nginx Config Changes Without Passwords</title>
+      <link>http://willhaley.com/blog/deploy-an-html-web-app-with-nginx-config-changes-without-passwords/</link>
+      <pubDate>Sat, 05 Nov 2016 12:26:10 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/deploy-an-html-web-app-with-nginx-config-changes-without-passwords/</guid>
+      <description>I want to be able to run a single script from my client machine, and push HTML changes and nginx config changes to a remote server. I do not want to be prompted for passwords or any sort of confirmation at any point in this process.
+This requires a number of steps, but is certainly doable.
+Client SSH key First, make sure you have an SSH key on your client that is not password protected.</description>
+    </item>
+    
+    <item>
+      <title>Getting My Jekyll Blog on AWS S3 with Semaphore CI</title>
+      <link>http://willhaley.com/blog/getting-my-jekyll-blog-on-aws-s3-with-semaphore-ci/</link>
+      <pubDate>Tue, 04 Oct 2016 15:51:01 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/getting-my-jekyll-blog-on-aws-s3-with-semaphore-ci/</guid>
+      <description>My guide is largely based on the Deploying to Amazon S3 guide from Semaphore, but with some pre-requisite steps and fine-tuning to S3.
+Switching your DNS provider for your domain to Amazon&amp;rsquo;s Route 53 may be a requirement. Depending on your DNS provider, your DNS configuration, and your willingness to jump through hoops like setting up a reverse proxy on another server, you may be forced to transfer your domain.</description>
+    </item>
+    
+    <item>
+      <title>T-Mobile Huawei Jet 2.0 in Windows 10 64-bit</title>
+      <link>http://willhaley.com/blog/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/</link>
+      <pubDate>Mon, 26 Sep 2016 17:30:47 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/</guid>
+      <description>The T-Mobile Jet 2.0 is a USB 4G modem. If you connect it to a PC, it acts like a USB storage drive and includes installation software for the T-Mobile webConnect Manager. webConnect is what is typically used to manage the card and connect to the cell network to get a 4G connection for your PC.
+Unfortunately, this software does not install properly in Windows 10. At least, not for me.</description>
+    </item>
+    
+    <item>
+      <title>Find and Correspond Which Disk Belongs to Which Hard Drive Controller in Linux</title>
+      <link>http://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/</link>
+      <pubDate>Wed, 21 Sep 2016 22:07:31 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/</guid>
+      <description>First, list all block devices with an identifier for their PCI device.
+ls -al /sys/block/sd* lrwxrwxrwx 1 root root 0 Sep 6 10:01 /sys/block/sda -&amp;gt; ../devices/pci0000:00/0000:00:1f.2/ata3/host2/target2:0:0/2:0:0:0/block/sda lrwxrwxrwx 1 root root 0 Sep 6 10:01 /sys/block/sdb -&amp;gt; ../devices/pci0000:00/0000:00:1f.2/ata3/host2/target2:0:1/2:0:1:0/block/sdb lrwxrwxrwx 1 root root 0 Sep 6 10:01 /sys/block/sdc -&amp;gt; ../devices/pci0000:00/0000:00:1f.2/ata4/host3/target3:0:0/3:0:0:0/block/sdc lrwxrwxrwx 1 root root 0 Sep 6 10:01 /sys/block/sdd -&amp;gt; ../devices/pci0000:00/0000:00:1f.2/ata4/host3/target3:0:1/3:0:1:0/block/sdd lrwxrwxrwx 1 root root 0 Sep 6 10:01 /sys/block/sde -&amp;gt; ../devices/pci0000:00/0000:00:1e.0/0000:05:05.0/ata5/host4/target4:0:0/4:0:0:0/block/sde lrwxrwxrwx 1 root root 0 Sep 6 10:04 /sys/block/sdf -&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>Resolvconf DNS Issue After Ubuntu Xenial Upgrade</title>
+      <link>http://willhaley.com/blog/resolvconf-dns-issue-after-ubuntu-xenial-upgrade/</link>
+      <pubDate>Sat, 10 Sep 2016 07:45:08 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/resolvconf-dns-issue-after-ubuntu-xenial-upgrade/</guid>
+      <description>After following DigitalOcean&amp;rsquo;s guide for upgrading to Ubuntu Xenial I hit a snag. DNS was broken. I do not see this as a fault of DigitalOcean, but more likely an issue with Ubuntu.
+Update: 2017-06-27 As Uğur Çetin mentions in the comments below, there is a simpler fix for this.
+Find the IP address of your mirror and create an /etc/hosts entry for it.
+Then simply run apt upgrade.</description>
+    </item>
+    
+    <item>
+      <title>Power and Performance Comparisons Between Various CPUs and Configurations</title>
+      <link>http://willhaley.com/blog/power-performance-comparisons-between-various-cpus-configurations/</link>
+      <pubDate>Fri, 02 Sep 2016 17:28:48 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/power-performance-comparisons-between-various-cpus-configurations/</guid>
+      <description>I have several computers sitting around my home in various states of completion. Some are used daily, some are just a few components plugged together sitting on a shelf.
+A long-running hobby of mine has been setting up a reliable home theater for my digital media. I bounced around between various providers before finally landing with Plex.
+For me, the great appeal behind Plex is that I can have a headless server running off in a closet and use the Plex client app on my Roku.</description>
+    </item>
+    
+    <item>
+      <title>Create a Simple Spanned LVM Volume</title>
+      <link>http://willhaley.com/blog/simple-lvm-spanned-volume/</link>
+      <pubDate>Thu, 01 Sep 2016 18:15:02 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/simple-lvm-spanned-volume/</guid>
+      <description>Start with one drive. Create a spanned volume, volume group, and logical volume.
+pvcreate /dev/sdb vgcreate STORAGE1 /dev/sdb lvcreate -l +100%FREE STORAGE1 -n storage1  Add an additional disk (you could have done this in one step, but I want to illustrate adding a disk).
+pvcreate /dev/sdc vgextend STORAGE1 /dev/sdc lvextend -l +100%FREE /dev/STORAGE1/storage1  You can view the status of the physical and logical volumes.
+pvdisplay vgdisplay lvdisplay  </description>
+    </item>
+    
+    <item>
+      <title>Default Foreign Soft Subtitle Support In Plex Using HandBrake</title>
+      <link>http://willhaley.com/blog/default-foreign-soft-subtitle-support-in-plex-using-handbrake/</link>
+      <pubDate>Sat, 20 Aug 2016 21:24:51 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/default-foreign-soft-subtitle-support-in-plex-using-handbrake/</guid>
+      <description>After much trial and error, I discovered how to properly get subtitle support in Plex without needing to manually enable subtitles when viewing.
+The process I am using specifically covers movies transcoded from DVDs, not BluRays.
+I am using HandBrakeCLI, but you should be able to extrapolate the same process for use with the HandBrake GUI.
+I want to stop and point out a few things:
+ This guide is for soft (non-burned in) subtitles.</description>
+    </item>
+    
+    <item>
+      <title>Power Consumption Tests With a Kill A Watt</title>
+      <link>http://willhaley.com/blog/power-consumption-tests-with-a-kill-a-watt/</link>
+      <pubDate>Fri, 19 Aug 2016 16:08:15 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/power-consumption-tests-with-a-kill-a-watt/</guid>
+      <description>Saving electricity is great for the environment and my utility bill.
+I recently ran some simple experiments to try and figure out which of my computers I&amp;rsquo;m better off using as a semi-permanent Plex server. My requirements are:
+ Power to transcode Low drain on electricity  Ideally, I would use a Raspberry Pi, as it has low power requirements and is very cheap. Unfortunately, it&amp;rsquo;s not powerful enough for my needs.</description>
+    </item>
+    
+    <item>
+      <title>United Mileage Plus Security Standards are Disappointing</title>
+      <link>http://willhaley.com/blog/united-mileage-plus-security-standards-are-disappointing/</link>
+      <pubDate>Sun, 20 Mar 2016 08:51:12 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/united-mileage-plus-security-standards-are-disappointing/</guid>
+      <description>I have a tendency to go on rants when I encounter a major service provider doing something upsetting. I will do my best to temper my feelings and exhibit gracious proffesionalism while discussing some aspects of United&amp;rsquo;s Mileage Plus program that are lackluster.
+I am sharing my thoughts with the hope that someone feeling the same feelings as me on the matter can either provide some advice, counterpoint, or at least to know that they are not alone.</description>
+    </item>
+    
+    <item>
+      <title>Securely erase a disk in the terminal in OS X El Capitan</title>
+      <link>http://willhaley.com/blog/securely-erase-a-disk-in-the-terminal-in-os-x-el-capitan/</link>
+      <pubDate>Sun, 07 Feb 2016 12:05:42 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/securely-erase-a-disk-in-the-terminal-in-os-x-el-capitan/</guid>
+      <description>It took me longer than I&amp;rsquo;d like to admit to learn how to use the secureErase command to shred a disk using diskutil in OS X El Capitan.
+# This works, using one pass of random data. # Replace `disk3` with whatever you need! diskutil secureErase 1 /dev/disk3  I found the documentation for the command slightly confusing.
+diskutil secureErase [freespace] level MountPoint|DiskIdentifier|DeviceNode  I&amp;rsquo;m not used to a whole parameter being optional.</description>
+    </item>
+    
+    <item>
+      <title>Moderately Advanced Mongo Queries</title>
+      <link>http://willhaley.com/blog/moderately-advanced-mongo-queries/</link>
+      <pubDate>Wed, 16 Sep 2015 21:31:40 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/moderately-advanced-mongo-queries/</guid>
+      <description>Here are a few queries and miscellaneous commands that I like to keep on hand, and may help you as well.
+MongoDB Cheat Sheet Restore a multi-collection Mongo DB dump. tar -xzvf /tmp/backup.tar.gz -C /tmp &amp;amp;&amp;amp; mongorestore --drop /tmp/databaseName/  Export data from a Mongo collection to a CSV. mongoexport -u USERNAME -p PASSWORD -c &amp;quot;COLLECTION&amp;quot; -h HOST -d DB -q &#39;{whateverYourQueryIs: true}&#39; -f &#39;_id,field1,field2,field3&#39; --csv -o output.csv  Query by and sort by date.</description>
+    </item>
+    
+    <item>
+      <title>Creating The EncFS Extension For TinyCore Linux</title>
+      <link>http://willhaley.com/blog/creating-the-encfs-extension-for-tinycore-linux/</link>
+      <pubDate>Wed, 16 Sep 2015 21:19:56 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/creating-the-encfs-extension-for-tinycore-linux/</guid>
+      <description>Creating an extension for TinyCore Linux is fairly straightforward thanks to their documentation.
+Below is a simple bash script I used to help me automate the process when I was building the EncFS extension for TC. Note, I am not the author of EncFS. I only compiled a build and packaged it for TinyCore Linux.
+There are some major steps in the build process missing here, but you may find some helpful pointers.</description>
+    </item>
+    
+    <item>
+      <title>Different SSH Users For Vagrant SSH and Vagrant Up (Provision)</title>
+      <link>http://willhaley.com/blog/different-ssh-users-for-vagrant-ssh-and-vagrant-up/</link>
+      <pubDate>Wed, 16 Sep 2015 19:46:53 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/different-ssh-users-for-vagrant-ssh-and-vagrant-up/</guid>
+      <description>I have a Vagrant box where I want to SSH in as the standard vagrant user for the initial provision and deployment, but I want to use my own alternate custom user account for my dev work.
+I want to use vagrant for the initial deploy as that is the standard user for many vagrant machine images. Adding my own user into the image would be a pain, and would prevent me from being able to use a standard Vagrant image.</description>
+    </item>
+    
+    <item>
+      <title>Edit Microsoft Office Files in Google Drive (Docs)</title>
+      <link>http://willhaley.com/blog/edit-microsoft-office-files-in-google-drive-docs/</link>
+      <pubDate>Wed, 16 Sep 2015 18:52:08 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/edit-microsoft-office-files-in-google-drive-docs/</guid>
+      <description>Google does not seem to actively advertise this, but they have a nice Chrome extension in their Chrome Web Store that allows for editing .doc, .docx, and other Microsoft file formats in their native forms.
+Typically, when opening one of these Microsoft files, Google creates a copy in their native format (.gdoc or whatever the case may be). That is convenient, but sometimes I would prefer to maintain my documents in their original formats.</description>
+    </item>
+    
+    <item>
+      <title>Try/catch Callbacks in Javascript</title>
+      <link>http://willhaley.com/blog/try-catch-callbacks-in-javascript/</link>
+      <pubDate>Fri, 08 May 2015 19:46:12 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/try-catch-callbacks-in-javascript/</guid>
+      <description>I came across an interesting issue with a node module recently. A callback was being invoked twice. Once on a success condition, and a second time as an error condition. We typically expect a callback to be invoked once. Either on success, or error, and not twice.
+In hindsight, it was all my fault why I was encountering the issue, but a pattern in the third-party code really made it hard to debug.</description>
+    </item>
+    
+    <item>
+      <title>Octopress Maintenance</title>
+      <link>http://willhaley.com/blog/octopress-maintenance/</link>
+      <pubDate>Fri, 08 May 2015 14:58:24 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/octopress-maintenance/</guid>
+      <description>I recently noticed, by means of a Google search, that an old post of mine was still alive and well on my Octopress site. &amp;ldquo;That&amp;rsquo;s odd&amp;rdquo;, I thought, since the page no longer lived in my source control and the page still lived on even after running a rake deploy.
+This was the culprit: rsync_delete = false in my Rakefile
+I had this set to false for a very particular reason.</description>
+    </item>
+    
+    <item>
+      <title>Simple Portable Linux QEMU VM on a USB Drive</title>
+      <link>http://willhaley.com/blog/simple-portable-linux-qemu-vm-usb/</link>
+      <pubDate>Sun, 19 Apr 2015 20:46:25 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/simple-portable-linux-qemu-vm-usb/</guid>
+      <description>Create a Linux virtual machine that can run on a Windows, Linux, or Mac OSX host. The VM can be moved around on a USB drive or even synced via DropBox between machines.
+OS: Tiny Core Linux Tiny Core Linux is small and simple. Its size makes it the perfect guest OS for this project.
+Create a directory called tc to store all the files for this project.
+Let&amp;rsquo;s grab the latest Tiny Core Linux iso.</description>
+    </item>
+    
+    <item>
+      <title>Access Host from QEMU VM</title>
+      <link>http://willhaley.com/blog/access-host-from-qemu-vm/</link>
+      <pubDate>Sun, 19 Apr 2015 13:50:27 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/access-host-from-qemu-vm/</guid>
+      <description>From within a QEMU VM, you can access the host at 10.0.2.2. This is a special network address created by Qemu as a convenience. It is very helpful if you want a &amp;ldquo;Shared Folder&amp;rdquo;, similar to what you might use in Virtualbox, in Qemu. This allows us to easily transfer files between the guest and host.
+In my case, I am using Windows 7 as the host and a live ISO for Puppy Linux as the guest.</description>
+    </item>
+    
+    <item>
+      <title>Clone Windows To a Smaller Drive</title>
+      <link>http://willhaley.com/blog/clone-windows-to-a-smaller-drive/</link>
+      <pubDate>Sun, 08 Mar 2015 22:41:38 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/clone-windows-to-a-smaller-drive/</guid>
+      <description>In the past I have used the built-in Windows Disk Management snap-in to shrink volumes and clone them to smaller disks, but I recently discovered that in some cases, Windows will only let you shrink a volume so far.
+If a volume cannot be shrunk down enough, then it will be impossible to clone it to a smaller drive. This may happen if you want to replace a 1TB 5400 RPM drive with something like a 512GB SSD.</description>
+    </item>
+    
+    <item>
+      <title>Backup, Disk Encryption, Keyfiles, Physical Theft, and the Raspberry Pi</title>
+      <link>http://willhaley.com/blog/backup-disk-encryption-keyfiles-physical-theft-raspberry-pi/</link>
+      <pubDate>Sat, 21 Feb 2015 01:40:57 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/backup-disk-encryption-keyfiles-physical-theft-raspberry-pi/</guid>
+      <description>Backup Servers and Security I am the IT manager for my family. I&amp;rsquo;m in charge of all laptop/desktop upgrades and often help in any technology purchasing decisions. As the head of IT, I also feel a sense of responsibility for making sure everyone&amp;rsquo;s data is backed up. A paid service like DropBox or OneDrive may be nice and reliable, if expensive, but I have several Raspberry Pi&amp;rsquo;s sitting around, so why not put them to good use?</description>
+    </item>
+    
+    <item>
+      <title>WordPress in tiny core linux 6</title>
+      <link>http://willhaley.com/blog/wordpress-in-tiny-core-linux-6/</link>
+      <pubDate>Fri, 16 Jan 2015 20:43:59 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/wordpress-in-tiny-core-linux-6/</guid>
+      <description>For this post I&amp;rsquo;m assuming you already have Tiny Core Linux up and running and persistence (Tiny Core&amp;rsquo;s ability to save changes) is working. I&amp;rsquo;m also assuming that your installation of Tiny Core Linux has an adequately sized hard drive.
+Setup MySQL Use these instructions, or whatever method you prefer, to get MariaDB (A &amp;ldquo;drop-in&amp;rdquo; MySQL replacement) working in your Tiny Core installation. Note: I may use the names MySQL and MariaDB interchangeably in these instructions.</description>
+    </item>
+    
+    <item>
+      <title>MariaDB in Tiny Core linux</title>
+      <link>http://willhaley.com/blog/mariadb-tinycore-linux/</link>
+      <pubDate>Tue, 13 Jan 2015 22:29:39 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/mariadb-tinycore-linux/</guid>
+      <description>To use MariaDB with Tiny Core Linux you must provide a data directory that is persistent and writeable. By default, if you install the MariaDB extension and try to run it, you will most likely see an error like this.
+150126 3:12:11 [ERROR] mysqld: File &#39;/tmp/tcloop/mariadb/usr/local/mysql/data/aria_log_control&#39; not found (Errcode: 30 &amp;quot;Read-only file system&amp;quot;) 150126 3:12:11 [ERROR] mysqld: Got error &#39;Can&#39;t open file&#39; when trying to use aria control file &#39;/tmp/tcloop/mariadb/usr/local/mysql/data/aria_log_control&#39; 150126 3:12:11 [ERROR] Plugin &#39;Aria&#39; init function returned error.</description>
+    </item>
+    
+    <item>
+      <title>Portable WordPress for Windows</title>
+      <link>http://willhaley.com/blog/portable-wordpress-for-windows/</link>
+      <pubDate>Sat, 10 Jan 2015 13:39:44 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/portable-wordpress-for-windows/</guid>
+      <description>I occasionally teach computer classes at a local community center and one of our classes covers basic WordPress and web design.
+One of our goals in the first iteration of this class was to have students interact with a full WordPress installation. However, we did not want to pay for web hosting or set up a server in-house that the students could connect to. Primarily, the effort of administrating the WordPress instances and user accounts did not seem worthwhile.</description>
+    </item>
+    
+    <item>
+      <title>Install android apps to SD card by default</title>
+      <link>http://willhaley.com/blog/install-android-apps-to-sd-card-by-default/</link>
+      <pubDate>Fri, 09 Jan 2015 22:47:44 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/install-android-apps-to-sd-card-by-default/</guid>
+      <description>There&amp;rsquo;s a bit of a bad user experience when you run out of space to install new apps on your Android device. You may want to move newly installed apps to your SD card to free up space on-device, but you can&amp;rsquo;t download any apps in the first place if your device does not have sufficient storage space in the default installation location.
+To get Android to install to your SD card by default, you can use the following command.</description>
+    </item>
+    
+    <item>
+      <title>LUKS Encrypted File Container (Disk Image) On Linux</title>
+      <link>http://willhaley.com/blog/encrypted-file-container-disk-image-in-linux/</link>
+      <pubDate>Tue, 14 Oct 2014 17:28:55 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/encrypted-file-container-disk-image-in-linux/</guid>
+      <description>These instructions can be used to create an encrypted disk image/volume/file container/whatever you want to call it.
+I will show you how to use cryptsetup and common Linux commands to create a disk image, create a random keyfile, and encrypt and unlock your disk image with that keyfile. You can just as easily use a passphrase rather than a key if you would prefer. Read a cryptsetup manual for more information regarding cryptsetup.</description>
+    </item>
+    
+    <item>
+      <title>Root Samsung Galaxy S Blaze 4G (SGH-T769)</title>
+      <link>http://willhaley.com/blog/root-samsung-galaxy-s-blaze-4g-sgh-t769/</link>
+      <pubDate>Thu, 15 May 2014 21:59:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/root-samsung-galaxy-s-blaze-4g-sgh-t769/</guid>
+      <description>I wrote this because I could not find one specific post or site that could confirm the process for rooting my phone. You may prefer to read the xda-developers forum post where I learned the process and to watch the video about rooting that they posted. They do not specifically cover the SGH-T769 in their post or video.
+Follow these instructions at your own risk! There is a chance that your phone could become permanently and irreversibly damaged and your data will be lost if you follow these instructions, and you will almost certainly void your warranty.</description>
+    </item>
+    
+    <item>
+      <title>Chinese Characters in Android Emulator</title>
+      <link>http://willhaley.com/blog/chinese-characters-in-android-emulator/</link>
+      <pubDate>Mon, 21 Oct 2013 21:13:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/chinese-characters-in-android-emulator/</guid>
+      <description>In my experience, every Android emulator normally uses the Latin (English) IME for character input. An exception to this is the 3.x emulator. I do not know if this varies by SDK version or by OS, but I have seen this emulator differs from the others in that the default input method, randomly, uses the Pinyin/Chinese character set.
+I apologize for my ignorance in that I do not know exactly what Pinyin applies to, but a a quick google search seems to imply that it &amp;ldquo;is the official phonetic system for transcribing the sound of Chinese characters into Latin script&amp;hellip;&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Reset Raspberry Pi Password Offline</title>
+      <link>http://willhaley.com/blog/reset-raspberry-pi-password-offline/</link>
+      <pubDate>Thu, 10 Oct 2013 20:31:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/reset-raspberry-pi-password-offline/</guid>
+      <description>These instructions apply not just to a Raspberry Pi, but many Linux distributions. If you forgot the password to your Pi, worry not, it&amp;rsquo;s possible to reset it without re-installing.
+ Take the SD card out of your Pi and plug it into another computer with an SD card reader. Open the SDCARD/etc/shadow file on your Raspberry Pi Look down the list for your user name. It should look like this.</description>
+    </item>
+    
+    <item>
+      <title>Backup Windows over the Internet with rsync, SSH, and Raspberry Pi</title>
+      <link>http://willhaley.com/blog/backup-windows-internet-rsync-ssh-raspberry-pi/</link>
+      <pubDate>Thu, 10 Oct 2013 20:22:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/backup-windows-internet-rsync-ssh-raspberry-pi/</guid>
+      <description>You will need the following:
+ A Pi with Raspbian installed and the SSH daemon (sshd) enabled Enough free space on your Pi to backup whatever it is you want to backup (you could always connect an external drive and mount that on your Pi) Update your router so that external requests to port 22 (SSH) are forwarded to your Pi Read and understand the risks involved with exposing port 22 (SSH) to the Internet  These instructions assume you are using the default pi account on the Pi device.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Hotspot With The Edimax EW-7811Un (RTL8188CUS chipset)</title>
+      <link>http://willhaley.com/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/</link>
+      <pubDate>Wed, 01 May 2013 22:11:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/</guid>
+      <description>These instructions are meant to help you use your Raspberry Pi as a WiFi hotspot (wireless access point) using an Edimax EW-7811Un wireless network adapter. This will allow your Raspberry Pi to share it&amp;rsquo;s wired network connection over WiFi.
+Please keep in mind that you must already have a working wired network connection to your Raspberry Pi for these instructions to be meaningful. These instructions will not circumvent your need to obtain an initial connection to the Internet or LAN for your Raspberry Pi to share.</description>
+    </item>
+    
+    <item>
+      <title>Clone Windows XP to a larger partition with Linux</title>
+      <link>http://willhaley.com/blog/clone-xp-to-larger-partition-with-linux/</link>
+      <pubDate>Sun, 21 Apr 2013 21:56:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/clone-xp-to-larger-partition-with-linux/</guid>
+      <description>I have XP installed on a drive with a configuration like this. (In reality, each partition was 10x larger, but I&amp;rsquo;m using smaller numbers for this example).
+[ ~2GB FAT32 | E: (/dev/sda1) ] [ ~6GB NTFS | C: (/dev/sda2) ] [ ~2GB NTFS | F: (/dev/sda3) ]  It may look unusual that C: is not the first partition, but a setup like this is not entirely unsual for an OEM hard drive.</description>
+    </item>
+    
+    <item>
+      <title>Clone Windows XP from an IDE to SATA drive</title>
+      <link>http://willhaley.com/blog/clone-windows-xp-from-an-ide-to-sata-drive/</link>
+      <pubDate>Sun, 21 Apr 2013 17:06:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/clone-windows-xp-from-an-ide-to-sata-drive/</guid>
+      <description>I have an old Dell desktop that seems to crawl to a stop whenever some intense disk I/O takes place. I also happen to have a spare SSD. That SSD would give this machine a nice performance boost. The current IDE drive in the Dell has the exact same amount of space as the SSD. Unfortunately, this Dell has no SATA support and the SSD has a SATA interface. Not to worry.</description>
+    </item>
+    
+    <item>
+      <title>Flask on BlueHost</title>
+      <link>http://willhaley.com/blog/flask-on-bluehost/</link>
+      <pubDate>Sun, 22 Apr 2012 16:41:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/flask-on-bluehost/</guid>
+      <description>These instructions assume you have already installed a version of Python compatible with Flask. They also assume you have installed pip, a Python package manager. I&amp;rsquo;ve written [instructions]/blog/python-27-bluehost/) for this.
+Be mindful when copying and pasting the code below. Make sure you use Unix-style line endings in your text editor, as Michael Lee points out in the comments below. You will very likely encounter issues if you use Windows-style line endings.</description>
+    </item>
+    
+    <item>
+      <title>Python 2.7 on Bluehost</title>
+      <link>http://willhaley.com/blog/python-27-bluehost/</link>
+      <pubDate>Tue, 17 Apr 2012 21:43:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/python-27-bluehost/</guid>
+      <description>These instructions worked for me on my BlueHost instance, but I cannot guarantee they will work for everyone. Luckily, gcc, g++, make, and every utility that I needed to install Python 2.7 were already present in my case.
+In order for this to work, enable SSH on your Bluehost.com account and verify that you can connect to your server, then follow the directions below.
+ Connect to your server by SSH</description>
+    </item>
+    
+    <item>
+      <title>Optware on the PogoPlug</title>
+      <link>http://willhaley.com/blog/optware-on-the-pogoplug/</link>
+      <pubDate>Thu, 22 Mar 2012 23:56:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/optware-on-the-pogoplug/</guid>
+      <description> http://tech.groups.yahoo.com/group/nslu2-general/files/Plug%20Files Register to join the nslu2 Yahoo group. It&amp;rsquo;s quick and easy. Check out the plug.tar.gz file (read the comments provided for that file). It&amp;rsquo;s an archive that has all the important files ready to go. It can save you a lot of time and work. You should also take a gander at the profile file they provide Once you follow the instructions on the Yahoo group installing rsync is as simple as  ipkg install rsync  </description>
+    </item>
+    
+    <item>
+      <title>PogoPlug Software and Support Issues</title>
+      <link>http://willhaley.com/blog/pogoplug-software-and-support-issues/</link>
+      <pubDate>Sun, 04 Mar 2012 23:32:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/pogoplug-software-and-support-issues/</guid>
+      <description>My family has a lot of old slides and photos. We bought my father a scanner for Christmas 2010 so he could scan those memories onto our family laptop. To date, my father has scanned in over 40 years worth of photos.
+I knew I had to implement a backup solution for the photos, but I did not want a Desktop PC powered on 24 hours a day to act as a backup server.</description>
+    </item>
+    
+    <item>
+      <title>T-Mobile Password Confusion</title>
+      <link>http://willhaley.com/blog/tmobile-password-confusion/</link>
+      <pubDate>Sun, 26 Feb 2012 00:38:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/tmobile-password-confusion/</guid>
+      <description>Last week I signed into t-mobile.com and received a message requesting that I update my password as part of a security upgrade. &amp;ldquo;Fair enough&amp;rdquo;, I thought. My password on T-Mobile was pretty weak and could use some updating, and if this was part of a larger security upgrade on their part, then by all means, update away.
+I tried my standard method for creating a strong (but unique) password for that site, and was met with an annoying limit on special characters.</description>
+    </item>
+    
+    <item>
+      <title>Altiris Folder Automatic Organization</title>
+      <link>http://willhaley.com/blog/altiris-folder-org/</link>
+      <pubDate>Fri, 03 Feb 2012 23:13:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/altiris-folder-org/</guid>
+      <description>During an Altiris Deployment Server implementation I was interested in a way to automatically sort computer objects based on office name. Some consultants I was working with at the time offered up the base code and a brief explanation of stored procedures. I ran with it and modified the SQL to suit my needs.
+It was a good introduction to stored procedures and more complex SQL than I&amp;rsquo;d dealt with at the time.</description>
+    </item>
+    
+    <item>
+      <title>Single Running Instance of a Java Application</title>
+      <link>http://willhaley.com/blog/java-single-instance/</link>
+      <pubDate>Fri, 03 Feb 2012 23:08:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/java-single-instance/</guid>
+      <description>I&amp;rsquo;ve been trying to find a reliable way to make sure I only have a single instance of a running Java application. A lot of suggestions I found online recommended opening a Socket on a specific port that you reserve for your program. I don&amp;rsquo;t like this approach because it seems a bit short-sighted. If another program needs to be deployed on your computer(s) and that program uses the same port as your own then you have a conflict.</description>
+    </item>
+    
+    <item>
+      <title>Delay Windows Idle Timer</title>
+      <link>http://willhaley.com/blog/delay-windows-idle-timer/</link>
+      <pubDate>Fri, 03 Feb 2012 23:01:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/delay-windows-idle-timer/</guid>
+      <description>The idle timer is the countdown after a user driven event on a Windows computer. So if your computer is set to enable a screensaver &amp;ldquo;after 5 minutes&amp;rdquo;, that &amp;ldquo;after&amp;rdquo; refers to a user driven event like moving the mouse or pressing a key.
+This program simulates a user driven event to reset that idle timer.
+Download Program
+I have not tested this extensively, but it does work in Windows 7 x86 as an Admin.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Why Is Finding A Reliable USB WiFi Device For Linux Difficult? - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="TL;DR Most manufacterers do not play well with Linux. ThinkPenguin Devices are designed for Linux and should always work out-of-the-box! Finding a reliable USB ...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/finding-linux-wifi-usb/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Why Is Finding A Reliable USB WiFi Device For Linux Difficult?</h1>
+    <p class="post-meta"><time datetime="2017-10-07T16:08:00+00:00" itemprop="datePublished">Oct 7, 2017</time><span class="date-modified">Updated <time datetime="2018-04-14T00:00:00+00:00" itemprop="dateModified">Apr 14, 2018</time></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p><strong>TL;DR Most manufacterers do not play well with Linux. <a href="https://www.thinkpenguin.com/catalog/wireless-networking-gnulinux">ThinkPenguin Devices</a> are designed for Linux and should always work out-of-the-box!</strong></p>
+
+<p>Finding a reliable USB Linux WiFi device can be complicated.</p>
+
+<p>I naively bought several devices from Amazon that had mixed reviews for Linux support, and I informally tested them at home on Ubuntu. It was a simplistic effort to find a card that worked out of the box on Ubuntu.</p>
+
+<p>Some of the devices I purchased seemed to be working without issue and so I wrote <a href="/blog/linux-usb-wifi/">an article</a> proclaiming, &ldquo;These devices work on Linux!&rdquo; in the hope that I could help recommend devices for Linux users like me.</p>
+
+<p>Although I may have had good intentions, that article was actually more harmful than helpful.</p>
+
+<p>A commenter on that article <a href="http://willhaley.com/blog/linux-usb-wifi/#comment-3480480313">rightly pointed out to me</a> the various problems with lists like mine that recommend specific USB WiFi devices for Linux, and I have since rewritten that article to be more informative and helpful.</p>
+
+<p>I would summarize the issues (from my perspective) as follows.</p>
+
+<ul>
+<li><a href="#marketing-and-sales-confusion">Marketing and Sales confusion</a></li>
+<li><a href="#chipset-inconsistency">Chipset Inconsistency</a></li>
+<li><a href="#driver-support">Driver Support</a></li>
+<li><a href="#unpredictable-chipsets-unpredictable-features">Unpredictable Chipsets -&gt; Unpredictable Features</a></li>
+</ul>
+
+<p><strong><a href="https://wiki.debian.org/WiFi">This Debian article on WiFi</a> sums things up far better than I ever could.</strong></p>
+
+<blockquote>
+<p>Currently there are only a few modern wifi chipsets readily available that work with free software systems.</p>
+
+<p>&hellip;</p>
+
+<p>USB Wifi cards are becoming less free.</p>
+</blockquote>
+
+<p>I spent enough time and energy researching this that I figured I may as well share my fumblings and findings in case they are helpful to anyone.</p>
+
+<p><a href="#thinkpenguin-wifi-devices-for-linux">My own conclusion</a> is that <a href="https://www.thinkpenguin.com/catalog/wireless-networking-gnulinux">ThinkPenguin devices</a> are the only networking hardware I feel confident will always work on Linux, and that they are the only company that will give me the exact chipset they advertise. That alone is extremely helpful whenever I need Atheros chipsets for penetration testing. <strong>Though, I must admit, the lack of modern features (5Ghz 802.11ac for instance) are a major downside for ThinkPenguin.</strong></p>
+
+<p>In general, the state of USB WiFi on Linux is less than ideal. PCI cards, ethernet bridges, and USB WiFi tethering may be better options depending on your situation.</p>
+
+<p><em>I am no expert. Please comment and critique this article if you think I am way off the mark on any points. My opinions and observations are my own. I give no guarantees and you are responsible for your own purchasing decisions.</em></p>
+
+<h1 id="marketing-and-sales-confusion">Marketing and Sales Confusion</h1>
+
+<p>I buy almost everything on Amazon, and I rely on Amazon reviews to inform my purchasing. In my quest to find a USB WiFi device for Linux that &ldquo;just works&rdquo;, I often found reviews like these.</p>
+
+<p>One review for <a href="https://www.amazon.com/Panda-300Mbps-Wireless-USB-Adapter/dp/B00EQT0YK2/ref=cm_cr_srp_d_product_top?ie=UTF8">the Panda PAU05 300Mbps</a> said it has an <code>RT5372</code> chipset.</p>
+
+<!-- https://www.amazon.com/review/RMT9IALY45B4T/ref=ask_dp_lswr_rp_hza -->
+
+<p><img src="/images/chipsets/Panda PAU05 300Mbps 1.png" alt="Panda PAU05 300Mbps 1.png" /></p>
+
+<p>Another review says the same product has an <code>RT2870</code> chipset.</p>
+
+<!-- https://www.amazon.com/review/R9PNEUOR226MI/ref=ask_dp_lswr_rp_hza -->
+
+<p><img src="/images/chipsets/Panda PAU05 300Mbps 2.png" alt="Panda PAU05 300Mbps 2.png" /></p>
+
+<p>What is happening? How are we seeing the same <em>model</em> of a USB WiFi network device reportedly having multiple supported <em>chipsets</em>?</p>
+
+<p>Here is another example of that same chipset inconsistency.</p>
+
+<p>The <strong>manufacturer</strong> of the <a href="https://www.amazon.com/ANEWISH-Adapter-802-11ac-Wireless-10-4-10-12-5/dp/B06XMZ4Y4B/ref=sr_1_22?s=pc&amp;ie=UTF8&amp;qid=1506624585&amp;sr=1-22&amp;keywords=usb+wifi">ANEWISH Wifi Adapter 600Mbps USB Wifi Adapter</a> says the chipset is an <code>RTL8111</code>.</p>
+
+<p><!-- https://www.amazon.com/ask/questions/TxY0F9PSNZI6CZ/ref=ask_dp_lsw_al_hza?asin=B06XMZ4Y4B --><br />
+<img src="/images/chipsets/ANEWISH 600Mbps.png" alt="ANEWISH 600Mbps.png" /></p>
+
+<p>Then a reviewer claims their device has the <code>RTL8188AU</code> chipset.</p>
+
+<!-- https://www.amazon.com/review/RTK95CJ3EUX21/ref=ask_dp_lswr_rp_hza -->
+
+<p><img src="/images/chipsets/ANEWISH 600Mbps 2.png" alt="ANEWISH 600Mbps 2.png" />
+​</p>
+
+<!--
+
+This is yet another example here where the [**manufacturer**](https://www.amazon.com/sp?_encoding=UTF8&asin=B01G8IPLD8&isAmazonFulfilled=1&isCBA=&marketplaceID=ATVPDKIKX0DER&orderID=&seller=A16UPHTV03MQOZ&tab=&vasStoreID=) of the [ANEWKODI 600Mbps Dual Band](https://www.amazon.com/gp/product/B01G8IPLD8/ref=ask_ql_qh_dp_hza) tells an Amazon user that that there are multiple chipsets for the same device, and the only way to tell the difference is the price.
+
+![ANEWKODI 600Mbps Chipset.png](/images/chipsets/ANEWKODI 600Mbps Chipset.png)
+
+-->
+
+<p>The <a href="https://wikidevi.com/wiki/Edimax_EW-7811UTC">Edimax-EW-7811UTC</a> is another great example of this confusion in how devices can be marketed one way, but the underlying device internals are likely to be inconsistent.</p>
+
+<p>The <a href="https://wikidevi.com/wiki/Edimax_EW-7811UTC">WikiDev articles</a> for the Edimax-EW-7811UTC clearly state that there are multiple revisions of the same device.</p>
+
+<blockquote>
+<p>multiple revisions of this device, use caution</p>
+</blockquote>
+
+<p>This is a case where a device is marketed and sold under one model number, but there are different internals being used across the multiple revisions of that one card. We have almost no guarantee or way of knowing which flavor we will receive.</p>
+
+<p>For that Edimax device, it <em>seems</em> the same chipset is used across <a href="https://wikidevi.com/w/index.php?title=Special:Ask&amp;q=%5B%5BASIN%3A%3A~B00FW6T36Y*%5D%5D&amp;p=format%3Dbroadtable%2Fheaders%3Dshow%2Flink%3Dall%2Fclass%3Dsortable-20wikitable-20smwtable&amp;offset=&amp;limit=&amp;eq=no">multiple revisions</a>, but there is no guarantee there aren&rsquo;t other varying chipsets in use for that model right now, or in the near future. <a href="https://wikidevi.com/wiki/Edimax_EW-7811UTC">One revision of that device</a> has a vendor id (VID) and product id (PID) of <code>7392:a811</code>, and <a href="https://wikidevi.com/wiki/Edimax_EW-7811UTC_7392_A812">another revision of that same device</a> has a vendor id (VID) and product id (PID) of <code>7392:a812</code>.</p>
+
+<p>We might, understandably, presume that the device with product id <code>a811</code> uses the <a href="http://www.realtek.com/products/productsView.aspx?Langid=1&amp;PNid=21&amp;PFid=57&amp;Level=5&amp;Conn=4&amp;ProdID=400">rtl8811au</a> chipset while the device with product id <code>a812</code> uses the <a href="http://www.realtek.com.tw/products/productsView.aspx?Langid=1&amp;PFid=57&amp;Level=5&amp;Conn=4&amp;ProdID=397">rtl8812au</a> chipset, but it appears they <em>both</em> use the <code>rtl8811au</code> chipset.</p>
+
+<p>This behavior by companies to market devices with different internals, but the same branding and model number, can clearly lead to confusion.</p>
+
+<h1 id="chipset-inconsistency">Chipset Inconsistency</h1>
+
+<p>What is going on in those reviews? Why is there confusion as to which chipset these USB WiFi devices will have, even when directly asking the manufacturers?</p>
+
+<p>From what I&rsquo;ve been told, read, and observed firsthand, <strong>manufacturers can, and clearly do, sell the same <em>model</em> of a USB WiFi product, but using <em>multiple varying chipsets</em>.</strong></p>
+
+<p>The way this behavior manifests is as we see in the Amazon reviews above.</p>
+
+<p>Two users can buy the same model of a card and end up with different chipsets.</p>
+
+<pre><code>Consumer A
+	Buys WiFi Card X
+	Card has chipset 123
+
+Consumer B
+	Buys WiFi Card X
+	Card has chipset 456
+</code></pre>
+
+<p>This behavior is one of the issues that was pointed out to me by the helpful commenter on my other article.</p>
+
+<p>Because of this behavior, articles <a href="/blog/linux-usb-wifi/">like the one I wrote</a> proclaiming, &ldquo;These devices work on Linux!&rdquo;, are actually very dubious. How can I, or anyone else, recommend a USB WiFi card if I cannot guarantee which chipset a consumer will receive?</p>
+
+<p><a href="https://www.thinkpenguin.com/catalog/wireless-networking-gnulinux">ThinkPenguin</a> solves this problem by using chipsets that are suited for Linux.</p>
+
+<blockquote>
+<p>Our products are freedom-compatible: Meaning they will work with just about any free software operating system.</p>
+
+<p>&hellip;</p>
+
+<p>The chipsets we use encourage community development and user participation.</p>
+</blockquote>
+
+<p>ThinkPenguin clearly indicates which (free software friendly) chipsets they use in each device, their chipsets are supported with open source drivers, and ThinkPenguin does not change their chipsets at random.</p>
+
+<p>The <a href="https://www.amazon.com/TP-Link-N150-Wireless-Adapter-TL-WN725N/dp/B008IFXQFU/ref=sr_1_8?s=pc&amp;ie=UTF8&amp;qid=1506624585&amp;sr=1-8&amp;keywords=usb+wifi">TP-Link N150 Wireless Nano USB Adapter (TL-WN725N)</a> is a perfect and unfortunate example of the chipset inconsistency problem.</p>
+
+<!-- https://www.amazon.com/ask/questions/TxXBMRIGZIIE6Q/? -->
+
+<p><img src="/images/chipsets/TP-Link N150 multiple chipsets.png" alt="TP-Link N150 multiple chipsets.png" />.</p>
+
+<p>It is a total gamble for Linux when we buy devices like these. <strong>We have almost zero guarantee which chipset will be in our device when it arrives even when we buy the exact same model of a device as someone else.</strong></p>
+
+<p>ThinkPenguin, on the other hand, uses predictable and reliable chipsets.</p>
+
+<h1 id="driver-support">Driver Support</h1>
+
+<p>Even if we decide to gamble and purchase an oddball USB WiFi device, I have found that the vendor-supplied Linux drivers for the USB WiFi devices I bought on Amazon were pretty awful.</p>
+
+<p>The drivers were designed for 2.6 kernels, were poorly documented, and never installed properly.</p>
+
+<p>This may not <em>always</em> be the case, but considering I saw the vendor Linux drivers were consistenly terrible, I imagine it is a common occurance.</p>
+
+<p>Because most consumer USB WiFi device manufacturers do not work with the community, <a href="https://wiki.debian.org/WiFi">Linux support is problematic</a>.</p>
+
+<blockquote>
+<p>Non-free drivers and firmware are produced by companies refusing or unable to cooperate with the free software community. With non-free drivers and firmware support is often unavailable or severely strained. For instance features are often left out, bugs go unfixed, and what support does exist from the manufacture is fleeting.</p>
+</blockquote>
+
+<p>It seems to me that manufacturer behaviors make it exceedingly difficult to develop reliable Linux drivers. Again, this is a case where ThinkPenguin is an appealing choice for Linux since they <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb">have mainline kernel support</a>. However, the USB WiFi space is <a href="https://wiki.debian.org/WiFi">challenging</a> for ThinkPenguin.</p>
+
+<blockquote>
+<p>With 802.11N there is only one chipset on the market from Atheros which is completely free.</p>
+
+<p>ThinkPenguin.com, has indicated the availability of free software supported 802.11N USB wifi cards is disappearing. Solving this problem will require more demand than currently exists. Next time you purchase a piece of hardware ask yourself if it is free software compatible.</p>
+</blockquote>
+
+<p>I should point out that there certainly are <a href="https://wiki.debian.org/WiFi">a plethora of other (non-free) Linux USB WiFi drivers out in the wild</a>. It is not as though <em>only</em> ThinkPenguin devices will work on Linux, but rather, they seem to have the best support due to the nature of their relationship with the Linux community.</p>
+
+<h1 id="unpredictable-chipsets-unpredictable-features">Unpredictable Chipsets -&gt; Unpredictable Features</h1>
+
+<p>Some users may purchase WiFi devices because they want a particular chipset with a particular feature.</p>
+
+<p>Since manufacturers often change chipsets at random, we cannot ensure that buying a card off of Amazon or some other electronics site will have the chipset we desire with the feature(s) we desire.</p>
+
+<p>See examples of this issue here for the <a href="https://www.amazon.com/TP-Link-Wireless-Adapter-TL-WN722N-Version/dp/B002SZEOLG/ref=cm_cr_srp_d_product_top?ie=UTF8">TP-Link N150</a>. Some users received cards with an Atheros chipset that supports <a href="https://en.wikipedia.org/wiki/Monitor_mode">monitor mode</a>, which is ideal for security penetration testing. However, not <em>all</em> the cards have that chipset, and some users were left in the lurch.</p>
+
+<!-- https://www.amazon.com/gp/customer-reviews/R2LH3GL82Z1L2Y/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU -->
+
+<p><img src="/images/chipsets/Ath9k.png" alt="Ath9k.png" />.</p>
+
+<p>Other users purchasing <strong>the same card</strong> ended up with devices that had a <strong>different chipset</strong> that <em>does not</em> support monitor mode.</p>
+
+<!-- https://www.amazon.com/review/R2EA3UWRN6RUKM/ref=ask_dp_lswr_rp_hza -->
+
+<p><img src="/images/chipsets/Not Atheros chipset.png" alt="Not Atheros chipset.png" />.</p>
+
+<p>This user had the same issue.</p>
+
+<!-- https://www.amazon.com/gp/customer-reviews/R13U0L7849J5L8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU -->
+
+<p><img src="/images/chipsets/Bad info.png" alt="Bad info.png" />.</p>
+
+<!--
+# Buyers Beware
+
+It is entirely possible for cards with the same model number, but different chipsets, to have either very subtle or _no_ obvious differences, making it impossible to tell which one has which chipset.
+
+https://www.amazon.com/review/RDCADVGT5FXLM/ref=ask_dp_lswr_rp_hza
+![No visible indicators.png](/images/chipsets/No visible indicators.png).
+
+This issue can be extremely frustrating if you want to purchase a card whose chipset supports a specific feature, like monitor mode.
+
+https://www.amazon.com/gp/customer-reviews/R18SFO30VJKX5Q/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU
+![Monitor mode.png](/images/chipsets/Monitor mode.png).
+
+And users may end up stuck with a card they cannot use, or that is lacking an essential feature they wanted.
+
+https://www.amazon.com/gp/customer-reviews/R27VZHDA9H5ZX0/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU
+![TP-Link 1.png](/images/chipsets/TP-Link 1.png)
+
+-->
+
+<!--
+# Chipset X Sucks. Long Live Chipset Y!
+
+To further complicate matters, I occasionally ran into reviews like these.
+
+Here we have a review claiming that Realtek is a "good chipset".
+
+https://www.amazon.com/review/R1E095JYY583US/ref=ask_dp_lswr_rp_hza
+![Realtek is great.png](/images/chipsets/Realtek is great.png)
+
+Then, for another device, a review claiming that "Realtek is the worst of all chipset manufacturers".
+
+https://www.amazon.com/gp/customer-reviews/R2SX2I0AV7XCAZ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B003MTTJOY
+![Realtek is awful.png](/images/chipsets/Realtek is awful.png)
+
+For a person like myself who has _no experience_ with chipsets, it is difficult to look at the material online and determine what cards are the best bets.
+
+My hunch would say most of these criticisms or support for any chipset are based more on opinions than facts, but it is difficult to tell.
+
+-->
+
+<p>Since ThinkPenguin cards offer consistent chipsets, we can confidently purchase <a href="https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb">a card with an Atheros chipset supporting monitor mode from ThinkPenguin</a> and know that we will receive a card with those features.</p>
+
+<h1 id="thinkpenguin-wifi-devices-for-linux">ThinkPenguin WiFi Devices For Linux</h1>
+
+<p>A far better solution than playing this guessing game with manufacturers would seem to be purchasing the <a href="https://www.thinkpenguin.com/catalog/wireless-networking-gnulinux">networking devices sold by ThinkPenguin</a>.</p>
+
+<p>These devices clearly list which chipset is used, and the open source drivers for these devices are included with pretty much every modern Linux kernel.</p>
+
+<p>ThinkPenguin <a href="https://www.thinkpenguin.com/about">makes a concerted effort</a> to sell hardware that is designed for Linux.</p>
+
+<blockquote>
+<p>The chipsets we use encourage community development and user participation. Users can not be locked into a vendor or product, be forced into an expensive upgrade, or have other digital restrictions placed on them.</p>
+</blockquote>
+
+<p>As that <a href="/blog/linux-usb-wifi/#comment-3480480313">helpful commenter pointed out to me in my other article</a>, ThinkPenguin devices are ideal for Linux.</p>
+
+<blockquote>
+<p>They&rsquo;re the only adapters you can be reasonably confident are going to be properly supported now and into the future because the community is able to fix bugs, add features, etc. They also don&rsquo;t change chipsets randomly so you know what your getting.</p>
+</blockquote>
+
+<p>I understand ThinkPenguin devices may not suit everyone&rsquo;s needs. Their cards lack modern features, the prices may be a little more expensive, and shopping with ThinkPenguin may not be as convenient as with Amazon.</p>
+
+<p>If we must buy a non-free USB WiFi card, all we can do is cross our fingers and hope for the best. Hope that the manufacturer from whom we purchase do their best to conform to best practices and act as faithful allies to the Linux community.</p>
+
+<p>As someone who cares about free and open software and hardware, I plan to buy ThinkPenguin devices when they fit my needs. I will buy non-free devices as well, but I hope that supporting companies like ThinkPenguin will help the Linux community overall.</p>
+
+<p><strong>As long as ThinkPenguin maintains their current stance, we know which chipset our USB networking cards will have that they will be well-supported on Linux.</strong></p>
+
+<!--
+
+# But...Amazon
+
+As much as I will shout out support for ThinkPenguin from the mountaintops, I understand a few shortcomings.
+
+1. Most people probably go to Amazon without a second thought
+2. ThinkPenguin has no cards supporting the [IEEE 802.11ac standard](https://en.wikipedia.org/wiki/IEEE_802.11ac)
+3. ThinkPenguin cards may not support Feature X that you want
+
+I think it is a tradeoff. Would you rather buy a card off Amazon and cross your fingers that you get the chipset you wanted, and may perform better? Or would you rather support open source and go with something a bit more reliable and predictable?
+
+I went both routes. I bought some ThinkPenguin devices to help support their efforts, and still bought some Amazon cards for the sake of testing.
+
+You _may_ scour the Amazon reviews for a device, and if you only ever find refernce of _one_ chipset, you could probably assume that manufacturer does not change their chipset, but again, there is **no guarantee** that they will not change it in the future, or that you will be the one unlucky customer to get a card with a different chipset.
+
+If you go the Amazon route, be prepared to hunt for drivers or return the device if it does not suit your needs or is not what you expected.
+
+# More Cards With Multiple Chipsets
+
+​Chipset may vary - https://www.amazon.com/USB-N13-Wireless-N-Adapter-802-11b-Wireless/dp/B002UVNW5W/ref=sr_1_88?s=pc&ie=UTF8&qid=1506626052&sr=1-88&keywords=usb+wifi
+
+https://www.amazon.com/gp/customer-reviews/R2U95S6MKSCILA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B002UVNW5W
+![ASUS USB-N13 1.png](/images/chipsets/ASUS USB-N13 1.png)
+
+Oh no :(
+
+https://www.amazon.com/Panda-300Mbps-Wireless-USB-Adapter/dp/B00EQT0YK2/ref=sr_1_58?s=pc&ie=UTF8&qid=1506626035&sr=1-58&keywords=usb+wifi
+
+Even devices [that I recommended]() suffer from this issue :-/ I'm just as much a part of the problem.
+
+This kind of product grid, good lucking sussing out reviews. https://www.amazon.com/Belkin-N300-Pocket-Adapter-300Mbps/dp/B004N625BO/ref=sr_1_53?s=pc&ie=UTF8&qid=1506626035&sr=1-53&keywords=usb+wifi
+​
+Multiple chipsets https://www.amazon.com/Belkin-N300-Pocket-Adapter-300Mbps/product-reviews/B004N625BO/ref=cm_cr_arp_d_viewopt_kywd?ie=UTF8&reviewerType=avp_only_reviews&pageNumber=1&filterByKeyword=chipset
+​
+https://www.amazon.com/Panda-Wireless-PAU06-300Mbps-Adapter/product-reviews/B00JDVRCI0/ref=cm_cr_arp_d_viewopt_kywd?ie=UTF8&reviewerType=avp_only_reviews&pageNumber=1&filterByKeyword=chipset
+
+Again :( I have the opposite chipset as seems to be popular in reviews...
+
+​https://www.amazon.com/Edimax-EW-7811UTC-Dual-Band-Connectivity-Exceeding/dp/B00FW6T36Y/ref=sr_1_4?ie=UTF8&qid=1506626074&sr=8-4&keywords=usb+wifi+edimax
+
+https://forums.macrumors.com/threads/disassemble-lacie-rugged-thunderbolt-disk.1507720/#post-18457976
+And for external disk enclosures https://forums.macrumors.com/threads/disassemble-lacie-rugged-thunderbolt-disk.1507720/
+![Enclosure Chipset.png](/images/chipsets/Enclosure Chipset.png)
+
+https://www.raymond.cc/blog/best-compatible-usb-wireless-adapter-for-backtrack-5-and-aircrack-ng/
+-->
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2ffinding-linux-wifi-usb%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "willhaley" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

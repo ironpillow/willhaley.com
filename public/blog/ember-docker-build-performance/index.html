@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ember Build Performance With Different Environments - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="I have found that building Ember on Linux (with and without Docker) and Mac (without Docker) are fairly fast and all reasonably close in speed. Each of those en...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/ember-docker-build-performance/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Ember Build Performance With Different Environments</h1>
+    <p class="post-meta"><time datetime="2017-11-09T09:23:00+00:00" itemprop="datePublished">Nov 9, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>I have found that building Ember on Linux (with and without Docker) and Mac (without Docker) are fairly fast and all reasonably close in speed.</p>
+
+<p>Each of those environments built in <strong>less than 15 seconds</strong> for me.</p>
+
+<p>The <strong>major performance outlier</strong> was <a href="https://docs.docker.com/docker-for-mac/install/">Docker for Mac</a>. With Docker for Mac, builds took <strong>1 minute and 16 seconds</strong>. The <a href="https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound/8076/198">performance</a> <a href="https://forums.docker.com/t/alternatives-to-osxfs-performant-shares-under-osx/19565">issues</a> using Docker for Mac <a href="https://github.com/docker/for-mac/issues/689">are</a> <a href="https://github.com/docker/for-mac/issues/77">well</a> <a href="https://docs.docker.com/docker-for-mac/troubleshoot/">documented</a>.</p>
+
+<p>I want to specifically call out the <a href="https://docs.docker.com/docker-for-mac/troubleshoot/">official Docker documentation</a> that shows this <strong>is not an Ember issue, but rather, a macOS and Docker issue that effects multiple frameworks and tools</strong>. Docker has a <a href="https://docs.docker.com/docker-for-mac/osxfs/#performance-issues-solutions-and-roadmap">lengthy article on these issues</a>.</p>
+
+<blockquote>
+<p>There are a number of issues with the performance of directories bind-mounted with osxfs &hellip; Applications that behave in this way include:</p>
+
+<ul>
+<li>rake</li>
+<li>ember build</li>
+<li>Symfony</li>
+<li>Magento</li>
+<li>Zend Framework</li>
+<li>PHP applications that use Composer to install dependencies in a vendor folder</li>
+</ul>
+</blockquote>
+
+<p><a href="/blog/docker-macos-ember/">I have found</a> that <strong><a href="https://github.com/EugenMayer/docker-sync">docker-sync</a> was the simplest and most performant solution to this issue</strong>. Build times came in at <strong>20 seconds</strong>, which is obviously <em>fantastic</em> compared to &ldquo;normal&rdquo; Docker for Mac speeds. I had tried a number of other workarounds beforehand. rsync scripts, Samba, NFS, but nothing worked quite as well as <code>docker-sync</code>.</p>
+
+<p>See test data and information here.</p>
+
+<ul>
+<li><a href="#linux">Linux Test</a></li>
+<li><a href="#mac">Mac Test</a></li>
+<li><a href="#docker-linux-host">Docker on Linux Test</a></li>
+<li><a href="#docker-mac-host">Docker on Mac Test</a></li>
+<li><a href="#docker-mac-host-with-docker-sync">Docker on Mac (with docker-sync) Test</a></li>
+</ul>
+
+<!--
+
+This is due to limitations in [macOS](https://docs.docker.com/docker-for-mac/osxfs-caching/#performance-implications-of-host-container-file-system-consistency).
+
+> The current implementations of mounts on Linux provide a consistent view of a host directory tree inside a container ...
+>
+> On Linux, these guarantees carry no overhead ... However, on macOS (and other non-Linux platforms) there are significant overheads to guaranteeing perfect consistency, since messages describing file system actions must be passed synchronously between container and host.
+
+Docker's [official documentation](https://docs.docker.com/docker-for-mac/troubleshoot/#known-issues) calls out workarounds, and [there](https://medium.freecodecamp.org/speed-up-file-access-in-docker-for-mac-fbeee65d0ee7) [are](https://github.com/stephank/docker-for-mac-nfs) [a](https://github.com/IFSight/d4m-nfs) [number](http://docker-sync.io/) [of](https://github.com/docker/for-mac/issues/1592) [them](https://github.com/TomFrost/fs_eventbridge) [available](https://github.com/codekitchen/dinghy).
+-->
+
+<h1 id="linux">Linux</h1>
+
+<pre><code>Could not start watchman
+Visit https://ember-cli.com/user-guide/#watchman for more info.
+cleaning up...
+Built project successfully. Stored in &quot;dist/&quot;.
+
+real	0m14.923s
+user	0m14.732s
+sys	0m0.800s
+</code></pre>
+
+<h1 id="mac">Mac</h1>
+
+<pre><code>cleaning up...
+Built project successfully. Stored in &quot;dist/&quot;.
+
+real	0m8.543s
+user	0m6.825s
+sys	0m2.156s
+</code></pre>
+
+<h1 id="docker-linux-host">Docker (Linux Host)</h1>
+
+<pre><code>Could not start watchman
+Visit https://ember-cli.com/user-guide/#watchman for more info.
+cleaning up...
+Built project successfully. Stored in &quot;dist/&quot;.
+
+real	0m14.633s
+user	0m14.752s
+sys	0m0.921s
+</code></pre>
+
+<h1 id="docker-mac-host">Docker (Mac Host)</h1>
+
+<pre><code>Could not start watchman
+Visit https://ember-cli.com/user-guide/#watchman for more info.
+cleaning up...
+Built project successfully. Stored in &quot;dist/&quot;.
+
+real	1m16.261s
+user	0m19.710s
+sys	0m5.730s
+</code></pre>
+
+<h1 id="docker-mac-host-with-docker-sync">Docker (Mac Host <em>with docker-sync</em>)</h1>
+
+<pre><code>Could not start watchman
+Visit https://ember-cli.com/user-guide/#watchman for more info.
+cleaning up...
+Built project successfully. Stored in &quot;dist/&quot;.
+
+real	0m20.308s
+user	0m17.530s
+sys	0m2.040s
+</code></pre>
+
+<h1 id="how-i-tested">How I Tested</h1>
+
+<p>I would like to stress that these tests were not very scientific, and were subject to a number of environmental issues (what else was I running on my machine at the time? Was my hard drive or CPU being stressed?).</p>
+
+<p>My goal was not to show the most accurate performance characteristics, but rather, to show how performance (relatively) varies between different builds environments. I hope this will successfully detail how dramatically performance can change between these different scenarios.</p>
+
+<h2 id="linux-and-macos">Linux and macOS</h2>
+
+<p>Wipe out the current <code>$HOME/.nvm</code> install.</p>
+
+<pre><code>rm -rf ~/.nvm/
+</code></pre>
+
+<p>Reinstall <a href="https://github.com/creationix/nvm">NVM</a>.</p>
+
+<p>Install latest <strong>lts</strong> version of node. Verify the system is using it.</p>
+
+<pre><code>nvm install --lts &amp;&amp; which node
+</code></pre>
+
+<p>Install <code>ember-cli</code> with npm.</p>
+
+<pre><code>npm install -g ember-cli
+</code></pre>
+
+<p>Clone <a href="https://github.com/ember-learn/super-rentals">super-rentals</a>.</p>
+
+<pre><code>git clone https://github.com/ember-learn/super-rentals
+</code></pre>
+
+<p>Change to the <code>super-rentals</code> directory.</p>
+
+<pre><code>cd super-rentals
+</code></pre>
+
+<p>Use yarn to install node modules.</p>
+
+<pre><code>yarn install
+</code></pre>
+
+<p>Time a build.</p>
+
+<pre><code>time ember build
+</code></pre>
+
+<h1 id="docker-on-linux-and-macos">Docker on Linux and macOS</h1>
+
+<p>Clone <a href="https://github.com/ember-learn/super-rentals">super-rentals</a>.</p>
+
+<pre><code>git clone https://github.com/ember-learn/super-rentals
+</code></pre>
+
+<p>Run a docker container for node <strong>lts</strong> (at time or writing, <code>node:8.9.1</code>) with <code>super-rentals</code> mounted inside.</p>
+
+<p>Install <code>ember-cli</code> with npm.</p>
+
+<pre><code>npm install -g ember-cli
+</code></pre>
+
+<p>Change to the <code>super-rentals</code> directory.</p>
+
+<pre><code>cd /super-rentals
+</code></pre>
+
+<p>Use yarn to install node modules.</p>
+
+<pre><code>yarn install
+</code></pre>
+
+<p>Time a build.</p>
+
+<pre><code>time ember build
+</code></pre>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fember-docker-build-performance%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

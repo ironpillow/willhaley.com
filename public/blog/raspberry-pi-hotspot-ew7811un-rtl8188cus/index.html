@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Raspberry Pi Hotspot With The Edimax EW-7811Un (RTL8188CUS chipset) - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="These instructions are meant to help you use your Raspberry Pi as a WiFi hotspot (wireless access point) using an Edimax EW-7811Un wireless network adapter. Thi...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Raspberry Pi Hotspot With The Edimax EW-7811Un (RTL8188CUS chipset)</h1>
+    <p class="post-meta"><time datetime="2013-05-01T22:11:00+00:00" itemprop="datePublished">May 1, 2013</time><span class="date-modified">Updated <time datetime="2015-01-18T00:00:00+00:00" itemprop="dateModified">Jan 18, 2015</time></span></p>
+  </header>
+
+  <h2 class="outdated">This article was last edited over 3 years ago. Information here may no longer be accurate. Please proceed with caution, and feel free to <a href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fraspberry-pi-hotspot-ew7811un-rtl8188cus%2f%0a%0a">contact me</a>.</h2><div class="post-content" itemprop="articleBody">
+    <p>These instructions are meant to help you use your Raspberry Pi as a WiFi hotspot (wireless access point) using an Edimax EW-7811Un wireless network adapter.  This will allow your Raspberry Pi to share it&rsquo;s wired network connection over WiFi.</p>
+
+<p>Please keep in mind that you must already have a working wired network connection to your Raspberry Pi for these instructions to be meaningful. These instructions will not circumvent your need to obtain an initial connection to the Internet or LAN for your Raspberry Pi to share.</p>
+
+<p><strong>Updated 2015-01-18</strong> <em>Instructions updated and tested against a Raspberry Pi B+ using the latest version of Raspbian/Debian Wheezy.  I have not tested these instructions against any other platform.</em></p>
+
+<p>Required:</p>
+
+<ul>
+<li>Familiarity with the terminal</li>
+<li>Edimax EW-7811Un WiFi USB adapter (RTL8188CUS chipset)
+
+<ul>
+<li><strong>Use a USB powered hub or make sure you have a high amperage power supply!</strong></li>
+</ul></li>
+<li>Raspberry Pi with Raspbian installed</li>
+<li>A working wired Internet connection to your Raspberry Pi</li>
+</ul>
+
+<!-- more -->
+
+<p>Run the following commands on your Raspberry Pi</p>
+
+<ol>
+<li><p>Install required software</p>
+
+<pre><code>sudo apt-get install bridge-utils hostapd
+</code></pre></li>
+
+<li><p>Grab a custom copy of <code>hostapd</code> that is compatible with the RTL8188CUS chipset.</p>
+
+<pre><code>wget http://dl.dropbox.com/u/1663660/hostapd/hostapd.zip
+</code></pre>
+
+<p>Thanks to the <a href="http://blog.sip2serve.com/">Techy Findings blog</a> and their article on <a href="http://blog.sip2serve.com/post/38010690418/raspberry-pi-access-point-using-rtl8192cu">using the Raspberry Pi and hostapd with the RTL8192cu chipset</a>.  These instructions of mine would not work without the custom <code>hostapd</code> binary provided in <a href="http://blog.sip2serve.com/post/38010690418/raspberry-pi-access-point-using-rtl8192cu">that article</a>.</p>
+
+<p>I would like to point out that <a href="http://dl.dropbox.com/u/1663660/hostapd/hostapd.zip">their custom binary</a> is a few years old at this point, but it certainly works.</p></li>
+
+<li><p>Backup the standard/default <code>hostapd</code> binary that we installed earlier and replace it with the custom one. You should be able to copy and paste this whole block into the terminal as one command.</p>
+
+<pre><code>unzip hostapd.zip &amp;&amp; \
+sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.original &amp;&amp; \
+sudo mv hostapd /usr/sbin/hostapd.edimax &amp;&amp; \
+sudo ln -sf /usr/sbin/hostapd.edimax /usr/sbin/hostapd &amp;&amp; \
+sudo chown root.root /usr/sbin/hostapd &amp;&amp; \
+sudo chmod 755 /usr/sbin/hostapd
+</code></pre></li>
+
+<li><p>Make a bridged interface between <code>eth0</code> and <code>wlan0</code> (I am assuming your wired and wireless nics are <code>eth0</code> and <code>wlan0</code>, respectively). Edit <code>/etc/network/interfaces</code> so that it looks like the following.</p>
+
+<pre><code>auto lo
+
+iface lo inet loopback
+iface eth0 inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+#iface default inet dhcp
+
+auto br0
+iface br0 inet dhcp
+bridge_ports eth0 wlan0
+</code></pre>
+
+<p>Keep in mind that this is based on the stock <code>interfaces</code> file in Raspbian.  If you&rsquo;re not using Raspbian or if you are using an older version of Raspbian, or have modified this file previously, then you may want to use caution!</p>
+
+<p>The important part is that I commented out two lines and added the three lines at the bottom for the bridged adapter.</p></li>
+
+<li><p>Restart the Pi.</p>
+
+<pre><code>sudo reboot
+</code></pre></li>
+
+<li><p>Create <code>/etc/hostapd/hostapd.conf</code> so that it looks like this.</p>
+
+<p><strong>Make sure you update the <code>ssid</code> and <code>wpa_passphrase</code> variables!  Use whatever id and password you prefer.</strong></p>
+
+<pre><code>interface=wlan0
+driver=rtl871xdrv
+bridge=br0
+ssid=THENAMEOFTHENETWORK
+channel=6
+wmm_enabled=0
+wpa=1
+wpa_passphrase=THEPASSWORD
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+auth_algs=1
+macaddr_acl=0
+</code></pre>
+
+<p>This config file was based on something I found on another blog and I do not have an in-depth understanding of each variable, so I will leave it to you to research and adjust these variables (at your own risk).</p></li>
+
+<li><p>Start <code>hostapd</code> manually as a test that we can see the access point and connect to it.</p>
+
+<pre><code>sudo hostapd -dd /etc/hostapd/hostapd.conf
+</code></pre>
+
+<p>It may take a few moments before the WiFi network is visible.</p>
+
+<p>Try using your phone, laptop, or whatever test device you have on hand.  You should be able to connect using the ssid and password specified in the <code>hostapd.conf</code> file above.</p></li>
+
+<li><p>Assuming all went well for you and <em>if</em> you want hostapd to run at startup, then you can update <code>/etc/default/hostapd</code> so that the line that says <code>DAEMON_CONF</code> is uncommented and points to your configuration file.</p>
+
+<pre><code>DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+</code></pre></li>
+</ol>
+
+<p>If you are having any issues getting this to work, I suggest you make sure all of your config options are set correctly.  As I mentioned above I have only tested this on one device with one, brand new and unmodified, installation of the OS, so it may not cover your setup, but hopefully it will point you in the proper direction.</p>
+
+<p><a href="http://www.cyberciti.biz/faq/debian-ubuntu-linux-setting-wireless-access-point/">This article at nixCraft</a> was a helpful resource for configuring hostapd.</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fraspberry-pi-hotspot-ew7811un-rtl8188cus%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "willhaley" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

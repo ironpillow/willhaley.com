@@ -1,0 +1,166 @@
+---
+title: "Examining UASP Performance with USB 3.0 on Linux and Mac"
+slug: usb-3-uasp
+date: 2017-09-28 00:00:00
+disqus: true
+---
+
+I wanted to try and understand just how much of a practical benefit I could get from an external drive enclosure with [UASP (USB Attached SCSI)](https://en.wikipedia.org/wiki/USB_Attached_SCSI).
+
+Please note that I am **not** examining the performance of USB 3.1 or Thunderbolt in this article. Simply USB 3.0 with and without UASP.
+
+For this experiment, I purchased two enclosures. One with UASP and one without UASP. Both are USB 3.0 external 2.5" enclosures.
+
+[Inateck FE2001/FEU3NS-1 Tool-free 2.5 Inch HDD Case](https://www.inateck.com/hard-drive-accessories/hdd-enclosures/tool-free-usb-3-0-hdd-enclosure/fe2001.html)
+
+[_Amazon Product Link_](https://www.amazon.com/gp/product/B00DW374W4/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1)
+
+[Inateck FE2002/FEU3NS-1E Tool-free 2.5 Inch HDD Case [UASP]](https://www.inateck.com/hard-drive-accessories/hdd-enclosures/tool-free-usb-3-0-hdd-enclosure/fe2002.html)
+
+[_Amazon Product Link_](https://www.amazon.com/gp/product/B00FCLG65U/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1)
+
+The enclosures are nearly identical except that one supports UASP, and one does not. Both use USB 3.0.
+
+For my tests, I used the **exact same cable** and the **exact same USB 3.0 port** on the test computers.
+
+The test SSD drive used in the enclosures is a [Chronos MKNSSDCR120GB SATA III 2.5" SSD](http://poweredbymushkin.com/catalog/item/11-chronos/772-chronos-120gb-7mm.html).
+
+I tested against Arch Linux 4.13.3-1-ARCH using an [ASUS H87I-PLUS](https://www.asus.com/us/Motherboards/H87IPLUS/) motherboard that supports UASP over USB 3.0.
+
+I tested against macOS Sierra 10.12.6 using a MacBook Pro (Retina, 15-inch, Mid 2015), which [has USB 3.0 ports](https://support.apple.com/kb/SP719?locale=en_US). I wrote to `rdisk` rather than `disk` because `disk` [is inherintly slower](http://daoyuan.li/solution-dd-too-slow-on-mac-os-x/) than `rdisk`.
+
+# Linux - Without UASP (FE2001)
+
+In this test I wrote data to the SSD while it was in the enclosure without UASP support.
+
+```
+$ cat /dev/zero | pv -t -a > /dev/sdz
+0:08:30 [ 224MiB/s]
+```
+
+The test averaged 224MiB/s (1.879 Gbps).
+
+# Linux - With UASP (FE2002)
+
+In this test I wrote data to the SSD while it was in the enclosure with UASP support.
+
+```
+$ cat /dev/zero | pv -t -a > /dev/sdz
+0:04:44 [ 402MiB/s]
+```
+
+The test averaged 402MiB/s (3.372 Gbps).
+
+# Mac - Without UASP (FE2001)
+
+In this test I wrote data to the SSD while it was in the enclosure without UASP support.
+
+```
+$ cat /dev/zero | pv -t -a > /dev/rdisk9
+0:12:20 [ 154MiB/s]
+```
+
+The test averaged 154MiB/s (1.291 Gbps).
+
+# Mac - With UASP (FE2002)
+
+In this test I wrote data to the SSD while it was in the enclosure with UASP support.
+
+```
+$ cat /dev/zero | pv -t -a > /dev/rdisk9
+0:09:02 [ 209MiB/s]
+```
+
+The test averaged 209MiB/s (1.753 Gbps).
+
+# Mac - Boot To Enclosure Without UASP (FE2001)
+
+In this test I installed macOS 10.12.6 to the SSD, and booted to it while it was in the enclosure without UASP support.
+
+```
+$ cat /dev/zero | pv -t -a > /tmp/garbage.file
+0:02:00 [ 213MiB/s]
+```
+
+The test averaged 213MiB/s (1.786 Gbps).
+
+# Mac - Boot To Enclosure With UASP (FE2002)
+
+In this test I installed macOS 10.12.6 to the SSD, and booted to it while it was in the enclosure with UASP support.
+
+```
+$ cat /dev/zero | pv -t -a > /tmp/garbage.file
+0:02:00 [ 389MiB/s]
+```
+
+The test averaged 389MiB/s (3.263 Gbps).
+
+# Conclusion
+
+UASP made a clear difference for me on Linux.
+
+The macOS results were a bit more difficult to decipher.
+
+On macOS, UASP barely made a difference in the first couple tests. The numbers make me believe that UASP support was not working properly in the first two macOS tests.
+
+The very last test is interesting. I booted my MacBook Pro to the USB 3.0 enclosure with UASP, and in that scenario, UASP seemed to be working, because the speeds were far faster. Unfortunately, I do not understand why this particular scenario allowed UASP to work.
+
+I am pleased to know that UASP can offer clear performance benefits in Linux.
+
+I am also pleased to know that booting to an external USB 3.0 enclosure with UASP on a Mac performs well. If you are considering a USB 3.0 drive for booting your Mac, clearly UASP _can_ make a difference.
+
+I do not know what Apple magic is in play that causes UASP to work properly in that last test scenario of mine, but at least it works!
+
+# Buyer Beware
+
+Based on the [mix of hardware support for UASP](https://en.wikipedia.org/wiki/USB_Attached_SCSI#Hardware_support), I definitely suggest doing serious research before making any purchases related to this feature.
+
+# Additional Research
+
+In my first two tests on macOS, it seemed that UASP was not enabled, or that it provided no significant benefits.
+
+Only that _last test_ seems to show UASP working on macOS. That was the scenario where the UASP enclosure was being used as the boot drive.
+
+Perhaps macOS loads a special extension at boot time if it detects that the boot drive is being accessed via external storage? Or perhaps the native install of macOS on my internal SSD is suffering from an issue of some sort that prevents UASP from working properly?
+
+I found [some](https://www.reddit.com/r/applehelp/comments/3vhcnt/how_do_i_know_if_my_imac_supports_the_uasp/) [articles](https://discussions.apple.com/thread/5128258?tstart=0)  that lead me to to believe that UASP support is hit-or-miss in Macs.
+
+To further confuse things, I noticed that the extension supposedly responsible for UASP support on Macs was not loaded on my Mac at any time during these tests. Even in the test scenario when UASP seemed to be working.
+
+I went to `About This Mac` -> `System Report...` -> `Extensions` -> `IOUSBAttachedSCSI` and saw the IOUSBAttachedSCSI module (which apparently corresponds to UASP) was not loaded at any time.
+
+I tried manually loaded the IOUSBAttachedSCSI kext to see if that made any difference in these tests.
+
+```
+sudo kextload /System/Library/Extensions/IOUSBAttachedSCSI.kext
+```
+
+But there was no change in my test results.
+
+I've [seen](https://discussions.apple.com/thread/7443772?start=0&tstart=0) [multiple](https://discussions.apple.com/thread/6164330?tstart=0) [articles](https://forums.macrumors.com/threads/uasp-drivers-broken-in-el-capitan.1892027/) suggesting that the IOUSBAttachedSCSI extension has been renamed to IOUSBMassStorageUASDriver, but I never saw that extension in any of these tests in macOS.
+
+[Some](https://forums.macrumors.com/threads/external-ssd-as-boot-drive-usb-3-vs-thunderbolt.1709803/#post-18804403) [articles](https://discussions.apple.com/thread/5592068?tstart=0) imply that perhaps only enclosures with specific chipsets will properly support UASP on a Mac.
+
+```
+$ ioreg
+...
++-o SSP1@14500000  <class AppleUSB30XHCIPort, id 0x1000002a3, registered, matched, active, busy 0 (5346 ms), retain 23>
+| +-o ASM1153E@14500000  <class IOUSBHostDevice, id 0x100001b36, registered, matched, active, busy 0 (768 ms), retain 118>
+|   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100001b39, !registered, !matched, active, busy 0, retain$
+|   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x100001b43, !registered, !matched, active, busy 0, $
+|   +-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x100001b44, registered, matched, active, busy 0 (638 ms), retain 13$
+|     +-o IOUSBMassStorageInterfaceNub  <class IOUSBMassStorageInterfaceNub, id 0x100001b48, registered, matched, active, busy 0$
+|       +-o IOUSBMassStorageDriverNub  <class IOUSBMassStorageDriverNub, id 0x100001b4a, registered, matched, active, busy 0 (63$
+|         +-o IOUSBMassStorageUASDriver  <class IOUSBMassStorageUASDriver, id 0x100001b4c, registered, matched, active, busy 0 ($
+|           +-o IOSCSITargetDevice  <class IOSCSITargetDevice, id 0x100001b4e, registered, matched, active, busy 0 (529 ms), ret$
+|             +-o IOSCSIHierarchicalLogicalUnit@0000000000000000  <class IOSCSIHierarchicalLogicalUnit, id 0x100001b50, register$
+|               +-o IOSCSIPeripheralDeviceType00  <class IOSCSIPeripheralDeviceType00, id 0x100001b54, !registered, !matched, ac$
+|                 +-o IOBlockStorageServices  <class IOBlockStorageServices, id 0x100001b57, registered, matched, active, busy 0$
+|                   +-o IOBlockStorageDriver  <class IOBlockStorageDriver, id 0x100001b58, registered, matched, active, busy 0 ($
+|                     +-o Inateck ASM1153E Media  <class IOMedia, id 0x100001b59, registered, matched, active, busy 0 (3 ms), re$
+|                       +-o IOMediaBSDClient  <class IOMediaBSDClient, id 0x100001b5a, registered, matched, active, busy 0 (0 ms$
+
+...
+```
+
+You can see from the `ioreg` output above that my Inateck enclosure is using the ASM1153E chipset, and that the IOUSBMassStorageUASDriver driver does seem to be loaded (even though there is no corresponding kext, which confuses me), and still, performance was subpar _until it was used as the boot drive_.

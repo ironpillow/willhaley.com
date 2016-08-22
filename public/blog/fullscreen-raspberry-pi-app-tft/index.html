@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fullscreen App With Raspberry Pi and Adafruit TFT Display - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="Please consider that these instructions may not be the ideal solution depending on the needs of a given project. Adafruit&rsquo;s forums are a valuable resource...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/fullscreen-raspberry-pi-app-tft/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Fullscreen App With Raspberry Pi and Adafruit TFT Display</h1>
+    <p class="post-meta"><time datetime="2017-08-07T00:00:00+00:00" itemprop="datePublished">Aug 7, 2017</time><span class="date-modified">Updated <time datetime="2018-04-24T19:41:00+00:00" itemprop="dateModified">Apr 24, 2018</time></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>Please consider that these instructions may not be the ideal solution depending on the needs of a given project. <a href="https://forums.adafruit.com/">Adafruit&rsquo;s forums</a> are a valuable resource for help regarding their products.</p>
+
+<p>These are the steps I used in order to run a fullscreen Python app on a Raspberry Pi with an Adafruit 2.8&rdquo; resistive TFT display.</p>
+
+<p><img src="/images/fullscreen-raspberry-pi-app-tft/pi-tft.jpg" alt="Raspberry Pi With an Adafruit TFT Display" /></p>
+
+<p>The first thing we need to do is enable support for the TFT on our Raspberry Pi.</p>
+
+<h1 id="adafruit-pitft-support">Adafruit PiTFT Support</h1>
+
+<p>As of time of writing, Adafruit offers an <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">installation script</a> that is designed to work with the latest standard/official Raspbian images. Adafruit <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#unsupported-full-images">previously offered</a> custom Raspbian images with TFT support built in. Those images are now deprecated and the use of the script <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=133212&amp;p=661598&amp;hilit=resistive#p661598">is</a> <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=124665&amp;p=661446&amp;hilit=resistive#p661446">encouraged</a>.</p>
+
+<p>Unless otherwise noted, or the process changes over time, one should use the <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">installation script as instructed by Adafruit</a> to enable a PiTFT with touch support!</p>
+
+<h1 id="configuration">Configuration</h1>
+
+<p>For this process, I am using <strong>Raspbian Lite</strong> as the base image for my Pi and then installing an <code>X11</code> environment.</p>
+
+<p>Enable the <code>nonfree</code> Raspbian repository. The Adafruit script requires this, and as of time of writing, this repo is not enabled by default..</p>
+
+<pre><code>cat &lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/nonfree.list
+deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi firmware
+EOF
+</code></pre>
+
+<p>Install required packages for our fullscreen app.</p>
+
+<pre><code>sudo apt-get update &amp;&amp; \
+sudo apt-get install --no-install-recommends \
+    sudo \
+    cmake \
+    xorg \
+    openbox \
+    lightdm \
+    python3 \
+    python3-tk \
+    xserver-xorg-legacy \
+    xserver-xorg-video-fbdev
+</code></pre>
+
+<p>Modify the lightdm config script at <code>/etc/lightdm/lightdm.conf</code> to enable autologin if it is not already enabled.</p>
+
+<pre><code>cat &lt;&lt; EOF | sudo tee /etc/lightdm/lightdm.conf
+[SeatDefaults]
+autologin-user=pi
+# Prevent the screen from shutting off automatically.
+xserver-command=X -s 0 dpms
+EOF
+</code></pre>
+
+<p>Run the <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">Adafruit TFT install script</a> as described on their site.</p>
+
+<pre><code>cd ~ &amp;&amp; \
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/adafruit-pitft.sh &amp;&amp; \
+chmod +x adafruit-pitft.sh &amp;&amp; \
+sudo ./adafruit-pitft.sh
+</code></pre>
+
+<p>Reboot the Pi. It should log in as <code>pi</code> automatically to <code>openbox</code>. Your screen will most likely be blank at this point with only a mouse cursor.</p>
+
+<h1 id="app">App</h1>
+
+<p>Create the openbox config directory for the <code>pi</code> user if it does not exist.</p>
+
+<pre><code>mkdir -p $HOME/.config/openbox
+</code></pre>
+
+<p>Create a script at <code>$HOME/.config/openbox/autostart</code> for the <code>pi</code> user. This script will be run at login.</p>
+
+<pre><code>cat &lt;&lt; EOF &gt; $HOME/.config/openbox/autostart
+# redirect all output to a log file
+# -u so that output is flushed immediately to the log
+python3 -u $HOME/app.py &gt; $HOME/app.log 2&gt;&amp;1 &amp;
+EOF
+</code></pre>
+
+<p>The <code>&amp;</code> at the end is required for <em>every</em> command in the <code>autostart</code> script.</p>
+
+<p>Create a file <code>$HOME/app.py</code> for our python application code.</p>
+
+<pre><code>import tkinter as tk
+
+class FullScreenApp(object):
+    padding=3
+    dimensions=&quot;{0}x{1}+0+0&quot;
+
+    def __init__(self, master, **kwargs):
+        self.master=master
+        width=master.winfo_screenwidth()-self.padding
+        height=master.winfo_screenheight()-self.padding
+        master.geometry(self.dimensions.format(width, height))
+
+        b = tk.Button(self.master, text=&quot;Press me!&quot;, command=lambda: self.pressed())
+        b.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+
+    def pressed(self):
+        print(&quot;clicked!&quot;)
+
+root=tk.Tk()
+root.wm_attributes('-fullscreen','true')
+
+app=FullScreenApp(root)
+
+root.mainloop()
+</code></pre>
+
+<p>Reboot. The app should launch automatically in fullscreen mode.</p>
+
+<h1 id="screen-on-off">Screen On / Off</h1>
+
+<p>You can use a script like this to enable or disable the LCD with the first two GPIO buttons tied to the TFT.</p>
+
+<pre><code>#!/usr/bin/env python3
+
+import RPi.GPIO as GPIO
+import time
+import os
+
+&quot;&quot;&quot;
+apt-get install python3-rpi.gpio
+&quot;&quot;&quot;
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+while True:
+    # Screen on
+    input_state = GPIO.input(17)
+    if input_state == False:
+        print('screen on', flush=True)
+        print('1', file=open('/sys/class/backlight/soc:backlight/brightness', 'w'))
+        time.sleep(0.2)
+
+    # Screen off
+    input_state = GPIO.input(22)
+    if input_state == False:
+        print('screen off', flush=True)
+        print('0', file=open('/sys/class/backlight/soc:backlight/brightness', 'w'))
+        time.sleep(0.2)
+
+    # Screen off and power off
+    input_state = GPIO.input(27)
+    if input_state == False:
+        print('screen off and power off', flush=True)
+        print('0', file=open('/sys/class/backlight/soc:backlight/brightness', 'w'))
+        os.system('shutdown -h now')
+        time.sleep(3)
+</code></pre>
+
+<p>You could potentially have the script run at boot by appending the following to <code>/etc/rc.local</code> at the end of the file before it calls the <code>exit</code> command.</p>
+
+<pre><code>python3 -u /home/pi/buttons.py
+</code></pre>
+
+<p>It seems there may be a <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=18200">few reasons</a> the TFT/LCD will automatically shut off, and changing the brightness does nothing in that case. So those buttons and the accompanying script would be useless at that point.</p>
+
+<p>The <code>lightdm.conf</code> above <em>should</em> disable the auto-off behavior of the TFT, but <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=86760#p436887">other methods</a> may be required as well.</p>
+
+<h1 id="citations">Citations</h1>
+
+<ul>
+<li><a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/easy-install">Adafruit PiTFT - 2.8&rdquo; Touchscreen Display for Raspberry Pi</a></li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?p=485302">PiTFT: boot to desktop problem</a></li>
+<li><a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/extras#boot-to-x-windows-on-pitft">Boot to X Windows on PiTFT</a></li>
+<li><a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/touchscreen-install-and-calibrate#manual-calibration">Manual Calibration</a></li>
+<li><a href="https://stackoverflow.com/questions/7966119/display-fullscreen-mode-on-tkinter">Display fullscreen mode on Tkinter</a></li>
+<li><a href="https://blog.turboturbo.net/2016/07/09/raspberry-pi-3-pitft-and-a-modern-kernel/">Raspberry Pi 3, PiTFT and a modern kernel (bluetooth support!)</a></li>
+<li><a href="http://www.uugear.com/portfolio/using-2-8-touchscreen-display-on-raspberry-pi/">http://www.uugear.com/portfolio/using-2-8-touchscreen-display-on-raspberry-pi/</a></li>
+<li><a href="https://blog.turboturbo.net/2016/07/09/raspberry-pi-3-pitft-and-a-modern-kernel/">https://blog.turboturbo.net/2016/07/09/raspberry-pi-3-pitft-and-a-modern-kernel/</a></li>
+</ul>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2ffullscreen-raspberry-pi-app-tft%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "willhaley" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

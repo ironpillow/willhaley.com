@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FRC Joystick Toggle Button In Java - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="Let&rsquo;s compare two different types of buttons. Imagine you want to have a button that fires a laser. It may make sense that the laser fires only when the b...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/frc-toggle-button/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">FRC Joystick Toggle Button In Java</h1>
+    <p class="post-meta"><time datetime="2018-02-08T01:53:00+00:00" itemprop="datePublished">Feb 8, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>Let&rsquo;s compare two different types of buttons.</p>
+
+<p>Imagine you want to have a button that fires a laser.</p>
+
+<p>It may make sense that the laser fires only when the button is held down (pressed). So you could press the button for 1 second, 10 seconds, a minute, and the laser would fire in a sustained beam for as long as you held the button.</p>
+
+<pre><code>hold button -&gt; 1 second -&gt; 2 seconds -&gt; 3 seconds STOP
+pew-&gt;pew-&gt;pew-&gt;pew-&gt;pew-&gt;pew-&gt;pew-&gt;pew-&gt;pew-&gt;pew- STOP
+</code></pre>
+
+<p>Now image we have a button that should open or close a door.</p>
+
+<p>If we hold the button down for 3 seconds, we don&rsquo;t want it to toggle the door open and closed continuously for 3 seconds, right? The door would flap open and closed like it was haunted! Not very helpful behavior.</p>
+
+<pre><code>hold button -&gt; 1 second -&gt; 2 seconds -&gt; 3 seconds STOP
+open-&gt;close-&gt;open-&gt;close-&gt;open-&gt;close-&gt;open-&gt;clos STOP
+</code></pre>
+
+<p>For the sake of our door, we probably want our button to <em>toggle</em> the door being open instead. <strong>Holding</strong> the button for our door should behave no differently than <strong>pressing</strong> the button for our door. The length of time should not matter.</p>
+
+<p>In this case, our button would <strong>essentially be a switch</strong>. It&rsquo;s either on or off.</p>
+
+<p>That way, no matter whether you hold the button for 0.1 seconds or 100 seconds, the door only swings once until the next time the button is pressed (toggled).</p>
+
+<pre><code>hold button -&gt; 1 second -&gt; 2 seconds -&gt; 3 seconds
+open
+
+hold button -&gt; 1 second -&gt; 2 seconds -&gt; 3 seconds
+close
+</code></pre>
+
+<h1 id="can-we-use-getrawbutton-to-solve-this">Can we use <code>getRawButton()</code> to solve this?</h1>
+
+<p>Short answer, <strong>no</strong>. Long answer, it&rsquo;s complicated and there are better ways.</p>
+
+<p>It may be tempting to do something like this in the <code>while</code> loop of the <code>operatorControl()</code> method if you&rsquo;re using a <code>SampleRobot</code> base class or the <code>robotPeriodic()</code> func if you&rsquo;re using an <code>IterativeRobot</code> base class. <em>As an aside, you should NOT be using the <code>SampleRobot</code> class!</em></p>
+
+<pre><code>while ... {
+    // Get whether or not button 3 is pressed.
+    if (stick.getRawButton(3)) {
+        System.out.println(&quot;Button 3 is pressed!&quot;);
+    }
+}
+</code></pre>
+
+<p>That method call above to <code>getRawButton()</code> <em>does</em> get the value you want, but there&rsquo;s an issue.</p>
+
+<p>If you, a human, only press the button for 0.1 seconds, that <code>while</code> loop can execute dozens of times in that fraction of a second! The while <code>loop</code> execution is <em>faster</em> than your finger. Even though you may think, &ldquo;I only lightly pressed it really quickly. I didn&rsquo;t hold it down!&rdquo;, the code disagrees. What seems like a short time to you is actually a very long time to a fast bit of code like this.</p>
+
+<p>Even pressing the button for a fraction of a second would cause the opening / closing door problem from above. We don&rsquo;t want that! We want our button to behave like a switch.</p>
+
+<p>Here&rsquo;s an example from my machine at home. This is the console output from Eclipse. I ran some code using a simulator. I tapped a button on a joystick and let go of the button as fast as I could, and that code still ran 4 times. This is not an ideal way to read and toggle a value.</p>
+
+<pre><code>[java] Button 3 is pressed!
+[java] Button 3 is pressed!
+[java] Button 3 is pressed!
+[java] Button 3 is pressed!
+</code></pre>
+
+<h1 id="can-we-use-stick-getrawbuttonpressed">Can we use <code>stick.getRawButtonPressed()</code>?</h1>
+
+<p>If you&rsquo;re using the latest Eclipse plugin (<code>v2018.2.2</code> at time of writing), then sure! In this case <a href="http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/GenericHID.html#getRawButtonPressed-int-">getRawButtonPressed()</a> is an <strong>ideal</strong> API to use!</p>
+
+<blockquote>
+<p><strong>public boolean getRawButtonPressed(int button)</strong></p>
+
+<p>Whether the button was pressed <strong>since the last check</strong>. Button indexes begin at 1.</p>
+</blockquote>
+
+<p>&ldquo;Since the last check&rdquo; is crucial here. <code>getRawButtonPressed()</code> is doing the hard work for us. It will make sure that we can treat the presses like toggles, and that holding down on the button for a given length of time makes no difference.</p>
+
+<pre><code>// See if button number 3 was pressed.
+if (stick.getRawButtonPressed(3)) {
+    // Every time the button is pressed, flip the
+    // value of someBoolean.
+    someBoolean = !someBoolean;
+}
+</code></pre>
+
+<h1 id="using-the-command-api">Using the <code>Command</code> API</h1>
+
+<p>The <a href="http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/command/InstantCommand.html">InstantCommand</a> class is also ideal for this sort of problem. Especially if you are using an older version of the FRC libraries and do not have access to the <code>getRawButtonPressed()</code> API.</p>
+
+<p>Add this code inside the <code>robotInit()</code> method. This allows us to define a JoystickButton object which gives us a much friendlier interface than getting the raw joystick input.</p>
+
+<pre><code>public void robotInit() {
+  ... existing code ...
+
+  // Create a JoystickButton for button number 3.
+  JoystickButton toggleButton = new JoystickButton(stick, 3);
+
+  // This code will fire **once** every time the button is pressed.
+  toggleButton.whenPressed(new InstantCommand() {
+    @Override
+    protected void execute() {
+        // Flip the value of someBoolean.
+        someBoolean = !someBoolean;
+        System.out.println(&quot;someBoolean: &quot; + someBoolean);
+    }
+  });
+}
+</code></pre>
+
+<p>You&rsquo;ll need to define that <code>someBoolean</code> boolean at the top of the class so that it&rsquo;s in scope and can be used elsewhere.</p>
+
+<pre><code>public class Robot extends SampleRobot {
+    ... existing code ...
+    boolean someBoolean = false;
+    ... existing code ...
+}
+</code></pre>
+
+<p>And then add this line to the while loop if using a <code>SampleRobot</code> (<em>Which, again, you should not be using</em>).</p>
+
+<pre><code>while ... existing code ... {
+   // This makes sure commands are run (if needed)
+   // every time the execution loop runs.
+   Scheduler.getInstance().run();
+
+   ... existing code ...
+}
+</code></pre>
+
+<p>Or if using an <code>IterativeRobot</code> base class you can use the <code>teleopPeriodic()</code> method.</p>
+
+<pre><code>public void teleopPeriodic() {
+    // This makes sure commands are run (if needed)
+    // every time the execution loop runs.
+    Scheduler.getInstance().run();
+}
+</code></pre>
+
+<h1 id="other-options">Other options</h1>
+
+<p>You may find other implementations for handling a toggle button. If your answer works reliably like you need, then go for it!</p>
+
+<p>I am trying to offer some approaches that may help, but these are not necessarily the best or only ways to get toggling behavior from a button.</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2ffrc-toggle-button%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

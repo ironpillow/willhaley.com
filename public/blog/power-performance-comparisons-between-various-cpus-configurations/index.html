@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Power and Performance Comparisons Between Various CPUs and Configurations - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="I have several computers sitting around my home in various states of completion. Some are used daily, some are just a few components plugged together sitting on...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/power-performance-comparisons-between-various-cpus-configurations/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Power and Performance Comparisons Between Various CPUs and Configurations</h1>
+    <p class="post-meta"><time datetime="2016-09-02T17:28:48+00:00" itemprop="datePublished">Sep 2, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>I have several computers sitting around my home in various states of completion. Some are used daily, some are just a few components plugged together sitting on a shelf.</p>
+
+<p>A long-running hobby of mine has been setting up a reliable home theater for my digital media. I bounced around between various providers before finally landing with Plex.</p>
+
+<p>For me, the great appeal behind Plex is that I can have a headless server running off in a closet and use the Plex client app on my Roku. One device. One remote. No loud PC sitting in my living room. Simple.</p>
+
+<p>The question for me came to figuring out which of my computers and components would make the best long-running server. I wanted to find which configuration of mine would draw the least electricity while providing reasonable times to transcode media with HandBrake as needed.</p>
+
+<p>To that end, I ran a bunch of rudimentary experiments to try and measure and balance these qualities.</p>
+
+<p>I was looking for:</p>
+
+<ul>
+<li>Low power usage.</li>
+<li>Short HandBrake transcode time.</li>
+<li>Ability to run Plex server (this point became moot. All configurations handled this perfectly).</li>
+</ul>
+
+<p>I would have <em>loved</em> to use a Raspberry Pi, but I found it was under-powered for this job.</p>
+
+<p>The results were surprising at some points, and gave me interesting insights into which of my components are most efficient or the biggest energy hogs.</p>
+
+<h1 id="processors-tested">Processors tested</h1>
+
+<p>I tested various configuraitons against these three LGA 775 processors.</p>
+
+<!-- more -->
+
+<ul>
+<li>Intel Core 2 Extreme QX6700 Quad-Core Processor.</li>
+<li>Intel Core 2 Duo E6600 Dual-Core Processor.</li>
+<li>Intel Celeron 430 Processor.</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>CPU</th>
+<th>Cores</th>
+<th>Speed</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>QX6700</td>
+<td>4</td>
+<td>high</td>
+</tr>
+
+<tr>
+<td>E6600</td>
+<td>2</td>
+<td>med</td>
+</tr>
+
+<tr>
+<td>430</td>
+<td>1</td>
+<td>slow</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="hypothesis">Hypothesis</h1>
+
+<p>I tested each CPU transcoding the same file in HandBrake, and tested to see if the various configurations of components were able to handle the same Plex docker instance.</p>
+
+<p>This isn&rsquo;t very scientific in that not all CPUs were tested in the exact same rigs with the exact same conditions, but I was at least able to find patterns and trends. Some configurations were tested more extensively than others.</p>
+
+<h1 id="experiments">Experiments</h1>
+
+<p>Wattage was measured using a Kill-A-Watt. Wattage was measured while the rig was &ldquo;idle&rdquo; (booted for several minutes. No user-based activity) and while under load doing a HandBrake job. In most cases, I re-ran the HandBrake job multiple times to get an average, but the times seem fairly consistent overall.</p>
+
+<p>Time is measured in minutes:seconds.</p>
+
+<h2 id="quad-core-with-nvidia-gpu">Quad-Core with NVIDIA GPU</h2>
+
+<p>I figured this would be my most power-hungry configuration. The most peripherals, everything turned up to 11, etc.</p>
+
+<ul>
+<li>Intel Core 2 Extreme QX6700 Quad-Core Processor.</li>
+<li>5 spindle disks.</li>
+<li>Fans at &ldquo;high&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 8GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>NVIDIA GPU.</li>
+<li>Corsair HX620W.</li>
+</ul>
+
+<p>133 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>210</td>
+<td>5:25</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>210</td>
+<td>5:23</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>210</td>
+<td>5:24</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="same-as-previous-but-removed-the-nvidia-gpu">Same as previous, but removed the NVIDIA GPU</h2>
+
+<ul>
+<li>Intel Core 2 Extreme QX6700 Quad-Core Processor.</li>
+<li>All 5 spindle disks.</li>
+<li>Fans at &ldquo;high&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 8GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+</ul>
+
+<p>110 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>19:35</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>140</td>
+<td>19:31</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="same-as-previous-but-non-essential-spindle-disks-were-disconnected">Same as previous, but non-essential spindle disks were disconnected</h2>
+
+<ul>
+<li>Intel Core 2 Extreme QX6700 Quad-Core Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;high&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 8GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+</ul>
+
+<p>87 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>116</td>
+<td>19:34</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="core-2-duo-with-boxd945gcnl-motherboard">Core 2 Duo with BOXD945GCNL motherboard</h2>
+
+<ul>
+<li>Intel Core 2 Duo E6600 Dual-Core Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;low&rdquo;.</li>
+<li>BOXD945GCNL motherboard with 2GB RAM.
+
+<ul>
+<li>Integrated Intel GPU</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+</ul>
+
+<p>58 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>100</td>
+<td>11:36</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>100</td>
+<td>11:33</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>100</td>
+<td>11:35</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="core-2-duo-with-boxd975xbx2kr-motherboard">Core 2 Duo with BOXD975XBX2KR motherboard</h2>
+
+<ul>
+<li>Intel Core 2 Duo E6600 Dual-Core Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;low&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 8GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+</ul>
+
+<p>72 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>98</td>
+<td>21:36</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>96</td>
+<td>21:37</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="same-as-previous-but-with-only-2gb-of-ram">Same as previous, but with only 2GB of RAM</h2>
+
+<ul>
+<li>Intel Core 2 Duo E6600 Dual-Core Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;low&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 2GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+</ul>
+
+<p>66 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>90</td>
+<td>21:47</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="same-as-previous-with-nvidia-gpu">Same as previous, with NVIDIA GPU</h2>
+
+<ul>
+<li>Intel Core 2 Duo E6600 Dual-Core Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;low&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 2GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+<li>NVIDIA GPU.</li>
+</ul>
+
+<p>89 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>128</td>
+<td>11:31</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>127</td>
+<td>11:33</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="same-as-pervious-but-back-to-8gb-of-ram">Same as pervious, but back to 8GB of RAM</h2>
+
+<ul>
+<li>Intel Core 2 Duo E6600 Dual-Core Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;low&rdquo;.</li>
+<li>BOXD975XBX2KR motherboard with 8GB RAM.
+
+<ul>
+<li>No onboard video.</li>
+</ul></li>
+<li>Corsair HX620W.</li>
+<li>NVIDIA GPU.</li>
+</ul>
+
+<p>97 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>136</td>
+<td>11:25</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>136</td>
+<td>11:21</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>135</td>
+<td>11:20</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="celeron">Celeron</h2>
+
+<p>I didn&rsquo;t even bother transcoding with HandBrake with this rig. I was fairly certain it would be disappointing based on other results. Though, I did measure idle wattage, as I expected significant power savings.</p>
+
+<ul>
+<li>Intel Celeron 430 Processor.</li>
+<li>1 spindle disk (3TB).</li>
+<li>Fans at &ldquo;low&rdquo;.</li>
+<li>BOXD945GCNL motherboard with 2GB RAM.
+
+<ul>
+<li>Integrated Intel GPU</li>
+</ul></li>
+</ul>
+
+<p>50 watts while idle.</p>
+
+<h1 id="observations">Observations</h1>
+
+<p>The most fascinating data to me was the <em>drastic</em> increase (~3x) time to transcode when the NVIDIA GPU was removed from the Quad-Core non-integrated graphics rig.</p>
+
+<p>The Core 2 Duo transcoded almost 2x as fast with its integrated graphics as the Quad-Core with no graphics.</p>
+
+<p>I did not realize how much work the NVIDIA GPU was doing in HandBrake.</p>
+
+<p>I also did not realize how much power the NVIDIA GPU (albeit, it&rsquo;s almost 10 years old now) was drawing. 70 watts under load! That&rsquo;s more than the <em>entire</em> wattage of some of the power thrify configurations when idle.</p>
+
+<p>My hypothesis was correct that the most power-hungry rig was the most powerful.</p>
+
+<p>Unfortunately, no configuration dropped under double-digit minutes for transcoding except the aforementioned hog, but the Core 2 Duo performed reasonably well with <em>significant</em> power savings.</p>
+
+<p>I found that every rig handled Plex fine. My HandBrake settings create videos that require no transcoding from Plex, so this wasn&rsquo;t a very revealing test for Plex performance, but it simulates my real-world usage so I&rsquo;m happy. Plex usage barely added any energy draw.</p>
+
+<p>The Core 2 Duo drew almost 20 fewer watts and was ~2x as fast when it was in a motherboard with onboard/integrated video.</p>
+
+<p>I was pleased to find some concrete numbers around which components drew how much power.</p>
+
+<p>All power savings are approximate.</p>
+
+<table>
+<thead>
+<tr>
+<th>Wattage Savings</th>
+<th>Cause</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>33</td>
+<td>4 non-essential spindle disks</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>6GB of RAM</td>
+</tr>
+
+<tr>
+<td>23</td>
+<td>NVIDIA GPU (when idle)</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>BOXD945GCNL instead of BOXD975XBX2KR</td>
+</tr>
+</tbody>
+</table>
+
+<p>It&rsquo;s interesting to see the real-world implications of using different components.</p>
+
+<p>The changes in RAM seemed to have no significant impact on transcoding time, though they did impact wattage.</p>
+
+<p>Idle -&gt; load is a 30 watt jump without the NVIDIA GPU.</p>
+
+<p>Idle -&gt; load is a 77 watt jump with the NVIDIA GPU.</p>
+
+<p>This isn&rsquo;t reflected in the data above, but I saw ~6 watt drop when turning down my manually adjustable fans from high to low.</p>
+
+<p>The NVIDIA GPU was a GeForce 8600 GT 64 bit with 33MHz clock. The board that had integrated Intel graphics was a 82945G/GZ 32 bit with 33 MHz clock (i915).</p>
+
+<p>Even with the NVIDIA GPU, the Core 2 was almost twice as slow as the Quad Core with the NVIDIA GPU, so the CPU does factor into overall performance. This is even more clear when comparing transcode times when there is no GPU. It all comes down to CPU ability at that point.</p>
+
+<p>The integrated Intel GPU on the BOXD945GCNL motheboard with the Core 2 Duo transcoded just as fast as the NVIDIA GPU on the BOXD975XBX2KR with the Core 2 Duo, but with a power savings of 30 watts.</p>
+
+<h1 id="a-modern-configuration">A modern configuration</h1>
+
+<p>I threw this in as a lark, but in hindsight, it has me questioning my entire presumption that I should use old hardware to try to save electricity.</p>
+
+<p>I tested the same experiments against a much more modern Core i5 and GTX 960. The results were not surprising in some regards.</p>
+
+<ul>
+<li>Intel Core i5.</li>
+<li>1 spindle disk (3TB).</li>
+<li>ITX MOBO with 16 GB RAM.</li>
+<li>GeForce GTX 960</li>
+</ul>
+
+<p>42 watts while idle.</p>
+
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Wattage Under Load</th>
+<th>Time To Transcode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>83</td>
+<td>2:48</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>85</td>
+<td>2:39</td>
+</tr>
+</tbody>
+</table>
+
+<p>This does not seem like a shock to me. Fastest CPU I have with the fastest GPU. What&rsquo;s wonderful is that it&rsquo;s fast <em>and</em> the lowest Wattage.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Energy efficiency has come a long way over the past decade or so. I don&rsquo;t fault the older tech for taking as much energy as it does. Rather, I&rsquo;m impressed at how much better things are now.</p>
+
+<p>A GPU makes an incredible impact on HandBrake performance. I did not realize how heavily GPU acceleration factored into HandBrake&rsquo;s performance, but clearly, it is significant.</p>
+
+<p>I could save about 45 watts and get similar performance by switching to the BOXD945GCNL motherboard, which has integrated graphics that perform almost just as well as the NVIDIA GPU.</p>
+
+<p>The key for me now is finding the balance. This rig will be on frequently, and only rarely transcoding. So is the better setup one that consumes less power, but is slower? If it takes a day to transcode something that would take the other rig a few minutes, is there really a major savings?</p>
+
+<p>I think it depends a lot on how often this is powered on in reality, and how much transcoding is done.</p>
+
+<p>It seems that there are some clear energy savings if I switch over to the lower wattage motherboard and rely on the Intel onboard graphics.</p>
+
+<p>Though, I should seriously consider if something like a Core i3 is actually best for the environment since I&rsquo;d see both an increase in speed and much more efficient power consumption. Maybe all my old configurations are bound for <a href="http://freegeekchicago.org/">FreeGeek</a> while I get some modern, more efficient, hardware.</p>
+
+<p>Food for thought.</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fpower-performance-comparisons-between-various-cpus-configurations%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>

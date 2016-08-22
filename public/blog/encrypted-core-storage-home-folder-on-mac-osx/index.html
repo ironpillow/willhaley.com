@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Encrypted Core Storage Home Folder on Mac OSX - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="So you want to encrypt your $HOME on your Mac but nothing else? Let&rsquo;s stop right here. The built in option for FileVault full disk encryption is the stand...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/encrypted-core-storage-home-folder-on-mac-osx/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Encrypted Core Storage Home Folder on Mac OSX</h1>
+    <p class="post-meta"><time datetime="2016-11-12T10:23:51+00:00" itemprop="datePublished">Nov 12, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    
+
+<p>So you want to encrypt your <code>$HOME</code> on your Mac but nothing else?</p>
+
+<p>Let&rsquo;s stop right here.</p>
+
+<p><strong>The built in option for FileVault full disk encryption is the standard on a Mac, and I recommend going that route for encryption. It is a fairly big pain to do what you&rsquo;re asking.</strong></p>
+
+<p>Though, it is possible, and that is what this guide will help you to accomplish. Although it is complicated, it <em>is</em> possible to encrypt a user&rsquo;s home folder independently of the rest of the system. We can use a keyfile to encrypt our home, and automatically mount it at boot.</p>
+
+<p>A couple caveats.</p>
+
+<ol>
+<li>Again, I have to stress, FileVault is <em>so much</em> simpler. Or <a href="https://en.wikipedia.org/wiki/VeraCrypt">VeraCrypt</a>.</li>
+<li>You must be comfortable using a USB key to decrypt your drive.</li>
+<li>My process works 99% of the time, but about once every few months my <code>$HOME</code> fails to mount properly and I must reboot to try again.</li>
+</ol>
+
+<p>Full disk encryption is better than partial disk encryption, and my process certainly has some holes. It is up to you to be as secure (paranoid) as you want.</p>
+
+<!-- more -->
+
+<h2 id="administrator-account">Administrator account</h2>
+
+<p>Create an <code>Administrator</code> user on your Mac (with Administrator access of course) and log out of your account and log in as that user.</p>
+
+<p>While it may be possible, I do not think it&rsquo;s a good idea to mess with the home folder of a user while that user is logged in. That is why I ask you to create the Administrator user account.</p>
+
+<p>Not only should you use that secondary account to follow these instructions, but you should keep that account around and <strong>never encrypt its home</strong>.</p>
+
+<p>Why? Well, if your encrypted home folder fails to mount at boot time for some reason, you may be locked out of your Mac. That&rsquo;s no fun. You can probably fix things via the recovery tools if that happens, but having a secondary admin account will greatly ease your burden if you need to troubleshoot. It&rsquo;s your choice, but be warned, if something goes wrong and you get locked out of your machine, it will probably be very frustrating and annoying.</p>
+
+<h2 id="create-a-keyfile">Create a keyfile</h2>
+
+<p>I believe that a keyfile is the only way to accomplish the goal of this article.</p>
+
+<p>I cannot find any way to accomplish our goal using a password prompt. I don&rsquo;t think you can inject/prompt for a password in the standard boot process without using a file that can be read via script.</p>
+
+<p>I am naming my keyfile <code>willencryptedhome.key</code>. The file should contain nothing but the password.</p>
+
+<pre><code>thePassw0rd
+</code></pre>
+
+<p>That is a trivial example. In reality, this is how I generated my keyfile.</p>
+
+<pre><code># 1023 chars is the longest allowed passphrase here.
+cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 1023 | head -n 1 &gt; willencryptedhome.key
+</code></pre>
+
+<p>Find a USB drive. Bonus points if it has a <a href="https://www.amazon.com/Kanguru-Flash-Physical-Protect-switch/dp/B008OGNM8E">&ldquo;read only&rdquo; switch on it like the Kanguru USB drives that I use</a>.</p>
+
+<p>Format the USB drive as MS-DOS (FAT), with a Master Boot Record, using Disk Utility. Name the drive <code>KEYDRIVE01</code> or something that&rsquo;s reasonably unique.</p>
+
+<p>Copy your keyfile to the root of <code>KEYDRIVE01</code>.</p>
+
+<p>You should backup this keyfile somewhere secure. If you lose it, you will forever lose access to your encrypted disk.</p>
+
+<h2 id="set-up-our-encrypted-disk">Set up our encrypted disk</h2>
+
+<p>I highly recommend using a dedicated disk to house this encrypted home of yours. What I mean is, a separate, distinct disk from your OS disk.</p>
+
+<p>In my case, I&rsquo;m using a brand new ~500GB SSD drive to act as my encrypted home.</p>
+
+<p>For clarity, I&rsquo;m going to refer to this disk as the &ldquo;encrypted home&rdquo;, even though it&rsquo;s not encrypted just yet.</p>
+
+<p>With your machine powered off, plug in your new encrypted home disk to your Mac. Boot up and open up your terminal.</p>
+
+<p>Find the id of the disk that will server as your encrypted home.</p>
+
+<pre><code>diskutil list
+</code></pre>
+
+<p>My encrypted home disk is brand new and so has no partitions.</p>
+
+<pre><code>/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:                                                   *480.1 GB   disk0
+... etc ...
+</code></pre>
+
+<p>Be <strong>extremely</strong> certain that you&rsquo;re looking at the correct disk before proceeding. If you choose the wrong disk, you may lose data.</p>
+
+<p>Create a <code>corestorage</code> <code>Logical Volume Group</code> on your encrypted home disk. <strong>Warning: this will erase the disk.</strong> Note that I am running this command against <code>/dev/disk0</code> based on the output of the command above. This will almost certainly <strong>not</strong> be the same for you, so read carefully!</p>
+
+<p>I am using <code>ENCRYPTEDHOME</code> for the Core Storage logical volume group name, but you use whatever you like.</p>
+
+<pre><code>diskutil corestorage create ENCRYPTEDHOME /dev/disk0
+</code></pre>
+
+<p>Your encrypted home disk layout should look something like this if you do another <code>diskutil list</code>.</p>
+
+<pre><code>/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *480.1 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:          Apple_CoreStorage ENCRYPTEDHOME           479.8 GB   disk0s2
+   3:                 Apple_Boot Boot OS X               134.2 MB   disk0s3
+... etc ...
+</code></pre>
+
+<p>Create a volume inside the Core Storage <code>Logical Volume Group</code> that we just created a moment ago. I am calling <em>my</em> volume <code>WILLENCRYPTEDHOME</code>. You can name it however you like, but then make sure you use <em>your</em> updated name(s) in the rest of my steps.</p>
+
+<pre><code>diskutil corestorage createVolume ENCRYPTEDHOME jhfs+ WILLENCRYPTEDHOME 100%
+</code></pre>
+
+<p>Encrypt your encrypted home disk Core Storage volume using the key we created earlier.</p>
+
+<pre><code>cat /Volumes/KEYDRIVE01/willencryptedhome.key|diskutil corestorage encryptVolume WILLENCRYPTEDHOME -stdinpassphrase
+</code></pre>
+
+<h2 id="unlock-our-encrypted-disk-at-boot">Unlock our encrypted disk at boot</h2>
+
+<p>Great. Now we have an encrypted drive and a USB key to unlock it, but how do we unlock it at boot when we need to login? OS X has no built in mechanism for this, so we&rsquo;ll have to script it ourselves.</p>
+
+<p>Technically, we can&rsquo;t unlock the drive as part of the login process. At least, not to my knowledge. So, we must unlock the disk at boot time. We&rsquo;ll unlock it then using our USB key.</p>
+
+<p>Get the UUID of your USB key.</p>
+
+<pre><code>wills-iMac:~ will$ diskutil list | grep KEYDRIVE01
+1:                  Apple_HFS KEYDRIVE01              1.9 GB     disk4s1
+wills-iMac:~ will$ diskutil info disk4s1 | grep &quot;Volume UUID&quot;
+Volume UUID:              35B0AB1F-AF54-3A8B-8C95-8DA9833CB0E1
+</code></pre>
+
+<p>Get the UUID of your encrypted <code>Logical Volume</code>. Note, it&rsquo;s the last item in the list.</p>
+
+<pre><code>wills-iMac:~ will$ diskutil corestorage list | grep &quot;Logical Volume&quot;
++-- Logical Volume Group C3E498E5-BADE-4367-9979-D6E541D37989
+    +-&gt; Logical Volume Family 7E96AFD1-3B18-4C48-8537-8491B35DF73A
+        +-&gt; Logical Volume 0C4997C8-EE93-4723-813F-D60A50872B60
+</code></pre>
+
+<p>Create a file with the following contents at <code>/opt/mount.sh</code>.</p>
+
+<p><strong>Replace <code>YOUR_USB_KEY_UUID</code> and <code>YOUR_ENCRYPTED_VOLUME_UUID</code> in the script below with the correct UUIDs for <em>your</em> USB key and encrypted volume found when you ran the commands above!</strong></p>
+
+<p>Modify the script as needed for your system. For instance, your keyfile probably has a different file name than mine.</p>
+
+<pre><code>#!/bin/bash
+
+USB_KEY_UUID=YOUR_USB_KEY_UUID
+ENCRYPTED_VOLUME_UUID=YOUR_ENCRYPTED_VOLUME_UUID
+
+LOG=/tmp/mount.log
+
+echo &quot;mount attempted at $(date)&quot; &gt; $LOG 2&gt;&amp;1
+
+# Must ensure the USB key is mounted so we can access the keyfile.
+diskutil mount $USB_KEY_UUID &gt;&gt; $LOG 2&gt;&amp;1
+
+diskutil list &gt;&gt; $LOG 2&gt;&amp;1
+
+KEY_NAME=$(diskutil info $USB_KEY_UUID | grep &quot;Volume Name&quot; | awk '{print $3}')
+
+echo $KEY_NAME &gt;&gt; $LOG 2&gt;&amp;1
+
+# Read the key.
+password=$(cat /Volumes/$KEY_NAME/willencryptedhome.key)
+
+# Mount encrypted volume using the key.
+printf $password|diskutil corestorage unlockVolume $ENCRYPTED_VOLUME_UUID -stdinpassphrase
+</code></pre>
+
+<p>Lock that script down a bit and make it executable.</p>
+
+<pre><code>sudo chown root:wheel /opt/mount.sh
+sudo chmod 500 /opt/mount.sh
+sudo chmod +x /opt/mount.sh
+</code></pre>
+
+<p>OK, so how do we get that to run at boot?</p>
+
+<p>Create a file at <code>/Library/LaunchDaemons/com.willhaley.mac.startup.mounthome.plist</code> using these contents.</p>
+
+<p>Again, you can rename that file if you want, but make sure you update the name appropriately elsewhere!</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true /&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.willhaley.mac.startup.mounthome&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/opt/mount.sh&lt;/string&gt;
+    &lt;/array&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>Set our mount script to run at boot.</p>
+
+<pre><code>launchctl load -w /Library/LaunchDaemons/com.willhaley.mac.startup.mounthome.plist
+</code></pre>
+
+<p>Now comes the ultimate test. Keep your USB key plugged in, and reboot. Log in as any user and verify that you can see your mounted drive in the Finder.</p>
+
+<p>Create a new folder in your encrypted volume. Reboot.</p>
+
+<p>Do you see your folder in the encrypted drive? Great. Data is persisting as we&rsquo;d hope.</p>
+
+<p>Try unplugging your USB key and rebooting. You should see that the encrypted home disk does <em>not</em> mount now. Re-connect your USB key and reboot again.</p>
+
+<p>Hopefully the encrypted home disk is mounting properly each time you reboot as long as the USB key is plugged in.</p>
+
+<p>If your encrypted home is failing to mount automatically, take a step back and try to see where you went wrong.</p>
+
+<p>Can you run the <code>mount.sh</code> script manually? Do you see any errors? Do you see a file created at <code>/tmp/mount.log</code> indicating that a mount was even attempted? Keep at it. I&rsquo;m sure you&rsquo;ll figure it out, and my apologies if I left out a step.</p>
+
+<h2 id="move-your-home-data-to-the-encrypted-disk">Move your $HOME data to the encrypted disk</h2>
+
+<p>You may not have paid attention at the beginning, but to reiterate, I <strong>highly</strong> recommend that you log out of your account and log in as another administrator for these next steps.</p>
+
+<p>Once you have logged in as another user, we can copy data from your old unencrypted home directory to the new encrypted home location.</p>
+
+<pre><code>rsync -avr /Users/will/ /Volumes/WILLENCRYPTEDHOME/
+</code></pre>
+
+<h1 id="mount-your-encrypted-disk-as-your-new-home">Mount your encrypted disk as your new $HOME</h1>
+
+<p>Our encrypted volume should mount automatically at boot now, but you&rsquo;ll note it&rsquo;s mounted under <code>/Volumes</code> by default. We do not want that. We want it mounted at <code>$HOME</code>. Although it&rsquo;s possible to re-define where <code>$HOME</code> is, or do a mount bind, I am not entirely comfortable messing with those. I feel like that would be very non-standard and may not play well on a Mac.</p>
+
+<p>So instead, we will mount the encrypted home disk over our standard <code>/Users/$USER</code> path.</p>
+
+<p>Let&rsquo;s go back and edit our <code>/opt/mount.sh</code> script. We have a couple more lines to add.</p>
+
+<p>At the bottom, add these lines so that from now on, your encrypted home volume will mount at <code>/Users/will</code> (or whatever is applicable).</p>
+
+<pre><code># This looks odd, but I've found that occasionally it fails to unmount the first
+# time, so adding a loop so we can re-try.
+MAX_ATTEMPTS=10
+ATTEMPT=0
+while [ &quot;$(diskutil info $ENCRYPTED_VOLUME_UUID | grep -i &quot;Mounted&quot; | awk '{print $2}')&quot; == 'Yes' ] &amp;&amp; [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+  sleep 1
+  echo &quot;$ENCRYPTED_VOLUME_UUID is mounted. Attempt: $ATTEMPT of $MAX_ATTEMPTS&quot; &gt;&gt; $LOG 2&gt;&amp;1
+  diskutil umount $ENCRYPTED_VOLUME_UUID &gt;&gt; $LOG 2&gt;&amp;1
+  ATTEMPT=$((ATTEMPT+1))
+done
+
+diskutil mount -mountPoint /Users/will $ENCRYPTED_VOLUME_UUID &gt;&gt; $LOG 2&gt;&amp;1
+</code></pre>
+
+<p>Reboot again. Your machine should now be using the encrypted volume as your <code>/Users/will</code> folder.</p>
+
+<h2 id="clean-up">Clean up</h2>
+
+<p>Once you&rsquo;re satisfied and your data is backed up securely and your USB key is backed up securely, then you should <strong>delete</strong> your old home directory at <code>/Users/will</code> (or wherever) from the unencrypted disk.</p>
+
+<p>After all, what is the point of encrypting our <code>$HOME</code> if the old unencrypted data is still there in the open?</p>
+
+<p><strong>Be extremely careful that you are deleting the data from the unencrypted disk, and not from your encrypted disk.</strong></p>
+
+<p>These steps took a <em>lot</em> of trial and error. FileVault is a much safer and easier way to get encryption, and although I have not used VeraCrypt, it is probably much simpler too.</p>
+
+<p>For any of this to be worthwhile, please don&rsquo;t leave your USB key plugged in to your Mac when you leave the house ;)</p>
+
+<h2 id="citations">Citations</h2>
+
+<p><a href="https://derflounder.wordpress.com/2011/11/23/using-the-command-line-to-unlock-or-decrypt-your-filevault-2-encrypted-boot-drive/">This site</a> was a huge help in understanding Core Storage.</p>
+
+<p><a href="http://www.splinter.com.au/using-launchd-to-run-a-script-every-5-mins-on/">This site</a> was a huge help in understanding <code>Launchd</code> and boot scripts in OS X.</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fencrypted-core-storage-home-folder-on-mac-osx%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>
