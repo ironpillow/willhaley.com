@@ -10,6 +10,10 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 
 > The Guardian, Arwa Mahdawi, 2018-11-20
 
+[Delay, Deny and Deflect: How Facebook’s Leaders Fought Through Crisis](https://www.nytimes.com/2018/11/14/technology/facebook-data-russia-election-racism.html)
+
+> The New York Times, Sheera Frenkel, Nicholas Confessore, Cecilia Kang, Matthew Rosenberg and Jack Nicas, 2018-11-14
+
 [Did Law Enforcement Overlook The Threat Of Far-Right Extremism?](https://www.npr.org/2018/11/07/665215124/did-law-enforcement-overlook-the-threat-of-far-right-extremism)
 
 > NPR, Fresh Air, 2018-11-07
