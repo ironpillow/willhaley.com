@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Set Up a Raspberry Pi Using Only a Chromebook</title>
+      <link>http://willhaley.com/blog/setup-raspberry-pi-chromebook/</link>
+      <pubDate>Fri, 23 Nov 2018 11:40:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/setup-raspberry-pi-chromebook/</guid>
+      <description>It is possible to configure a WiFi enabled Raspberry Pi using only a Chromebook. This can be done headless (no monitor required) and results in a Raspberry Pi with WiFi and ssh enabled so that you can control it from your Chromebook.
+Requirements:
+ Chromebook SD/microSD Card Reader (built in to many Chromebooks) Raspberry Pi with integrated WiFi Raspbian OS image .zip file downloaded to the Chromebook Chromebook Recovery Utility, an App provided by Google Text, a text editor App for Chrome OS  Connect the SD/microSD card to your Chromebook.</description>
+    </item>
+    
+    <item>
       <title>North Face Gnomad</title>
       <link>http://willhaley.com/blog/north-face-gnomad/</link>
       <pubDate>Sat, 10 Nov 2018 17:55:00 +0000</pubDate>

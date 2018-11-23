@@ -362,3 +362,10 @@ public/images/googlebot-crawler/chrome41.png filter=lfs diff=lfs merge=lfs -text
 public/images/north-face-gnomad/laptop-sleeve.jpg filter=lfs diff=lfs merge=lfs -text
 public/images/pogoplug-software-and-support-issues/Remote-Access2.png filter=lfs diff=lfs merge=lfs -text
 public/images/raspberry-pi-wifi-ethernet-bridge/speed.png filter=lfs diff=lfs merge=lfs -text
+public/images/setup-raspberry-pi-chromebook/ filter=lfs diff=lfs merge=lfs -text
+public/images/setup-raspberry-pi-chromebook/recovery.png filter=lfs diff=lfs merge=lfs -text
+public/images/setup-raspberry-pi-chromebook/writing.png filter=lfs diff=lfs merge=lfs -text
+public/images/setup-raspberry-pi-chromebook/files.png filter=lfs diff=lfs merge=lfs -text
+static/images/setup-raspberry-pi-chromebook/files.png filter=lfs diff=lfs merge=lfs -text
+static/images/setup-raspberry-pi-chromebook/recovery.png filter=lfs diff=lfs merge=lfs -text
+static/images/setup-raspberry-pi-chromebook/writing.png filter=lfs diff=lfs merge=lfs -text

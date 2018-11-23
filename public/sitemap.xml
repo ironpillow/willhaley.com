@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://willhaley.com/blog/setup-raspberry-pi-chromebook/</loc>
+    <lastmod>2018-11-23T11:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://willhaley.com/blog/north-face-gnomad/</loc>
     <lastmod>2018-11-10T17:55:00+00:00</lastmod>
   </url>
@@ -594,7 +599,7 @@
   
   <url>
     <loc>http://willhaley.com/blog/</loc>
-    <lastmod>2018-11-10T17:55:00+00:00</lastmod>
+    <lastmod>2018-11-23T11:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
