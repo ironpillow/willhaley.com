@@ -6,6 +6,14 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking.
 
+[Trump proposes a government-run TV news network to counter CNN](https://arstechnica.com/tech-policy/2018/11/trump-proposes-state-run-tv-network-to-tell-world-how-great-america-is/)
+
+> Ars Technica, Jon Brodkin, 2018-11-27
+
+[Nooses found hanging on grounds of Mississippi state capitol](https://www.theguardian.com/us-news/2018/nov/26/nooses-mississippi-state-capitol-jackson)
+
+> The Guardian, Associated Press, 2018-11-26
+
 [Where to avoid if you don’t want to be shot in America](https://www.theguardian.com/commentisfree/2018/nov/20/us-mass-shootings-locations-avoid-bar-church-movie-theater-concert)
 
 > The Guardian, Arwa Mahdawi, 2018-11-20
