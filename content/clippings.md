@@ -10,6 +10,10 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 
 > Ars Technica, Jon Brodkin, 2018-11-27
 
+[Trump on own administration's climate report: 'I don't believe it'](https://www.theguardian.com/us-news/2018/nov/26/trump-national-climate-assessment-dont-believe)
+
+> The Guardian, Emily Holden, 2018-11-26
+
 [Nooses found hanging on grounds of Mississippi state capitol](https://www.theguardian.com/us-news/2018/nov/26/nooses-mississippi-state-capitol-jackson)
 
 > The Guardian, Associated Press, 2018-11-26
