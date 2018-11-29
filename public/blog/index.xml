@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Will Haley</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Nov 2018 11:40:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 19:31:00 +0000</lastBuildDate>
     
 	<atom:link href="http://willhaley.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manually Install Plex Media Server on Raspberry Pi 3</title>
+      <link>http://willhaley.com/blog/raspberry-pi-plex-manual-install/</link>
+      <pubDate>Wed, 28 Nov 2018 19:31:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/raspberry-pi-plex-manual-install/</guid>
+      <description>At time of writing this article, most of the guides I&amp;rsquo;ve found concerning the installation of Plex on a Raspberry Pi recommend using the Raspberry Pi compatible Raspbian/Debian package offered by dev2day. The work by dev2day provides a simple and easy way to install the Plex server on a Raspberry Pi.
+I recommend using the dev2day package repository and instructions for a pain-free installation process. My process, written below, is manual and untested.</description>
+    </item>
     
     <item>
       <title>Set Up a Raspberry Pi Using Only a Chromebook</title>
