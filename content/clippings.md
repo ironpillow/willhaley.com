@@ -6,6 +6,14 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking.
 
+['He's a black man with a gun': Emantic Bradford's shooting divides city of civil rights](https://www.theguardian.com/world/2018/nov/28/hes-a-black-man-with-a-gun-emantic-bradfords-shooting-divides-city-of-civil-rights?CMP=Share_iOSApp_Other)
+
+> The Guardian, Khushbu Shah, 2018-11-29
+
+[A Trauma Surgeon Who Survived Gun Violence Is Taking On The NRA](https://www.npr.org/sections/health-shots/2018/11/28/671519701/this-trauma-surgeon-survived-gun-violence-now-hes-taking-on-the-nra)
+
+> NPR, Fresh Air, 2018-11-28
+
 [Trump proposes a government-run TV news network to counter CNN](https://arstechnica.com/tech-policy/2018/11/trump-proposes-state-run-tv-network-to-tell-world-how-great-america-is/)
 
 > Ars Technica, Jon Brodkin, 2018-11-27
