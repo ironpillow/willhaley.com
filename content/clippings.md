@@ -6,6 +6,22 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking.
 
+[Australia rushes its ‘dangerous’ anti-encryption bill into parliament, despite massive opposition](https://techcrunch.com/2018/12/05/australia-rushes-its-dangerous-anti-encryption-bill-into-parliament/)
+
+> TechCrunch, Zack Whittaker, 2018-12-05
+
+[Waymo One, the groundbreaking self-driving taxi service, explained](https://arstechnica.com/cars/2018/12/waymo-one-the-groundbreaking-self-driving-taxi-service-explained/)
+
+> Ars Technica, Timothy B Lee, 2018-12-05
+
+[Rudy Giuliani, a Trump cybersecurity adviser, doesn’t understand the internet](https://techcrunch.com/2018/12/04/rudy-giuliani-doesnt-understand-the-internet/)
+
+> TechCrunch, Jon Russell, 2018-12-05
+
+[Satanic Sculpture Installed At Illinois Statehouse, Just In Time For The Holidays](https://www.wbez.org/shows/npr/satanic-sculpture-installed-at-illinois-statehouse/35e840ce-3787-4db1-9f0d-4565eeea8268)
+
+> WBEZ, Laurel Wamsley, 2018-12-04
+
 ['He's a black man with a gun': Emantic Bradford's shooting divides city of civil rights](https://www.theguardian.com/world/2018/nov/28/hes-a-black-man-with-a-gun-emantic-bradfords-shooting-divides-city-of-civil-rights?CMP=Share_iOSApp_Other)
 
 > The Guardian, Khushbu Shah, 2018-11-29
