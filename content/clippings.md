@@ -4,7 +4,11 @@ date: 2016-10-16 09:57:00
 type: toplevel
 ---
 
-Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking.
+Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
+
+[Charles Darwin And The Terrible, Horrible, No Good, Very Bad Day](https://www.npr.org/sections/krulwich/2012/10/18/163181524/charles-darwin-and-the-terrible-horrible-no-good-very-bad-day)
+
+> NPR, Robert Krulwich, 2012-10-19
 
 [Australia rushes its ‘dangerous’ anti-encryption bill into parliament, despite massive opposition](https://techcrunch.com/2018/12/05/australia-rushes-its-dangerous-anti-encryption-bill-into-parliament/)
 
