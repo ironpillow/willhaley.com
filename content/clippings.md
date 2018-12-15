@@ -6,6 +6,14 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Bike Lane Uprising - One Year of Data Insights](https://www.youtube.com/watch?v=ObZBEcREoM0)
+
+> YouTube, Chi Hack Night, Christina Whitehouse, 2018-10-17
+
+[Marriott Data Breach Is Traced to Chinese Hackers as U.S. Readies Crackdown on Beijing](https://www.nytimes.com/2018/12/11/us/politics/trump-china-trade.html)
+
+> The New York Times, David E. Sanger, Nicole Perlroth, Glenn Thrush and Alan Rappeport, 2018-12-11
+
 [Charles Darwin And The Terrible, Horrible, No Good, Very Bad Day](https://www.npr.org/sections/krulwich/2012/10/18/163181524/charles-darwin-and-the-terrible-horrible-no-good-very-bad-day)
 
 > NPR, Robert Krulwich, 2012-10-19
