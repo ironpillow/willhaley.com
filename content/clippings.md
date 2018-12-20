@@ -6,6 +6,18 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Gatwick flights remain suspended as drones reappear over runway](https://www.theguardian.com/uk-news/2018/dec/19/gatwick-flights-halted-after-drone-sighting)
+
+> The Guardian, Matthew Weaver, Damien Gayle and Patrick Greenfield, 2018-12-20
+
+[Report: Facebook let major tech firms access private messages, friends lists](https://arstechnica.com/tech-policy/2018/12/report-facebook-let-companies-get-even-more-data-than-previously-known/)
+
+> ArsTechnica, Cyrus Farivar, 2018-12-18
+
+[We The People Will Fund The Wall](https://www.gofundme.com/thetrumpwall)
+
+> GoFundMe, 2018-12-16
+
 [Bike Lane Uprising - One Year of Data Insights](https://www.youtube.com/watch?v=ObZBEcREoM0)
 
 > YouTube, Chi Hack Night, Christina Whitehouse, 2018-10-17
