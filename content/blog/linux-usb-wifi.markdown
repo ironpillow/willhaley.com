@@ -38,7 +38,7 @@ I understand that ThinkPenguin devices may not be ideal for everyone. I am listi
 
 This is _not_ an exhaustive list. I have _not_ purchased hundreds of cards. I have purchased several cards, and am ranking only the cards _I own_. As an average Linux user, I will do the best I can to relate what I found so that it may help others.
 
-_All cards were tested using Ubuntu 16.04.3 LTS Xenial Xerus `4.10.0-37-generic #41~16.04.1-Ubuntu SMP Fri Oct 6 22:42:59 UTC 2017` against a server running iperf 3.0.11. Each test was performed over a period of 4 hours. See my [test data](http://d.willhaley.com/linux-usb-wifi/) and [my wifi-testing repo](https://github.com/williamhaley/wifi-testing) if you are interested._
+_All cards were tested using Ubuntu 16.04.3 LTS Xenial Xerus `4.10.0-37-generic #41~16.04.1-Ubuntu SMP Fri Oct 6 22:42:59 UTC 2017` against a server running iperf 3.0.11. Each test was performed over a period of 4 hours. See [my wifi-testing repo](https://github.com/williamhaley/wifi-testing) if you are interested._
 
 # TPE-N150USB - Great for Linux
 

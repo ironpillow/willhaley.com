@@ -21,6 +21,5 @@ post = "/blog/:title/"
 
 [params]
 version = "1.1.6"
-assetDomain = "http://d.willhaley.com"
 gitHubUserName = "williamhaley"
 name = "Will Haley"

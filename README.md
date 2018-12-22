@@ -28,32 +28,6 @@
 ./deploy.sh
 ```
 
-# Assets
-
-The `d.willhaley.com` domain hosts assets that are too big for git. It is a simple static web host using `index.html` with public read access.
-
-A CNAME was created as described [on Google's docs](https://cloud.google.com/storage/docs/hosting-static-website). Public access was defined using the `allUsers` member as described [on Google's docs](https://cloud.google.com/storage/docs/access-control/making-data-public).
-
-Sync assets to bucket. **Warning: `-d` is destructive**
-
-```
-gsutil rsync -R -d assets/ gs://d.willhaley.com/
-```
-
-Use (legacy) ACLs to allow public read access to all bucket objects via API.
-
-```
-gsutil acl ch -u AllUsers:R gs://d.willhaley.com/
-```
-
-This URL can be used to query the bucket.
-
-```
-https://www.googleapis.com/storage/v1/b/d.willhaley.com/o
-```
-
-Download assets with `./download-assets.sh`. Note there is **not** an equivalent `upload_assets.sh` to ensure we do not accidentically clobber files.
-
 ## Standard Front Matter
 
 Try and only use these tags when possible.
