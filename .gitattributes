@@ -369,3 +369,11 @@ public/images/setup-raspberry-pi-chromebook/files.png filter=lfs diff=lfs merge=
 static/images/setup-raspberry-pi-chromebook/files.png filter=lfs diff=lfs merge=lfs -text
 static/images/setup-raspberry-pi-chromebook/recovery.png filter=lfs diff=lfs merge=lfs -text
 static/images/setup-raspberry-pi-chromebook/writing.png filter=lfs diff=lfs merge=lfs -text
+public/images/holiday-bike-lights/battery-compartment.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/holiday-bike-lights/lights-off.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/holiday-bike-lights/lights-on.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/holiday-bike-lights/wire.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/holiday-bike-lights/lights-off.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/holiday-bike-lights/lights-on.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/holiday-bike-lights/wire.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/holiday-bike-lights/battery-compartment.jpg filter=lfs diff=lfs merge=lfs -text

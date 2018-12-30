@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Set Up a Raspberry Pi Using Only a Chromebook - Will Haley</title>
+  <title>Holiday Bike Frame Lights - Will Haley</title>
 
   <meta name="author" content="will">
-  <meta name="description" content="It is possible to configure a WiFi enabled Raspberry Pi using only a Chromebook. This can be done headless (no monitor required) and results in a Raspberry Pi w...">
+  <meta name="description" content="Target sells a type of Christmas light that fits very well on my bicycle.    Philips 30ct Christmas LED Dewdrop Lights Battery Operated Multicolored SW  These l...">
 
   <link rel="stylesheet" href="/css/main.css?version=1.1.6">
   <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
-  <link rel="canonical" href="http://willhaley.com/blog/setup-raspberry-pi-chromebook/">
+  <link rel="canonical" href="http://willhaley.com/blog/holiday-bike-lights/">
 
   <link rel="manifest" href="/manifest.json?version=1.1.6">
 
@@ -59,80 +59,62 @@
       
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Set Up a Raspberry Pi Using Only a Chromebook</h1>
-    <p class="post-meta"><time datetime="2018-11-23T11:40:00+00:00" itemprop="datePublished">Nov 23, 2018</time></p>
+    <h1 class="post-title" itemprop="name headline">Holiday Bike Frame Lights</h1>
+    <p class="post-meta"><time datetime="2018-12-30T12:09:00+00:00" itemprop="datePublished">Dec 30, 2018</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>It is possible to configure a WiFi enabled Raspberry Pi using only a Chromebook. This can be done headless (no monitor required) and results in a Raspberry Pi with WiFi and ssh enabled so that you can control it from your Chromebook.</p>
+    <p>Target <a href="https://www.target.com/p/philips-30ct-christmas-led-dewdrop-lights-battery-operated-multicolored-sw/-/A-52352028">sells a type of Christmas light that fits very well on my bicycle</a>.</p>
 
-<p>Requirements:</p>
 
-<ul>
-<li>Chromebook</li>
-<li>SD/microSD Card Reader (built in to many Chromebooks)</li>
-<li>Raspberry Pi with integrated WiFi</li>
-<li><a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a> OS image <code>.zip</code> file downloaded to the Chromebook</li>
-<li><a href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/jndclpdbaamdhonoechobihbbiimdgai">Chromebook Recovery Utility</a>, an App provided by Google</li>
-<li><a href="https://chrome.google.com/webstore/detail/text/mmfbcljfglbokpmkimbfghdkjmjhdgbg">Text</a>, a text editor App for Chrome OS</li>
-</ul>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/PEJNZGNcqTQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
-<p>Connect the SD/microSD card to your Chromebook.</p>
 
-<p>Launch the <code>Recovery Utility</code> and click the gear icon in the upper right hand corner. Select the <code>Use local image</code> menu option.</p>
+<blockquote>
+<p>Philips 30ct Christmas LED Dewdrop Lights Battery Operated Multicolored SW</p>
+</blockquote>
+
+<p>These lights are simply a strand of highly flexible wire with LEDs on them attached to a battery pack with a switch.</p>
 
 <figure class="post-image">
-    <img src="/images/setup-raspberry-pi-chromebook/recovery.png" alt="Use a local image with the recovery utility">
-    
-    <figcaption>Use a local image with the recovery utility</figcaption>
+    <img src="/images/holiday-bike-lights/wire.jpg" alt="">
     
 </figure>
 
-<p>When prompted, navigate to your downloaded copy of <code>Raspbian OS</code> as a <code>.zip</code> file. The Recovery Utility can use that as-is without needing to extract the raw <code>img</code> file.</p>
+<p>They offer lights in a variety of colors, but I went for the traditional blue, green, orange, etc., colored lights.</p>
 
-<p>The Recovery Utility will beging writing Raspbian to the SD/microSD card.</p>
+<p>They&rsquo;re about 9 feet long and I found that they fit perfectly around my frame.</p>
 
 <figure class="post-image">
-    <img src="/images/setup-raspberry-pi-chromebook/writing.png" alt="Writing Raspbian to the card">
-    
-    <figcaption>Writing Raspbian to the card</figcaption>
+    <img src="/images/holiday-bike-lights/lights-off.jpg" alt="">
     
 </figure>
 
-<p>After writing is complete you should see <code>boot</code> and <code>rootfs</code> partitions appear in the file explorer on your Chromebook.</p>
-
-<p>Use a text editor like <code>Text</code> on the Chromebook to create two files. I find it is simpler to save these files to your Chromebook, and once they are ready, we can copy them to the Raspberry Pi.</p>
-
-<p>The <strong>first file</strong> should be named <code>ssh</code>, and does not need any content at all. It can be entirely empty.</p>
-
-<p>The <strong>second file</strong> should be named <code>wpa_supplicant.conf</code>. The <code>wpa_supplicant.conf</code> file should look like so. Update the <code>country</code> as appropriate for you, and the <code>ssid</code> and password information as well.</p>
-
-<pre><code>country=US
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-network={
-    ssid=&quot;My Wifi&quot;
-    psk=&quot;password 12345&quot;
-}
-</code></pre>
-
-<p>Copy the <code>ssh</code> and <code>wpa_supplicant.conf</code> files to your <code>boot</code> partition. There are special Raspberry Pi-specific linux scripts that run when you boot the Raspberry Pi for the first time. These scripts will automatically detect the files we placed on the <code>boot</code> partition and 1) enable ssh and 2) configure WiFi for your Pi.</p>
-
-<p>I created those two files locally on my Chromebook then simply copied them to my <code>boot</code> partition.</p>
-
 <figure class="post-image">
-    <img src="/images/setup-raspberry-pi-chromebook/files.png" alt="files required for headless booting">
-    
-    <figcaption>files required for headless booting</figcaption>
+    <img src="/images/holiday-bike-lights/lights-on.jpg" alt="">
     
 </figure>
 
-<p>You should now be able to boot your Raspberry Pi headless, with no screen, and connect to it wirelessly over ssh from your Chromebook after waiting several minutes for booting to complete and for the Pi to connect to WiFi.</p>
+<p>The lights say they&rsquo;re for indoor use only, but I found they survived rain, snow, and harsh Chicago wind and cold. On two AA batteries they lasted all December and are still going strong into January. These gave me a lot of illumination from the side on dark Winter evenings.</p>
 
-<p>The last piece of the puzzle is determining the IP address of your Raspberry Pi. On a home network, you should be able to access the DHCP tables on your router to see what IP address your Pi was given and connect as you normally would over ssh.</p>
+<p>A little electric tape did the trick to secure the battery compartment to my seat post under the saddle. I also used electric tape to secure the wire around the frame. If I had a rear bag under the saddle I could have just as easily tucked the battery compartment under there.</p>
+
+<p>The light mode can be toggled from off to blinking to slowly fading to staying on constantly.</p>
+
+<figure class="post-image">
+    <img src="/images/holiday-bike-lights/battery-compartment.jpg" alt="">
+    
+</figure>
+
+<p>I was afraid the wire could come loose while I was riding and get caught in the wheels or drive train, but thankfully the tape held fine and that was never an issue. I imagine zip ties would have worked well too.</p>
+
+<p>For a cheap easy way to get some seasonal lights on your bicycle, I think this and similar products work great.</p>
 
   </div>
 
-  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fsetup-raspberry-pi-chromebook%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fholiday-bike-lights%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
   
 </article>
 

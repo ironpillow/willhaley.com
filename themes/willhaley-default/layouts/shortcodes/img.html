@@ -1,4 +1,6 @@
 <figure class="post-image">
     <img src="/images/{{.Page.BaseFileName}}/{{.Get 0}}" alt="{{.Get 1}}">
-    <figcaption>{{.Get 1}}</figcaption>
+    {{ with (.Get 1) }}
+    <figcaption>{{ . }}</figcaption>
+    {{ end }}
 </figure>
