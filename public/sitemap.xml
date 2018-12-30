@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://willhaley.com/blog/key-space-partitioning/</loc>
+    <lastmod>2018-12-22T14:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://willhaley.com/blog/raspberry-pi-plex-manual-install/</loc>
     <lastmod>2018-11-28T19:31:00+00:00</lastmod>
   </url>
@@ -604,7 +609,7 @@
   
   <url>
     <loc>http://willhaley.com/blog/</loc>
-    <lastmod>2018-11-28T19:31:00+00:00</lastmod>
+    <lastmod>2018-12-22T14:01:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

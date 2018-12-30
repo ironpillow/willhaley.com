@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Kinesis Hash Key Space Partitioning</title>
+      <link>http://willhaley.com/blog/key-space-partitioning/</link>
+      <pubDate>Sat, 22 Dec 2018 14:01:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/key-space-partitioning/</guid>
+      <description>Before going any further, please note that there are far better resources around this topic than what I am sharing here in this article.
+Here are a few articles that helped me on this topic:
+ PutRecord - Amazon Kinesis Data Streams Service API Reference A Binary Search Tree - Applied Go Balancing a binary search tree - Applied Go Kinesis Shard Splitting &amp;amp; Merging by Example ELI5 ExplicitHashKey vs PartitionKey &amp;hellip; How to use ExplicitHashKey for round robin stream assignment in AWS Kinesis A Tour of Go - Exercise: Equivalent Binary Trees tree.</description>
+    </item>
+    
+    <item>
       <title>Manually Install Plex Media Server on Raspberry Pi 3</title>
       <link>http://willhaley.com/blog/raspberry-pi-plex-manual-install/</link>
       <pubDate>Wed, 28 Nov 2018 19:31:00 +0000</pubDate>
