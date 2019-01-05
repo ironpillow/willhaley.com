@@ -1,13 +1,35 @@
 ---
 title: "Setting up a Linux Ubuntu 16.04.3 Box for FRC 2018"
 date: 2017-01-31 21:12:00
-date_modified: 2018-02-07 20:52:00
+date_modified: 2019-01-04 22:45:00
 aliases: [
     /blog/frc-2017-linux/
 ]
 disqus: true
 ---
 
+Previous instructions are deprecated and are no longer available here. The version of Ubuntu specified in this guide is a bit old now, and as of FRC 2019, the build system and guides have changed significantly. FRC now recommends VS Code (yay) and a different simulation environment.
+
+* [Installing C++ and Java Development Tools for FRC](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/1027503-installing-c-and-java-development-tools-for-frc)
+* [Playing Field | FIRST](https://www.firstinspires.org/robotics/frc/playing-field)
+* [What is Synthesis? | Creative Minds](https://www.youtube.com/watch?v=8a1eslYd94w&feature=youtu.be)
+* [Tutorials](http://synthesis.autodesk.com/tutorials.html)
+
+The latest simulation software does not support Linux at all, unfortunately (darn).
+
+> Operating System
+>
+> *    64-bit Microsoft® Windows® 10 (preferred) Anniversary Update (version 1607 or higher)
+> *    64-bit Microsoft Windows 8.1
+> *    64-bit Microsoft Windows 7 SP1 with Update KB4019990
+
+So one of the primary purposes of this article is now moot. A major accomplishment in this article was to get a simulation environment working in Linux, and that is not currently possible at all (or at least, non-obvious and requires more research).
+
+Also, there are now [updated canonical documents regarding Linux support from FRC/WPILib](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/1027503-installing-c-and-java-development-tools-for-frc), so these instructions would merely muddy the waters regarding a "normal" setup guide for Linux.
+
+If the day comes when FRC supports Linux for simulation with the latest tools, or I find a simple way to integrate a Windows simulation environment with a Linux development environment (probably possible with some build scripts, rsync, etc), then I'll update this guide or direct to helpful resources on the topic.
+
+<!--
 These instructions are meant to help set up an Ubuntu Xenial 16.04.3 LTS development environment for the [FRC 2018 FIRST POWER UP](https://www.firstinspires.org/robotics/frc/game-and-season) competition. This guide is written with Java in mind and not C++. With these steps, you should be able to run a simulated environment with which you can test your robot code for FRC 2018.
 
 # Index
@@ -513,4 +535,4 @@ That said, the official docs were my source material for this guide. I picked ou
 * [Creating robot models _without_ SolidWords & CAD](http://wpilib.screenstepslive.com/s/4485/m/23353/l/482129-debugging-simulation)
 * [Troubleshooting gazebo 7, wpilib, and Ubuntu 16](https://www.chiefdelphi.com/forums/showthread.php?t=152866)
 * [Java RobotDrive examples: Tank Drive, Arcade Drive, Mecanum drive](http://wpilib.screenstepslive.com/s/4485/m/13809/l/599700-getting-your-robot-to-drive-with-the-robotdrive-class)
-* [Runtime error while running java simulation of GearBots sample](https://github.com/wpilibsuite/allwpilib/issues/456)
+* [Runtime error while running java simulation of GearBots sample](https://github.com/wpilibsuite/allwpilib/issues/456) -->

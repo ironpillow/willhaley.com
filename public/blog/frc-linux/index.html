@@ -9,7 +9,7 @@
   <title>Setting up a Linux Ubuntu 16.04.3 Box for FRC 2018 - Will Haley</title>
 
   <meta name="author" content="will">
-  <meta name="description" content="These instructions are meant to help set up an Ubuntu Xenial 16.04.3 LTS development environment for the FRC 2018 FIRST POWER UP competition. This guide is writ...">
+  <meta name="description" content="Previous instructions are deprecated and are no longer available here. The version of Ubuntu specified in this guide is a bit old now, and as of FRC 2019, the b...">
 
   <link rel="stylesheet" href="/css/main.css?version=1.1.6">
   <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
@@ -60,487 +60,544 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Setting up a Linux Ubuntu 16.04.3 Box for FRC 2018</h1>
-    <p class="post-meta"><time datetime="2017-01-31T21:12:00+00:00" itemprop="datePublished">Jan 31, 2017</time><span class="date-modified">Updated <time datetime="2018-02-07T20:52:00+00:00" itemprop="dateModified">Feb 7, 2018</time></span></p>
+    <p class="post-meta"><time datetime="2017-01-31T21:12:00+00:00" itemprop="datePublished">Jan 31, 2017</time><span class="date-modified">Updated <time datetime="2019-01-04T22:45:00+00:00" itemprop="dateModified">Jan 4, 2019</time></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    
-
-<p>These instructions are meant to help set up an Ubuntu Xenial 16.04.3 LTS development environment for the <a href="https://www.firstinspires.org/robotics/frc/game-and-season">FRC 2018 FIRST POWER UP</a> competition. This guide is written with Java in mind and not C++. With these steps, you should be able to run a simulated environment with which you can test your robot code for FRC 2018.</p>
-
-<h1 id="index">Index</h1>
+    <p>Previous instructions are deprecated and are no longer available here. The version of Ubuntu specified in this guide is a bit old now, and as of FRC 2019, the build system and guides have changed significantly. FRC now recommends VS Code (yay) and a different simulation environment.</p>
 
 <ul>
-<li><a href="#warnings">Warnings</a></li>
-<li><a href="#install-java">Install Java</a></li>
-<li><a href="#install-eclipse">Install Eclipse</a></li>
-<li><a href="#install-frc-toolchain">Install FRC Toolchain</a></li>
-<li><a href="#install-eclipse-frc-plugins">Install Eclipse FRC Plugins</a></li>
-<li><a href="#install-gazebo">Install Gazebo</a></li>
-<li><a href="#install-frcsim">Install FRCSim</a></li>
-<li><a href="#install-model-and-world-files">Install model and world files</a></li>
-<li><a href="#create-a-sample-application">Create a sample application</a></li>
-<li><a href="#run-a-name-run-a">Run</a></li>
-<li><a href="#next-steps">Next steps</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-<li><a href="#docs">Docs</a></li>
+<li><a href="https://wpilib.screenstepslive.com/s/currentCS/m/java/l/1027503-installing-c-and-java-development-tools-for-frc">Installing C++ and Java Development Tools for FRC</a></li>
+<li><a href="https://www.firstinspires.org/robotics/frc/playing-field">Playing Field | FIRST</a></li>
+<li><a href="https://www.youtube.com/watch?v=8a1eslYd94w&amp;feature=youtu.be">What is Synthesis? | Creative Minds</a></li>
+<li><a href="http://synthesis.autodesk.com/tutorials.html">Tutorials</a></li>
 </ul>
 
-<h2 id="warnings">Warnings!</h2>
+<p>The latest simulation software does not support Linux at all, unfortunately (darn).</p>
+
+<blockquote>
+<p>Operating System</p>
 
 <ul>
-<li>You should acquire a reliable Internet connection to run these steps, as you will be downloading a lot of software</li>
-<li>You must run these steps in the specified order</li>
-<li>You must wait for a step to finish before moving to the next step</li>
-<li>I highly recommend a fresh Ubuntu install if possible</li>
-<li>You need a fast machine (Core i5 equivalent or better, 8GB RAM minimum) to run the simulator</li>
-<li>Simulation is not a replacement for testing on your real world physical Robot</li>
-<li>I have found it is almost impossible to get CAD models of your robot into the simulation environment</li>
-<li>Driver Station does not run on Linux, <a href="https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/599670-installing-the-frc-2018-update-suite-all-languages">only on Windows</a></li>
-<li>FRCSim is not well maintained and may be replaced soon</li>
-<li>You must install outdated software to get this to work</li>
-<li>This guide is constantly updated, so older user comments should be read with caution</li>
+<li>64-bit Microsoft® Windows® 10 (preferred) Anniversary Update (version 1607 or higher)</li>
+<li>64-bit Microsoft Windows 8.1</li>
+<li>64-bit Microsoft Windows 7 SP1 with Update KB4019990</li>
 </ul>
+</blockquote>
 
-<p><span class="warning"><strong>Based on those warnings you should consider whether or not this is worth your time and effort.</strong></span></p>
+<p>So one of the primary purposes of this article is now moot. A major accomplishment in this article was to get a simulation environment working in Linux, and that is not currently possible at all (or at least, non-obvious and requires more research).</p>
 
-<h1 id="install-java">Install Java</h1>
+<p>Also, there are now <a href="https://wpilib.screenstepslive.com/s/currentCS/m/java/l/1027503-installing-c-and-java-development-tools-for-frc">updated canonical documents regarding Linux support from FRC/WPILib</a>, so these instructions would merely muddy the waters regarding a &ldquo;normal&rdquo; setup guide for Linux.</p>
 
-<p>Add the <code>webupd8team</code> repository to your machine. This repository will be used to download Oracle Java installers, which make for a simpler Java install process than manually downloading and installing Java.</p>
+<p>If the day comes when FRC supports Linux for simulation with the latest tools, or I find a simple way to integrate a Windows simulation environment with a Linux development environment (probably possible with some build scripts, rsync, etc), then I&rsquo;ll update this guide or direct to helpful resources on the topic.</p>
 
-<pre><code>sudo add-apt-repository ppa:webupd8team/java
-</code></pre>
+<!--
+These instructions are meant to help set up an Ubuntu Xenial 16.04.3 LTS development environment for the [FRC 2018 FIRST POWER UP](https://www.firstinspires.org/robotics/frc/game-and-season) competition. This guide is written with Java in mind and not C++. With these steps, you should be able to run a simulated environment with which you can test your robot code for FRC 2018.
 
-<p>Refresh your machine&rsquo;s repository package list now that we have added the new respository above.</p>
+# Index
 
-<pre><code>sudo apt-get update
-</code></pre>
+* [Warnings](#warnings)
+* [Install Java](#install-java)
+* [Install Eclipse](#install-eclipse)
+* [Install FRC Toolchain](#install-frc-toolchain)
+* [Install Eclipse FRC Plugins](#install-eclipse-frc-plugins)
+* [Install Gazebo](#install-gazebo)
+* [Install FRCSim](#install-frcsim)
+* [Install model and world files](#install-model-and-world-files)
+* [Create a sample application](#create-a-sample-application)
+* [Run](#run-a-name-run-a)
+* [Next steps](#next-steps)
+* [Troubleshooting](#troubleshooting)
+* [Docs](#docs)
 
-<p>Install Java 8.</p>
+## Warnings!
 
-<pre><code>sudo apt-get install oracle-java8-installer
-</code></pre>
+* You should acquire a reliable Internet connection to run these steps, as you will be downloading a lot of software
+* You must run these steps in the specified order
+* You must wait for a step to finish before moving to the next step
+* I highly recommend a fresh Ubuntu install if possible
+* You need a fast machine (Core i5 equivalent or better, 8GB RAM minimum) to run the simulator
+* Simulation is not a replacement for testing on your real world physical Robot
+* I have found it is almost impossible to get CAD models of your robot into the simulation environment
+* Driver Station does not run on Linux, [only on Windows](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/599670-installing-the-frc-2018-update-suite-all-languages)
+* FRCSim is not well maintained and may be replaced soon
+* You must install outdated software to get this to work
+* This guide is constantly updated, so older user comments should be read with caution
 
-<p>Edit the <code>/etc/environment</code> file.</p>
+<span class="warning">**Based on those warnings you should consider whether or not this is worth your time and effort.**</span>
 
-<pre><code>sudo nano /etc/environment
-</code></pre>
+# Install Java
 
-<p><strong>Append a new line</strong> with this content. This defines a system-wide variable named <code>JAVA_HOME</code> that references the install location of Java on your machine.</p>
+Add the `webupd8team` repository to your machine. This repository will be used to download Oracle Java installers, which make for a simpler Java install process than manually downloading and installing Java.
 
-<pre><code>JAVA_HOME=&quot;/usr/lib/jvm/java-8-oracle&quot;
-</code></pre>
+```
+sudo add-apt-repository ppa:webupd8team/java
+```
 
-<p>Immediately load the <code>/etc/environment</code> configuration file you just created.</p>
+Refresh your machine's repository package list now that we have added the new respository above.
 
-<pre><code>source /etc/environment
-</code></pre>
+```
+sudo apt-get update
+```
 
-<p>List the contents of your Java installation directory using your new <code>$JAVA_HOME</code> variable.</p>
+Install Java 8.
 
-<pre><code>ls $JAVA_HOME
-</code></pre>
+```
+sudo apt-get install oracle-java8-installer
+```
 
-<p>You should see contents like this, which means that your system is properly referencing the Java installation directory we set above.</p>
+Edit the `/etc/environment` file.
 
-<pre><code>bin             LICENSE
+```
+sudo nano /etc/environment
+```
+
+**Append a new line** with this content. This defines a system-wide variable named `JAVA_HOME` that references the install location of Java on your machine.
+
+```
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+```
+
+Immediately load the `/etc/environment` configuration file you just created.
+
+```
+source /etc/environment
+```
+
+List the contents of your Java installation directory using your new `$JAVA_HOME` variable.
+
+```
+ls $JAVA_HOME
+```
+
+You should see contents like this, which means that your system is properly referencing the Java installation directory we set above.
+
+```
+bin             LICENSE
 COPYRIGHT       man
 db              README.html
 include         release
 javafx-src.zip  src.zip
 jre             THIRDPARTYLICENSEREADME-JAVAFX.txt
 lib             THIRDPARTYLICENSEREADME.txt
-</code></pre>
+```
 
-<h1 id="install-eclipse">Install Eclipse</h1>
+# Install Eclipse
 
-<p>Add the <code>ubuntu-make</code> repository to install a modern version of the Eclipse IDE.</p>
+Add the `ubuntu-make` repository to install a modern version of the Eclipse IDE.
 
-<pre><code>sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-</code></pre>
+```
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+```
 
-<p>Refresh your machine&rsquo;s repository package list now that we have added the new respository above.</p>
+Refresh your machine's repository package list now that we have added the new respository above.
 
-<pre><code>sudo apt-get update
-</code></pre>
+```
+sudo apt-get update
+```
 
-<p>Install <code>ubuntu-make</code>.</p>
+Install `ubuntu-make`.
 
-<pre><code>sudo apt install ubuntu-make
-</code></pre>
+```
+sudo apt install ubuntu-make
+```
 
-<p>Install Eclipse using <code>umake</code>. Use the default options when prompted.</p>
+Install Eclipse using `umake`. Use the default options when prompted.
 
-<pre><code>umake ide eclipse
-</code></pre>
+```
+umake ide eclipse
+```
 
-<p><code>Launch</code> Eclipse after the installation is finished.</p>
+`Launch` Eclipse after the installation is finished.
 
-<p>When prompted to choose a <code>workspace</code>, use the default value and click <code>Ok</code> unless you know what you are doing. The workspace is the directory where Eclipse will save your programming projects, and defaults to <code>$HOME/workspace</code>.</p>
+When prompted to choose a `workspace`, use the default value and click `Ok` unless you know what you are doing. The workspace is the directory where Eclipse will save your programming projects, and defaults to `$HOME/workspace`.
 
-<p>Verify that Eclipse is using the <strong>Oracle</strong> version of Java. There are other versions of Java that may be compatible, but (in my FRC experience) are not as stable.</p>
+Verify that Eclipse is using the **Oracle** version of Java. There are other versions of Java that may be compatible, but (in my FRC experience) are not as stable.
 
-<p>In Eclipse, navigate to <code>Window</code> -&gt; <code>Open Perspective</code> -&gt; <code>Java</code> so that we use the Java view in Eclipse.</p>
+In Eclipse, navigate to `Window` -> `Open Perspective` -> `Java` so that we use the Java view in Eclipse.
 
-<p>In Eclipse, navigate to <code>Window</code> -&gt; <code>Preferences</code> -&gt; <code>Java</code> -&gt; <code>Installed JREs</code>.</p>
+In Eclipse, navigate to `Window` -> `Preferences` -> `Java` -> `Installed JREs`.
 
-<p>Verify that the <strong>Oracle</strong> version of Java is listed there.</p>
+Verify that the **Oracle** version of Java is listed there.
 
-<h2 id="install-frc-toolchain">Install FRC Toolchain</h2>
+## Install FRC Toolchain
 
-<p>Add the <code>wpilib</code> repository to your machine. This repository will be used to install FRC software.</p>
+Add the `wpilib` repository to your machine. This repository will be used to install FRC software.
 
-<pre><code>sudo apt-add-repository ppa:wpilib/toolchain
-</code></pre>
+```
+sudo apt-add-repository ppa:wpilib/toolchain
+```
 
-<p>Update the <code>wpilib</code> repo to install packages for Ubuntu yakkety. We need this so that we get a slightly older version of the FRC software.</p>
+Update the `wpilib` repo to install packages for Ubuntu yakkety. We need this so that we get a slightly older version of the FRC software.
 
-<pre><code>sudo sed -i \
+```
+sudo sed -i \
     's/xenial/yakkety/g' \
     /etc/apt/sources.list.d/wpilib-ubuntu-toolchain-xenial.list
-</code></pre>
+```
 
-<p>Refresh your machine&rsquo;s repository package list now that we have added the new respository above.</p>
+Refresh your machine's repository package list now that we have added the new respository above.
 
-<pre><code>sudo apt-get update
-</code></pre>
+```
+sudo apt-get update
+```
 
-<p>Install various required libraries and tools. The <code>frc-toolchain</code> includes compilers, libraries, and tools required for programming our Robot <sup>[<a href="http://first.wpi.edu/FRC/roborio/toolchains/">1</a>]</sup>. <code>git</code> can be used for code management <sup>[<a href="https://git-scm.com/">2</a>]</sup> and will be required to install some other software later in this guide.</p>
+Install various required libraries and tools. The `frc-toolchain` includes compilers, libraries, and tools required for programming our Robot <sup>[<a href="http://first.wpi.edu/FRC/roborio/toolchains/">1</a>]</sup>. `git` can be used for code management <sup>[<a href="https://git-scm.com/">2</a>]</sup> and will be required to install some other software later in this guide.
 
-<p>This code block can be copied and pasted into your terminal as is.</p>
+This code block can be copied and pasted into your terminal as is.
 
-<pre><code>sudo apt-get install \
+```
+sudo apt-get install \
   libc6-i386 libwebkitgtk-1.0-0 curl \
   git jstest-gtk gradle \
   frc-toolchain meshlab cmake libprotobuf-dev \
   libprotoc-dev protobuf-compiler
-</code></pre>
+```
 
-<p>Verify the version of <code>frc-toolchain</code> that was installed.</p>
+Verify the version of `frc-toolchain` that was installed.
 
-<pre><code>sudo dpkg-query \
+```
+sudo dpkg-query \
     --showformat='${Version}\n' \
     --show frc-toolchain
-</code></pre>
+```
 
-<p>The output of the above command should be <code>2017.0~yakkety1</code>. I realize this is <strong>not the latest version</strong>, but we need it for simulation to work properly.</p>
+The output of the above command should be `2017.0~yakkety1`. I realize this is **not the latest version**, but we need it for simulation to work properly.
 
-<h2 id="install-eclipse-frc-plugins">Install Eclipse FRC Plugins</h2>
+## Install Eclipse FRC Plugins
 
-<p>Launch Eclipse if it is not already open.</p>
+Launch Eclipse if it is not already open.
 
-<p>We will now install a <strong>specific version</strong> of the Eclipse FRC Java plugin. This will add extra functionality to Eclipse that is specific to FRC. The Eclipse plugins for FRC assist you in building, deploying, and testing Robot projects.</p>
+We will now install a **specific version** of the Eclipse FRC Java plugin. This will add extra functionality to Eclipse that is specific to FRC. The Eclipse plugins for FRC assist you in building, deploying, and testing Robot projects.
 
-<p>Download the plugin to your <code>$HOME/Downloads</code> directory.</p>
+Download the plugin to your `$HOME/Downloads` directory.
 
-<pre><code>curl -o $HOME/Downloads/EclipsePluginsV2017.3.1.zip \
-    &quot;http://first.wpi.edu/FRC/roborio/release/EclipsePluginsV2017.3.1.zip&quot;
-</code></pre>
+```
+curl -o $HOME/Downloads/EclipsePluginsV2017.3.1.zip \
+    "http://first.wpi.edu/FRC/roborio/release/EclipsePluginsV2017.3.1.zip"
+```
 
-<p>Unzip the plugins to the <code>$HOME/Downloads</code> directory.</p>
+Unzip the plugins to the `$HOME/Downloads` directory.
 
-<pre><code>unzip \
+```
+unzip \
     $HOME/Downloads/EclipsePluginsV2017.3.1.zip \
     -d $HOME/Downloads/EclipsePluginsV2017.3.1
-</code></pre>
+```
 
-<p>In Eclipse navigate to <code>Help</code> -&gt; <code>Install new software</code> -&gt; <code>Add...</code>.</p>
+In Eclipse navigate to `Help` -> `Install new software` -> `Add...`.
 
-<p>Enter a name like <code>FRC Plugins (local v2017.3.1)</code> and click <code>Local...</code>.</p>
+Enter a name like `FRC Plugins (local v2017.3.1)` and click `Local...`.
 
-<p>In the filesystem navigator, navigate to <code>Downloads</code> -&gt; <code>EclipsePluginsV2017.3.1</code> -&gt; <code>eclipse</code> and click <code>Ok</code> when done.</p>
+In the filesystem navigator, navigate to `Downloads` -> `EclipsePluginsV2017.3.1` -> `eclipse` and click `Ok` when done.
 
-<p>Expand the <code>WPILib Robot Development</code> category.</p>
+Expand the `WPILib Robot Development` category.
 
-<p>Check the box for the <code>Robot Java Development</code> plugin. Note that the version number should be <code>2017.3.1</code> for this plugin.</p>
+Check the box for the `Robot Java Development` plugin. Note that the version number should be `2017.3.1` for this plugin.
 
-<p>Click <code>Next</code>, and follow the wizard and confirm and agree to the prompts presented to you.</p>
+Click `Next`, and follow the wizard and confirm and agree to the prompts presented to you.
 
-<p>You may see a message that says <code>Warning: You are installing software that contains unsigned content</code>. Although this is not ideal, it is safe to click <code>Ok</code>.</p>
+You may see a message that says `Warning: You are installing software that contains unsigned content`. Although this is not ideal, it is safe to click `Ok`.
 
-<p>Eclipse will prompt you to restart itself. Let it.</p>
+Eclipse will prompt you to restart itself. Let it.
 
-<p><strong>Eclipse will install critical files after it restarts. Be patient!</strong></p>
+**Eclipse will install critical files after it restarts. Be patient!**
 
-<h2 id="install-gazebo">Install Gazebo</h2>
+## Install Gazebo
 
-<p>Gazebo is the simulator software that models a 3D world through which we can test our robot.</p>
+Gazebo is the simulator software that models a 3D world through which we can test our robot.
 
-<p>The install process is wonderfully simple, but this is actually a very complex and resource intensive piece of software.</p>
+The install process is wonderfully simple, but this is actually a very complex and resource intensive piece of software.
 
-<p>Gazebo will simulate the real world so that you can test your robot code in a (modeled) 3D space.</p>
+Gazebo will simulate the real world so that you can test your robot code in a (modeled) 3D space.
 
-<p>Note the <code>sed</code> command so that we can install an older version of Gazebo.</p>
+Note the `sed` command so that we can install an older version of Gazebo.
 
-<pre><code>curl -ssL http://get.gazebosim.org | sed s/GZ_VER=9/GZ_VER=8/g | sh
-</code></pre>
+```
+curl -ssL http://get.gazebosim.org | sed s/GZ_VER=9/GZ_VER=8/g | sh
+```
 
-<h2 id="install-frcsim">Install FRCSim</h2>
+## Install FRCSim
 
-<blockquote>
-<p>With FRCSim, you should be able to finish 90% Of your programming without ever touching a RoboRIO.</p>
+> With FRCSim, you should be able to finish 90% Of your programming without ever touching a RoboRIO.
 
-<p>We want you to be able to test your code BEFORE you put in on your robot, and before the robot is even built.</p>
+> We want you to be able to test your code BEFORE you put in on your robot, and before the robot is even built.
 
-<p>FRCSim allows robot code written in C++ or Java that normally runs on your RoboRIO to be run on your laptop or desktop. It connects to custom robot models in the Gazebo robot simulator. <sup>[<a href="https://wpilib.screenstepslive.com/s/currentCS/m/frcsim/l/480159-introduction-to-frcsim">3</a>]</sup></p>
-</blockquote>
+> FRCSim allows robot code written in C++ or Java that normally runs on your RoboRIO to be run on your laptop or desktop. It connects to custom robot models in the Gazebo robot simulator. <sup>[<a href="https://wpilib.screenstepslive.com/s/currentCS/m/frcsim/l/480159-introduction-to-frcsim">3</a>]</sup>
 
-<p>Use <code>curl</code> to download FRCSim files to your machine.</p>
+Use `curl` to download FRCSim files to your machine.
 
-<pre><code>curl -o \
+```
+curl -o \
     $HOME/Downloads/simulation-2017.3.1.zip \
     http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpilib/simulation/simulation/2017.3.1/simulation-2017.3.1.zip
-</code></pre>
+```
 
-<p>Create a directory for various simulation files. Note that Eclipse automatically created <code>$HOME/wpilib</code> when we installed the FRC Plugin. We are now manually creating <code>$HOME/wpilib/simulation</code>.</p>
+Create a directory for various simulation files. Note that Eclipse automatically created `$HOME/wpilib` when we installed the FRC Plugin. We are now manually creating `$HOME/wpilib/simulation`.
 
-<pre><code>mkdir $HOME/wpilib/simulation
-</code></pre>
+```
+mkdir $HOME/wpilib/simulation
+```
 
-<p>Unzip our simulation files to the directory we just created.</p>
+Unzip our simulation files to the directory we just created.
 
-<pre><code>unzip \
+```
+unzip \
     $HOME/Downloads/simulation-2017.3.1.zip \
     -d $HOME/wpilib/simulation
-</code></pre>
+```
 
-<p>Create a system-wide <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlink</a> to the <code>frcsim</code> (FRC simulator) program.</p>
+Create a system-wide [symlink](https://en.wikipedia.org/wiki/Symbolic_link) to the `frcsim` (FRC simulator) program.
 
-<pre><code>sudo ln -s $HOME/wpilib/simulation/frcsim /usr/bin/frcsim
-</code></pre>
+```
+sudo ln -s $HOME/wpilib/simulation/frcsim /usr/bin/frcsim
+```
 
-<p>Create a system-wide symlink to the <code>sim_ds</code> (simulated driver station) program.</p>
+Create a system-wide symlink to the `sim_ds` (simulated driver station) program.
 
-<pre><code>sudo ln -s $HOME/wpilib/simulation/sim_ds /usr/bin/sim_ds
-</code></pre>
+```
+sudo ln -s $HOME/wpilib/simulation/sim_ds /usr/bin/sim_ds
+```
 
-<p>We must manually compile the wpilib simulation plugins for FRCsim in order for the simulator to work properly on Linux.</p>
+We must manually compile the wpilib simulation plugins for FRCsim in order for the simulator to work properly on Linux.
 
-<p>Navigate to the <code>$HOME/Downloads</code> directory in your terminal.</p>
+Navigate to the `$HOME/Downloads` directory in your terminal.
 
-<pre><code>cd $HOME/Downloads
-</code></pre>
+```
+cd $HOME/Downloads
+```
 
-<p>Use <code>git</code> to download some <code>wpilib</code> code that we must compile on our machine.</p>
+Use `git` to download some `wpilib` code that we must compile on our machine.
 
-<pre><code>git clone https://github.com/wpilibsuite/allwpilib
-</code></pre>
+```
+git clone https://github.com/wpilibsuite/allwpilib
+```
 
-<p>Navigate to the <code>allwpilib</code> code that we just downloaded.</p>
+Navigate to the `allwpilib` code that we just downloaded.
 
-<pre><code>cd $HOME/Downloads/allwpilib
-</code></pre>
+```
+cd $HOME/Downloads/allwpilib
+```
 
-<p>Check out a specific version of the code we just downloaded. Note that this matches the versions of the Eclipse Plugin and the simulation files. It also (roughly) matches our version of the <code>frc-toolchain</code>.</p>
+Check out a specific version of the code we just downloaded. Note that this matches the versions of the Eclipse Plugin and the simulation files. It also (roughly) matches our version of the `frc-toolchain`.
 
-<pre><code>git checkout v2017.3.1
-</code></pre>
+```
+git checkout v2017.3.1
+```
 
-<p>Run the <code>gradelw</code> script. That script will use <a href="https://gradle.org/">gradle</a>, a software build tool, to compile the software we just downloaded. This script takes a while to run. Though, occasionally, I see this script freeze and hang. <strong>If that happens, it is safe to kill this operation and re-run it</strong>.</p>
+Run the `gradelw` script. That script will use [gradle](https://gradle.org/), a software build tool, to compile the software we just downloaded. This script takes a while to run. Though, occasionally, I see this script freeze and hang. **If that happens, it is safe to kill this operation and re-run it**.
 
-<pre><code>./gradlew build -PmakeSim
-</code></pre>
+```
+./gradlew build -PmakeSim
+```
 
-<p>Copy the plugins we just compiled into our simulation plugins directory.</p>
+Copy the plugins we just compiled into our simulation plugins directory.
 
-<pre><code>cp ./build/install/simulation/plugins/* \
+```
+cp ./build/install/simulation/plugins/* \
     $HOME/wpilib/simulation/plugins/
-</code></pre>
+```
 
-<h2 id="install-model-and-world-files">Install model and world files</h2>
+## Install model and world files
 
-<p>2018 simulation files have not yet been released (and the 2017 files were never shared either) but we can install the 2016 simulation worlds and models to give us something to work off.</p>
+2018 simulation files have not yet been released (and the 2017 files were never shared either) but we can install the 2016 simulation worlds and models to give us something to work off.
 
-<p>Download some 3D models for our simulation.</p>
+Download some 3D models for our simulation.
 
-<pre><code>curl -o \
+```
+curl -o \
     $HOME/Downloads/models.zip \
     https://usfirst.collab.net/sf/frs/do/downloadFile/projects.wpilib/frs.simulation.frcsim_gazebo_models/frs1160?dl=1
-</code></pre>
+```
 
-<p>Unzip the model files into our <code>$HOME/Downloads</code> directory.</p>
+Unzip the model files into our `$HOME/Downloads` directory.
 
-<pre><code>unzip $HOME/Downloads/models.zip -d $HOME/Downloads/
-</code></pre>
+```
+unzip $HOME/Downloads/models.zip -d $HOME/Downloads/
+```
 
-<p>Copy the downloaded gazebo simulation <em>models</em> into our simulation directory.</p>
+Copy the downloaded gazebo simulation _models_ into our simulation directory.
 
-<pre><code>cp -r $HOME/Downloads/frcsim-gazebo-models-4/models \
+```
+cp -r $HOME/Downloads/frcsim-gazebo-models-4/models \
     $HOME/wpilib/simulation/
-</code></pre>
+```
 
-<p>Copy the downloaded gazebo simulation <em>worlds</em> into our simulation directory.</p>
+Copy the downloaded gazebo simulation _worlds_ into our simulation directory.
 
-<pre><code>cp -r $HOME/Downloads/frcsim-gazebo-models-4/worlds \
+```
+cp -r $HOME/Downloads/frcsim-gazebo-models-4/worlds \
     $HOME/wpilib/simulation/
-</code></pre>
+```
 
-<p>Download the official 2016 game arena world file to our simulation directory.</p>
+Download the official 2016 game arena world file to our simulation directory.
 
-<pre><code>curl -o $HOME/wpilib/simulation/worlds/frc2016.world \
-    &quot;http://first.wpi.edu/FRC/roborio/release/simulation/downloads/frc2016.world&quot;
-</code></pre>
+```
+curl -o $HOME/wpilib/simulation/worlds/frc2016.world \
+    "http://first.wpi.edu/FRC/roborio/release/simulation/downloads/frc2016.world"
+```
 
-<h2 id="create-a-sample-application">Create a sample application</h2>
+## Create a sample application
 
-<p>If you already have Java code for your robot in Eclipse, you can skip this step. This is to get you set up with some sample code to get started.</p>
+If you already have Java code for your robot in Eclipse, you can skip this step. This is to get you set up with some sample code to get started.
 
-<p>In Eclipse navigate to <code>File</code> -&gt; <code>New</code> -&gt; <code>Other</code> -&gt; <code>WPILib Robot Java Development</code> -&gt; <code>Example Robot Java Program</code>.</p>
+In Eclipse navigate to `File` -> `New` -> `Other` -> `WPILib Robot Java Development` -> `Example Robot Java Program`.
 
-<p>Enter your team number when prompted.</p>
+Enter your team number when prompted.
 
-<p>Choose the <code>GearsBot</code> sample from the bottom of the list in the <code>CommandBased Project</code> category. This is a simple sample robot that has a corresponding simulation model.</p>
+Choose the `GearsBot` sample from the bottom of the list in the `CommandBased Project` category. This is a simple sample robot that has a corresponding simulation model.
 
-<p>Click <code>Next</code> -&gt; <code>Finish</code>.</p>
+Click `Next` -> `Finish`.
 
-<h2 id="run-a-name-run-a">Run<a name="run"></a></h2>
+## Run<a name="run"></a>
 
-<h3 id="1-frcsim-gazebo">1. FRCSim/Gazebo</h3>
+### 1. FRCSim/Gazebo
 
-<p>Fire up <code>frcsim</code> (Gazebo) using the terminal.</p>
+Fire up `frcsim` (Gazebo) using the terminal.
 
-<pre><code>frcsim
-</code></pre>
+```
+frcsim
+```
 
-<p>That will load an empty three dimensional world in which we can test our robot.</p>
+That will load an empty three dimensional world in which we can test our robot.
 
-<p><strong>Alternatively</strong>, you can specify a world file to be loaded like so. Here we are using the world from 2016. As I mentioned above, the 2017 world has not been released.</p>
+**Alternatively**, you can specify a world file to be loaded like so. Here we are using the world from 2016. As I mentioned above, the 2017 world has not been released.
 
-<pre><code>frcsim $HOME/wpilib/simulation/worlds/frc2016.world
-</code></pre>
+```
+frcsim $HOME/wpilib/simulation/worlds/frc2016.world
+```
 
-<p>Wait until Gazebo has finished loading. Once Gazebo loads, insert the sample <code>GearsBot</code> robot provided by FRC.</p>
+Wait until Gazebo has finished loading. Once Gazebo loads, insert the sample `GearsBot` robot provided by FRC.
 
-<p>In Gazebo navigate to <code>Insert</code> -&gt; <code>Models</code> -&gt; <code>GearsBot</code>.</p>
+In Gazebo navigate to `Insert` -> `Models` -> `GearsBot`.
 
-<p>Click somewhere in the world to place your model.</p>
+Click somewhere in the world to place your model.
 
-<h3 id="2-simulated-driver-station">2. Simulated driver station</h3>
+### 2. Simulated driver station
 
-<p>Run the drive station simulator.</p>
+Run the drive station simulator.
 
-<pre><code>sim_ds
-</code></pre>
+```
+sim_ds
+```
 
-<p>Select your input controller from the list provided. Select <code>Teleop</code>. Click <code>Enable</code>.</p>
+Select your input controller from the list provided. Select `Teleop`. Click `Enable`.
 
-<h3 id="3-run-the-code">3. Run the code</h3>
+### 3. Run the code
 
-<p>Right click the name of your project in Eclipes and <code>Run As</code> a <code>WPILib Java Simulation</code>.</p>
+Right click the name of your project in Eclipes and `Run As` a `WPILib Java Simulation`.
 
-<h3 id="4-enjoy">4. Enjoy</h3>
+### 4. Enjoy
 
-<p><img src="/images/frc-linux/gazebo.png" alt="Gazebo" /></p>
+![Gazebo](/images/frc-linux/gazebo.png)
 
-<p>You should now be able to use your controller to drive your robot.</p>
+You should now be able to use your controller to drive your robot.
 
-<h2 id="next-steps">Next steps</h2>
+## Next steps
 
-<p>Your next steps should be that you alter the code (or create a whole new project as needed) tailored to the needs of your robot.</p>
+Your next steps should be that you alter the code (or create a whole new project as needed) tailored to the needs of your robot.
 
-<p>You should also research (see docs below) how you can export a CAD model of <em>your</em> robot, or create one from scratch, for use in Gazebo. <strong>That is critical</strong>, because then you can test <em>your</em> robot in the Gazebo simulator world rather than the sample robot. Although, as noted in the warnings above, <strong>I think this is extremely difficult and I have never been able to get it working.</strong></p>
+You should also research (see docs below) how you can export a CAD model of _your_ robot, or create one from scratch, for use in Gazebo. **That is critical**, because then you can test _your_ robot in the Gazebo simulator world rather than the sample robot. Although, as noted in the warnings above, **I think this is extremely difficult and I have never been able to get it working.**
 
-<p>The sample robot may have motors and other physical components that do not align with the robot your team is building. Only by testing a model of <em>your</em> robot can you ensure your code will work as expected.</p>
+The sample robot may have motors and other physical components that do not align with the robot your team is building. Only by testing a model of _your_ robot can you ensure your code will work as expected.
 
-<p>The sample robot models in Gazebo may be helpful in testing things like the drivetrain, but this is <strong>not a substitute for testing with your real physical robot</strong>.</p>
+The sample robot models in Gazebo may be helpful in testing things like the drivetrain, but this is **not a substitute for testing with your real physical robot**.
 
-<h2 id="troubleshooting">Troubleshooting</h2>
+## Troubleshooting
 
-<h3 id="robot-is-not-moving">Robot is not moving</h3>
+### Robot is not moving
 
-<p>Make sure you completed all the above steps <strong>in the specified order</strong>.</p>
+Make sure you completed all the above steps **in the specified order**.
 
-<ol>
-<li>Terminate your Eclipse simulation (the red square &ldquo;Stop&rdquo; button) if it is running.</li>
-<li>Close Gazebo.</li>
-<li>Close <code>sim_ds</code>.</li>
-<li>Try re-running the <a href="#run">Run</a> steps above <strong>in the specified order</strong>.</li>
-</ol>
+1. Terminate your Eclipse simulation (the red square "Stop" button) if it is running.
+1. Close Gazebo.
+1. Close `sim_ds`.
+1. Try re-running the [Run](#run) steps above **in the specified order**.
 
-<p>Make sure the &ldquo;Pause&rdquo; button is not selected in Gazebo (it is located at the bottom of the Gazebo window).</p>
+Make sure the "Pause" button is not selected in Gazebo (it is located at the bottom of the Gazebo window).
 
-<h3 id="joystick-controller">Joystick/Controller</h3>
+### Joystick/Controller
 
-<p>This command helps test raw controller input in linux.</p>
+This command helps test raw controller input in linux.
 
-<pre><code>jstest-gtk
-</code></pre>
+```
+jstest-gtk
+```
 
-<h3 id="sim-ds-will-not-stop">sim_ds will not stop</h3>
+### sim_ds will not stop
 
-<p>If <code>sim_ds</code> does not fully exit after closing its window, you can type <code>ctrl + c</code> in its terminal window to kill it.</p>
+If `sim_ds` does not fully exit after closing its window, you can type `ctrl + c` in its terminal window to kill it.
 
-<h3 id="sim-ds-will-not-connect">sim_ds will not connect</h3>
+### sim_ds will not connect
 
-<pre><code>$ sim_ds
+```
+$ sim_ds
 WARNING|Gazebo Transport: Cannot connect, retrying in five seconds.
 WARNING|Gazebo Transport: Cannot connect, retrying in five seconds.
 WARNING|Gazebo Transport: Cannot connect, retrying in five seconds.
 WARNING|Gazebo Transport: Cannot connect, retrying in five seconds.
-</code></pre>
+```
 
-<p>This most likely means Gazebo is not running. Make sure to start Gazebo <em>before</em> starting <code>sim_ds</code>.</p>
+This most likely means Gazebo is not running. Make sure to start Gazebo _before_ starting `sim_ds`.
 
-<p>If it is still not working after you run Gazebo, close everything and try again. Remember, you must run the appropriate steps in the <strong>specified order</strong>.</p>
+If it is still not working after you run Gazebo, close everything and try again. Remember, you must run the appropriate steps in the **specified order**.
 
-<h3 id="error-when-running-a-script-or-installing-software">Error when running a script or installing software</h3>
+### Error when running a script or installing software
 
-<pre><code>E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+```
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
 E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
-</code></pre>
+```
 
-<p>This means that your machine is currently in the process of installing software. Do not reboot! Do not try to stop it!</p>
+This means that your machine is currently in the process of installing software. Do not reboot! Do not try to stop it!
 
-<p>There are two likely causes for that error.</p>
+There are two likely causes for that error.
 
-<ol>
-<li>Your machine is auto-updating in the background.</li>
-<li>You are already in the middle of installing software.</li>
-</ol>
+1. Your machine is auto-updating in the background.
+2. You are already in the middle of installing software.
 
-<p>In both cases, you should <strong>be patient and wait</strong>.</p>
+In both cases, you should **be patient and wait**.
 
-<p>You can check the status of currently running software installs with this command.</p>
+You can check the status of currently running software installs with this command.
 
-<pre><code>ps ax | grep -i dpkg
-</code></pre>
+```
+ps ax | grep -i dpkg
+```
 
-<h3 id="nvidia-gpu">NVIDIA GPU</h3>
+### NVIDIA GPU
 
-<p>If using an NVIDIA GPU, you can install proprietary drivers, which should perform better than the stock drivers.</p>
+If using an NVIDIA GPU, you can install proprietary drivers, which should perform better than the stock drivers.
 
-<p>System Menu -&gt; Settings -&gt; Additional Drivers.</p>
+System Menu -> Settings -> Additional Drivers.
 
-<p>Let the process scan and list the proprietary drivers you require (choose the newest tested proprietary drivers for your card).</p>
+Let the process scan and list the proprietary drivers you require (choose the newest tested proprietary drivers for your card).
 
-<p><img src="/images/frc-linux/nvidia.png" alt="nvidia" /></p>
+![nvidia](/images/frc-linux/nvidia.png)
 
-<p>Click <code>Apply Changes</code>. Let the install finish. Then reboot.</p>
+Click `Apply Changes`. Let the install finish. Then reboot.
 
-<h2 id="docs">Docs</h2>
+## Docs
 
-<p>The <a href="https://wpilib.screenstepslive.com/s/4485/m/23353">official docs for FRCSim</a> can be a tad confusing. The manual process is a bit out of date, and covers the 2016 models/worlds, but does not seem to have been updated for 2017. The official docs recommend a version of Ubuntu that is fairly old at this point.</p>
+The [official docs for FRCSim](https://wpilib.screenstepslive.com/s/4485/m/23353) can be a tad confusing. The manual process is a bit out of date, and covers the 2016 models/worlds, but does not seem to have been updated for 2017. The official docs recommend a version of Ubuntu that is fairly old at this point.
 
-<p>That said, the official docs were my source material for this guide. I picked out the bits and pieces of the FRCSim install process that I needed, and tracked down the 2017 files where I could (and where they weren&rsquo;t referenced in the official docs).</p>
+That said, the official docs were my source material for this guide. I picked out the bits and pieces of the FRCSim install process that I needed, and tracked down the 2017 files where I could (and where they weren't referenced in the official docs).
 
-<ul>
-<li><a href="http://www.firstinspires.org/resource-library/frc/competition-manual-qa-system">FRC 2017 Overview</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485">Programmer&rsquo;s Overview</a></li>
-<li><a href="http://first.wpi.edu/FRC/roborio/release/docs/java/">WPILib JAVA API</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/13809/l/599681-installing-eclipse-c-java">Bootstrapping an FRC Java dev environment</a></li>
-<li><a href="http://first.wpi.edu/FRC/roborio/toolchains/">Installing FRC Toolchains</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/13809/l/242586-building-and-downloading-a-robot-project-to-the-roborio">Deploying code</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/13809/l/145307-creating-your-benchtop-test-program">Creating a robot project in Eclipse</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/26402/c/92710">Using the robot builder to generate stub code for motors, servos, etc.</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/23353/l/349023-installing-solidworks-gazebo-exporter-plugin">Exporing robot models from CAD using solidworks</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/23353/l/403034-importing-a-model-into-gazebo">Importing robot models into gazebo</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/23353/l/228980-simulating-gearsbot-with-frcsim">Simulating gearsbot demo</a></li>
-<li><a href="https://wpilib.screenstepslive.com/s/4485/m/26402/l/255426-overview-of-robotbuilder">Overview of robot builder</a></li>
-<li><a href="http://wpilib.screenstepslive.com/s/4485/m/23353/l/482129-debugging-simulation">Creating robot models <em>without</em> SolidWords &amp; CAD</a></li>
-<li><a href="https://www.chiefdelphi.com/forums/showthread.php?t=152866">Troubleshooting gazebo 7, wpilib, and Ubuntu 16</a></li>
-<li><a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599700-getting-your-robot-to-drive-with-the-robotdrive-class">Java RobotDrive examples: Tank Drive, Arcade Drive, Mecanum drive</a></li>
-<li><a href="https://github.com/wpilibsuite/allwpilib/issues/456">Runtime error while running java simulation of GearBots sample</a></li>
-</ul>
+* [FRC 2017 Overview](http://www.firstinspires.org/resource-library/frc/competition-manual-qa-system)
+* [Programmer's Overview](https://wpilib.screenstepslive.com/s/4485)
+* [WPILib JAVA API](http://first.wpi.edu/FRC/roborio/release/docs/java/)
+* [Bootstrapping an FRC Java dev environment](https://wpilib.screenstepslive.com/s/4485/m/13809/l/599681-installing-eclipse-c-java)
+* [Installing FRC Toolchains](http://first.wpi.edu/FRC/roborio/toolchains/)
+* [Deploying code](https://wpilib.screenstepslive.com/s/4485/m/13809/l/242586-building-and-downloading-a-robot-project-to-the-roborio)
+* [Creating a robot project in Eclipse](https://wpilib.screenstepslive.com/s/4485/m/13809/l/145307-creating-your-benchtop-test-program)
+* [Using the robot builder to generate stub code for motors, servos, etc.](https://wpilib.screenstepslive.com/s/4485/m/26402/c/92710)
+* [Exporing robot models from CAD using solidworks](https://wpilib.screenstepslive.com/s/4485/m/23353/l/349023-installing-solidworks-gazebo-exporter-plugin)
+* [Importing robot models into gazebo](https://wpilib.screenstepslive.com/s/4485/m/23353/l/403034-importing-a-model-into-gazebo)
+* [Simulating gearsbot demo](https://wpilib.screenstepslive.com/s/4485/m/23353/l/228980-simulating-gearsbot-with-frcsim)
+* [Overview of robot builder](https://wpilib.screenstepslive.com/s/4485/m/26402/l/255426-overview-of-robotbuilder)
+* [Creating robot models _without_ SolidWords & CAD](http://wpilib.screenstepslive.com/s/4485/m/23353/l/482129-debugging-simulation)
+* [Troubleshooting gazebo 7, wpilib, and Ubuntu 16](https://www.chiefdelphi.com/forums/showthread.php?t=152866)
+* [Java RobotDrive examples: Tank Drive, Arcade Drive, Mecanum drive](http://wpilib.screenstepslive.com/s/4485/m/13809/l/599700-getting-your-robot-to-drive-with-the-robotdrive-class)
+* [Runtime error while running java simulation of GearBots sample](https://github.com/wpilibsuite/allwpilib/issues/456) -->
 
   </div>
 

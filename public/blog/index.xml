@@ -610,8 +610,8 @@ SystemGroup printadmin root  Once I did that and rebooted, I was able to see out
       <pubDate>Tue, 31 Jan 2017 21:12:00 +0000</pubDate>
       
       <guid>http://willhaley.com/blog/frc-linux/</guid>
-      <description>These instructions are meant to help set up an Ubuntu Xenial 16.04.3 LTS development environment for the FRC 2018 FIRST POWER UP competition. This guide is written with Java in mind and not C++. With these steps, you should be able to run a simulated environment with which you can test your robot code for FRC 2018.
-Index  Warnings Install Java Install Eclipse Install FRC Toolchain Install Eclipse FRC Plugins Install Gazebo Install FRCSim Install model and world files Create a sample application Run Next steps Troubleshooting Docs  Warnings!</description>
+      <description>Previous instructions are deprecated and are no longer available here. The version of Ubuntu specified in this guide is a bit old now, and as of FRC 2019, the build system and guides have changed significantly. FRC now recommends VS Code (yay) and a different simulation environment.
+ Installing C++ and Java Development Tools for FRC Playing Field | FIRST What is Synthesis? | Creative Minds Tutorials  The latest simulation software does not support Linux at all, unfortunately (darn).</description>
     </item>
     
     <item>
