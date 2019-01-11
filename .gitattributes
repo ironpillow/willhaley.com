@@ -377,3 +377,11 @@ static/images/holiday-bike-lights/lights-off.jpg filter=lfs diff=lfs merge=lfs -
 static/images/holiday-bike-lights/lights-on.jpg filter=lfs diff=lfs merge=lfs -text
 static/images/holiday-bike-lights/wire.jpg filter=lfs diff=lfs merge=lfs -text
 static/images/holiday-bike-lights/battery-compartment.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/bike-water-bottle-light/prototype.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/bike-water-bottle-light/bottle.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/bike-water-bottle-light/indoors.jpg filter=lfs diff=lfs merge=lfs -text
+static/images/bike-water-bottle-light/light-in-action.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/bike-water-bottle-light/bottle.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/bike-water-bottle-light/indoors.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/bike-water-bottle-light/light-in-action.jpg filter=lfs diff=lfs merge=lfs -text
+public/images/bike-water-bottle-light/prototype.jpg filter=lfs diff=lfs merge=lfs -text
