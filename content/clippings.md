@@ -6,6 +6,10 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Trump welcomes a shutdown during Oval Office squabble with Pelosi, Schumer](https://www.washingtonpost.com/powerpost/schumer-pelosi-set-to-meet-with-trump-on-wall-but-house-gop-stands-firm/2018/12/11/2604b1ae-fd56-11e8-862a-b6a6f3ce8199_story.html?noredirect=on&utm_term=.49eec2187174)
+
+> The Washington Post, Erica Werner and John Wagner, 2018-12-11
+
 [Gatwick flights remain suspended as drones reappear over runway](https://www.theguardian.com/uk-news/2018/dec/19/gatwick-flights-halted-after-drone-sighting)
 
 > The Guardian, Matthew Weaver, Damien Gayle and Patrick Greenfield, 2018-12-20
@@ -692,6 +696,10 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 [What Google Learned From Its Quest to Build the Perfect Team](http://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html?_r=2)
 
 > The New York Times Magazine, Charles Duhigg, 2016-02-25
+
+[Is Migration a Basic Human Right?](http://freakonomics.com/podcast/is-migration-a-basic-human-right-a-new-freakonomics-radio-podcast/)
+
+> Freakonomics, Stephen Dubner, 2015-12-17
 
 [The secret ingredient that makes some teams better than others](http://ideas.ted.com/the-secret-ingredient-that-makes-some-teams-better-than-others/)
 
