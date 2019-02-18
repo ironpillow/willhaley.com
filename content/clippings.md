@@ -6,6 +6,22 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Trump’s Bizarre, Rambling Announcement of a National Emergency](https://www.theatlantic.com/politics/archive/2019/02/trump-emergency-declaration/582904/)
+
+> The Atlantic, 2019-02-15, David A. Graham
+
+[Wife of White House communications chief goes on anti-vaccine tirade](https://www.theguardian.com/us-news/2019/feb/13/darla-shine-vaccines-anti-vaxxer-measles?CMP=Share_iOSApp_Other)
+
+> The Guardian, Sabrina Siddiqui, 2019-02-13
+
+[Solitude is necessary to balance things out. But isolation is different.](https://www.instagram.com/p/BtzKeOahBjx/?utm_source=ig_share_sheet&igshid=1unt38kj96a5o)
+
+> Humans of New York, 2019-02-12
+
+[How Facebook and YouTube help spread anti-vaxxer propaganda](https://www.theguardian.com/media/2019/feb/01/facebook-youtube-anti-vaccination-misinformation-social-media?CMP=Share_iOSApp_Other)
+
+> The Guardian, Julia Carrie Wong, 2019-02-01
+
 [Trump welcomes a shutdown during Oval Office squabble with Pelosi, Schumer](https://www.washingtonpost.com/powerpost/schumer-pelosi-set-to-meet-with-trump-on-wall-but-house-gop-stands-firm/2018/12/11/2604b1ae-fd56-11e8-862a-b6a6f3ce8199_story.html?noredirect=on&utm_term=.49eec2187174)
 
 > The Washington Post, Erica Werner and John Wagner, 2018-12-11
