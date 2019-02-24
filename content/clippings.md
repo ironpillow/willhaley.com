@@ -6,9 +6,25 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+['Moment of reckoning': US cities burn recyclables after China bans imports](https://www.theguardian.com/cities/2019/feb/21/philadelphia-covanta-incinerator-recyclables-china-ban-imports)
+
+> The Guardian, Oliver Milman, 2019-02-21
+
+[Roger Stone ordered to appear in court over Instagram post targeting judge](https://www.theguardian.com/us-news/2019/feb/19/roger-stone-court-instagram-post-judge)
+
+> The Guardian, Eric Durkin, 2019-02-19
+
+[The Middle Class Is Shrinking Everywhere — In Chicago It’s Almost Gone](https://www.wbez.org/shows/wbez-news/the-middle-class-is-shrinking-everywhere-in-chicago-its-almost-gone/e63cb407-5d1e-41b1-9124-a717d4fb1b0b)
+
+> WBEZ, Linda Lutton, 2019-02-18
+
+[Emma, Carrie, Vivian: How A Family Became A Test Case For Forced Sterilizations](https://www.npr.org/2019/02/17/695574984/emma-carrie-vivian-how-a-family-became-a-test-case-for-forced-sterilizations)
+
+> NPR, Hidden Brain, Shankar Vedantam, 2019-02-18
+
 [Trump’s Bizarre, Rambling Announcement of a National Emergency](https://www.theatlantic.com/politics/archive/2019/02/trump-emergency-declaration/582904/)
 
-> The Atlantic, 2019-02-15, David A. Graham
+> The Atlantic, David A. Graham, 2019-02-15
 
 [Wife of White House communications chief goes on anti-vaccine tirade](https://www.theguardian.com/us-news/2019/feb/13/darla-shine-vaccines-anti-vaxxer-measles?CMP=Share_iOSApp_Other)
 
