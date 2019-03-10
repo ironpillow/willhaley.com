@@ -6,6 +6,42 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[‘I’m so done with driving’: is the robot car revolution finally near?](https://www.theguardian.com/cities/2019/mar/09/im-so-done-with-driving-is-the-robot-car-revolution-finally-near-waymo?CMP=Share_iOSApp_Other)
+
+> The Guardian, Dominic Rushe, 2019-03-10
+
+[How America’s food giants swallowed the family farms](https://www.theguardian.com/environment/2019/mar/09/american-food-giants-swallow-the-family-farms-iowa?CMP=Share_iOSApp_Other)
+
+> The Guardian, Chris McGreal, 2019-03-09
+
+[In Chicago, reparations aren’t just an idea. They’re the law](https://www.theguardian.com/news/2019/mar/08/chicago-reparations-won-police-torture-school-curriculum?CMP=Share_iOSApp_Other)
+
+> The Guardian, Peter C Baker, 2019-03-08
+
+[The White House And Its 'Shadow Cabinet' Of Fox News TV Hosts](https://www.npr.org/2019/03/07/701052337/the-white-house-and-its-shadow-cabinet-of-fox-news-tv-hosts)
+
+> Fresh Air, Terry Gross, 2019-03-07
+
+[Is Your Child An Orchid Or A Dandelion? Unlocking The Science Of Sensitive Kids ](https://www.npr.org/sections/health-shots/2019/03/04/699979387/is-your-child-an-orchid-or-a-dandelion-unlocking-the-science-of-sensitive-kids)
+
+> Fresh Air, Dave Davies, 2019-03-04
+
+[Anti-vaxx 'mobs': doctors face harassment campaigns on Facebook](https://www.theguardian.com/technology/2019/feb/27/facebook-anti-vaxx-harassment-campaigns-doctors-fight-back?CMP=Share_iOSApp_Other)
+
+> The Guardian, Julia Carrie Wong, 2019-02-28
+
+[Iceberg twice the size of New York City is set to break away from Antarctica](https://www.theguardian.com/world/2019/feb/26/iceberg-break-away-antarctica-ice-shelf)
+
+> The Guardian, Oliver Milman, 2019-02-26
+
+[Citing parental freedom, Arizona lawmakers move ahead with anti-vaccine bills](https://arstechnica.com/science/2019/02/three-anti-vaccine-bills-move-ahead-in-arizona-despite-measles-outbreaks/)
+
+> ArsTechnica, Beth Mole, 2019-02-25
+
+[Things I Don’t Know as of 2018](https://overreacted.io/things-i-dont-know-as-of-2018/)
+
+> Overreacted, Dan Abramov, 2018-12-28
+
 ['Moment of reckoning': US cities burn recyclables after China bans imports](https://www.theguardian.com/cities/2019/feb/21/philadelphia-covanta-incinerator-recyclables-china-ban-imports)
 
 > The Guardian, Oliver Milman, 2019-02-21
