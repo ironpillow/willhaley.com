@@ -6,6 +6,10 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Rodrigo Duterte calls women at gender-equality event 'bitches'](https://www.theguardian.com/world/2019/mar/12/rodrigo-duterte-calls-women-at-gender-equality-event-bitches-philippines?CMP=Share_iOSApp_Other)
+
+> The Guardian, Rodrigo Duterte, 2019-03-12
+
 [‘I’m so done with driving’: is the robot car revolution finally near?](https://www.theguardian.com/cities/2019/mar/09/im-so-done-with-driving-is-the-robot-car-revolution-finally-near-waymo?CMP=Share_iOSApp_Other)
 
 > The Guardian, Dominic Rushe, 2019-03-10
