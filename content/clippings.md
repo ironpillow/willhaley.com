@@ -6,6 +6,42 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Why Pedestrian Deaths Are At A 30-Year High](https://www.npr.org/2019/03/28/706481382/why-pedestrian-deaths-are-at-a-30-year-high)
+
+> NPR, Sea Stachura, 2019-03-28
+
+[Paula White: the pastor who helps Trump hear 'what God has to say'](https://www.theguardian.com/us-news/2019/mar/27/paula-white-donald-trump-pastor-evangelicals)
+
+> The Guardian, Jessica Glenza, 2019-03-27
+
+[House-hunting in Silicon Valley: tech's newly rich fuel a spectacle of excess](https://www.theguardian.com/us-news/2019/mar/27/silicon-valley-tech-wealth-real-estate)
+
+> The Guardian, Carol Pogash, 2019-03-27
+
+[What Twins Can Tell Us About Who We Are](https://www.npr.org/2019/03/21/705487258/what-twins-can-tell-us-about-who-we-are)
+
+> Hidden Brain, Shankar Vedantam, 2019-03-25
+
+[Author Says New Zealand Massacre Points To A Global Resurgence Of 'Extremism'](https://www.npr.org/2019/03/25/706482037/author-says-new-zealand-massacre-points-to-a-global-resurgence-of-extremism)
+
+> Fresh Air, Terry Gross, 2019-03-25
+
+[After Boeing Crashes, New Attention On The Potential Flaws Of Software](https://www.npr.org/2019/03/24/705966447/software-is-everywhere-but-its-not-always-an-upgrade)
+
+> NPR, Martin Kaste, 2019-03-24
+
+[Alarm over leaked US database targeting journalists and immigration activists](https://www.theguardian.com/us-news/2019/mar/20/leaked-database-targeting-journalists-immigration-activists)
+
+> The Guardian, Amanda Holpuch and Lauren Aratani, 2019-03-20
+
+[White Nationalist Groups Increase Recruiting And Propaganda Across The West](https://www.npr.org/2019/03/19/704586335/white-nationalist-groups-increase-recruiting-and-propaganda-across-the-west)
+
+> NPR, Nate Hegyi, 2019-03-19
+
+[Misophonia: When Life's Noises Drive You Mad](https://www.npr.org/sections/health-shots/2019/03/18/702784044/misophonia-when-lifes-noises-drive-you-mad)
+
+> NPR, April Fulton, 2019-03-18
+
 [Rodrigo Duterte calls women at gender-equality event 'bitches'](https://www.theguardian.com/world/2019/mar/12/rodrigo-duterte-calls-women-at-gender-equality-event-bitches-philippines?CMP=Share_iOSApp_Other)
 
 > The Guardian, Rodrigo Duterte, 2019-03-12
