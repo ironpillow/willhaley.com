@@ -6,6 +6,46 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[Notre Dame fire: Paris cathedral devastated by ferocious blaze](https://www.theguardian.com/world/2019/apr/15/notre-dame-fire-paris-france-cathedral)
+
+> The Guardian, Angelique Chrisafis and Jon Henley, 2019-04-15
+
+[Something happened the second year of college.](https://www.instagram.com/p/BwM-9tCHQ1Z/?utm_source=ig_share_sheet&igshid=111ylr7folgk8)
+
+> Humans of New York, 2019-04-13
+
+[City Council Approves Lincoln Yards, The 78](https://www.npr.org/local/309/2019/04/11/712274362/city-council-approves-lincoln-yards-the-78)
+
+> The Guardian, Linda Lutton, Becky Vevea, Mark LeBien, 2019-04-11
+
+[Breakin’ the Law: What Should We Do About Cyclists Who Don’t Play By the Rules?](https://chi.streetsblog.org/2019/04/11/breakin-the-law-what-should-we-do-about-cyclists-who-dont-play-by-the-rules/)
+
+> Streetsblog Chicago, John Greenfield, 2019-04-11
+
+[Julian Assange charged by US with computer hacking conspiracy](https://www.theguardian.com/media/2019/apr/11/julian-assange-charged-with-computer-hacking-conspiracy)
+
+> The Guardian, Jon Swaine, 2019-04-11
+
+[Suspect arrested in connection with fires at black churches in Louisiana](https://www.theguardian.com/us-news/2019/apr/11/louisiana-church-fires-suspect-arrested)
+
+> The Guardian, Jamiles Lartey, 2019-04-11
+
+[Donald Trump rails against 'greatest hoax' at first rally since Mueller report](https://www.theguardian.com/us-news/2019/mar/29/donald-trump-michigan-rally-mueller-report)
+
+> The Guardian, Tom Perkins, 2019-03-29
+
+[Some Black millennials refuse to be forced out of Chicago, others have no choice](https://thetriibe.com/2019/03/some-black-millennials-refuse-to-be-forced-out-of-chicago-others-have-no-choice/)
+
+> The Tribe, Janaya Greene, 2019-03-29
+
+[Alaska: video shows father and son boasting after illegally killing bear and cubs ](https://www.theguardian.com/us-news/2019/mar/28/father-son-kill-bear-cubs-alaska-video?CMP=Share_iOSApp_Other)
+
+> The Guardian, Erin Durkin, 2019-03-28
+
+[EPA Science Panel Considering Guidelines That Upend Basic Air Pollution Science](https://www.npr.org/2019/03/28/707166015/epa-science-panel-considering-guidelines-that-upend-basic-air-pollution-science)
+
+> NPR, Rebecca Hersher, 2019-03-28
+
 [Why Pedestrian Deaths Are At A 30-Year High](https://www.npr.org/2019/03/28/706481382/why-pedestrian-deaths-are-at-a-30-year-high)
 
 > NPR, Sea Stachura, 2019-03-28
