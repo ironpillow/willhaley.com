@@ -6,6 +6,10 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
 
+[What’s New About Conspiracy Theories?](https://www.newyorker.com/magazine/2019/04/22/whats-new-about-conspiracy-theories)
+
+> The New Yorker, Elizabeth Kolbert, 2019-04-15
+
 [Notre Dame fire: Paris cathedral devastated by ferocious blaze](https://www.theguardian.com/world/2019/apr/15/notre-dame-fire-paris-france-cathedral)
 
 > The Guardian, Angelique Chrisafis and Jon Henley, 2019-04-15
@@ -13,6 +17,14 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 [Something happened the second year of college.](https://www.instagram.com/p/BwM-9tCHQ1Z/?utm_source=ig_share_sheet&igshid=111ylr7folgk8)
 
 > Humans of New York, 2019-04-13
+
+['Fox News brain': meet the families torn apart by toxic cable news](https://www.theguardian.com/media/2019/apr/12/fox-news-brain-meet-the-families-torn-apart-by-toxic-cable-news)
+
+> The Guardian, Luke O'Neil, 2019-04-12
+
+[China’s hi-tech war on its Muslim minority](https://www.theguardian.com/news/2019/apr/11/china-hi-tech-war-on-muslim-minority-xinjiang-uighurs-surveillance-face-recognition)
+
+> The Guardian, Darren Byler, 2019-04-11
 
 [City Council Approves Lincoln Yards, The 78](https://www.npr.org/local/309/2019/04/11/712274362/city-council-approves-lincoln-yards-the-78)
 
@@ -30,6 +42,10 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 
 > The Guardian, Jamiles Lartey, 2019-04-11
 
+[Why did Trump say his dad was German? He lies so much he doesn’t know the truth](https://www.theguardian.com/commentisfree/2019/apr/04/trump-dad-germany-lies-orange-stories)
+
+> The Guardian, Richard Wolffe, 2019-04-04
+
 [Donald Trump rails against 'greatest hoax' at first rally since Mueller report](https://www.theguardian.com/us-news/2019/mar/29/donald-trump-michigan-rally-mueller-report)
 
 > The Guardian, Tom Perkins, 2019-03-29
@@ -38,7 +54,11 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 
 > The Tribe, Janaya Greene, 2019-03-29
 
-[Alaska: video shows father and son boasting after illegally killing bear and cubs ](https://www.theguardian.com/us-news/2019/mar/28/father-son-kill-bear-cubs-alaska-video?CMP=Share_iOSApp_Other)
+[Garfield phones beach mystery finally solved after 35 years](https://www.bbc.com/news/world-europe-47732553)
+
+> BBC, 2019-03-28
+
+[Alaska: video shows father and son boasting after illegally killing bear and cubs](https://www.theguardian.com/us-news/2019/mar/28/father-son-kill-bear-cubs-alaska-video?CMP=Share_iOSApp_Other)
 
 > The Guardian, Erin Durkin, 2019-03-28
 
