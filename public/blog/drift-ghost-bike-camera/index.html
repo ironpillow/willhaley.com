@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Linux on the Drift Ghost X Bike Camera - Will Haley</title>
+
+  <meta name="author" content="will">
+  <meta name="description" content="I&rsquo;ve been enjoying the quality and ease of use of the Drift Ghost X camera for my bicycle rides. It is relatively affordable and simple. The camera is wat...">
+
+  <link rel="stylesheet" href="/css/main.css?version=1.1.6">
+  <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
+  <link rel="canonical" href="http://willhaley.com/blog/drift-ghost-bike-camera/">
+
+  <link rel="manifest" href="/manifest.json?version=1.1.6">
+
+  <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?version=1.1.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?version=1.1.6">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?version=1.1.6">
+  <meta name="msapplication-config" content="/browserconfig.xml?version=1.1.6">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper" id="app">
+
+      <a class="site-title" href="/">Will Haley</a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/clippings/">Clippings</a>
+          <a class="page-link" href="/favorites/">Favorites</a>
+          <a class="page-link" href="/cv/">CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Linux on the Drift Ghost X Bike Camera</h1>
+    <p class="post-meta"><time datetime="2019-04-17T20:11:00+00:00" itemprop="datePublished">Apr 17, 2019</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I&rsquo;ve been enjoying the quality and ease of use of the <a href="https://driftinnovation.com/collections/cameras-new/products/ghost-x">Drift Ghost X camera</a> for my bicycle rides.</p>
+
+<p>It is relatively affordable and simple. The camera is water resistant, and the waterproof case gives me confidence during a rain storm. Though, the waterproof case looks rather bulky and a little ridiculous I must admit.</p>
+
+<p>I&rsquo;ve found that the simplest way to dump video from the camera is by removing the SD card, but I wanted to share what I found while examining the Linux system installed on the camera.</p>
+
+<p>The camera can be connected to via WiFi in order to use the <a href="https://itunes.apple.com/us/app/drift-life/id1052659378?mt=8">Drift Lite iOS app</a>. When the camera is in WiFi mode it creates an access point and the camera is accessible at <code>192.168.42.1</code>.</p>
+
+<pre><code>$ ping 192.168.42.1
+PING 192.168.42.1 (192.168.42.1): 56 data bytes
+64 bytes from 192.168.42.1: icmp_seq=0 ttl=64 time=10.693 ms
+^C
+--- 192.168.42.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 10.693/10.693/10.693/0.000 ms
+</code></pre>
+
+<p>The camera does not support ssh.</p>
+
+<pre><code>$ ssh 192.168.42.1
+ssh: connect to host 192.168.42.1 port 22: Connection refused
+</code></pre>
+
+<p>Though, it does serve telnet as well as an HTTP endpoint.</p>
+
+<pre><code>$ nmap 192.168.42.1
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-04-02 18:44 CDT
+mass_dns: warning: Unable to open /etc/resolv.conf. Try using --system-dns or specify valid servers with --dns-servers
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap scan report for 192.168.42.1
+Host is up (1.0s latency).
+Not shown: 993 closed ports
+PORT STATE SERVICE
+23/tcp open telnet
+53/tcp open domain
+80/tcp open http
+111/tcp open rpcbind
+554/tcp open rtsp
+8001/tcp open vcom-tunnel
+9898/tcp open monkeycom
+
+Nmap done: 1 IP address (1 host up) scanned in 129.05 seconds
+</code></pre>
+
+<p>As you may expect, <code>root</code> is the username for telnet connections.</p>
+
+<pre><code>$ telnet 192.168.42.1
+Trying 192.168.42.1...
+Connected to 192.168.42.1.
+Escape character is '^]'.
+
+a12 login: root
+~ # whoami
+root
+~ # cd /
+/ # ls
+bin etc init lib32 media opt proc run sys usr
+dev home lib linuxrc mnt pref root sbin tmp var
+</code></pre>
+
+<p>All the media can be found at <code>/var/www/DCIM/100MEDIA/</code></p>
+
+<pre><code>/var/www/DCIM # cd /var/www/DCIM/100MEDIA/
+/var/www/DCIM/100MEDIA # ls
+VID00001.MP4 VID00002.MP4 VID00003.MP4 VID00004.MP4 VID00005.MP4 VID00006.MP4 VID00007.MP4 VID00008.MP4 VID00009.MP4
+VID00001_thm.MP4 VID00002_thm.MP4 VID00003_thm.MP4 VID00004_thm.MP4 VID00005_thm.MP4 VID00006_thm.MP4 VID00007_thm.MP4 VID00008_thm.MP4 VID00009_thm.MP4
+</code></pre>
+
+<p>The running processes are fairly bare bones.</p>
+
+<pre><code>~ # ps
+PID USER TIME COMMAND
+1 root 0:00 init
+2 root 0:00 [kthreadd]
+3 root 0:02 [ksoftirqd/0]
+5 root 0:00 [kworker/0:0H]
+6 root 0:00 [kworker/u2:0]
+7 root 0:03 [rcu_preempt] [155/430]
+8 root 0:00 [rcu_bh]
+9 root 0:00 [rcu_sched]
+10 root 0:00 [khelper]
+11 root 0:00 [kdevtmpfs]
+12 root 0:00 [kworker/u2:1]
+146 root 0:00 [writeback]
+149 root 0:00 [bioset]
+150 root 0:00 [crypto]
+152 root 0:00 [kblockd]
+162 root 0:00 [kworker/0:1]
+254 root 0:00 [rpciod]
+267 root 0:00 [kswapd0]
+268 root 0:00 [fsnotify_mark]
+269 root 0:00 [nfsiod]
+359 root 0:00 [krfcommd]
+363 root 0:00 [deferwq]
+366 root 0:00 [kworker/0:1H]
+367 root 0:01 [kworker/0:2]
+389 root 0:00 /usr/bin/rpcbind
+419 root 0:00 /usr/bin/ipcbind -b
+421 root 0:00 /usr/bin/util_svc -b
+425 root 0:00 /usr/bin/AmbaNetFifoDaemon
+429 root 0:00 /usr/bin/AmbaEventNotifyDaemon
+438 root 0:00 [cfg80211]
+447 root 0:00 [khubd]
+459 root 0:00 telnetd
+473 root 0:00 /usr/bin/remoteapi_disc_daemon
+474 root 0:00 httpd -f -p 80 -h /var/www/
+483 root 0:00 -/bin/sh
+484 root 0:00 /usr/bin/remoteapi_cmd_daemon
+489 root 0:00 /usr/bin/remoteapi_data_daemon
+494 root 0:00 /usr/bin/remoteapi_syssvc_daemon
+499 root 0:00 /usr/bin/AmbaRTSPServer
+658 root 0:03 [RTW_CMD_THREAD]
+685 nobody 0:00 dnsmasq --nodns -5 -K -R -n --dhcp-range=192.168.42.2,192.168.42.21,infinite
+710 root 0:00 hostapd -B /tmp/hostapd.conf
+716 root 0:10 /usr/bin/stream_daemon
+724 root 0:09 example_framer
+5991 root 0:00 -sh
+6007 root 0:00 ps
+</code></pre>
+
+<p>The configs give us some clues about the HTTP server. This device is running a <a href="http://cherokee-project.com/">cherokee</a> web server.</p>
+
+<pre><code>~ # ls /etc/
+TZ fstab hosts inputrc ld.so.conf mdev.conf network passwd random-seed shadow
+cherokee.conf group init.d issue ld.so.conf.d mtab nsswitch.conf ppp resolv.conf ssl
+dropbear hostname inittab ld.so.cache libnl netconfig os-release protocols services
+</code></pre>
+
+<p>It runs a number of standard Linux binaries as well as busybox, which you may expect from a small embedded Linux device.</p>
+
+<pre><code>~ # wget
+BusyBox v1.23.2 (2018-11-28 15:25:18 CST) multi-call binary.
+
+Usage: wget [-c|--continue] [-s|--spider] [-q|--quiet] [-O|--output-document FILE]
+[--header 'header: value'] [-Y|--proxy on/off] [-P DIR]
+[-U|--user-agent AGENT] [-T SEC] URL...
+
+Retrieve files via HTTP or FTP
+
+-s Spider mode - only check file existence
+-c Continue retrieval of aborted transfer
+-q Quiet
+-P DIR Save to DIR (default .)
+-T SEC Network read timeout is SEC seconds
+-O FILE Save to FILE ('-' for stdout)
+-U STR Use STR for User-Agent header
+-Y Use proxy ('on' or 'off')
+</code></pre>
+
+<p>I did not take much time to dive into the filesystem layout.</p>
+
+<pre><code>~ # df -h
+Filesystem Size Used Available Use% Mounted on
+/dev/root 17.8M 17.8M 0 100% /
+devtmpfs 19.2M 0 19.2M 0% /dev
+tmpfs 19.3M 0 19.3M 0% /dev/shm
+tmpfs 19.3M 28.0K 19.3M 0% /tmp
+a: 13.8M 40.0K 13.8M 0% /tmp/FL0
+c: 238.2G 23.6G 214.7G 10% /tmp/SD0
+a: 13.8M 40.0K 13.8M 0% /pref
+c: 238.2G 23.6G 214.7G 10% /var/www/DCIM
+</code></pre>
+
+<p>The camera does not have <code>netcat</code>, which makes copying files a bit tricky. Also, the filesystems appear to be squashfs or something similar that does not allow writing. It is probably booting from an integrated storage device that I didn&rsquo;t bother trying to dive into. There&rsquo;s no build environment or package management. <code>wget</code> seems the simplest solution to install any binaries. Although the idea was temping, at this point I felt trying to install and run my own web UI or similar was overkill and I&rsquo;d be better off just removing the SD card like a normal user when I wanted to dump files :D</p>
+
+<p>Some interesting product configuration is available at <code>/tmp/FL0/pref/product.cfg</code> for the camera.</p>
+
+<p>You could potentially do something like this to populate a list of files and download from the camera on a *nix system.</p>
+
+<pre><code>#!/usr/bin/env expect
+
+spawn telnet 192.168.42.1
+expect &quot;a12 login:&quot;
+send &quot;root\r&quot;
+expect &quot;~ #&quot;
+send &quot;ls /var/www/DCIM/100MEDIA\r&quot;
+expect &quot;~ #&quot;
+
+#!/usr/bin/env bash
+for i in `seq 1 $1`;
+do
+    # Full video
+    wget http://192.168.42.1/DCIM/100MEDIA/VID00001.MP4
+    # Video thumbnail
+    wget http://192.168.42.1/DCIM/100MEDIA/VID00001_thm.MP4
+done
+</code></pre>
+
+<p>Always fun to poke around on a Linux box!</p>
+
+  </div>
+
+  <div class="feedback">Feel free to <a target="_blank" href="https://twitter.com/messages/compose?recipient_id=142425885&amp;text=Regarding%20article%20http%3a%2f%2fwillhaley.com%2fblog%2fdrift-ghost-bike-camera%2f%0a%0a">contact me</a> with questions or feedback regarding this article.</div>
+  
+</article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+
+      <h2 class="footer-heading">Will Haley</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>Will Haley</li>
+            <li><a href="mailto:"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+
+            <li>
+              <a href="https://github.com/williamhaley"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+  </span><span class="username">williamhaley</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-16792239-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  <script src="/js/custom.js?version=1.1.6"></script>
+</body>
+</html>
