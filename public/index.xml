@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Mounting a Camera to my Bicycle Helmet</title>
+      <link>http://willhaley.com/blog/camera-mount/</link>
+      <pubDate>Sat, 27 Apr 2019 14:55:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/camera-mount/</guid>
+      <description>After much Internet searching regarding the types of brackets, screws, and other hardware I may need to mount a camera to my helmet, I decided to share my findings here for others. Unfortunately, people seem to refer to the various pieces of hardware with different names, which made things a bit confusing for me.
+In my case, I have a bicycle helmet that came with some hardware for various mounts. The place to mount this hardware is along a plastic track on top of the helmet.</description>
+    </item>
+    
+    <item>
       <title>Linux on the Drift Ghost X Bike Camera</title>
       <link>http://willhaley.com/blog/drift-ghost-bike-camera/</link>
       <pubDate>Wed, 17 Apr 2019 20:11:00 +0000</pubDate>
@@ -318,7 +328,7 @@ Although it should be possible to install macOS High Sierra in VirtualBox on an 
       <description>EXTLINUX is neat.
  EXTLINUX is a Syslinux variant which boots from a Linux filesystem
  It provides (as far as I can tell) all the functionality of SYSLINUX with the bonus that you can boot from these filesystems.
-FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS[1]
+FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS[3]
 If you have an ext4 formatted disk with the bootable flag enabled on the parition, you can do the following to set up a fun custom boot menu.</description>
     </item>
     
@@ -372,7 +382,7 @@ I used to live by Lakewood and Wrightwood and would ocasionally notice train tra
       
       <guid>http://willhaley.com/blog/access-point-vulnerable-wps-attack/</guid>
       <description>In order to test this, you must have a WiFi card with monitor mode. The Penguin Wireless N USB Adapter for GNU / Linux (TPE-N150USB) worked well for me.
-ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain you will receive an Atheros chipset for this device[1]. With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.</description>
+ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain you will receive an Atheros chipset for this device[2]. With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.</description>
     </item>
     
     <item>
@@ -916,11 +926,10 @@ Client SSH key First, make sure you have an SSH key on your client that is not p
       <pubDate>Sun, 16 Oct 2016 09:57:00 +0000</pubDate>
       
       <guid>http://willhaley.com/clippings/</guid>
-      <description>Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
-What’s New About Conspiracy Theories?
- The New Yorker, Elizabeth Kolbert, 2019-04-15
- Notre Dame fire: Paris cathedral devastated by ferocious blaze
- The Guardian, Angelique Chrisafis and Jon Henley, 2019-04-15</description>
+      <description>Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
+If you build them, they will come: record year for cycle counters
+ The Guardian, Laura Laker, 2019-04-26
+ Cook County Sees Country’s Largest Population Loss</description>
     </item>
     
     <item>

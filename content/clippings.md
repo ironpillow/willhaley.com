@@ -4,7 +4,19 @@ date: 2016-10-16 09:57:00
 type: toplevel
 ---
 
-Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first read them, descending.
+Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
+
+[If you build them, they will come: record year for cycle counters](https://www.theguardian.com/environment/bike-blog/2019/apr/26/if-you-build-them-they-will-come-record-year-for-cycle-counters)
+
+> The Guardian, Laura Laker, 2019-04-26
+
+[Cook County Sees Country’s Largest Population Loss](https://www.wbez.org/shows/wbez-news/cook-county-sees-countrys-largest-population-loss/d14c43e9-7ddb-4f2c-b27b-1b19a3469ec1)
+
+> WBEZ, Esther Yoon-Ji Kang, 2019-04-17
+
+[Concurrency is not parallelism](https://blog.golang.org/concurrency-is-not-parallelism)
+
+> The Go Blog, Rob Pike, 2013-01-16
 
 [What’s New About Conspiracy Theories?](https://www.newyorker.com/magazine/2019/04/22/whats-new-about-conspiracy-theories)
 

@@ -3,6 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://willhaley.com/blog/</loc>
+    <lastmod>2019-04-27T14:55:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://willhaley.com/blog/camera-mount/</loc>
+    <lastmod>2019-04-27T14:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://willhaley.com/blog/drift-ghost-bike-camera/</loc>
     <lastmod>2019-04-17T20:11:00+00:00</lastmod>
   </url>
@@ -620,12 +631,6 @@
   <url>
     <loc>http://willhaley.com/blog/delay-windows-idle-timer/</loc>
     <lastmod>2012-02-03T23:01:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://willhaley.com/blog/</loc>
-    <lastmod>2019-04-17T20:11:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
