@@ -12,7 +12,7 @@
       <li>
         <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
         <h2>
-          <a class="post-link" href="{{ .URL }}">{{ .Title }}</a>
+          <a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
       </li>
       {{ end }}

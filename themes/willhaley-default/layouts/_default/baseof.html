@@ -14,13 +14,15 @@
 
   <link rel="stylesheet" href="/css/main.css?version={{ .Site.Params.version }}">
   <link rel="stylesheet" href="/css/custom.css?version={{ .Site.Params.version }}">
-  <link rel="canonical" href="{{ .URL | absURL }}">
+  <link rel="canonical" href="{{ .Permalink }}">
 
-  {{ if .RSSLink }}
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-  {{ end -}}
-
+  {{ if .IsHome }}
+  {{ $title := .Site.Title }}
+  {{ with .OutputFormats.Get "RSS" -}}
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $title }}" />
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $title }}" />
+  {{ end }}
+  {{ end }}
   <link rel="manifest" href="/manifest.json?version={{ .Site.Params.version }}">
 
   <link rel="shortcut icon" href="/favicon.ico?version={{ .Site.Params.version }}">
@@ -70,9 +72,9 @@
 
   <footer class="site-footer">
     <div class="wrapper">
-      {{- if .RSSLink -}}
-      <p class="rss-subscribe">subscribe <a href="{{ .RSSLink }}">via RSS</a></p>
-      {{- end }}
+      {{ with .OutputFormats.Get "RSS" -}}
+      <p class="rss-subscribe">subscribe <a href="{{ .Permalink }}">via RSS</a></p>
+      {{- end -}}
 
       <h2 class="footer-heading">{{ .Site.Title }}</h2>
 

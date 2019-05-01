@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
   <link rel="canonical" href="http://willhaley.com/blog/custom-debian-live-environment/">
 
+  
   <link rel="manifest" href="/manifest.json?version=1.1.6">
 
   <link rel="shortcut icon" href="/favicon.ico?version=1.1.6">
@@ -236,7 +237,8 @@ LIVE_BOOT/image/live/filesystem.squashfs
 <div class="tabs">
   <nav><div data-selected="true">BIOS</div><div>UEFI</div><div>BIOS &#43; UEFI</div></nav>
   <section>
-    <div class="tab" data-selected="true" >
+    
+<div class="tab" data-selected="true" >
   <p>Create a grub BIOS image.</p>
 
 <pre><code>grub-mkstandalone \
@@ -395,41 +397,8 @@ LIVE_BOOT/image/live/filesystem.squashfs
 
 </div>
 
-  </section>
-</div>
-<script>
-
-document.querySelectorAll('.tabs').forEach(($tabs) => {
-
-    
-    $tabs.querySelectorAll('nav div').forEach(($button) => {
-
-        
-        $button.addEventListener('click', function () {
-            let selectedIndex = 0;
-
-            
-            $tabs.querySelectorAll('nav div').forEach(($otherButton, index) => {
-                if ($otherButton !== $button) {
-                    delete $otherButton.dataset.selected;
-                } else {
-                    selectedIndex = index;
-                    $button.dataset.selected = true;
-                }
-            });
-
-            
-            $tabs.querySelectorAll('.tab').forEach(($otherTab, index) => {
-                if (index != selectedIndex) {
-                    delete $otherTab.dataset.selected;
-                } else {
-                    $otherTab.dataset.selected = true;
-                }
-            });
-        });
-    });
-});
-</script>
+<p></section>
+</div></p>
 
 <h2 id="create-bootable-usb">Create Bootable USB</h2>
 
@@ -442,7 +411,8 @@ document.querySelectorAll('.tabs').forEach(($tabs) => {
 <div class="tabs">
   <nav><div data-selected="true">BIOS</div><div>UEFI</div><div>BIOS &#43; UEFI</div></nav>
   <section>
-    <div class="tab" data-selected="true" >
+    
+<div class="tab" data-selected="true" >
   <p>I am assuming you have an umounted <strong>blank</strong> USB drive at <strong>/dev/sdz</strong>.  To allow easily swapping in a real block device, I am using a variable named <code>$disk</code> in these commands.</p>
 
 <p>Export the <code>disk</code> variable.</p>
@@ -679,41 +649,8 @@ sudo mount ${disk}3 /mnt/usb
 
 </div>
 
-  </section>
-</div>
-<script>
-
-document.querySelectorAll('.tabs').forEach(($tabs) => {
-
-    
-    $tabs.querySelectorAll('nav div').forEach(($button) => {
-
-        
-        $button.addEventListener('click', function () {
-            let selectedIndex = 0;
-
-            
-            $tabs.querySelectorAll('nav div').forEach(($otherButton, index) => {
-                if ($otherButton !== $button) {
-                    delete $otherButton.dataset.selected;
-                } else {
-                    selectedIndex = index;
-                    $button.dataset.selected = true;
-                }
-            });
-
-            
-            $tabs.querySelectorAll('.tab').forEach(($otherTab, index) => {
-                if (index != selectedIndex) {
-                    delete $otherTab.dataset.selected;
-                } else {
-                    $otherTab.dataset.selected = true;
-                }
-            });
-        });
-    });
-});
-</script>
+<p></section>
+</div></p>
 
 <div class="accordion">
   <h1 id="notes" class="heading">
@@ -807,7 +744,6 @@ EOF
   </article>
 </div>
 
-
 <h1 id="citations">Citations</h1>
 
 <ul>
@@ -884,7 +820,6 @@ EOF
 
   <footer class="site-footer">
     <div class="wrapper">
-
       <h2 class="footer-heading">Will Haley</h2>
 
       <div class="footer-col-wrapper">
