@@ -21,7 +21,7 @@ Penguin Wireless N USB Adapter for GNU / Linux (TPE-N150USB)](https://www.thinkp
 
 ![TPE-N150USB](https://www.thinkpenguin.com/files/wireless-n-usb-adapter-zero-1.jpg)
 
-ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain you _will_ receive an Atheros chipset for this device{{% cite "https://www.thinkpenguin.com/about" %}}. With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.
+ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain [you _will_ receive an Atheros chipset for this device](https://www.thinkpenguin.com/about). With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.
 
 Download and install [kali linux](https://www.kali.org/) to a USB drive and boot to that.
 
@@ -81,7 +81,7 @@ aireplay-ng \
 	wlan0mon
 ```
 
-That command sends a message to deauthenticate wireless clients associated with the AP. The wireless client will then hopefully reauthenticate with the AP. The reauthentication is what generates the 4-way authentication handshake we are interested in collecting. This is what we use to break the WPA/WPA2 pre-shared key.{{% cite "http://aircrack-ng.org/doku.php?id=cracking_wpa#step_3_-_use_aireplay-ng_to_deauthenticate_the_wireless_client" %}}
+That command sends a message to deauthenticate wireless clients associated with the AP. The wireless client will then hopefully reauthenticate with the AP. The reauthentication is what generates the 4-way authentication handshake we are interested in collecting. [This is what we use to break the WPA/WPA2 pre-shared key.](http://aircrack-ng.org/doku.php?id=cracking_wpa#step_3_-_use_aireplay-ng_to_deauthenticate_the_wireless_client)
 
 Look at your first terminal. The one running `airodump-ng`.
 

@@ -71,9 +71,9 @@
 <p>EXTLINUX is a Syslinux variant which boots from a Linux filesystem</p>
 </blockquote>
 
-<p>It provides (as far as I can tell) all the functionality of SYSLINUX with the bonus that you can boot from these filesystems.</p>
+<p>It provides (as far as I can tell) all the functionality of SYSLINUX with the <a href="http://www.syslinux.org/wiki/index.php?title=EXTLINUX">bonus that you can boot from these filesystems</a>.</p>
 
-<p><code>FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS</code><sup>[<a href="http://www.syslinux.org/wiki/index.php?title=EXTLINUX">1</a>]</sup></p>
+<p><code>FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS</code></p>
 
 <p>If you have an <code>ext4</code> formatted disk with the <code>bootable</code> flag enabled on the parition, you can do the following to set up a fun custom boot menu.</p>
 
@@ -114,7 +114,7 @@ libcom32.c32
 libutil.c32
 </code></pre>
 
-<p>Copy <a href="/images/extlinux-menu/background.png">an image</a><sup>[<a href="https://static.pexels.com/photos/110854/pexels-photo-110854.jpeg">2</a>]</sup> that is <em>exactly</em> 640x480 to <code>/mnt/background.png</code>.</p>
+<p>Copy <a href="/images/extlinux-menu/background.png">an image</a> (<a href="https://static.pexels.com/photos/110854/pexels-photo-110854.jpeg">original</a>) that is <em>exactly</em> 640x480 to <code>/mnt/background.png</code>.</p>
 
 <pre><code>sudo cp ~/some/image/image-640x480.png /mnt/background.png
 </code></pre>

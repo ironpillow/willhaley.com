@@ -9,7 +9,7 @@ Penguin Wireless N USB Adapter for GNU / Linux (TPE-N150USB)](https://www.thinkp
 
 ![TPE-N150USB](https://www.thinkpenguin.com/files/wireless-n-usb-adapter-zero-1.jpg)
 
-ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain you _will_ receive an Atheros chipset for this device{{% cite "https://www.thinkpenguin.com/about" %}}. With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.
+ThinkPenguin USB WiFi cards typically use Atheros chipsets, and because ThinkPenguin uses predictable chipsets you can be certain [you _will_ receive an Atheros chipset for this device](https://www.thinkpenguin.com/about). With this card, you can use monitor mode. The range not be great, but if you are testing the security of your own home network, range should not matter much.
 
 Install the necessary tools.
 

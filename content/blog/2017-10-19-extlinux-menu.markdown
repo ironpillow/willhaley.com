@@ -8,9 +8,9 @@ date: 2017-10-19 23:25:00
 
 > EXTLINUX is a Syslinux variant which boots from a Linux filesystem
 
-It provides (as far as I can tell) all the functionality of SYSLINUX with the bonus that you can boot from these filesystems.
+It provides (as far as I can tell) all the functionality of SYSLINUX with the [bonus that you can boot from these filesystems](http://www.syslinux.org/wiki/index.php?title=EXTLINUX).
 
-`FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS`{{% cite "http://www.syslinux.org/wiki/index.php?title=EXTLINUX" %}}
+`FAT12/16/32, NTFS, ext2/3/4, Btrfs, XFS, UFS/FFS`
 
 If you have an `ext4` formatted disk with the `bootable` flag enabled on the parition, you can do the following to set up a fun custom boot menu.
 
@@ -56,7 +56,7 @@ libcom32.c32
 libutil.c32
 ```
 
-Copy [an image](/images/extlinux-menu/background.png){{% cite "https://static.pexels.com/photos/110854/pexels-photo-110854.jpeg" %}} that is _exactly_ 640x480 to `/mnt/background.png`.
+Copy [an image](/images/extlinux-menu/background.png) ([original](https://static.pexels.com/photos/110854/pexels-photo-110854.jpeg)) that is _exactly_ 640x480 to `/mnt/background.png`.
 
 ```
 sudo cp ~/some/image/image-640x480.png /mnt/background.png

@@ -46,7 +46,6 @@ Try and only use these tags when possible.
 
 ## Shortcodes
 
-* `cite` in the theme and used for citations.
 * `tab-nav` and `tab` in the site (not the theme, since it is so specific) and used for simple tabs. Kind of ugly, but work.
 
 ## Comments

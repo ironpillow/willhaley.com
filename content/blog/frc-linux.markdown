@@ -180,7 +180,7 @@ Refresh your machine's repository package list now that we have added the new re
 sudo apt-get update
 ```
 
-Install various required libraries and tools. The `frc-toolchain` includes compilers, libraries, and tools required for programming our Robot {{% cite "http://first.wpi.edu/FRC/roborio/toolchains/" %}}. `git` can be used for code management {{% cite "https://git-scm.com/" %}} and will be required to install some other software later in this guide.
+Install various required libraries and tools. The `frc-toolchain` includes compilers, libraries, and tools required for programming our Robot [source](http://first.wpi.edu/FRC/roborio/toolchains/). `git` can be used for code management [source](https://git-scm.com/) and will be required to install some other software later in this guide.
 
 This code block can be copied and pasted into your terminal as is.
 
@@ -261,7 +261,7 @@ curl -ssL http://get.gazebosim.org | sed s/GZ_VER=9/GZ_VER=8/g | sh
 
 > We want you to be able to test your code BEFORE you put in on your robot, and before the robot is even built.
 
-> FRCSim allows robot code written in C++ or Java that normally runs on your RoboRIO to be run on your laptop or desktop. It connects to custom robot models in the Gazebo robot simulator. {{% cite "https://wpilib.screenstepslive.com/s/currentCS/m/frcsim/l/480159-introduction-to-frcsim" %}}
+> FRCSim allows robot code written in C++ or Java that normally runs on your RoboRIO to be run on your laptop or desktop. It connects to custom robot models in the Gazebo robot simulator. [source](https://wpilib.screenstepslive.com/s/currentCS/m/frcsim/l/480159-introduction-to-frcsim)
 
 Use `curl` to download FRCSim files to your machine.
 
