@@ -227,7 +227,7 @@ My website is using a very unique and nonsensical name that overlaps with no oth
     </item>
     
     <item>
-      <title>Boot Windows 10 Installer With GRUB</title>
+      <title>Boot Windows 10 Installer from USB With GRUB</title>
       <link>http://willhaley.com/blog/windows-installer-usb-linux/</link>
       <pubDate>Wed, 20 Dec 2017 19:32:00 +0000</pubDate>
       
@@ -1311,7 +1311,7 @@ In order for this to work, enable SSH on your Bluehost.com account and verify th
       <pubDate>Thu, 22 Mar 2012 23:56:00 +0000</pubDate>
       
       <guid>http://willhaley.com/blog/optware-on-the-pogoplug/</guid>
-      <description> http://tech.groups.yahoo.com/group/nslu2-general/files/Plug%20Files Register to join the nslu2 Yahoo group. It&amp;rsquo;s quick and easy. Check out the plug.tar.gz file (read the comments provided for that file). It&amp;rsquo;s an archive that has all the important files ready to go. It can save you a lot of time and work. You should also take a gander at the profile file they provide Once you follow the instructions on the Yahoo group installing rsync is as simple as  ipkg install rsync  </description>
+      <description>http://tech.groups.yahoo.com/group/nslu2-general/files/Plug%20Files Register to join the nslu2 Yahoo group. It&amp;rsquo;s quick and easy. Check out the plug.tar.gz file (read the comments provided for that file). It&amp;rsquo;s an archive that has all the important files ready to go. It can save you a lot of time and work. You should also take a gander at the profile file they provide Once you follow the instructions on the Yahoo group installing rsync is as simple as</description>
     </item>
     
     <item>

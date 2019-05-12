@@ -1,5 +1,5 @@
 ---
-title: "Boot Windows 10 Installer With GRUB"
+title: "Boot Windows 10 Installer from USB With GRUB"
 date: 2017-12-20 19:32:00
 ---
 
