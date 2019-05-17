@@ -99,7 +99,7 @@ storage1	UUID=d719b16d-d9e3-4a7d-97f4-661bc7904a69	/mnt/key/mykey.keyfile	luks,n
 
 <p>There is a bit of a catch here. <code>/etc/crypttab</code> is processed <em>before</em> <code>/etc/fstab</code>. So <code>/mnt/key</code> will not be available at the right time.</p>
 
-<p>To get around that, we create <code>/etc/cryptdisks</code> like so.</p>
+<p>To get around that, we create <code>/etc/default/cryptdisks</code> like so.</p>
 
 <pre><code># /etc/default/cryptdisks
 CRYPTDISKS_MOUNT='/mnt/key'

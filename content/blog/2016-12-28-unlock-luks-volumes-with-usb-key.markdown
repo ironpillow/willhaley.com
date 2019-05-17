@@ -38,7 +38,7 @@ Note above. I have an encrypted volume identified by a UUID that will be opened 
 
 There is a bit of a catch here. `/etc/crypttab` is processed _before_ `/etc/fstab`. So `/mnt/key` will not be available at the right time.
 
-To get around that, we create `/etc/cryptdisks` like so.
+To get around that, we create `/etc/default/cryptdisks` like so.
 
 ```
 # /etc/default/cryptdisks
