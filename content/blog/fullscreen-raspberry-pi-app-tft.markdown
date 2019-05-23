@@ -1,7 +1,7 @@
 ---
 title: "Fullscreen App With Raspberry Pi and Adafruit TFT Display"
 date: 2017-08-07 00:00:00
-date_modified: 2018-04-24 19:41:00
+date_modified: 2019-05-22 22:00:00
 aliases: [
     /blog/fullscreen-raspberry-pi-python-app-adafruit-tft/
 ]
