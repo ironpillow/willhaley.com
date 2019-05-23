@@ -3,7 +3,7 @@ title: "Kinesis Hash Key Space Partitioning"
 date: 2018-12-22 14:01:00
 ---
 
-Before going any further, please note that there are **far better** resources around this topic than what I am sharing here in this article.
+Before going any further, please note that there are **far better** resources around this topic than what I am sharing here in this article. These are the **notes of an amateur** and nothing here should be used as a reference or canonical source.
 
 Here are a few articles that helped me on this topic:
 
@@ -154,9 +154,11 @@ We can see that the two new shards represent the divided key space.
 }
 ```
 
-Of our two active shards, one shard covers all explicit hash keys from `0` to `170141183460469231731687303715884105727` and the other shard covers from `170141183460469231731687303715884105728` to `340282366920938463463374607431768211455`. We can also describe this distribution by saying that the first shard covers all keys from `[0, 2^64)` and the second shard covers all hash keys from `[2^64, 2^128)`.
+Of our two active shards, one shard covers all explicit hash keys from `0` to `170141183460469231731687303715884105727` and the other shard covers from `170141183460469231731687303715884105728` to `340282366920938463463374607431768211455`.
 
 If we try to insert records at or below `170141183460469231731687303715884105727` they will end up in shard one, and any records inserted with a hash key above that number will end up in shard two.
+
+To simplify from these massive 128-bit values, one can think in terms of an 8-bit keyspace to understand the same idea with numbers that are simpler to grasp. In an 8-bit key space the minimum value is still `0` and the max is `255`. So a stream with two shards in this fictional scenario cover values from `[0, 127]` and `[128, 255]`.
 
 Please note that whether we use `PartitionKey` and let Kinesis calculate a hash for us automatically, or if we override that and explicitly set an `ExplicitHashKey` to manually set the hash ourselves, the result is the same. The only difference is who decides what the hash key is, and so which shard the data lands on. Either Kinesis does it for us, or we do it ourselves.
 
@@ -170,26 +172,27 @@ If we want to handle `n` dynamic number of future shards, between `1` and `10000
 
 Continually doubling our shards while sub-dividing and halving each recursive available key space should end up giving us an even key distribution that withstands splitting and merging of shards (**assuming we do not delete large numbers of keys and that the load is evenly balanced**).
 
-I believe that the key space distribution strategy can be represented as a binary tree. _Note that I use values like `64`, `32`, but really (based on Kinesis' hash key space) these values represent `2^64`, `2^32`, etc._
+I believe that the key space distribution strategy can be represented as a binary tree. For the sake of having simple numbers I will describe this as a fictional 7-bit based key space having a minimum value of `0` and a maximum value of `127 (2^7 - 1)`.
 
 ```
-# Shards | Keys/Shard | Splits in key space
----------+------------+-----------------------------------------------
-1        | 2^128 - 1  |
-2        | 2^64       |                     64
-4        | 2^32       |         32                      96
-8        | 2^16       |   16          48          80           112
-16       | 2^8        | 8    24    40    56    72    88    104     120
+# Shards | Sizes | Key spaces
+---------+-------+-----------------------------------------------------------
+1        | 2^7   | [0                                                    127]
+2        | 2^6   | [0                      63][64                        127]
+4        | 2^5   | [0        31][32        63][64        95][96          127]
+8        | 2^4   | [0 15][16 31][32 47][48 63][64 79][80 95][96 111][112 127]
 ```
 
-As we split and add more shards, the partitioned key spaces double and compound with the previous key spaces. So if we have eight shards, then the available hash key spaces are partitioned into buckets between `0 - 16`, `16 - 32`, `32 - 48`, `48 - 64`, `64 - 80`, `80 - 96`, `96 - 112`, and `112 - 128`. Eight shards, eight partitions in our key space range, and the distribution of the keys should be optimal so that when we split _again_ in the future and add eight more shards, our keys will still be evenly distributed.
+As we split and add more shards, the number of partitions doubles while the size of the key space for each partition is halved.
 
 This seems to be an ideal strategy if we want to be able to spit over an arbitrary `n` number of shards and maintain an even distribution for however many unique producer data sources we have in the future.
+
+_To simplify (for my own sake) the values in all following examples below, I will continue to use a ceiling of `128`, which would imply a 7-bit keyspace_
 
 For a concept like `users`, we could perhaps assign `user` data put onto the stream to a shard based on their `accountId`, and so we can associate a given `accountId` to a chosen `ExplicitHashKey`.
 
 ```
-id      |    account |     explicit hash key
+id      | account    | explicit hash key
 --------+------------+----------------------
 User: 1 | Account: 1 | Explicit Hash Key: 64
 User: 2 | Account: 1 | Explicit Hash Key: 64
@@ -213,6 +216,7 @@ import (
 
 func main() {
 	for n := 0; n < 15; n++ {
+		// 128 is the ceiling for our keyspace in this scenario
 		fmt.Println(nextKey(n, 128))
 	}
 }
@@ -256,14 +260,14 @@ However, this strategy has a problem. That algorithm fills the tree at `y` heigh
 If we hold steady at 23 unique keys in our stream, then our key space looks like this. It is skewed to the left with 15 values, and 8 values on the other side. I believe that the worst case scenario we can get in is a situation where the tree is skewed `n` vs `2n - 1`. Still better than the worst case we saw with the MD5 Kinesis algorithm, but more problematic the deeper the tree gets as `n` increases.
 
 ```
-Shards | Splits in key space
+Shards | Key distribution
 -------+-------------------------------------------------------------------------
 1      |
-2      |                                            64
-4      |                    32                                     96
-8      |        16                      48                   80           112
-16     |   8          24          40          56          72    88    104     120
-32     | 4   12    20    28    36    44    52    60
+2      |                                          64
+4      |                   32                                    96
+8      |        16                    48                   80          112
+16     |   8         24         40          56          72    88    104    120
+32     | 4  12     20  28     36  44      52  60
 ```
 
 A better approach may be to use the solution above while distributing the keys so that the left and right halves of the parent nodes never vary by more than `1` in size.
@@ -271,7 +275,7 @@ A better approach may be to use the solution above while distributing the keys s
 So the distribution for 23 keys would look like this, ideally, with the nodes at the deepest level of the tree resulting in an even distribution for the parent nodes.
 
 ```
-Shards | Splits in key space
+Shards | Key distribution
 -------+---------------------------------------------------------------
 1      |
 2      |                             64
@@ -297,6 +301,7 @@ import (
 
 func main() {
 	for n := 0; n < 15; n++ {
+		// 128 is the ceiling for our keyspace in this scenario
 		fmt.Println(nextKey(n, 128))
 	}
 }
@@ -598,6 +603,6 @@ This all works great if we're assigning new keys while we're deleting keys so th
 
 It may not be efficient, but if adding a new key/data source to the stream is a finite controlled operation for a controlled number of keys, then it shouldn't be too painful.
 
-Something to remember is that the actual _values_ in the trees are predictable for the use case in this article. We know we want to assign `2^64` as the first case as it is a perfect split on our key space, and (going left leaf first) `2^32` would be our next key, then `2^96`, etc down the tree as we partition the space evenly.
+Something to remember is that the actual _values_ in the trees are predictable for the use case in this article. We know we want to assign `64` in the first case in our contrived example as it is a perfect split on our key space, and (going left leaf first) `32` would be our next key, then `96`, etc down the tree as we partition the space evenly.
 
 Also remember that this is all assuming **we** control the keys.
