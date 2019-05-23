@@ -73,19 +73,15 @@
 
 <p><img src="/images/fullscreen-raspberry-pi-app-tft/pi-tft.jpg" alt="Raspberry Pi With an Adafruit TFT Display" /></p>
 
-<p>The first thing we need to do is enable support for the TFT on our Raspberry Pi.</p>
+<h1 id="warning">Warning</h1>
 
-<h1 id="adafruit-pitft-support">Adafruit PiTFT Support</h1>
+<p>For this process, I am using <strong>Raspbian Lite</strong> as the base image for my Pi and then installing an <code>X11</code> environment. If you are not using Raspbian Lite then these steps <strong>may break your current configuration</strong> and you should be careful before proceeding.</p>
 
-<p>As of time of writing, Adafruit offers an <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">installation script</a> that is designed to work with the latest standard/official Raspbian images. Adafruit <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#unsupported-full-images">previously offered</a> custom Raspbian images with TFT support built in. Those images are now deprecated and the use of the script <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=133212&amp;p=661598&amp;hilit=resistive#p661598">is</a> <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=124665&amp;p=661446&amp;hilit=resistive#p661446">encouraged</a>.</p>
+<p>These steps were tested on a &ldquo;fresh&rdquo; install of Rasbpian Lite and no other setup.</p>
 
-<p>Unless otherwise noted, or the process changes over time, one should use the <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">installation script as instructed by Adafruit</a> to enable a PiTFT with touch support!</p>
+<h1 id="required-software">Required Software</h1>
 
-<h1 id="configuration">Configuration</h1>
-
-<p>For this process, I am using <strong>Raspbian Lite</strong> as the base image for my Pi and then installing an <code>X11</code> environment.</p>
-
-<p>Enable the <code>nonfree</code> Raspbian repository. The Adafruit script requires this, and as of time of writing, this repo is not enabled by default..</p>
+<p>Enable the <code>nonfree</code> Raspbian repository. The Adafruit script (which we&rsquo;ll get to later and is required to support the display properly) requires this repo, and as of time of writing, this repo is not enabled by default.</p>
 
 <pre><code>cat &lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/nonfree.list
 deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi firmware
@@ -103,6 +99,7 @@ sudo apt-get install --no-install-recommends \
     lightdm \
     python3 \
     python3-tk \
+    python3-rpi.gpio \
     xserver-xorg-legacy \
     xserver-xorg-video-fbdev
 </code></pre>
@@ -125,7 +122,13 @@ chmod +x adafruit-pitft.sh &amp;&amp; \
 sudo ./adafruit-pitft.sh
 </code></pre>
 
-<p>Reboot the Pi. It should log in as <code>pi</code> automatically to <code>openbox</code>. Your screen will most likely be blank at this point with only a mouse cursor.</p>
+<p>The script will ask a series of question. You should answer to the best of your ability. If you have a different screen than the <code>2.8&quot; resistive</code> version then you should answer accordingly.</p>
+
+<p>When asked <code>Would you like the console to appear on the PiTFT display? [y/n]</code> I chose <code>n</code> since the goal here is to use a GUI on the TFT display and not just text.</p>
+
+<p>When asked <code>Would you like the HDMI display to mirror to the PiTFT display? [y/n]</code> I chose <code>y</code> since that is a simple way to get GUI support on the TFT display according to Adafruit&rsquo;s website.</p>
+
+<p>Reboot the Pi when prompted. The device should log in as <code>pi</code> automatically using the <code>openbox</code> window manager. The Pi display should be blank after it boots, except for a mouse cursor.</p>
 
 <h1 id="app">App</h1>
 
@@ -185,10 +188,6 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-&quot;&quot;&quot;
-apt-get install python3-rpi.gpio
-&quot;&quot;&quot;
-
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -219,14 +218,20 @@ while True:
         time.sleep(3)
 </code></pre>
 
-<p>You could potentially have the script run at boot by appending the following to <code>/etc/rc.local</code> at the end of the file before it calls the <code>exit</code> command.</p>
+<p>You could potentially have the script run at boot by appending the following to <code>/etc/rc.local</code> towards the end of the file before it calls the <code>exit</code> command.</p>
 
-<pre><code>python3 -u /home/pi/buttons.py
+<pre><code>python3 -u /home/pi/buttons.py &amp;
 </code></pre>
 
 <p>It seems there may be a <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=18200">few reasons</a> the TFT/LCD will automatically shut off, and changing the brightness does nothing in that case. So those buttons and the accompanying script would be useless at that point.</p>
 
 <p>The <code>lightdm.conf</code> above <em>should</em> disable the auto-off behavior of the TFT, but <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=86760#p436887">other methods</a> may be required as well.</p>
+
+<h1 id="notes-on-adafruit-pitft-support">Notes on Adafruit PiTFT Support</h1>
+
+<p>As of time of writing, Adafruit offers an <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">installation script</a> that is designed to work with the latest standard/official Raspbian images. Adafruit <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#unsupported-full-images">previously offered</a> custom Raspbian images with TFT support built in. Those images are now deprecated and the use of the script <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=133212&amp;p=661598&amp;hilit=resistive#p661598">is</a> <a href="https://forums.adafruit.com/viewtopic.php?f=50&amp;t=124665&amp;p=661446&amp;hilit=resistive#p661446">encouraged</a>.</p>
+
+<p>Unless otherwise noted, or the process changes over time, one should use the <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script">installation script as instructed by Adafruit</a> to enable a PiTFT with touch support!</p>
 
 <h1 id="citations">Citations</h1>
 

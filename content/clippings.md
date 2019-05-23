@@ -6,6 +6,10 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[EDITORIAL: When a bike rider is killed on Halsted Street](https://chicago.suntimes.com/2018/8/20/18354616/editorial-when-a-bike-rider-is-killed-on-halsted-street)
+
+> Chicago Sun Times, Sun-Times Editorial Board, 2018-08-20
+
 [If you build them, they will come: record year for cycle counters](https://www.theguardian.com/environment/bike-blog/2019/apr/26/if-you-build-them-they-will-come-record-year-for-cycle-counters)
 
 > The Guardian, Laura Laker, 2019-04-26

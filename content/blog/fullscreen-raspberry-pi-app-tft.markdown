@@ -14,19 +14,15 @@ These are the steps I used in order to run a fullscreen Python app on a Raspberr
 
 ![Raspberry Pi With an Adafruit TFT Display](/images/fullscreen-raspberry-pi-app-tft/pi-tft.jpg)
 
-The first thing we need to do is enable support for the TFT on our Raspberry Pi.
+# Warning
 
-# Adafruit PiTFT Support
+For this process, I am using **Raspbian Lite** as the base image for my Pi and then installing an `X11` environment. If you are not using Raspbian Lite then these steps **may break your current configuration** and you should be careful before proceeding.
 
-As of time of writing, Adafruit offers an [installation script](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script) that is designed to work with the latest standard/official Raspbian images. Adafruit [previously offered](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#unsupported-full-images) custom Raspbian images with TFT support built in. Those images are now deprecated and the use of the script [is](https://forums.adafruit.com/viewtopic.php?f=50&t=133212&p=661598&hilit=resistive#p661598) [encouraged](https://forums.adafruit.com/viewtopic.php?f=50&t=124665&p=661446&hilit=resistive#p661446).
+These steps were tested on a "fresh" install of Rasbpian Lite and no other setup.
 
-Unless otherwise noted, or the process changes over time, one should use the [installation script as instructed by Adafruit](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script) to enable a PiTFT with touch support!
+# Required Software
 
-# Configuration
-
-For this process, I am using **Raspbian Lite** as the base image for my Pi and then installing an `X11` environment.
-
-Enable the `nonfree` Raspbian repository. The Adafruit script requires this, and as of time of writing, this repo is not enabled by default..
+Enable the `nonfree` Raspbian repository. The Adafruit script (which we'll get to later and is required to support the display properly) requires this repo, and as of time of writing, this repo is not enabled by default.
 
 ```
 cat << EOF | sudo tee /etc/apt/sources.list.d/nonfree.list
@@ -46,6 +42,7 @@ sudo apt-get install --no-install-recommends \
     lightdm \
     python3 \
     python3-tk \
+    python3-rpi.gpio \
     xserver-xorg-legacy \
     xserver-xorg-video-fbdev
 ```
@@ -70,7 +67,13 @@ chmod +x adafruit-pitft.sh && \
 sudo ./adafruit-pitft.sh
 ```
 
-Reboot the Pi. It should log in as `pi` automatically to `openbox`. Your screen will most likely be blank at this point with only a mouse cursor.
+The script will ask a series of question. You should answer to the best of your ability. If you have a different screen than the `2.8" resistive` version then you should answer accordingly.
+
+When asked `Would you like the console to appear on the PiTFT display? [y/n]` I chose `n` since the goal here is to use a GUI on the TFT display and not just text.
+
+When asked `Would you like the HDMI display to mirror to the PiTFT display? [y/n]` I chose `y` since that is a simple way to get GUI support on the TFT display according to Adafruit's website.
+
+Reboot the Pi when prompted. The device should log in as `pi` automatically using the `openbox` window manager. The Pi display should be blank after it boots, except for a mouse cursor.
 
 # App
 
@@ -134,10 +137,6 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-"""
-apt-get install python3-rpi.gpio
-"""
-
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -168,15 +167,21 @@ while True:
         time.sleep(3)
 ```
 
-You could potentially have the script run at boot by appending the following to `/etc/rc.local` at the end of the file before it calls the `exit` command.
+You could potentially have the script run at boot by appending the following to `/etc/rc.local` towards the end of the file before it calls the `exit` command.
 
 ```
-python3 -u /home/pi/buttons.py
+python3 -u /home/pi/buttons.py &
 ```
 
 It seems there may be a [few reasons](https://www.raspberrypi.org/forums/viewtopic.php?t=18200) the TFT/LCD will automatically shut off, and changing the brightness does nothing in that case. So those buttons and the accompanying script would be useless at that point.
 
 The `lightdm.conf` above _should_ disable the auto-off behavior of the TFT, but [other methods](https://forums.adafruit.com/viewtopic.php?f=50&t=86760#p436887) may be required as well.
+
+# Notes on Adafruit PiTFT Support
+
+As of time of writing, Adafruit offers an [installation script](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script) that is designed to work with the latest standard/official Raspbian images. Adafruit [previously offered](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#unsupported-full-images) custom Raspbian images with TFT support built in. Those images are now deprecated and the use of the script [is](https://forums.adafruit.com/viewtopic.php?f=50&t=133212&p=661598&hilit=resistive#p661598) [encouraged](https://forums.adafruit.com/viewtopic.php?f=50&t=124665&p=661446&hilit=resistive#p661446).
+
+Unless otherwise noted, or the process changes over time, one should use the [installation script as instructed by Adafruit](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi?view=all#installer-script) to enable a PiTFT with touch support!
 
 # Citations
 

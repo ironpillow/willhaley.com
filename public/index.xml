@@ -459,7 +459,7 @@ scanimage \ --format=png \ -x 215.9 \ -y 279.4 \ --resolution=300 \ --mode=Gray 
       <guid>http://willhaley.com/blog/fullscreen-raspberry-pi-app-tft/</guid>
       <description>Please consider that these instructions may not be the ideal solution depending on the needs of a given project. Adafruit&amp;rsquo;s forums are a valuable resource for help regarding their products.
 These are the steps I used in order to run a fullscreen Python app on a Raspberry Pi with an Adafruit 2.8&amp;rdquo; resistive TFT display.
-The first thing we need to do is enable support for the TFT on our Raspberry Pi.</description>
+Warning For this process, I am using Raspbian Lite as the base image for my Pi and then installing an X11 environment.</description>
     </item>
     
     <item>
@@ -927,9 +927,9 @@ Client SSH key First, make sure you have an SSH key on your client that is not p
       
       <guid>http://willhaley.com/clippings/</guid>
       <description>Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
-If you build them, they will come: record year for cycle counters
- The Guardian, Laura Laker, 2019-04-26
- Cook County Sees Country’s Largest Population Loss</description>
+EDITORIAL: When a bike rider is killed on Halsted Street
+ Chicago Sun Times, Sun-Times Editorial Board, 2018-08-20
+ If you build them, they will come: record year for cycle counters</description>
     </item>
     
     <item>
