@@ -61,7 +61,7 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Boot Windows 10 Installer from USB With GRUB</h1>
-    <p class="post-meta"><time datetime="2017-12-20T19:32:00+00:00" itemprop="datePublished">Dec 20, 2017</time></p>
+    <p class="post-meta"><time datetime="2017-12-20T19:32:00+00:00" itemprop="datePublished">Dec 20, 2017</time><span class="date-modified">Updated <time datetime="2019-05-27T20:34:00+00:00" itemprop="dateModified">May 27, 2019</time></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
@@ -158,7 +158,17 @@ menuentry &quot;Windows 10 Installer&quot; {
 <pre><code>sudo umount /dev/sdz*
 </code></pre>
 
-<p>Boot!</p>
+<p>Boot! You should be all set to go at this point.</p>
+
+<p>If, when booting to Windows 10 from the USB device, you encounter an error saying this:</p>
+
+<blockquote>
+<p>A media driver your computer needs is missing. This could be a DVD, USB or Hard disk driver. If you have a CD, DVD, or USB flash drive with the driver on it, please insert it now.</p>
+
+<p>Note: If the installation media for Windows is in the DVD drive or on a USB drive, you can safely remove it for this step.</p>
+</blockquote>
+
+<p>then you may want to look at a <a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install/windows-10-clean-install-a-media-driver-your/3068a127-f088-44a2-af36-ba90a1604855">Microsoft Community article</a> addressing that issue. You may also want to verify that all the files copied properly during <code>rsync</code> or re-copy the files anyway just in case something was corrupt. You may also want to verify the integrity of the source Windows 10 <code>iso</code> file. Finally, I found that USB 2.0 drivers worked far more reliably for me than USB 3.0, and resolved that error when I encountered it on one of my machines.</p>
 
   </div>
 

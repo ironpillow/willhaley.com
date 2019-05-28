@@ -1,6 +1,7 @@
 ---
 title: "Boot Windows 10 Installer from USB With GRUB"
 date: 2017-12-20 19:32:00
+date_modified: 2019-05-27 20:34:00
 ---
 
 You can use these instructions to create a bootable USB drive with GRUB that can run the Windows 10 installer. I used Arch Linux to prepare my USB device, but any Linux variant like Debian or Ubuntu should work.
@@ -109,4 +110,12 @@ Clean up.
 sudo umount /dev/sdz*
 ```
 
-Boot!
+Boot! You should be all set to go at this point.
+
+If, when booting to Windows 10 from the USB device, you encounter an error saying this:
+
+> A media driver your computer needs is missing. This could be a DVD, USB or Hard disk driver. If you have a CD, DVD, or USB flash drive with the driver on it, please insert it now.
+>
+> Note: If the installation media for Windows is in the DVD drive or on a USB drive, you can safely remove it for this step.
+
+then you may want to look at a [Microsoft Community article](https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install/windows-10-clean-install-a-media-driver-your/3068a127-f088-44a2-af36-ba90a1604855) addressing that issue. You may also want to verify that all the files copied properly during `rsync` or re-copy the files anyway just in case something was corrupt. You may also want to verify the integrity of the source Windows 10 `iso` file. Finally, I found that USB 2.0 drivers worked far more reliably for me than USB 3.0, and resolved that error when I encountered it on one of my machines.
