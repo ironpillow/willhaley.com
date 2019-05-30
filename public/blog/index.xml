@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Will Haley</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Apr 2019 14:55:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 21:03:00 +0000</lastBuildDate>
     
 	<atom:link href="http://willhaley.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Woes While Porting From Landline to Mobile</title>
+      <link>http://willhaley.com/blog/landline-porting/</link>
+      <pubDate>Wed, 29 May 2019 21:03:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/landline-porting/</guid>
+      <description>I am going to assume your are somewhat familiar with porting and the concepts covered here. Unfortunately, the varying level of details around porting can be difficult to articulate so I will leave it to you to acquire the basic knowledge before reading through my tips and caveats. As an aside, here is a summary article from the FCC on the topic of porting.
+I found the particular process of transferring a phone number from landline to mobile to be very stressful and am sharing some thoughts and notes in the hopes that my experience can help others.</description>
+    </item>
     
     <item>
       <title>Mounting a Camera to my Bicycle Helmet</title>
