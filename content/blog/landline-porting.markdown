@@ -29,7 +29,7 @@ It was my choice to defer the port of my existing phone number until I was ready
 
 The result of that choice was that the responsibility for porting my number to the mobile carrier landed on my shoulders, which I see now was a mistake. When the time came and I was ready to transfer my old/existing number to the mobile company, it became a huge nightmare as detailed all throughout this article.
 
-**Hindsight:** Make the port of your existing phone number a condition fpr starting service with the mobile company so that the responsibility is on them to see it through. Do not plan on porting your number at a later date. Ask the mobile company to port your number immediately when you sign up for their service so that the work is solely on their shoulders. This is what most typically happens when people port numbers, and I made a huge mistake deviating from the norm.
+**Hindsight:** Make the port of your existing phone number a condition for starting service with the mobile company so that the responsibility is on them to see it through. Do not plan on porting your number at a later date. Ask the mobile company to port your number immediately when you sign up for their service so that the work is solely on their shoulders. This is what most typically happens when people port numbers, and I made a huge mistake deviating from the norm.
 
 # Account verification details are confusing
 
