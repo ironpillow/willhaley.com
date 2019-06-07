@@ -1,7 +1,7 @@
 ---
 title: "Debian Fullscreen GUI Kiosk"
 date: 2017-08-03 00:00:00
-date_modified: 2018-05-15 20:32:00
+lastmod: 2018-05-15 20:32:00
 disqus: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Create a Custom Debian 9 (Stretch) Live Environment (CD or USB) using Ubuntu 17.04 (Zesty)"
 date: 2017-08-27 00:00:00
-date_modified: 2017-02-08 18:36:00
+lastmod: 2017-02-08 18:36:00
 published: false
 ---
 

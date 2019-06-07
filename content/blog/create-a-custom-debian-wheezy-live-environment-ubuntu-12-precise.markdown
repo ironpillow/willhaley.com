@@ -1,7 +1,7 @@
 ---
 title: "Create a Custom Debian 7 (Wheezy) Live Environment (CD or USB) using Ubuntu 12.04 (Precise)"
 date: 2013-01-31 23:06:00
-date_modified: 2017-02-20 11:28:00
+lastmod: 2017-02-20 11:28:00
 published: false
 ---
 

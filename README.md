@@ -32,15 +32,15 @@
 
 Try and only use these tags when possible.
 
-* `title` name of the content.
-* `date` use the format `2017-10-07 00:00:00` (all dates are America/Chicago).
-* `slug` manually specify post URLs.
-* `published` disable a post by setting to `false`.
-* `aliases` list of aliases for content.
+* `title` name of the content
+* `date` use the format `2017-10-07 00:00:00` (all dates are America/Chicago)
+* `lastmod` sets the last edited date (default: "")
+* `slug` manually specify post URLs
+* `published` disable a post by setting to `false`
+* `aliases` list of aliases for content to 301 to the current URL
 
 ## Front Matter Enhancements
 
-* `date_modified` sets the last edited date (default: "")
 * `archived` sets noindex on the meta to prevent indexing (default: false)
 * `disqus` enable Disqus comments as needed (default: false)
 

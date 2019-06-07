@@ -2,7 +2,7 @@
 title: "LUKS Encrypted File Container (Disk Image) On Linux"
 slug: encrypted-file-container-disk-image-in-linux
 date: 2014-10-14 17:28:55
-date_modified: 2017-10-27 09:35:00
+lastmod: 2017-10-27 09:35:00
 disqus: true
 ---
 

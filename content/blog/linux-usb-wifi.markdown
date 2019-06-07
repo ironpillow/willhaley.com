@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu Linux Compatible WiFi USB Adapters"
 date: 2017-02-05 13:03:00
-date_modified: 2018-04-14 19:09:00
+lastmod: 2018-04-14 19:09:00
 aliases: [
     /blog/linux-16-04-1-usb-wifi-adapters/
 ]

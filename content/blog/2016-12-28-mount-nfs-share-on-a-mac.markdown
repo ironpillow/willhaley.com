@@ -2,7 +2,7 @@
 title: "Mount an NFS Share on a Mac using the Terminal"
 slug: mount-nfs-share-on-a-mac
 date: 2016-12-28 11:08:46
-date_modified: 2017-11-02 22:13:00
+lastmod: 2017-11-02 22:13:00
 disqus: true
 ---
 

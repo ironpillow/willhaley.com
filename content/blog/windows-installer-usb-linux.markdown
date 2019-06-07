@@ -1,7 +1,7 @@
 ---
 title: "Boot Windows 10 Installer from USB With GRUB"
 date: 2017-12-20 19:32:00
-date_modified: 2019-05-27 20:34:00
+lastmod: 2019-05-27 20:34:00
 ---
 
 You can use these instructions to create a bootable USB drive with GRUB that can run the Windows 10 installer. I used Arch Linux to prepare my USB device, but any Linux variant like Debian or Ubuntu should work.

@@ -2,7 +2,7 @@
 title: "Raspberry Pi Hotspot With The Edimax EW-7811Un (RTL8188CUS chipset)"
 slug: raspberry-pi-hotspot-ew7811un-rtl8188cus
 date: 2013-05-01 22:11:00
-date_modified: 2015-01-18 00:00:00
+lastmod: 2015-01-18 00:00:00
 disqus: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Kinesis Hash Key Space Partitioning"
 date: 2018-12-22 14:01:00
-date_modified: 2019-05-22 22:32:00
+lastmod: 2019-05-22 22:32:00
 ---
 
 Before going any further, please note that there are **far better** resources around this topic than what I am sharing here in this article. These are the **notes of an amateur** and nothing here should be used as a reference or canonical source.

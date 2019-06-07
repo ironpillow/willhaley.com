@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Linux Ubuntu 16.04.3 Box for FRC 2018"
 date: 2017-01-31 21:12:00
-date_modified: 2019-01-04 22:45:00
+lastmod: 2019-01-04 22:45:00
 aliases: [
     /blog/frc-2017-linux/
 ]

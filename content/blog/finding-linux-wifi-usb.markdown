@@ -1,7 +1,7 @@
 ---
 title: "Why Is Finding A Reliable USB WiFi Device For Linux Difficult?"
 date: 2017-10-07 16:08:00
-date_modified: 2018-04-14 00:00:00
+lastmod: 2018-04-14 00:00:00
 disqus: true
 ---
 

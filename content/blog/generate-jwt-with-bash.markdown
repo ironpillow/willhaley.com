@@ -1,7 +1,7 @@
 ---
 title: "Generate JWT With Bash"
 date: 2016-12-17 10:54:29
-date_modified: 2018-10-27 15:54:00
+lastmod: 2018-10-27 15:54:00
 disqus: true
 ---
 

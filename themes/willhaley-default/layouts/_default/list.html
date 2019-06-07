@@ -7,10 +7,10 @@
   <div class="post-content">
     {{ .Content }}
     <ul class="post-list">
-      {{ $paginator := .Paginate (where .Data.Pages "Section" "blog") }}
+      {{ $paginator := .Paginate (where .Data.Pages "Section" "blog").ByLastmod.Reverse }}
       {{ range $paginator.Pages }}
       <li>
-        <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span class="post-meta">{{ .Lastmod.Format "Jan 2, 2006" }}</span>
         <h2>
           <a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>

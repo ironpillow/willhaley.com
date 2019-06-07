@@ -1,7 +1,7 @@
 ---
 title: "Create a Custom Debian Live Environment (CD or USB)"
 date: 2018-02-08 18:36:00
-date_modified: 2018-05-26 12:30:00
+lastmod: 2018-05-26 12:30:00
 aliases: [
     /blog/create-a-custom-debian-live-environment/,
     /blog/create-a-custom-debian-stretch-live-environment-ubuntu-17-zesty/,
