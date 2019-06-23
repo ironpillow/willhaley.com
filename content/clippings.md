@@ -6,6 +6,22 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[Trump says he stopped airstrike on Iran because 150 would have died](https://www.theguardian.com/world/2019/jun/21/donald-trump-retaliatory-iran-airstrike-cancelled-10-minutes-before)
+
+> The Guardian, Patrick Wintour and Julian Borger, 2019-06-21
+
+[Americans' plastic recycling is dumped in landfills, investigation shows](https://www.theguardian.com/us-news/2019/jun/21/us-plastic-recycling-landfills)
+
+> The Guardian, Erin McCormick, Charlotte Simmonds, Jessica Glenza, and Katharine Gammon, 2019-06-21
+
+[Oregon senator walkout: 'patriot' groups vow to protect Republicans who fled state](https://www.theguardian.com/us-news/2019/jun/21/oregon-senator-walkout-patriot-groups-vow-to-protect-republicans-who-fled-state)
+
+> The Guardian, Jason Wilson, 2019-06-21
+
+[Bosses pocket Trump tax windfall as workers see job promises vanish](https://www.theguardian.com/business/2019/jun/15/job-losses-trump-tax-cut-at-t-general-motors-wells-fargo)
+
+> The Guardian, Michael Sainato, 2019-06-16
+
 [People eat at least 50,000 plastic particles a year, study finds](https://www.theguardian.com/environment/2019/jun/05/people-eat-at-least-50000-plastic-particles-a-year-study-finds)
 
 > The Guardian, Damian Carrington, 2019-06-05
