@@ -6,6 +6,26 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[People eat at least 50,000 plastic particles a year, study finds](https://www.theguardian.com/environment/2019/jun/05/people-eat-at-least-50000-plastic-particles-a-year-study-finds)
+
+> The Guardian, Damian Carrington, 2019-06-05
+
+[Lies pave the way for anti-abortion laws. To defeat the laws we must fight the lies](https://www.theguardian.com/commentisfree/2019/jun/03/lies-anti-abortion-laws-rebecca-solnit)
+
+> The Guardian, Rebecca Solnit, 2019-06-03
+
+[StoryCorps Chicago: Eating Disorder Was A Way 'To Protect Myself'](https://www.wbez.org/shows/storycorps-chicago/storycorps-chicago-eating-disorder-was-a-way-to-protect-myself/1bde3c06-484a-4ec4-8651-d637e266781e)
+
+> WEBZ, Bill Healy, 2019-05-31
+
+[US energy department rebrands fossil fuels as 'molecules of freedom'](https://www.theguardian.com/business/2019/may/29/energy-department-molecules-freedom-fossil-fuel-rebranding)
+
+> The Guardian, Luke O'Neil, 2019-05-29
+
+[Trump's China trade war risks damaging US economy, says OECD](https://www.theguardian.com/business/2019/may/21/trump-china-trade-war-us-economy-oecd-tariff)
+
+> The Guardian, Richard Partington, 2019-05-21
+
 [EDITORIAL: When a bike rider is killed on Halsted Street](https://chicago.suntimes.com/2018/8/20/18354616/editorial-when-a-bike-rider-is-killed-on-halsted-street)
 
 > Chicago Sun Times, Sun-Times Editorial Board, 2018-08-20
