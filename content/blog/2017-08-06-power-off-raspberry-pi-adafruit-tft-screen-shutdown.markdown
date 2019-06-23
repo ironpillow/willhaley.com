@@ -1,10 +1,13 @@
 ---
-title: "Power Off Raspberry Pi Adafruit TFT Screen on Shutdown"
+title: "Power Off Raspberry Pi Adafruit Resistive TFT Screen on Shutdown"
 slug: power-off-raspberry-pi-adafruit-tft-screen-shutdown
 date: 2017-08-06 00:00:00
+lastmod: 2019-06-23 09:28:00
 ---
 
-I have been enjoying the [Adafruit PiTFT 2.8" Touchscreen Display for Raspberry Pi](https://www.adafruit.com/product/2298). It is a nice, simple, touch display, and it has taught me a few distinctions regarding system power offs.
+**Note that this article only applies to [backlight control for the resistive touchscreen](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/backlight-control) and that the [backlight control for the capacitive touchscreen](https://learn.adafruit.com/adafruit-2-8-pitft-capacitive-touch/backlight-control) is limited**
+
+I have been enjoying the [Adafruit PiTFT 2.8" Resistive Touchscreen Display for Raspberry Pi](https://www.adafruit.com/product/2298). It is a nice, simple, touch display, and it has taught me a few distinctions regarding system power offs.
 
 There is a kernel module called `rpi_power_switch` included with the Adafruit Raspbian Jessie image. That module is used to power the system on and off when a button on the TFT board is pressed. By default, the button is tied to GPIO pin `23`.
 

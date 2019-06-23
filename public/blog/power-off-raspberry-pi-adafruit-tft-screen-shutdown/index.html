@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Power Off Raspberry Pi Adafruit TFT Screen on Shutdown - Will Haley</title>
+  <title>Power Off Raspberry Pi Adafruit Resistive TFT Screen on Shutdown - Will Haley</title>
 
   <meta name="author" content="will">
-  <meta name="description" content="I have been enjoying the Adafruit PiTFT 2.8&rdquo; Touchscreen Display for Raspberry Pi. It is a nice, simple, touch display, and it has taught me a few distinc...">
+  <meta name="description" content="Note that this article only applies to backlight control for the resistive touchscreen and that the backlight control for the capacitive touchscreen is limited ...">
 
   <link rel="stylesheet" href="/css/main.css?version=1.1.6">
   <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
@@ -60,14 +60,16 @@
       
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Power Off Raspberry Pi Adafruit TFT Screen on Shutdown</h1>
-    <p class="post-meta"><time datetime="2017-08-06T00:00:00+00:00" itemprop="datePublished">Aug 6, 2017</time></p>
+    <h1 class="post-title" itemprop="name headline">Power Off Raspberry Pi Adafruit Resistive TFT Screen on Shutdown</h1>
+    <p class="post-meta"><time datetime="2017-08-06T00:00:00+00:00" itemprop="datePublished">Aug 6, 2017</time><span class="date-modified">Updated <time datetime="2019-06-23T09:28:00+00:00" itemprop="dateModified">Jun 23, 2019</time></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     
 
-<p>I have been enjoying the <a href="https://www.adafruit.com/product/2298">Adafruit PiTFT 2.8&rdquo; Touchscreen Display for Raspberry Pi</a>. It is a nice, simple, touch display, and it has taught me a few distinctions regarding system power offs.</p>
+<p><strong>Note that this article only applies to <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/backlight-control">backlight control for the resistive touchscreen</a> and that the <a href="https://learn.adafruit.com/adafruit-2-8-pitft-capacitive-touch/backlight-control">backlight control for the capacitive touchscreen</a> is limited</strong></p>
+
+<p>I have been enjoying the <a href="https://www.adafruit.com/product/2298">Adafruit PiTFT 2.8&rdquo; Resistive Touchscreen Display for Raspberry Pi</a>. It is a nice, simple, touch display, and it has taught me a few distinctions regarding system power offs.</p>
 
 <p>There is a kernel module called <code>rpi_power_switch</code> included with the Adafruit Raspbian Jessie image. That module is used to power the system on and off when a button on the TFT board is pressed. By default, the button is tied to GPIO pin <code>23</code>.</p>
 
