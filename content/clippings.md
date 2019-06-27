@@ -6,6 +6,14 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[Dublin disappoints: what happened to city cycling's great hope?](https://www.theguardian.com/cities/2019/jun/25/dublin-disappoints-what-happened-to-city-cyclings-great-hope)
+
+> The Guardian, Laura Laker, 2019-06-25
+
+[A secret history of the Riverwalk bike ban](https://www.chicagoreader.com/chicago/secret-history-riverwalk-bike-ban/Content?oid=71221127)
+
+> Chicago Reader, John Greenfield, 2019-06-24
+
 [Trump says he stopped airstrike on Iran because 150 would have died](https://www.theguardian.com/world/2019/jun/21/donald-trump-retaliatory-iran-airstrike-cancelled-10-minutes-before)
 
 > The Guardian, Patrick Wintour and Julian Borger, 2019-06-21
