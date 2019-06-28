@@ -6,6 +6,26 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[He Drew His School Mascot — and ICE Labeled Him a Gang Member](https://features.propublica.org/ms-13-immigrant-students/huntington-school-deportations-ice-honduras/)
+
+> ProPublica, Hannah Dreier, 2018-12-27
+
+[A Betrayal](https://features.propublica.org/ms-13/a-betrayal-ms13-gang-police-fbi-ice-deportation/)
+
+> ProPublica, Hannah Dreier, 2018-04-02
+
+[Trump jokes to Putin they should 'get rid' of journalists](https://www.theguardian.com/us-news/2019/jun/28/smirking-trump-jokes-to-putin-dont-meddle-in-us-election-g20)
+
+> The Guardian, Julian Borger, 2019-06-28
+
+[France records all-time highest temperature of 45.9C](https://www.theguardian.com/world/2019/jun/28/france-on-red-alert-as-heatwave-forecast-to-reach-record-45c)
+
+> The Guardian, Jon Henley, Angelique Chrisafis, Sam Jones, 2019-06-28
+
+[A cyclist's guide to biking the city – a cartoon ](https://www.theguardian.com/cities/2019/jun/28/a-cyclists-guide-to-biking-the-city-a-cartoon)
+
+> The Guardian, Dave Walker, 2019-06-28
+
 [Dublin disappoints: what happened to city cycling's great hope?](https://www.theguardian.com/cities/2019/jun/25/dublin-disappoints-what-happened-to-city-cyclings-great-hope)
 
 > The Guardian, Laura Laker, 2019-06-25
