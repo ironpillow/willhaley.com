@@ -6,6 +6,10 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[Trump nepotism attacked after 'out-of-her-depth' Ivanka given key summit role](https://www.theguardian.com/us-news/2019/jul/01/donald-trump-ivanka-g20-north-korea-nepotism)
+
+> The Guardian, David Smith, 2019-07-01
+
 [He Drew His School Mascot — and ICE Labeled Him a Gang Member](https://features.propublica.org/ms-13-immigrant-students/huntington-school-deportations-ice-honduras/)
 
 > ProPublica, Hannah Dreier, 2018-12-27
