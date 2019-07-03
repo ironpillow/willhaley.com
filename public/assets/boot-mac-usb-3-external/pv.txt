@@ -1,0 +1,3 @@
+cat /dev/zero | pv -t -a > /tmp/garbage.file
+^C19:42 [82.3MiB/s]]
+

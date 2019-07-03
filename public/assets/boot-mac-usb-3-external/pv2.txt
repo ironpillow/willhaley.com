@@ -1,0 +1,4 @@
+Last login: Sun Oct 15 19:28:25 on console
+Haley-iMac:~ will$ cat /dev/zero | pv -t -a > /tmp/garbage.file
+0:02:14 [ 339MiB/s]
+

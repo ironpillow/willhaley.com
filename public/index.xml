@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>React United States Map</title>
+      <link>http://willhaley.com/blog/united-states-map-react/</link>
+      <pubDate>Tue, 02 Jul 2019 21:52:00 +0000</pubDate>
+      
+      <guid>http://willhaley.com/blog/united-states-map-react/</guid>
+      <description>Although D3.js is a handy visualization tool, the goal of this project is to display a map of the US using SVG and React without the need for D3.
+One of the most crucial aspects of this map is a complex JSON file that describes the shape of every state. Using existing source data from bl.ocks.org user Pasha as a template, I created my own states.json file which you are free to use as you like.</description>
+    </item>
+    
+    <item>
       <title>Recovering Data From a Proprietery Mac M2 SSD</title>
       <link>http://willhaley.com/blog/macbook-m2/</link>
       <pubDate>Sat, 01 Jun 2019 11:00:00 +0000</pubDate>

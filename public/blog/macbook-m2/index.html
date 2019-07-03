@@ -70,14 +70,14 @@
 <p>A friend of mine recently suffered cricitcal damage to their A1502 13.3&rdquo; 2013 MacBook Pro. Although the device was no longer usable and a replacement machine was required, we wanted to see if we could access the hard drive and dump any data. After purchasing a <a href="https://www.microcenter.com/product/486366/inland-precision-pentalobe-screwdriver-set---3-piece#photogroup-2">pentalobe screwdriver set from Micro Center</a> we were able to open the laptop and remove the M2 SSD drive from the MBP.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/ssd.jpg" alt="">
+    <img src="/assets/macbook-m2/ssd.jpg" alt="">
     
 </figure>
 
 <p>This is when we realized some more effort was involved than originally thought. The M2 SSD used in this model MacBook Pro uses a proprietery/uncommon key and pin configuration. This device has <strong>12 + 16 pins</strong>, which does not conform to a common M2 standard.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/12&#43;16.jpg" alt="">
+    <img src="/assets/macbook-m2/12&#43;16.jpg" alt="">
     
 </figure>
 
@@ -86,7 +86,7 @@
 <p>I ended up looking at simpler (and cheaper) adapters that would allow me to mount the M2 SSD in my Desktop motherboard so that I could read the data. I settled on the <a href="https://www.amazon.com/gp/product/B0173ODBCE/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1">Sintech M.2 M Key 28Pin SSD Adapter, Compatible for MacBook SSD 2013-2015 Year</a>. A major reason I chose this particular adapter is because it said it supported <code>12 + 16</code> pins and it listed the model of my SSD explicitly, which is the <code>SD6PQ4M-256G-1021H</code> 256GB SDNEP 655-1838D model.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/adapter.jpg" alt="Adapter without the SSD in it">
+    <img src="/assets/macbook-m2/adapter.jpg" alt="Adapter without the SSD in it">
     
     <figcaption>Adapter without the SSD in it</figcaption>
     
@@ -97,7 +97,7 @@
 <p>The catch is that the enclosures above plug directly to a computer via USB which is very simple and straightforward. This Sintech adapter I bought is cheaper, but far less convenient. The Sintech adapter I bought has a slot and screw hole for mounting the Apple M2 SSD, and then the adapter itself has a standard M key M2 SSD connector that allows plugging the adapter into a generic M2 motherboard (or enclosure) slot.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/ssd-in-adapter.jpg" alt="SSD secured in the adapter">
+    <img src="/assets/macbook-m2/ssd-in-adapter.jpg" alt="SSD secured in the adapter">
     
     <figcaption>SSD secured in the adapter</figcaption>
     
@@ -112,14 +112,14 @@
 <p>One of my slots uses PCIe for the M2 SSD.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/m2-pcie.jpg" alt="">
+    <img src="/assets/macbook-m2/m2-pcie.jpg" alt="">
     
 </figure>
 
 <p>The other M2 slot on my motherboard uses a standard SATA interface for the M2 SSD.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/m2-ssd.jpg" alt="">
+    <img src="/assets/macbook-m2/m2-ssd.jpg" alt="">
     
 </figure>
 
@@ -130,7 +130,7 @@
 <p>I connected the adapter (with the SSD in it) to the SATA M2 slot on my motherboard at first.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/adapter-in-m2-ssd.jpg" alt="">
+    <img src="/assets/macbook-m2/adapter-in-m2-ssd.jpg" alt="">
     
 </figure>
 
@@ -139,21 +139,21 @@
 <p><strong>Note how my BIOS differentiates between the two M2 slots! One is PCIe and one is a SATA</strong></p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/not-detected.jpg" alt="">
+    <img src="/assets/macbook-m2/not-detected.jpg" alt="">
     
 </figure>
 
 <p>Eventually I thought the M2 device must have been damaged along with the rest of the laptop and so the data was unrecoverable. After I just about gave up, I decided to try the other M2 slot. Here, the pins on the adapter also lined up fine and the device fit. Again, make sure that the adapter is snugly fastened in. None of the pins should be visible!</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/adapter-in-m2-pcie.jpg" alt="">
+    <img src="/assets/macbook-m2/adapter-in-m2-pcie.jpg" alt="">
     
 </figure>
 
 <p>There was a snag though. This M2 slot physically fit the Sintech adapter pins, but the adapter was too long and rested at an angle. <strong>Yikes!</strong> Please note that this adapter is resting at a <em>horrible</em> crooked angle and is not screwed in. The only thing keeping this adapter in place is gravity and luck.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/adapter-angled.jpg" alt="Adapter not physically screwed in and resting at an angle. Eek!">
+    <img src="/assets/macbook-m2/adapter-angled.jpg" alt="Adapter not physically screwed in and resting at an angle. Eek!">
     
     <figcaption>Adapter not physically screwed in and resting at an angle. Eek!</figcaption>
     
@@ -162,7 +162,7 @@
 <p>Although this seemed like a very bad idea, I booted my machine and saw that the SSD <em>was</em> detected in BIOS in the M2 PCIe slot!</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/detected.jpg" alt="">
+    <img src="/assets/macbook-m2/detected.jpg" alt="">
     
 </figure>
 
@@ -171,7 +171,7 @@
 <p>At this point I was able to boot to Linux and see the device show up as expected.</p>
 
 <figure class="post-image">
-    <img src="/images/macbook-m2/linux.jpg" alt="">
+    <img src="/assets/macbook-m2/linux.jpg" alt="">
     
 </figure>
 

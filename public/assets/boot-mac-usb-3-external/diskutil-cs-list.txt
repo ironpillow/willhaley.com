@@ -1,0 +1,29 @@
+CoreStorage logical volume groups (1 found)
+|
++-- Logical Volume Group 32B44A89-7252-43D6-86B4-E95E3F528802
+    =========================================================
+    Name:         Macintosh HD
+    Status:       Online
+    Size:         999345127424 B (999.3 GB)
+    Free Space:   18907136 B (18.9 MB)
+    |
+    +-< Physical Volume 01042B84-1164-463A-AD0F-7B4B08AA9B35
+    |   ----------------------------------------------------
+    |   Index:    0
+    |   Disk:     disk0s2
+    |   Status:   Online
+    |   Size:     999345127424 B (999.3 GB)
+    |
+    +-> Logical Volume Family FC61D377-A69C-4D5B-B3E8-3452398E46A5
+        ----------------------------------------------------------
+        Encryption Type:         None
+        |
+        +-> Logical Volume 260972EB-1B09-47C4-B3B5-20AA1E7AFE53
+            ---------------------------------------------------
+            Disk:                  disk1
+            Status:                Online
+            Size (Total):          998973898752 B (999.0 GB)
+            Revertible:            Yes (no decryption required)
+            LV Name:               Macintosh HD
+            Volume Name:           Macintosh HD
+            Content Hint:          Apple_HFS
