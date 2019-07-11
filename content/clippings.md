@@ -6,6 +6,22 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[Americans Shouldn’t Have to Drive, but the Law Insists on It](https://www.theatlantic.com/ideas/archive/2019/07/car-crashes-arent-always-unavoidable/592447/)
+
+> The Atlantic, Gregory H. Shill, 2019-07-09
+
+[Channel 5's nonsense will make me and other cyclists less safe](https://www.theguardian.com/environment/bike-blog/2019/jul/08/channel-5s-nonsense-will-make-me-and-other-cyclists-less-safe)
+
+> The Guardian, Peter Walker, 2019-07-08
+
+[Hundreds of cyclists hold 'die-in' in New York City to protest deaths](https://www.theguardian.com/us-news/2019/jul/10/hundreds-of-cyclists-hold-die-in-in-new-york-city-to-protest-deaths)
+
+> The Guardian, Lauren Aratani, 2019-07-10
+
+[Regret can seriously damage your mental health – here's how to leave it behind](https://www.theguardian.com/lifeandstyle/2019/jun/27/regret-can-seriously-damage-your-mental-health-heres-how-to-leave-it-behind?utm_source=pocket-newtab)
+
+> The Guardian, Moya Sarner, 2019-06-27
+
 [Trump nepotism attacked after 'out-of-her-depth' Ivanka given key summit role](https://www.theguardian.com/us-news/2019/jul/01/donald-trump-ivanka-g20-north-korea-nepotism)
 
 > The Guardian, David Smith, 2019-07-01
