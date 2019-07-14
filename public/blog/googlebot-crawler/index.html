@@ -71,21 +71,21 @@
 
 <p>My website is using a very unique and nonsensical name that overlaps with <em>no other</em> search results, so it was easy to search on and see what was and was not indexed. Initially, Google had no search results for my site&rsquo;s name.</p>
 
-<p><img src="/images/googlebot-crawler/no-seo.png" alt="no search results for my site" /></p>
+<p><img src="/assets/googlebot-crawler/no-seo.png" alt="no search results for my site" /></p>
 
 <p>I created a <a href="https://www.google.com/webmasters/tools/home?hl=en">Google Webmaster</a> entry for my trivial site and used the <code>Fetch as Google</code> tool to <code>Fetch and Render</code> my site.</p>
 
-<p><img src="/images/googlebot-crawler/fetch.png" alt="fetch site as Google" /></p>
+<p><img src="/assets/googlebot-crawler/fetch.png" alt="fetch site as Google" /></p>
 
 <p>I also clicked <code>Request Indexing</code> so that Google would <code>Crawl this URL and its direct links</code>.</p>
 
-<p><img src="/images/googlebot-crawler/index.png" alt="index site" /></p>
+<p><img src="/assets/googlebot-crawler/index.png" alt="index site" /></p>
 
 <p>I waited a few days to see how Google had indexed my content.</p>
 
 <p>The home page was indexed, as was the <code>/api</code> page, but some of my content was not searchable and did not seem to be picked up by Google at all. Specifically, I noticed the <code>/about</code> page was not indexed, which seemed odd since it was directly linked from my home page.</p>
 
-<p><img src="/images/googlebot-crawler/some-content-indexed.png" alt="some results" /></p>
+<p><img src="/assets/googlebot-crawler/some-content-indexed.png" alt="some results" /></p>
 
 <p>My <code>robots.txt</code> allows all, so nothing should be blocked for Googlebot. And although I have no <a href="https://en.wikipedia.org/wiki/Sitemaps">Sitemap</a>, which would &ldquo;&hellip;inform search engines about URLs on a website that are available for crawling.&rdquo;, my content had a number of links that should have been crawable by Googlebot.</p>
 
@@ -95,11 +95,11 @@
 
 <p>The result of that crawl request does not show my nav bar even though I can see the nav bar in my modern browser. Google states that &ldquo;This is how Googlebot saw the page:&rdquo; and &ldquo;This is how a visitor to your website would have seen the page:&ldquo;. See here a screenshot of the result.</p>
 
-<p><img src="/images/googlebot-crawler/missing-nav.png" alt="no nav visible when rendered by googlebot" /></p>
+<p><img src="/assets/googlebot-crawler/missing-nav.png" alt="no nav visible when rendered by googlebot" /></p>
 
 <p>That same navigation bar in my single page app renders without issue in production in Safari, Firefox, and Chrome. See here a screenshot of what the home page (<code>/</code>) looks like in Chrome <code>62.0.3202.94 (Official Build) (64-bit)</code>. Note the nav bar at the top.</p>
 
-<p><img src="/images/googlebot-crawler/nav-renders.png" alt="screenshot of website with nav" /></p>
+<p><img src="/assets/googlebot-crawler/nav-renders.png" alt="screenshot of website with nav" /></p>
 
 <p>At this point I was perplexed. Clearly Googlebot was having an issue with an aspect of my site, but I had a hard time understanding why Google would vary so significantly from what I could see in my browser. <strong>If I can see the nav bar in my modern browser, why can&rsquo;t Googlebot?</strong> <strong>Why is the navigation bar not rendered by Google&rsquo;s crawl process?</strong></p>
 
@@ -113,7 +113,7 @@
 
 <p>Once I removed the <code>linear-gradient</code> and changed the <code>background</code> to a simple color, Googlebot could see my nav bar.</p>
 
-<p><img src="/images/googlebot-crawler/fixed.png" alt="navigation rendering normally" /></p>
+<p><img src="/assets/googlebot-crawler/fixed.png" alt="navigation rendering normally" /></p>
 
 <h1 id="if-i-can-see-the-nav-bar-in-my-modern-browser-why-can-t-googlebot">If I can see the nav bar in my modern browser, why can&rsquo;t Googlebot?</h1>
 
@@ -129,7 +129,7 @@
 
 <p>Googlebot is <a href="https://developers.google.com/search/docs/guides/rendering">based on an older build of Chrome. Specifically, a build of version 41</a>. It is possible to <a href="http://google-chrome.en.uptodown.com/ubuntu/old">install Chrome 41</a> on a <a href="http://releases.ubuntu.com/14.04/">compatible OS</a>. I did so, and I do see the nav bar renders fine on a desktop with Chrome 41 and works as expected. See here the nav bar rendering fine in Chrome <code>41.0.2272.89 (64-bit)</code>.</p>
 
-<p><img src="/images/googlebot-crawler/chrome41.png" alt="nav renders fine in chrome 41" /></p>
+<p><img src="/assets/googlebot-crawler/chrome41.png" alt="nav renders fine in chrome 41" /></p>
 
 <p>Although my site works fine on Chrome 41, the issue with my site and Googlebot seems to be a case where it must be noted that <strong>Googlebot&rsquo;s web rendering service (WRS) is <em>not</em> the same as Chrome</strong>.</p>
 

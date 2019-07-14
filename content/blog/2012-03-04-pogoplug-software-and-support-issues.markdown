@@ -21,7 +21,7 @@ The primary reason is because I keep having to deal with frequent** radical sof
 
 I started with **version 2.5.5**.  It was simple.  The Web Ui allowed you to configure some very straight-forward settings, and to specify which folders to backup to your PogoPlug using **Active Copy**.  That is exactly why I bought the device.  Simple and clean.  I staged the backups to my PogoPlug, and as a bonus, I can share my photos with family and friends!  Hooray!
 
-![2.5.51.png](/images/pogoplug-software-and-support-issues/2.5.51.png)
+![2.5.51.png](/assets/pogoplug-software-and-support-issues/2.5.51.png)
 
 **Then the problems began**.  Every couple of weeks my parents would call to tell me the Desktop software had become logged out despite us clicking "Remember Me" at the login page.  I thought that was odd, and eventually filed a support case.  A tech told me, in a poorly written response, that this was by design for security.
 
@@ -40,8 +40,8 @@ How does the software logging out automatically make us any more secure?  There
 
 When you setup 2.5.5 it asked which folders you want to backup at first run, when you run **version** **3.0.1** for the first time, it asked you which folders to setup for "Remote Access".  "Wait a second...", I thought, why am I setting up folders for **Remote Access**?  What does that even mean in the world of PogoPlug?  I had no instruction manual or place to go for support.  As far as I could see, 3.0.1 had blown away Active Copy, my simple reliable backup process, and replaced it with Remote Access.
 
-![Active-Copy1.png](/images/pogoplug-software-and-support-issues/Active-Copy1.png)
-![Remote-Access2.png](/images/pogoplug-software-and-support-issues/Remote-Access2.png)
+![Active-Copy1.png](/assets/pogoplug-software-and-support-issues/Active-Copy1.png)
+![Remote-Access2.png](/assets/pogoplug-software-and-support-issues/Remote-Access2.png)
 
 I found no mention of Active Sync anywhere in the client, so I turned on Remote Access and was horrified to now see that folders on my computer were being shared live on my.pogoplug.com.  What?!
 
@@ -79,17 +79,17 @@ This seemed to be the new implementation of the** version 4** release.  That u
 
 It seems like the PogoPlug company revived Active Sync in the form of Sync, but didn't bother to tell anyone.  So here I was thinking my backups were working fine, but they were not.
 
-![Sync-Menu1.png](/images/tmobile-password-confusion/Sync-Menu1.png)
+![Sync-Menu1.png](/assets/tmobile-password-confusion/Sync-Menu1.png)
 
 Version 4, in my opinion, is the worst to date.   Sync only works if you have the Desktop Client up and running.  So it seems that in order for my backups to run I need the software minimized or in a Window at all times.  It's not enough to just have it running in the tray.
 
-![Really-Quit.png](/images/tmobile-password-confusion/Really-Quit.png)
+![Really-Quit.png](/assets/tmobile-password-confusion/Really-Quit.png)
 
 So I need the software running for backups to work, but at least I can see how long it will take before the backups are complete, right?  Wrong!  There's no progress indicator anywhere.  I have no way of knowing if Sync is even working or not!
 
 As the icing on the cake, even though the technician told me that Remote Access was now just that, a way of enabling Remote Access for a folder, I noticed that enabling Remote Access on a folder adds an entry to the backup menu.  So it seems like the software is broken, and the technician possibly has no idea what he's talking about.
 
-![Broken-Web-UI.png](/images/tmobile-password-confusion/Broken-Web-UI.png)
+![Broken-Web-UI.png](/assets/tmobile-password-confusion/Broken-Web-UI.png)
 
 If Remote Access is no longer involved in the backup process, why does adding a folder to it automatically create an entry in the backup menu?  And why is that entry seemingly broken from the start?
 

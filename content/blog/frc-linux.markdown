@@ -427,7 +427,7 @@ Right click the name of your project in Eclipes and `Run As` a `WPILib Java Simu
 
 ### 4. Enjoy
 
-![Gazebo](/images/frc-linux/gazebo.png)
+![Gazebo](/assets/frc-linux/gazebo.png)
 
 You should now be able to use your controller to drive your robot.
 
@@ -510,7 +510,7 @@ System Menu -> Settings -> Additional Drivers.
 
 Let the process scan and list the proprietary drivers you require (choose the newest tested proprietary drivers for your card).
 
-![nvidia](/images/frc-linux/nvidia.png)
+![nvidia](/assets/frc-linux/nvidia.png)
 
 Click `Apply Changes`. Let the install finish. Then reboot.
 

@@ -63,40 +63,40 @@ If your goal is performance, and your options are USB 3.0 or Thunderbolt 1, thes
 
 The drive offers both USB 3.0 and Thunderbolt 1 connectivity.
 
-![1.jpg](/images/thunderbolt-enclosure/1.jpg)
+![1.jpg](/assets/thunderbolt-enclosure/1.jpg)
 
 The Thunderbolt 1 cable is hard-wired.
 
-![2.jpg](/images/thunderbolt-enclosure/2.jpg)
+![2.jpg](/assets/thunderbolt-enclosure/2.jpg)
 
 The USB 3.0 cable is detachable.
 
-![3.jpg](/images/thunderbolt-enclosure/3.jpg)
+![3.jpg](/assets/thunderbolt-enclosure/3.jpg)
 
-![6.jpg](/images/thunderbolt-enclosure/6.jpg)
+![6.jpg](/assets/thunderbolt-enclosure/6.jpg)
 
 The drive is a breeze to disassemble.
 
 The rubber casing can be removed simply by stretching it off.
 
-![4.jpg](/images/thunderbolt-enclosure/4.jpg)
+![4.jpg](/assets/thunderbolt-enclosure/4.jpg)
 
 Underneath are four screws. These are the only screws that need to be removed.
 
-![5.jpg](/images/thunderbolt-enclosure/5.jpg)
+![5.jpg](/assets/thunderbolt-enclosure/5.jpg)
 
 You can then slide the drive assembly out.
 
-![7.jpg](/images/thunderbolt-enclosure/7.jpg)
+![7.jpg](/assets/thunderbolt-enclosure/7.jpg)
 
 You will have to peel off the magnetic tape. Unfortunately, you will probably end up breaking the tape, but I do not _think_ that it serves a significant purpose, so I would not worry too much.
 
-![8.jpg](/images/thunderbolt-enclosure/8.jpg)
+![8.jpg](/assets/thunderbolt-enclosure/8.jpg)
 
 The drive inside is a standard SATA drive. In my case, it is a 7200 RPM 1 TB drive.
 
 At this point, you can simply slide the drive out of the SATA connector, install your new drive, and reverse these steps.
 
-![9.jpg](/images/thunderbolt-enclosure/9.jpg)
+![9.jpg](/assets/thunderbolt-enclosure/9.jpg)
 
 Thankfully, it is all very straightforward.

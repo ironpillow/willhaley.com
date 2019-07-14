@@ -8,7 +8,7 @@ I have a [Late 2012 21.5" iMac](https://support.apple.com/kb/sp665?locale=en_US)
 
 Backups are failing for reasons that are very ambiguous. All I know is that the machine keeps complaining that `Time Machine couldn't back up`, that the Time Machine drive constantly needed first aid, and then first aid would consistently fail with exit code `8`.
 
-![time-machine.png](/images/boot-mac-usb-3-external/time-machine.png)
+![time-machine.png](/assets/boot-mac-usb-3-external/time-machine.png)
 
 I realize that sounds much more like the Time Machine drive is at fault, and not the internal drive.
 

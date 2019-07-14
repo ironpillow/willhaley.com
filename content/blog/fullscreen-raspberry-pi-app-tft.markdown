@@ -12,7 +12,7 @@ Please consider that these instructions may not be the ideal solution depending 
 
 These are the steps I used in order to run a fullscreen Python app on a Raspberry Pi with an Adafruit 2.8" resistive TFT display.
 
-![Raspberry Pi With an Adafruit TFT Display](/images/fullscreen-raspberry-pi-app-tft/pi-tft.jpg)
+![Raspberry Pi With an Adafruit TFT Display](/assets/fullscreen-raspberry-pi-app-tft/pi-tft.jpg)
 
 # Warning
 

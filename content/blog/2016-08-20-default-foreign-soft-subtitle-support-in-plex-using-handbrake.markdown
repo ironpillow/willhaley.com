@@ -83,7 +83,7 @@ So we know we must use VobSub subtitles, and we must use `.mkv` files. Perfect, 
 
 Well, you could play a movie in VLC to verify which subtitle track is appropriate. You may even find that VLC magically selects the appropriate subtitle track.
 
-![VLC default dvd subtitle track](/images/default-foreign-soft-subtitle-support-in-plex-using-handbrake/Screen Shot 2016-08-21 at 10.09.34 PM.png)
+![VLC default dvd subtitle track](/assets/default-foreign-soft-subtitle-support-in-plex-using-handbrake/Screen Shot 2016-08-21 at 10.09.34 PM.png)
 
 Hey now, look at that! When playing this DVD in VLC, it defaults to track 2. It's an English language movie, and if I play the DVD to a spot where I know there's non-English dialogue, the subtitles are there as expected! Perfect!
 
@@ -130,7 +130,7 @@ It's actually rather simple. Configure Plex to respect our subtitles under the `
 
 Check the "Automatically select audio and subtitle tracks" box, and change "Subtitle mode" to "Shown with foreign audio".
 
-![Plex respect subtitles](/images/default-foreign-soft-subtitle-support-in-plex-using-handbrake/plex-respect-subtitles.png)
+![Plex respect subtitles](/assets/default-foreign-soft-subtitle-support-in-plex-using-handbrake/plex-respect-subtitles.png)
 
 With that in place, you should now be able to add your `.mkv` file to your library and see Plex respecting the subtitles where appropriate.
 

@@ -991,7 +991,7 @@ Articles that I have clipped over the years. Whether because I agreed with them,
 
 [Conan O’Brien: Work of Art](http://www.artsobserver.com/2011/11/02/conan-obrien-work-of-art/)
 
-![photograph of art in conan o'brien gallery. piece by Bridget Haley on the right](/images/clippings/bridget haley conan obrien art.jpg)
+![photograph of art in conan o'brien gallery. piece by Bridget Haley on the right](/assets/clippings/bridget haley conan obrien art.jpg)
 
 > Arts Observer, Editor, 2011-11-02
 

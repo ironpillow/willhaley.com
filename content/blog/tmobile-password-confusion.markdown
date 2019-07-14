@@ -43,5 +43,5 @@ I've encountered this before. Either from length restrictions or my use of a tra
 
 This is super frustrating.
 
-![update-password.png](/images/tmobile-password-confusion/update-password.png)
-![login-failed.png 200](/images/tmobile-password-confusion/login-failed.png)
+![update-password.png](/assets/tmobile-password-confusion/update-password.png)
+![login-failed.png 200](/assets/tmobile-password-confusion/login-failed.png)

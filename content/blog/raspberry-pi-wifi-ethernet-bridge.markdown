@@ -291,4 +291,4 @@ Reverse mode, remote host iperf.he.net is sending
 iperf Done.
 ```
 
-![speed results](/images/raspberry-pi-wifi-ethernet-bridge/speed.png)
+![speed results](/assets/raspberry-pi-wifi-ethernet-bridge/speed.png)

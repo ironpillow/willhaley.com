@@ -10,7 +10,7 @@ I used to live by Lakewood and Wrightwood and would ocasionally notice train tra
 
 I was curious about the history behind those old lines.
 
-![Lakewood Branch](/images/lakewood-line-chicago/3.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/3.jpg)
 
 > Lakewood and Schubert - Facing West
 
@@ -20,41 +20,41 @@ The Chicago Rail Fan site [chronicles the location of old landmarks](https://www
 
 I made my way down there today to take some photos and track it as well as I could.
 
-![Lakewood Branch](/images/lakewood-line-chicago/route.png)
+![Lakewood Branch](/assets/lakewood-line-chicago/route.png)
 
-![Lakewood Branch](/images/lakewood-line-chicago/1.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/1.jpg)
 
 > Lakewood and Wolfram - Facing South
 
-![Lakewood Branch](/images/lakewood-line-chicago/2.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/2.jpg)
 
 > Lakewood and Diversey - Facing Southeast
 
-![Lakewood Branch](/images/lakewood-line-chicago/4.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/4.jpg)
 
 > Lakewood and Schubert - Facing South
 
-![Lakewood Branch](/images/lakewood-line-chicago/5.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/5.jpg)
 
 > Alley Directly West of Lakewood and Fullerton - Facing East
 
-![Lakewood Branch](/images/lakewood-line-chicago/6.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/6.jpg)
 
 > Alley Directly West of Lakewood and Fullerton - Facing South
 
-![Lakewood Branch](/images/lakewood-line-chicago/7.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/7.jpg)
 
 > Alley Directly West of Lakewood and Belden - Facing South
 
-![Lakewood Branch](/images/lakewood-line-chicago/8.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/8.jpg)
 
 > Lakewood and Clybourn - Facing South
 
-![Lakewood Branch](/images/lakewood-line-chicago/9.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/9.jpg)
 
 > Kingsbury and Clifton - Facing Southeast
 
-![Lakewood Branch](/images/lakewood-line-chicago/10.jpg)
+![Lakewood Branch](/assets/lakewood-line-chicago/10.jpg)
 
 > Kingsbury and Willow - Facing Southeast
 

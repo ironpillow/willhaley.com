@@ -22,11 +22,11 @@ A black background with white text renders fine and Googlebot renders it without
 
 ### As Viewed By Humans
 
-![high contrast web rendering example](/images/linear-gradient-background-googlebot/white on black.png)
+![high contrast web rendering example](/assets/linear-gradient-background-googlebot/white on black.png)
 
 ### As Viewed By Googlebot
 
-![high contrast web rendering example as viewed by google](/images/linear-gradient-background-googlebot/white on black (bot).png)
+![high contrast web rendering example as viewed by google](/assets/linear-gradient-background-googlebot/white on black (bot).png)
 
 # No Contrast - Googlebot Ignored
 
@@ -39,11 +39,11 @@ A white background with white text is not rendered by Googlebot. Note that a hum
 
 ### As Viewed By Humans
 
-![no contrast web rendering example](/images/linear-gradient-background-googlebot/white on white.png)
+![no contrast web rendering example](/assets/linear-gradient-background-googlebot/white on white.png)
 
 ### As Viewed By Googlebot
 
-![no contrast web rendering example as viewed by google](/images/linear-gradient-background-googlebot/white on white (bot).png)
+![no contrast web rendering example as viewed by google](/assets/linear-gradient-background-googlebot/white on white (bot).png)
 
 # Gradient - Googlebot Ignored
 
@@ -56,11 +56,11 @@ A gradient background, even if it results in a high contrast result, is ignored 
 
 ### As Viewed By Humans
 
-![high contrast gradient web rendering example](/images/linear-gradient-background-googlebot/white on black gradient.png)
+![high contrast gradient web rendering example](/assets/linear-gradient-background-googlebot/white on black gradient.png)
 
 ### As Viewed By Googlebot
 
-![high contrast gradient web rendering example as viewed by google](/images/linear-gradient-background-googlebot/white on black gradient (bot).png)
+![high contrast gradient web rendering example as viewed by google](/assets/linear-gradient-background-googlebot/white on black gradient (bot).png)
 
 # Gradient With Fallback - Works Great
 
@@ -79,8 +79,8 @@ With the dark fallback background, Googlebot will render the content.
 
 ### As Viewed By Humans
 
-![high contrast gradient with solid fallback web rendering example](/images/linear-gradient-background-googlebot/white on black gradient with fallback.png)
+![high contrast gradient with solid fallback web rendering example](/assets/linear-gradient-background-googlebot/white on black gradient with fallback.png)
 
 ### As Viewed By Googlebot
 
-![high contrast gradient with solid fallback web rendering example as viewed by google](/images/linear-gradient-background-googlebot/white on black gradient with fallback (bot).png)
+![high contrast gradient with solid fallback web rendering example as viewed by google](/assets/linear-gradient-background-googlebot/white on black gradient with fallback (bot).png)

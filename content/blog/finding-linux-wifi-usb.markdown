@@ -47,12 +47,12 @@ I buy almost everything on Amazon, and I rely on Amazon reviews to inform my pur
 One review for [the Panda PAU05 300Mbps](https://www.amazon.com/Panda-300Mbps-Wireless-USB-Adapter/dp/B00EQT0YK2/ref=cm_cr_srp_d_product_top?ie=UTF8) said it has an `RT5372` chipset.
 
 <!-- https://www.amazon.com/review/RMT9IALY45B4T/ref=ask_dp_lswr_rp_hza -->
-![Panda PAU05 300Mbps 1.png](/images/chipsets/Panda PAU05 300Mbps 1.png)
+![Panda PAU05 300Mbps 1.png](/assets/chipsets/Panda PAU05 300Mbps 1.png)
 
 Another review says the same product has an `RT2870` chipset.
 
 <!-- https://www.amazon.com/review/R9PNEUOR226MI/ref=ask_dp_lswr_rp_hza -->
-![Panda PAU05 300Mbps 2.png](/images/chipsets/Panda PAU05 300Mbps 2.png)
+![Panda PAU05 300Mbps 2.png](/assets/chipsets/Panda PAU05 300Mbps 2.png)
 
 What is happening? How are we seeing the same _model_ of a USB WiFi network device reportedly having multiple supported _chipsets_?
 
@@ -61,19 +61,19 @@ Here is another example of that same chipset inconsistency.
 The **manufacturer** of the [ANEWISH Wifi Adapter 600Mbps USB Wifi Adapter](https://www.amazon.com/ANEWISH-Adapter-802-11ac-Wireless-10-4-10-12-5/dp/B06XMZ4Y4B/ref=sr_1_22?s=pc&ie=UTF8&qid=1506624585&sr=1-22&keywords=usb+wifi) says the chipset is an `RTL8111`.
 
 <!-- https://www.amazon.com/ask/questions/TxY0F9PSNZI6CZ/ref=ask_dp_lsw_al_hza?asin=B06XMZ4Y4B -->\
-![ANEWISH 600Mbps.png](/images/chipsets/ANEWISH 600Mbps.png)
+![ANEWISH 600Mbps.png](/assets/chipsets/ANEWISH 600Mbps.png)
 
 Then a reviewer claims their device has the `RTL8188AU` chipset.
 
 <!-- https://www.amazon.com/review/RTK95CJ3EUX21/ref=ask_dp_lswr_rp_hza -->
-![ANEWISH 600Mbps 2.png](/images/chipsets/ANEWISH 600Mbps 2.png)
+![ANEWISH 600Mbps 2.png](/assets/chipsets/ANEWISH 600Mbps 2.png)
 ​
 
 <!--
 
 This is yet another example here where the [**manufacturer**](https://www.amazon.com/sp?_encoding=UTF8&asin=B01G8IPLD8&isAmazonFulfilled=1&isCBA=&marketplaceID=ATVPDKIKX0DER&orderID=&seller=A16UPHTV03MQOZ&tab=&vasStoreID=) of the [ANEWKODI 600Mbps Dual Band](https://www.amazon.com/gp/product/B01G8IPLD8/ref=ask_ql_qh_dp_hza) tells an Amazon user that that there are multiple chipsets for the same device, and the only way to tell the difference is the price.
 
-![ANEWKODI 600Mbps Chipset.png](/images/chipsets/ANEWKODI 600Mbps Chipset.png)
+![ANEWKODI 600Mbps Chipset.png](/assets/chipsets/ANEWKODI 600Mbps Chipset.png)
 
 -->
 
@@ -128,7 +128,7 @@ ThinkPenguin clearly indicates which (free software friendly) chipsets they use 
 The [TP-Link N150 Wireless Nano USB Adapter (TL-WN725N)](https://www.amazon.com/TP-Link-N150-Wireless-Adapter-TL-WN725N/dp/B008IFXQFU/ref=sr_1_8?s=pc&ie=UTF8&qid=1506624585&sr=1-8&keywords=usb+wifi) is a perfect and unfortunate example of the chipset inconsistency problem.
 
 <!-- https://www.amazon.com/ask/questions/TxXBMRIGZIIE6Q/? -->
-![TP-Link N150 multiple chipsets.png](/images/chipsets/TP-Link N150 multiple chipsets.png).
+![TP-Link N150 multiple chipsets.png](/assets/chipsets/TP-Link N150 multiple chipsets.png).
 
 
 It is a total gamble for Linux when we buy devices like these. **We have almost zero guarantee which chipset will be in our device when it arrives even when we buy the exact same model of a device as someone else.**
@@ -164,17 +164,17 @@ Since manufacturers often change chipsets at random, we cannot ensure that buyin
 See examples of this issue here for the [TP-Link N150](https://www.amazon.com/TP-Link-Wireless-Adapter-TL-WN722N-Version/dp/B002SZEOLG/ref=cm_cr_srp_d_product_top?ie=UTF8). Some users received cards with an Atheros chipset that supports [monitor mode](https://en.wikipedia.org/wiki/Monitor_mode), which is ideal for security penetration testing. However, not _all_ the cards have that chipset, and some users were left in the lurch.
 
 <!-- https://www.amazon.com/gp/customer-reviews/R2LH3GL82Z1L2Y/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU -->
-![Ath9k.png](/images/chipsets/Ath9k.png).
+![Ath9k.png](/assets/chipsets/Ath9k.png).
 
 Other users purchasing **the same card** ended up with devices that had a **different chipset** that _does not_ support monitor mode.
 
 <!-- https://www.amazon.com/review/R2EA3UWRN6RUKM/ref=ask_dp_lswr_rp_hza -->
-![Not Atheros chipset.png](/images/chipsets/Not Atheros chipset.png).
+![Not Atheros chipset.png](/assets/chipsets/Not Atheros chipset.png).
 
 This user had the same issue.
 
 <!-- https://www.amazon.com/gp/customer-reviews/R13U0L7849J5L8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU -->
-![Bad info.png](/images/chipsets/Bad info.png).
+![Bad info.png](/assets/chipsets/Bad info.png).
 
 <!--
 # Buyers Beware
@@ -182,17 +182,17 @@ This user had the same issue.
 It is entirely possible for cards with the same model number, but different chipsets, to have either very subtle or _no_ obvious differences, making it impossible to tell which one has which chipset.
 
 https://www.amazon.com/review/RDCADVGT5FXLM/ref=ask_dp_lswr_rp_hza
-![No visible indicators.png](/images/chipsets/No visible indicators.png).
+![No visible indicators.png](/assets/chipsets/No visible indicators.png).
 
 This issue can be extremely frustrating if you want to purchase a card whose chipset supports a specific feature, like monitor mode.
 
 https://www.amazon.com/gp/customer-reviews/R18SFO30VJKX5Q/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU
-![Monitor mode.png](/images/chipsets/Monitor mode.png).
+![Monitor mode.png](/assets/chipsets/Monitor mode.png).
 
 And users may end up stuck with a card they cannot use, or that is lacking an essential feature they wanted.
 
 https://www.amazon.com/gp/customer-reviews/R27VZHDA9H5ZX0/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B008IFXQFU
-![TP-Link 1.png](/images/chipsets/TP-Link 1.png)
+![TP-Link 1.png](/assets/chipsets/TP-Link 1.png)
 
 -->
 
@@ -204,12 +204,12 @@ To further complicate matters, I occasionally ran into reviews like these.
 Here we have a review claiming that Realtek is a "good chipset".
 
 https://www.amazon.com/review/R1E095JYY583US/ref=ask_dp_lswr_rp_hza
-![Realtek is great.png](/images/chipsets/Realtek is great.png)
+![Realtek is great.png](/assets/chipsets/Realtek is great.png)
 
 Then, for another device, a review claiming that "Realtek is the worst of all chipset manufacturers".
 
 https://www.amazon.com/gp/customer-reviews/R2SX2I0AV7XCAZ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B003MTTJOY
-![Realtek is awful.png](/images/chipsets/Realtek is awful.png)
+![Realtek is awful.png](/assets/chipsets/Realtek is awful.png)
 
 For a person like myself who has _no experience_ with chipsets, it is difficult to look at the material online and determine what cards are the best bets.
 
@@ -264,7 +264,7 @@ If you go the Amazon route, be prepared to hunt for drivers or return the device
 ​Chipset may vary - https://www.amazon.com/USB-N13-Wireless-N-Adapter-802-11b-Wireless/dp/B002UVNW5W/ref=sr_1_88?s=pc&ie=UTF8&qid=1506626052&sr=1-88&keywords=usb+wifi
 
 https://www.amazon.com/gp/customer-reviews/R2U95S6MKSCILA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B002UVNW5W
-![ASUS USB-N13 1.png](/images/chipsets/ASUS USB-N13 1.png)
+![ASUS USB-N13 1.png](/assets/chipsets/ASUS USB-N13 1.png)
 
 Oh no :(
 
@@ -284,7 +284,7 @@ Again :( I have the opposite chipset as seems to be popular in reviews...
 
 https://forums.macrumors.com/threads/disassemble-lacie-rugged-thunderbolt-disk.1507720/#post-18457976
 And for external disk enclosures https://forums.macrumors.com/threads/disassemble-lacie-rugged-thunderbolt-disk.1507720/
-![Enclosure Chipset.png](/images/chipsets/Enclosure Chipset.png)
+![Enclosure Chipset.png](/assets/chipsets/Enclosure Chipset.png)
 
 https://www.raymond.cc/blog/best-compatible-usb-wireless-adapter-for-backtrack-5-and-aircrack-ng/
 -->

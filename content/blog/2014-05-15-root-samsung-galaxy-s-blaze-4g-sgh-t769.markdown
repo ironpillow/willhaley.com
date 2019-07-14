@@ -19,31 +19,31 @@ My phone has Android 4.0.4 installed (Ice Cream Sandwich).  I recommend using W
 
     The file is called ```Root_with_Restore_by_Bin4ry_v33.zip```.  Extract the files from the zip to a directory
 
-   ![root-files.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/root-files.png)
+   ![root-files.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/root-files.png)
 
 1. Enable debugging on your phone
 
     Settings -> Developer Options -> USB debugging
 
-    ![Screenshot_2014-05-15-20-19-04.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/Screenshot_2014-05-15-20-19-04.png)
+    ![Screenshot_2014-05-15-20-19-04.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/Screenshot_2014-05-15-20-19-04.png)
 
 1. Enable Unknown sources on your phone
 
     Options -> Security -> Unknown sources
 
-    ![Screenshot_2014-05-15-20-39-53.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/Screenshot_2014-05-15-20-39-53.png)
+    ![Screenshot_2014-05-15-20-39-53.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/Screenshot_2014-05-15-20-39-53.png)
 
 1. Connect your phone to your computer
 
 1. Open Device Manager to make sure you do not need to install a driver for your phone.  On my machine Windows automatically located and installed a driver but you may need to install it manually
 
-    ![device-manager.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/device-manager.png)
+    ![device-manager.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/device-manager.png)
 
     [http://developer.samsung.com/android/tools-sdks/Samsung-Andorid-USB-Driver-for-Windows](http://developer.samsung.com/android/tools-sdks/Samsung-Andorid-USB-Driver-for-Windows)
 
 1. Figure out where your root files are located
 
-    ![copy-path-300x75.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/copy-path-300x75.png)
+    ![copy-path-300x75.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/copy-path-300x75.png)
 
 1. Open a command (cmd) prompt as Administrator and navigate to the root files
 
@@ -57,7 +57,7 @@ My phone has Android 4.0.4 installed (Ice Cream Sandwich).  I recommend using W
     stuff\adb devices
     ```
 
-    ![devices-list1.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/devices-list1.png)
+    ![devices-list1.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/devices-list1.png)
 
     If you do not see something similar to this screenshot then stop immediately!  If a "device" is listed then continue
 
@@ -67,7 +67,7 @@ My phone has Android 4.0.4 installed (Ice Cream Sandwich).  I recommend using W
     RunMe.bat
     ```
 
-    ![root.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/root.png)
+    ![root.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/root.png)
 
 1. This is important! For the SGH-T769 option **0** works perfectly! (I tried option 1.  It did not work so I rebooted my phone and tried 0, which did work)
 
@@ -79,7 +79,7 @@ My phone has Android 4.0.4 installed (Ice Cream Sandwich).  I recommend using W
 
     SuperSU
 
-    ![Screenshot_2014-05-15-20-19-59.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/Screenshot_2014-05-15-20-19-59.png)
+    ![Screenshot_2014-05-15-20-19-59.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/Screenshot_2014-05-15-20-19-59.png)
 
 1. Repeat step 7 - 8
 
@@ -89,7 +89,7 @@ My phone has Android 4.0.4 installed (Ice Cream Sandwich).  I recommend using W
     stuff\adb shell
     ```
 
-    ![shell.png](/images/root-samsung-galaxy-s-blaze-4g-sgh-t769/shell.png)
+    ![shell.png](/assets/root-samsung-galaxy-s-blaze-4g-sgh-t769/shell.png)
 
 1. Now gain root access
 

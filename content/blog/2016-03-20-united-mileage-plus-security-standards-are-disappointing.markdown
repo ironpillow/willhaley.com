@@ -16,7 +16,7 @@ I recently received an email saying that I **must** enable security questions on
 
 The problem is that security questions are [not](http://www.engadget.com/2015/05/25/google-security-question-study/) [really](http://www.theatlantic.com/technology/archive/2012/08/security-questions-the-biggest-joke-in-online-identity-verification/260835/) [secure](http://www.howtogeek.com/185354/security-questions-are-insecure-how-to-protect-your-accounts/). There are far better security experts (at United and in the community at large) than me who can explain why this is a bad idea, but I will try to summarize as best as I can.
 
-![available security questions](/images/united-mileage-plus-security-standards-are-disappointing/united-mileage-plus-questions.png)
+![available security questions](/assets/united-mileage-plus-security-standards-are-disappointing/united-mileage-plus-questions.png)
 
 Security questions like these are relatively easy for someone to guess. If the answer is obvious to you, then it is probably obvious to others as well.
 

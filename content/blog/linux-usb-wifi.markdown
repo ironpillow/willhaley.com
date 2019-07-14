@@ -44,7 +44,7 @@ _All cards were tested using Ubuntu 16.04.3 LTS Xenial Xerus `4.10.0-37-generic 
 
 [Penguin Wireless N USB Adapter for GNU / Linux (TPE-N150USB)](https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb)
 
-![/images/linux-usb-wifi/tpe-n150usb.jpg](/images/linux-usb-wifi/tpe-n150usb.jpg)
+![/images/linux-usb-wifi/tpe-n150usb.jpg](/assets/linux-usb-wifi/tpe-n150usb.jpg)
 
 **Chipset**: [AR9271](https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-gnu-linux-tpe-n150usb)
 
@@ -114,7 +114,7 @@ average: 11.58 Mbps
 
 [Penguin Wireless N USB Adapter /w External Antenna for GNU / Linux (TPE-N150USBL)](https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-w-external-antenna-gnu-linux-tpe-n150usbl)
 
-![/images/linux-usb-wifi/tpe-n150usbl.jpg](/images/linux-usb-wifi/tpe-n150usbl.jpg)
+![/images/linux-usb-wifi/tpe-n150usbl.jpg](/assets/linux-usb-wifi/tpe-n150usbl.jpg)
 
 **Chipset**: [AR9271](https://www.thinkpenguin.com/gnu-linux/penguin-wireless-n-usb-adapter-w-external-antenna-gnu-linux-tpe-n150usbl)
 
@@ -186,7 +186,7 @@ errors: 0
 
 [Edimax EW-7811UTC AC600 Dual-Band](https://www.amazon.com/gp/product/B00FW6T36Y/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
 
-![/images/linux-usb-wifi/ew-7811utc.jpg](/images/linux-usb-wifi/ew-7811utc.jpg)
+![/images/linux-usb-wifi/ew-7811utc.jpg](/assets/linux-usb-wifi/ew-7811utc.jpg)
 
 **Potential Chipsets**: [RTL8811AU](https://wikidevi.com/wiki/Edimax_EW-7811UTC_7392_A812)
 
@@ -266,7 +266,7 @@ average: 59.42 Mbps
 
 [Panda Wireless PAU06 300Mbps N](https://www.amazon.com/Panda-Wireless-PAU06-300Mbps-Adapter/dp/B00JDVRCI0)
 
-![/images/linux-usb-wifi/pau06.jpg](/images/linux-usb-wifi/pau06.jpg)
+![/images/linux-usb-wifi/pau06.jpg](/assets/linux-usb-wifi/pau06.jpg)
 
 **Potential Chipsets**: [RT5372](https://wikidevi.com/wiki/Panda_PAUO6)
 
@@ -338,7 +338,7 @@ average: 8.33 Mbps
 
 [Panda 300Mbps PAU05 Wireless N USB Adapter](https://www.amazon.com/Panda-300Mbps-Wireless-USB-Adapter/dp/B00EQT0YK2)
 
-![/images/linux-usb-wifi/pau05.jpg](/images/linux-usb-wifi/pau05.jpg)
+![/images/linux-usb-wifi/pau05.jpg](/assets/linux-usb-wifi/pau05.jpg)
 
 **Potential Chipsets**: [RT3070](http://www.wirelesshack.org/kali-linux-nano-usb-adapters.html), [Atheros ?](https://www.amazon.com/gp/customer-reviews/R23NBB147NFJC0/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B00EQT0YK2), [RT2870](https://www.amazon.com/gp/customer-reviews/R9PNEUOR226MI/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B00EQT0YK2), [RT5732](https://www.amazon.com/gp/customer-reviews/RMT9IALY45B4T/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B00EQT0YK2)
 

@@ -22,7 +22,7 @@ zbarimg screenshot.png
 
 Feel free to try it on this example QR code here.
 
-![qr-code.png](/images/decode-and-save-google-authenticator-qr-codes/qr-code.png)
+![qr-code.png](/assets/decode-and-save-google-authenticator-qr-codes/qr-code.png)
 
 This QR code should decode to this content.
 

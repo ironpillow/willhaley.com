@@ -45,7 +45,7 @@ Configure samba to be installed at `/opt/samba`.
 	--without-acl-support
 ```
 
-To fix a [bug with macOS support](https://bugzilla.samba.org/show_bug.cgi?id=11984), download [this tiny diff/patch file as `nss.diff`](/images/compile-samba-macos/nss.diff) and apply it.
+To fix a [bug with macOS support](https://bugzilla.samba.org/show_bug.cgi?id=11984), download [this tiny diff/patch file as `nss.diff`](/assets/compile-samba-macos/nss.diff) and apply it.
 
 Run this from the root of the `samba` directory.
 

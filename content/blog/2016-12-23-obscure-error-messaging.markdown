@@ -10,4 +10,4 @@ When editing the bio, an error message is displayed because an ancillary require
 
 I do not have any great suggestions for improvement. Scrolling the user up automatically seems jarring. Perhaps displaying confirmation and error messages near the modified setting would be more helpful?
 
-![unhelpful-confirmation.gif](/images/obscure-error-messaging/unhelpful-confirmation.gif)
+![unhelpful-confirmation.gif](/assets/obscure-error-messaging/unhelpful-confirmation.gif)

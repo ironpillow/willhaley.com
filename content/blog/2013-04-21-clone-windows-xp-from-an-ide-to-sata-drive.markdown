@@ -13,7 +13,7 @@ I have an old Dell desktop that seems to crawl to a stop whenever some intense d
 
 1. Here is my source installation.  XP running on a 10GB IDE disk using 100% of the available disk space.
 
-    ![SingleDisk-300x225.png](/images/clone-windows-xp-from-an-ide-to-sata-drive/SingleDisk-300x225.png)
+    ![SingleDisk-300x225.png](/assets/clone-windows-xp-from-an-ide-to-sata-drive/SingleDisk-300x225.png)
 
 1. Now, power off the computer and connect your SATA drive.  If you have SATA ports already built into your computer then you should be able to connect a drive that way and skip the next step.  However, if you are adding a SATA drive to a computer without SATA support, like me, then you will need a SATA controller card.  These [cards](http://www.newegg.com/Product/Product.aspx?Item=N82E16815287017) are relatively cheap.
 
@@ -21,7 +21,7 @@ I have an old Dell desktop that seems to crawl to a stop whenever some intense d
 
     You may use this as an opporunity to clean out some of the dust inside.
 
-    ![2013-01-19-15.30.29-300x225.jpg](/images/clone-windows-xp-from-an-ide-to-sata-drive/2013-01-19-15.30.29-300x225.jpg)
+    ![2013-01-19-15.30.29-300x225.jpg](/assets/clone-windows-xp-from-an-ide-to-sata-drive/2013-01-19-15.30.29-300x225.jpg)
 
     We have SATA hardware support!
 
@@ -29,17 +29,17 @@ I have an old Dell desktop that seems to crawl to a stop whenever some intense d
 
     Plug in your SATA drive.
 
-    ![2013-01-19-15.33.29-300x225.jpg](/images/clone-windows-xp-from-an-ide-to-sata-drive/2013-01-19-15.33.29-300x225.jpg)
+    ![2013-01-19-15.33.29-300x225.jpg](/assets/clone-windows-xp-from-an-ide-to-sata-drive/2013-01-19-15.33.29-300x225.jpg)
 
 1. Boot back into Windows.  If you added a SATA controller to your computer like I did, then you will have to install the drivers for that SATA controller so that XP will detect the drive.  **It is VERY important to do this before we clone the drive.**
 
-    ![add-device-300x225.png](/images/clone-windows-xp-from-an-ide-to-sata-drive/add-device-300x225.png)
+    ![add-device-300x225.png](/assets/clone-windows-xp-from-an-ide-to-sata-drive/add-device-300x225.png)
 
     If we clone XP to a SATA drive but your XP install does not have the drivers, then you will have a bad time.  I will leave it to you to figure out how to install the drivers for your SATA card.
 
 1. Once we know that our XP install can manage both our old IDE drive and new SATA drive (see below, XP can detect both disks in the Disk Management utility) then we are ready to boot to our live linux environment and clone the drive.
 
-    ![BothDisks-300x225.png](/images/clone-windows-xp-from-an-ide-to-sata-drive/BothDisks-300x225.png)
+    ![BothDisks-300x225.png](/assets/clone-windows-xp-from-an-ide-to-sata-drive/BothDisks-300x225.png)
 
 1. Boot to your live linux USB or CD and identify the drives.
 

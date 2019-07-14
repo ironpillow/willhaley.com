@@ -9,7 +9,7 @@ The idle timer is the countdown after a user driven event on a Windows computer.
 
 This program simulates a user driven event to reset that idle timer.
 
-[Download Program](/images/delay-windows-idle-timer/WinIdleDelay.zip)
+[Download Program](/assets/delay-windows-idle-timer/WinIdleDelay.zip)
 
 I have not tested this extensively, but it does work in Windows 7 x86 as an Admin.
 

@@ -14,7 +14,7 @@ It provides (as far as I can tell) all the functionality of SYSLINUX with the [b
 
 If you have an `ext4` formatted disk with the `bootable` flag enabled on the parition, you can do the following to set up a fun custom boot menu.
 
-![screenshot.png](/images/extlinux-menu/screenshot.png)
+![screenshot.png](/assets/extlinux-menu/screenshot.png)
 
 _I am assuming extlinux/syslinux is installed to `/usr/lib/syslinux`, as it was for me on Ubuntu 16.04.3, and that your disk is at `/dev/sdz`_
 
@@ -56,7 +56,7 @@ libcom32.c32
 libutil.c32
 ```
 
-Copy [an image](/images/extlinux-menu/background.png) ([original](https://static.pexels.com/photos/110854/pexels-photo-110854.jpeg)) that is _exactly_ 640x480 to `/mnt/background.png`.
+Copy [an image](/assets/extlinux-menu/background.png) ([original](https://static.pexels.com/photos/110854/pexels-photo-110854.jpeg)) that is _exactly_ 640x480 to `/mnt/background.png`.
 
 ```
 sudo cp ~/some/image/image-640x480.png /mnt/background.png

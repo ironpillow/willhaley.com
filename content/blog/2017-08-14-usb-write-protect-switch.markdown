@@ -8,7 +8,7 @@ I am a big fan of hardware enabled write protect switches on flash drives.
 
 My favorite is the [Kanguru FlashBlu30 with Physical Write Protect Switch](https://www.newegg.com/Product/Product.aspx?Item=9SIA24G28M5639).
 
-![Kanguru Flash BLU 30 USB 3.0 Flash Drive](/images/usb-write-protect-switch/kanguru.jpg)
+![Kanguru Flash BLU 30 USB 3.0 Flash Drive](/assets/usb-write-protect-switch/kanguru.jpg)
 
 You can certainly find cheaper thumb drives, but the write protect locking switch on this disk ensures the safety and integrity of this drive.
 

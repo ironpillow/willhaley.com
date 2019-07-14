@@ -8,7 +8,7 @@ The T-Mobile Jet 2.0 is a USB 4G modem. If you connect it to a PC, it acts like 
 
 Unfortunately, this software does not install properly in Windows 10. At least, not for me. In Windows 10 the software wizard runs, but hangs forever at the step `Installing Drivers ... Please Wait`.
 
-![installing-drivers-forever](/images/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/installing-drivers-forever.png)
+![installing-drivers-forever](/assets/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/installing-drivers-forever.png)
 
 I found a way around this by using the built in cellular connectivity features of Windows 10.
 
@@ -18,7 +18,7 @@ I will not say that these instructions are the _best_ way to get the Jet 2.0 wor
 
 First, connect the 4G card to your PC. Do *not* install the webConnect software when prompted. Instead, see if Windows 10 tries to automatically detect the modem and install drivers for you (it should).
 
-![installing-device](/images/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/installing-device.png)
+![installing-device](/assets/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/installing-device.png)
 
 Once Windows completes that process, install the webConnect software from the USB storage of the 4G card.
 
@@ -36,7 +36,7 @@ Extract the downloaded file and open `jet2.0`. Run `DataCard_Setup64.exe`.
 
 Now, I can't explain why, but for whatever reason, running that `exe` on my machine suddenly triggered Windows 10 to automatically install drivers for the card. What I mean is, rather than seeing the webConnect install wizard, I saw a Windows 10 driver prompt saying that it was `Installing HUAWEI Mobile Connect - USB Device (COM3)`.
 
-![installing-properly](/images/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/installing-properly.png)
+![installing-properly](/assets/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/installing-properly.png)
 
 I don't know why that happens. Maybe re-installing the software triggers something? Maybe it even has to do with the timing. Maybe trying to launch the software before the card is detected on reboot had something to do with it. I have no idea. All I know is that it worked.
 
@@ -48,7 +48,7 @@ Go to your `Settings` menu in Windows 10. Then `Network & Internet`.
 
 There should be a `Cellular` option on the left. Click it. Check the box that says `Connect automatically`, and then `Connect`.
 
-![cellular-device](/images/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/cellular-device.png)
+![cellular-device](/assets/t-mobile-huawei-jet-2.0-in-windows-10-64-bit/cellular-device.png)
 
 If all worked properly, you should now be able to get online with your 4G card.
 

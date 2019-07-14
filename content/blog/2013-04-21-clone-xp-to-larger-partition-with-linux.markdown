@@ -24,7 +24,7 @@ There instructions cover much of the same ground as a [previous post]({{<relref 
 
 1. Here is my source installation. XP running on a 10GB disk. Note that XP is not on the first partition.
 
-    ![xp-300x225.png](/images/clone-xp-to-larger-partition-with-linux/xp-300x225.png)
+    ![xp-300x225.png](/assets/clone-xp-to-larger-partition-with-linux/xp-300x225.png)
 
 1. Power off the machine. Connect your larger destination drive and boot to your live linux USB or CD.
 
