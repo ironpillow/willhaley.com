@@ -155,7 +155,8 @@ Requirements:
       <pubDate>Sat, 14 Apr 2018 15:16:00 +0000</pubDate>
       
       <guid>http://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/</guid>
-      <description>The goal is to connect a desktop to a WiFi network via a Raspberry Pi. We will use a Raspberry Pi 3 B+ as a bridge between the desktop and the WiFi network. The Raspberry Pi 3 B+ has 802.11ac WiFi, and so seems well suited to this task. This Stack Overflow answer and accompanying script are almost entirely how I got this working and are the inspiration for this guide.</description>
+      <description>The goal is to connect a non-WiFi computer to a WiFI network via a Raspberry Pi. We will use a Raspberry Pi 3 B+ as a bridge between the non-WiFi computer and the WiFi network. The Raspberry Pi connects to WiFi and shares its connection with other computers using Ethernet.
+The Raspberry Pi 3 B+ has 802.11ac WiFi, and so seems well suited to this task. This Stack Overflow answer and accompanying script as well as this proxy arp approach and Debian&amp;rsquo;s Bridging Network Connections with Proxy ARP are the primary sources for how I got this working and are the inspiration for this guide.</description>
     </item>
     
     <item>

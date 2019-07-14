@@ -9,7 +9,7 @@
   <title>Raspberry Pi 3 B&#43; WiFi Ethernet Bridge - Will Haley</title>
 
   <meta name="author" content="will">
-  <meta name="description" content="The goal is to connect a desktop to a WiFi network via a Raspberry Pi. We will use a Raspberry Pi 3 B&#43; as a bridge between the desktop and the WiFi network. The...">
+  <meta name="description" content="The goal is to connect a non-WiFi computer to a WiFI network via a Raspberry Pi. We will use a Raspberry Pi 3 B&#43; as a bridge between the non-WiFi computer and t...">
 
   <link rel="stylesheet" href="/css/main.css?version=1.1.6">
   <link rel="stylesheet" href="/css/custom.css?version=1.1.6">
@@ -61,13 +61,137 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Raspberry Pi 3 B&#43; WiFi Ethernet Bridge</h1>
-    <p class="post-meta"><time datetime="2018-04-14T15:16:00+00:00" itemprop="datePublished">Apr 14, 2018</time></p>
+    <p class="post-meta"><time datetime="2018-04-14T15:16:00+00:00" itemprop="datePublished">Apr 14, 2018</time><span class="date-modified">Updated <time datetime="2019-07-14T11:32:00+00:00" itemprop="dateModified">Jul 14, 2019</time></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>The goal is to connect a desktop to a WiFi network via a Raspberry Pi. We will use a Raspberry Pi 3 B+ as a bridge between the desktop and the WiFi network. The Raspberry Pi 3 B+ has <a href="https://www.raspberrypi.org/blog/raspberry-pi-3-model-bplus-sale-now-35/">802.11ac WiFi</a>, and so seems well suited to this task. This <a href="https://raspberrypi.stackexchange.com/a/50073/24566">Stack Overflow answer</a> and <a href="https://raw.githubusercontent.com/arpitjindal97/raspbian-recipes/master/wifi-to-eth-route.sh">accompanying script</a> are almost entirely how I got this working and are the inspiration for this guide.</p>
+    
 
-<p><img src="/images/raspberry-pi-wifi-ethernet-bridge/wifi-bridge.png" alt="diagram of the network topology" /></p>
+<p>The goal is to connect a <strong>non-WiFi</strong> computer to a WiFI network via a Raspberry Pi. We will use a Raspberry Pi 3 B+ as a bridge between the <strong>non-WiFi</strong> computer and the WiFi network. The Raspberry Pi connects to WiFi and shares its connection with other computers using Ethernet.</p>
+
+<p><img src="/assets/raspberry-pi-wifi-ethernet-bridge/wifi-bridge.png" alt="diagram of the network topology" /></p>
+
+<p>The Raspberry Pi 3 B+ has <a href="https://www.raspberrypi.org/blog/raspberry-pi-3-model-bplus-sale-now-35/">802.11ac WiFi</a>, and so seems well suited to this task. This <a href="https://raspberrypi.stackexchange.com/a/50073/24566">Stack Overflow answer</a> and <a href="https://raw.githubusercontent.com/arpitjindal97/raspbian-recipes/master/wifi-to-eth-route.sh">accompanying script</a> as well as <a href="https://raspberrypi.stackexchange.com/a/88955/24566">this proxy arp approach</a> and <a href="https://wiki.debian.org/BridgeNetworkConnectionsProxyArp">Debian&rsquo;s Bridging Network Connections with Proxy ARP</a> are the primary sources for how I got this working and are the inspiration for this guide.</p>
+
+<p>I have two <em>separate</em> guides below. Follow either the <code>Same Subnet</code> steps <strong>or</strong> the <code>Separate Subnet</code> steps below based on the configuration you would prefer. My process has evolved over time and I prefer the <code>Same Subnet</code> approach as it is meant to be a seamless bridge for clients.</p>
+
+<h1 id="option-1-same-subnet">Option 1 - Same Subnet</h1>
+
+<p>The following script configures everything in one go for a standard Raspbian-based Raspberry Pi. This script is based off a <a href="https://raspberrypi.stackexchange.com/a/88955/24566">very helpful Stack Overflow answer</a>. The only changes you should need to make are for the <code>ssid</code> and <code>psk</code> variables used for connecting the Pi to your WiFi network.</p>
+
+<p><strong>Note: This script drastically changes the networking configuration and your Pi may end up in an unreliable networking state if anything goes wrong</strong></p>
+
+<pre><code>#!/usr/bin/env bash
+
+set -e
+
+[ $EUID -ne 0 ] &amp;&amp; echo &quot;run as root&quot; &gt;&amp;2 &amp;&amp; exit 1
+
+# Update these variables as needed
+
+ssid=&quot;the ssid&quot;
+psk=&quot;the password&quot;
+country=&quot;US&quot;
+
+# You should not need to update anything below this line
+
+apt update &amp;&amp; apt install parprouted dhcp-helper
+
+systemctl stop dhcp-helper
+systemctl enable dhcp-helper
+
+systemctl mask networking.service
+systemctl mask dhcpcd.service
+if [ -d /etc/network/interfaces ];
+then
+  mv /etc/network/interfaces /etc/network/interfaces.bak
+fi
+sed -i '1i resolvconf=NO' /etc/resolvconf.conf
+
+systemctl enable systemd-networkd.service
+systemctl enable systemd-resolved.service
+ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
+cat &gt; /etc/wpa_supplicant/wpa_supplicant-wlan0.conf &lt;&lt;EOF
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=${country}
+
+network={
+    ssid=&quot;${ssid}&quot;
+    psk=&quot;${psk}&quot;
+}
+EOF
+
+chmod 600 /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+systemctl disable wpa_supplicant.service
+systemctl enable wpa_supplicant@wlan0.service
+
+cat &gt; /etc/systemd/network/08-wlan0.network &lt;&lt;EOF
+[Match]
+Name=wlan0
+[Network]
+DHCP=yes
+IPForward=yes
+EOF
+
+cat &gt; /etc/default/dhcp-helper &lt;&lt;EOF
+DHCPHELPER_OPTS=&quot;-b wlan0&quot;
+EOF
+
+cat &lt;&lt;'EOF' &gt;/etc/avahi/avahi-daemon.conf
+[server]
+use-ipv4=yes
+use-ipv6=yes
+ratelimit-interval-usec=1000000
+ratelimit-burst=1000
+
+[wide-area]
+enable-wide-area=yes
+
+[publish]
+publish-hinfo=no
+publish-workstation=no
+
+[reflector]
+enable-reflector=yes
+
+[rlimits]
+EOF
+
+cat &lt;&lt;'EOF' &gt;/etc/systemd/system/parprouted.service
+[Unit]
+Description=proxy arp routing service
+Documentation=https://raspberrypi.stackexchange.com/q/88954/79866
+
+[Service]
+Type=forking
+# Restart until wlan0 gained carrier
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=30
+ExecStartPre=/lib/systemd/systemd-networkd-wait-online --interface=wlan0 --timeout=6 --quiet
+ExecStartPre=/bin/echo 'systemd-networkd-wait-online: wlan0 is online'
+# clone the dhcp-allocated IP to eth0 so dhcp-helper will relay for the correct subnet
+ExecStartPre=/bin/bash -c '/sbin/ip addr add $(/sbin/ip -4 -br addr show wlan0 | /bin/grep -Po &quot;\\d+\\.\\d+\\.\\d+\\.\\d+&quot;)/32 dev eth0'
+ExecStartPre=/sbin/ip link set dev eth0 up
+ExecStartPre=/sbin/ip link set wlan0 promisc on
+ExecStart=-/usr/sbin/parprouted eth0 wlan0
+ExecStopPost=/sbin/ip link set wlan0 promisc off
+ExecStopPost=/sbin/ip link set dev eth0 down
+ExecStopPost=/bin/bash -c '/sbin/ip addr del $(/sbin/ip -4 -br addr show eth0 | /bin/grep -Po &quot;\\d+\\.\\d+\\.\\d+\\.\\d+&quot;)/32 dev eth0'
+
+[Install]
+WantedBy=wpa_supplicant@wlan0.service
+EOF
+
+systemctl daemon-reload
+systemctl enable parprouted.service
+
+systemctl start wpa_supplicant@wlan0 dhcp-helper systemd-networkd systemd-resolved
+</code></pre>
+
+<h1 id="option-2-separate-subnet">Option 2 - Separate Subnet</h1>
 
 <p>Become <code>root</code> on the Raspberry Pi. This will make the following steps a little bit simpler.</p>
 
