@@ -6,6 +6,10 @@ type: toplevel
 
 Articles that I have clipped over the years. Whether because I agreed with them, loved them, hated them, or found them interesting, these are articles I thought were worth tracking. The articles are (or should) be ordered by when I first encountered them, descending.
 
+[Anger as grinning Trump gives thumbs-up while Melania holds El Paso orphan](https://www.theguardian.com/us-news/2019/aug/09/trump-el-paso-melania-orphan-baby-thumbs-up)
+
+> The Guardian, Edward Helmore, 2019-08-09
+
 [Americans Shouldn’t Have to Drive, but the Law Insists on It](https://www.theatlantic.com/ideas/archive/2019/07/car-crashes-arent-always-unavoidable/592447/)
 
 > The Atlantic, Gregory H. Shill, 2019-07-09

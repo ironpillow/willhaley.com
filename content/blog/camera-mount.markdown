@@ -23,7 +23,7 @@ The bracket fits firmly into place on the helmet and will not move. Note that th
 
 {{% img "helmet-with-bracket.jpg" "Helmet with bracket locked in place" %}}
 
-The other half of the bracket mounting system is the bracket that connects to the camera using the 1/8" threading. I believe 1/8" threading is the standard size for tripods and most camera mounting accessories.
+The other half of the bracket mounting system is the bracket that connects to the camera using the 1/4" screw. I believe 1/4 inch is the standard size for tripods and most camera mounting accessories.
 
 {{% img "camera-bracket.jpg" "Camera bracket" %}}
 
